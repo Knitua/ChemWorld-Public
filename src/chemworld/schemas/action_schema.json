@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemWorld event action",
+  "type": "object",
+  "required": ["operation"],
+  "properties": {
+    "operation": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "add_reagent",
+            "add_solvent",
+            "add_catalyst",
+            "heat",
+            "wait",
+            "sample",
+            "quench",
+            "add_phase",
+            "add_extractant",
+            "mix",
+            "settle",
+            "separate_phase",
+            "wash",
+            "dry",
+            "concentrate",
+            "transfer",
+            "seed_crystals",
+            "cool_crystallize",
+            "filter_crystals",
+            "evaporate",
+            "distill",
+            "collect_fraction",
+            "set_flow_rate",
+            "run_flow",
+            "set_potential",
+            "electrolyze",
+            "terminate",
+            "measure"
+          ]
+        },
+        {"type": "integer", "minimum": 0, "maximum": 27}
+      ]
+    },
+    "payload": {"type": "object"},
+    "instrument": {
+      "oneOf": [
+        {"type": "string", "enum": ["hplc", "gc", "uvvis", "ph_meter", "final_assay"]},
+        {"type": "integer", "minimum": 0, "maximum": 4}
+      ]
+    },
+    "phase": {
+      "oneOf": [
+        {"type": "string", "enum": ["reactor_liquid", "aqueous", "organic"]},
+        {"type": "integer", "minimum": 0, "maximum": 2}
+      ]
+    },
+    "target_phase": {
+      "oneOf": [
+        {"type": "string", "enum": ["reactor_liquid", "aqueous", "organic"]},
+        {"type": "integer", "minimum": 0, "maximum": 2}
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "chemworld-work-i-world-fork-qualification-0.1",
+  "protocol_id": "chemworld-work-i-world-fork-qualification-v0.1",
+  "status": "candidate_preflight",
+  "inventory_path": "configs/benchmark/work_i_world_fork_component_inventory_v0.1.json",
+  "noise_contract": {
+    "mode": "keyed",
+    "namespace": "chemworld-work-i-world-fork",
+    "seed_policy": "world_seed"
+  },
+  "action_policy": {
+    "policy_id": "public-midpoint-complete-experiment-v0.1",
+    "source": "task_recipe_from_unit_vector",
+    "unit_vector_value": 0.5,
+    "same_sequence_on_parent_and_child": true
+  },
+  "counting_rule": {
+    "intervention_classes": 2,
+    "seeds_per_class": 3,
+    "world_variants_per_seed": 2,
+    "executions_per_variant": 2,
+    "qualification_trace_count": 24,
+    "provider_call_count": 0
+  },
+  "seeds": [0, 1, 2],
+  "cases": [
+    {
+      "case_id": "partition-constitutive-law-family",
+      "task_id": "partition-discovery",
+      "intervention_class": "mechanism_or_constitutive_law",
+      "target_component_id": "private_physics.constitutive_laws",
+      "intervention_payload": {
+        "kind": "mechanism_family",
+        "mode": "constitutive_law_family",
+        "severity": 1.0
+      },
+      "oracle": {
+        "schema_version": "chemworld-world-fork-divergence-oracle-0.1",
+        "oracle_id": "chemworld-divergence-42ae002772831540",
+        "intervention_class": "mechanism_or_constitutive_law",
+        "target_component_id": "private_physics.constitutive_laws",
+        "expectations": [
+          {
+            "expectation_id": "terminal-product-organic-amount",
+            "channel": "physical_state",
+            "checkpoint_id": "terminal_assay",
+            "field_path": ["species_amounts", "P_org"],
+            "direction": "increase",
+            "minimum_absolute_delta": 0.0001,
+            "minimum_relative_delta": 0.05,
+            "relative_scale_floor": 0.000001
+          },
+          {
+            "expectation_id": "assayed-product-organic-fraction",
+            "channel": "public_observation",
+            "checkpoint_id": "terminal_assay",
+            "field_path": ["product_in_organic"],
+            "direction": "increase",
+            "minimum_absolute_delta": 0.02,
+            "minimum_relative_delta": 0.02,
+            "relative_scale_floor": 0.000001
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "electrochemical-material-law-counterfactual",
+      "task_id": "electrochemical-conversion",
+      "intervention_class": "material_law_counterfactual",
+      "target_component_id": "private_physics.material_laws",
+      "intervention_payload": {
+        "kind": "material_law_counterfactual",
+        "material_field": "electrolyte_profile",
+        "public_to_baseline": [2, 1, 0, 3]
+      },
+      "oracle": {
+        "schema_version": "chemworld-world-fork-divergence-oracle-0.1",
+        "oracle_id": "chemworld-divergence-7a6e7fe11c41a4e6",
+        "intervention_class": "material_law_counterfactual",
+        "target_component_id": "private_physics.material_laws",
+        "expectations": [
+          {
+            "expectation_id": "terminal-selective-product-amount",
+            "channel": "physical_state",
+            "checkpoint_id": "terminal_assay",
+            "field_path": ["species_amounts", "Red"],
+            "direction": "decrease",
+            "minimum_absolute_delta": 0.000001,
+            "minimum_relative_delta": 0.01,
+            "relative_scale_floor": 0.000001
+          },
+          {
+            "expectation_id": "assayed-ohmic-efficiency",
+            "channel": "public_observation",
+            "checkpoint_id": "terminal_assay",
+            "field_path": ["ohmic_efficiency"],
+            "direction": "decrease",
+            "minimum_absolute_delta": 0.05,
+            "minimum_relative_delta": 0.05,
+            "relative_scale_floor": 0.000001
+          }
+        ]
+      }
+    }
+  ],
+  "pass_rule": "all_lineage_public_execution_divergence_replay_and_zero_provider_call_gates_pass"
+}

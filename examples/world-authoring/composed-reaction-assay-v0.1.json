@@ -1,0 +1,66 @@
+{
+  "schema_version": "chemworld-world-composition-0.1",
+  "composition_id": "composed-reaction-assay-demo",
+  "world_split": "public-dev",
+  "components": [
+    {
+      "kind": "reaction",
+      "role": "transformation",
+      "parameters": {}
+    },
+    {
+      "kind": "thermal",
+      "role": "temperature-and-energy",
+      "parameters": {}
+    },
+    {
+      "kind": "observation",
+      "role": "public-measurement",
+      "parameters": {}
+    }
+  ],
+  "task": {
+    "budget": 8,
+    "operations": [
+      "add_reagent",
+      "add_solvent",
+      "add_catalyst",
+      "heat",
+      "wait",
+      "sample",
+      "quench",
+      "terminate",
+      "measure"
+    ],
+    "instruments": [
+      "hplc",
+      "gc",
+      "uvvis",
+      "final_assay"
+    ],
+    "observations": "partial-instrument-observation",
+    "resources": {
+      "operation_budget": 8
+    },
+    "termination": "final-assay-or-budget",
+    "evaluation": {
+      "metrics": [
+        "final_assay_score",
+        "trajectory_validity"
+      ],
+      "threshold": 0.55
+    },
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "episode_mode": "single_experiment",
+    "safety_limit": 0.65,
+    "difficulty": "intro",
+    "description": "Declaratively composed reaction world with thermal control and public measurement.",
+    "tags": [
+      "authoring-example"
+    ]
+  }
+}

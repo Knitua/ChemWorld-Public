@@ -1,0 +1,123 @@
+{
+  "schema_version": "chemworld-reference-task-contract-map-0.1",
+  "mapping_boundary": {
+    "component_pattern_explains_world_surface": true,
+    "registered_task_contracts_remain_frozen": true,
+    "byte_for_byte_reconstruction_claim": false,
+    "qualification_claim": false,
+    "exhaustive_task_space_claim": false
+  },
+  "task_overlay_fields": [
+    "objective",
+    "budget",
+    "episode_mode",
+    "allowed_operations",
+    "allowed_instruments",
+    "observation_policy",
+    "termination_policy",
+    "success_metrics",
+    "world_split",
+    "seeds"
+  ],
+  "patterns": [
+    {
+      "pattern_id": "reaction-thermal-observation",
+      "component_kinds": [
+        "reaction",
+        "thermal",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "reaction-to-assay",
+        "reaction-optimization-standard",
+        "reaction-safety-constrained",
+        "reaction-mechanism-explanation",
+        "low-budget-characterization",
+        "public-private-generalization"
+      ]
+    },
+    {
+      "pattern_id": "reaction-phase-separation-observation",
+      "component_kinds": [
+        "reaction",
+        "thermal",
+        "phase",
+        "separation",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "reaction-to-purification",
+        "purity-yield-tradeoff",
+        "tool-agent-planning"
+      ]
+    },
+    {
+      "pattern_id": "phase-separation-observation",
+      "component_kinds": [
+        "phase",
+        "separation",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "partition-discovery"
+      ]
+    },
+    {
+      "pattern_id": "reaction-crystallization-observation",
+      "component_kinds": [
+        "reaction",
+        "thermal",
+        "crystallization",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "reaction-to-crystallization"
+      ]
+    },
+    {
+      "pattern_id": "reaction-distillation-observation",
+      "component_kinds": [
+        "reaction",
+        "thermal",
+        "distillation",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "reaction-to-distillation"
+      ]
+    },
+    {
+      "pattern_id": "reaction-continuous-flow-observation",
+      "component_kinds": [
+        "reaction",
+        "thermal",
+        "continuous_flow",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "flow-reaction-optimization"
+      ]
+    },
+    {
+      "pattern_id": "reaction-electrochemistry-observation",
+      "component_kinds": [
+        "reaction",
+        "electrochemistry",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "electrochemical-conversion"
+      ]
+    },
+    {
+      "pattern_id": "phase-observation",
+      "component_kinds": [
+        "phase",
+        "observation"
+      ],
+      "reference_task_ids": [
+        "equilibrium-characterization"
+      ]
+    }
+  ]
+}

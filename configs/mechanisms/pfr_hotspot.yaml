@@ -1,0 +1,66 @@
+schema_version: chemworld_mechanism_v1
+network_id: pfr_hotspot
+metadata:
+  description: >
+    Strongly exothermic plug-flow-oriented mechanism where desired and
+    undesired rates have different activation energies, creating hotspot risk.
+  mechanism_family: continuous_reactor
+  qualitative_tags: [pfr, hotspot, heat_removal, selectivity_tradeoff]
+species:
+  - species_id: A
+    formula: C3H6O
+    phase: liquid
+    observable_aliases: [reactant]
+  - species_id: P
+    formula: C3H6O
+    phase: liquid
+    observable_aliases: [product]
+  - species_id: B
+    formula: C3H6O
+    phase: liquid
+    observable_aliases: [side_product]
+  - species_id: D
+    formula: C3H6O
+    phase: liquid
+    observable_aliases: [degradation_product]
+  - species_id: E
+    formula: C6H12O2
+    phase: liquid
+    observable_aliases: [heavy_impurity]
+reactions:
+  - reaction_id: target_exothermic
+    equation: A => P
+    delta_h_J_per_mol: -70000.0
+    rate_law:
+      rate_law_id: target_hotspot_rate
+      equation_id: modified_arrhenius
+      parameters:
+        A: 0.04
+        b: 0.2
+        Ea_J_per_mol: 28000.0
+  - reaction_id: side_high_temperature
+    equation: A => B
+    delta_h_J_per_mol: -42000.0
+    rate_law:
+      rate_law_id: side_high_temperature_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.018
+        Ea_J_per_mol: 33000.0
+  - reaction_id: product_degradation
+    equation: P => D
+    delta_h_J_per_mol: 15000.0
+    rate_law:
+      rate_law_id: degradation_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.0025
+        Ea_J_per_mol: 17000.0
+  - reaction_id: heavy_coupling
+    equation: 2 P => E
+    delta_h_J_per_mol: -8000.0
+    rate_law:
+      rate_law_id: heavy_coupling_rate
+      equation_id: mass_action
+      parameters:
+        k: 0.001

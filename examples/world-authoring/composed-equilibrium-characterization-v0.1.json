@@ -1,0 +1,74 @@
+{
+  "schema_version": "chemworld-world-composition-0.1",
+  "composition_id": "composed-equilibrium-characterization-demo",
+  "world_split": "public-test",
+  "components": [
+    {
+      "kind": "phase",
+      "role": "bounded-aqueous-phase-state",
+      "parameters": {
+        "phases": [
+          "aqueous",
+          "organic"
+        ]
+      }
+    },
+    {
+      "kind": "observation",
+      "role": "public-equilibrium-measurement",
+      "parameters": {
+        "instruments": [
+          "ph_meter",
+          "uvvis",
+          "final_assay"
+        ]
+      }
+    }
+  ],
+  "task": {
+    "objective": "balanced",
+    "budget": 5,
+    "operations": [
+      "add_solvent",
+      "add_reagent",
+      "measure",
+      "terminate"
+    ],
+    "instruments": [
+      "ph_meter",
+      "uvvis",
+      "final_assay"
+    ],
+    "observations": "partial-instrument-observation",
+    "resources": {
+      "operation_budget": 5,
+      "sample_volume_L": 0.001,
+      "instrument_uses": 3,
+      "final_assays": 1
+    },
+    "termination": "budget",
+    "evaluation": {
+      "metrics": [
+        "pH_normalized",
+        "acid_dissociation_fraction",
+        "precipitation_signal",
+        "equilibrium_residual",
+        "equilibrium_confidence"
+      ],
+      "threshold": 0.28
+    },
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "episode_mode": "campaign",
+    "safety_limit": 0.65,
+    "difficulty": "intro",
+    "description": "A resource-limited phase-characterization world that prepares a measurable sample before public observation and lifecycle closure.",
+    "tags": [
+      "authoring-example",
+      "single-process-module"
+    ]
+  }
+}

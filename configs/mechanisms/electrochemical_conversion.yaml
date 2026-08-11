@@ -1,0 +1,59 @@
+schema_version: chemworld_mechanism_v1
+network_id: electrochemical_conversion
+metadata:
+  description: >
+    Electrochemical conversion topology for three lumped redox pseudocomponents.
+    Runtime kinetics and conversion are owned by the electrochemical service,
+    not by the generic reaction-network ODE.
+  mechanism_family: electrochemical
+  qualitative_tags: [potential_selectivity, current_efficiency, energy_tradeoff]
+  runtime_authority: chemworld.runtime.electrochemical_services
+  task_contract_version: chemworld-electrochemical-task-contract-0.1
+  species_identity_semantics: lumped_redox_pseudocomponents
+  formula_semantics: conserved_element_inventory_basis_not_literal_molecular_formula
+  electron_accounting: implicit_faraday_charge_ledger
+  electrolyte_accounting: boundary_state_outside_redox_species_ledger
+species:
+  - species_id: Ox
+    formula: C6H10O5
+    phase: liquid
+    observable_aliases: [oxidized_reactant]
+    metadata:
+      identity_semantics: lumped_redox_pseudocomponents
+      formula_semantics: conserved_element_inventory_basis_not_literal_molecular_formula
+      role: oxidized_inventory_pool
+  - species_id: Red
+    formula: C6H10O5
+    phase: liquid
+    observable_aliases: [reduced_product]
+    metadata:
+      identity_semantics: lumped_redox_pseudocomponents
+      formula_semantics: conserved_element_inventory_basis_not_literal_molecular_formula
+      role: desired_reduced_inventory_pool
+  - species_id: SideRed
+    formula: C6H10O5
+    phase: liquid
+    observable_aliases: [side_product, lumped_side_reduction_product]
+    metadata:
+      identity_semantics: lumped_redox_pseudocomponents
+      formula_semantics: conserved_element_inventory_basis_not_literal_molecular_formula
+      role: non_target_reduced_inventory_pool
+reactions:
+  - reaction_id: desired_redox_couple
+    equation: Ox <=> Red
+    delta_h_J_per_mol: 0.0
+    rate_law:
+      rate_law_id: desired_electrochemical_runtime
+      equation_id: runtime_owned
+      parameters:
+        runtime_model_id: nernst_butler_volmer_faradaic_v1
+        runtime_component: reversible_redox_extent
+  - reaction_id: lumped_side_reduction
+    equation: Ox => SideRed
+    delta_h_J_per_mol: 0.0
+    rate_law:
+      rate_law_id: side_electrochemical_runtime
+      equation_id: runtime_owned
+      parameters:
+        runtime_model_id: nernst_butler_volmer_faradaic_v1
+        runtime_component: forward_product_selectivity_partition

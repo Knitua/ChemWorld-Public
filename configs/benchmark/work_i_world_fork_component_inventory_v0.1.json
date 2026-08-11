@@ -1,0 +1,378 @@
+{
+  "schema_version": "chemworld-world-component-inventory-0.1",
+  "inventory_id": "chemworld-work-i-world-components-v0.1",
+  "status": "frozen",
+  "scope": {
+    "paper": "work-i",
+    "certificate": "world-fork-programmability",
+    "intervention_classes": [
+      "mechanism_or_constitutive_law",
+      "material_law_counterfactual"
+    ],
+    "base_fork_pairs": true,
+    "single_declared_target_per_fork": true,
+    "public_contract_must_be_invariant": true,
+    "provider_calls_required": false,
+    "agent_performance_claim_allowed": false
+  },
+  "components": [
+    {
+      "component_id": "identity.lineage",
+      "layer": "identity",
+      "visibility": "audit_only",
+      "fork_policy": "derived",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "fork_spec.parent_world_sha256",
+        "fork_spec.child_world_sha256",
+        "fork_spec.intervention_sha256"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/foundation/world_fork_manifest.py"
+      ],
+      "description": "Content-addressed parent, child, and intervention provenance retained for audit and excluded from the agent-facing payload."
+    },
+    {
+      "component_id": "identity.world",
+      "layer": "identity",
+      "visibility": "audit_only",
+      "fork_policy": "derived",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "ScenarioInstance.parameters.world_id",
+        "ScenarioInstance.parameters.provider",
+        "ScenarioInstance.parameters.family_version"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/world/parameters.py",
+        "src/chemworld/world/scenario.py"
+      ],
+      "description": "Internal world identity changes when a fork is derived but is not an experimental observation or a public fork label."
+    },
+    {
+      "component_id": "private_physics.constitutive_laws",
+      "layer": "private_physics",
+      "visibility": "private",
+      "fork_policy": "intervention_target",
+      "allowed_intervention_classes": [
+        "mechanism_or_constitutive_law"
+      ],
+      "canonical_payload_sources": [
+        "ScenarioInstance.parameters.domain_parameters",
+        "ScenarioInstance.initial_state.metadata.derived_constitutive_calibration"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/world/mechanism_family.py",
+        "src/chemworld/world/parameters.py"
+      ],
+      "description": "Hidden constitutive response laws may be the single declared target of a mechanism-or-constitutive fork."
+    },
+    {
+      "component_id": "private_physics.initial_conditions",
+      "layer": "private_physics",
+      "visibility": "private",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "ScenarioInstance.spec.initial_state_id",
+        "ScenarioInstance.initial_state.physical_ledgers",
+        "ScenarioInstance.initial_state.thermodynamic_state"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/foundation/state.py",
+        "src/chemworld/world/scenario.py",
+        "src/chemworld/world/state_factory.py"
+      ],
+      "description": "Base and fork begin from matched physical amounts, phases, equipment state, temperature, and pressure."
+    },
+    {
+      "component_id": "private_physics.material_laws",
+      "layer": "private_physics",
+      "visibility": "private",
+      "fork_policy": "intervention_target",
+      "allowed_intervention_classes": [
+        "material_law_counterfactual"
+      ],
+      "canonical_payload_sources": [
+        "ScenarioInstance.parameters.catalyst_effects",
+        "ScenarioInstance.parameters.solvent_effects",
+        "ScenarioInstance.initial_state.metadata._hidden_material_law_public_to_baseline"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/world/material_counterfactual.py",
+        "src/chemworld/world/parameters.py"
+      ],
+      "description": "Hidden mappings from stable material choices to their executed response laws may be permuted without changing public material identities."
+    },
+    {
+      "component_id": "private_physics.randomness",
+      "layer": "private_physics",
+      "visibility": "private",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "ScenarioSpec.hidden_parameter_seed",
+        "ScenarioSpec.initial_state_seed",
+        "environment.seed",
+        "observation_noise.seed_policy"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/envs/observation_noise.py",
+        "src/chemworld/world/parameters.py",
+        "src/chemworld/world/scenario.py"
+      ],
+      "description": "Parameter, initial-state, environment, and observation-noise seed contracts are matched across a base-fork pair and exact replay."
+    },
+    {
+      "component_id": "private_physics.reaction_mechanism",
+      "layer": "private_physics",
+      "visibility": "private",
+      "fork_policy": "intervention_target",
+      "allowed_intervention_classes": [
+        "mechanism_or_constitutive_law"
+      ],
+      "canonical_payload_sources": [
+        "ScenarioInstance.compiled_mechanism.network",
+        "ScenarioInstance.compiled_mechanism.mechanism_hash"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/runtime/mechanism_manifest.py",
+        "src/chemworld/runtime/mechanisms.py",
+        "src/chemworld/world/mechanism_family.py"
+      ],
+      "description": "A compiled rate-law or reaction-topology mechanism may be the single declared target of a mechanism-or-constitutive fork."
+    },
+    {
+      "component_id": "private_physics.runtime_kernels",
+      "layer": "private_physics",
+      "visibility": "audit_only",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "world_law_spec.transition_kernel_registry",
+        "world_law_spec.observation_kernel_registry",
+        "runtime.kernel_registry"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/runtime/engine.py",
+        "src/chemworld/runtime/kernel_registry.py",
+        "src/chemworld/world/world_law.py"
+      ],
+      "description": "The execution engine, provider bindings, and transition and observation kernel implementations remain identical across a pair."
+    },
+    {
+      "component_id": "public_contract.actions",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "TaskSpec.allowed_operations",
+        "operation_contracts",
+        "public_action_schema"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/action_codec.py",
+        "src/chemworld/operation_validator.py",
+        "src/chemworld/world/operations.py"
+      ],
+      "description": "Operation names, typed fields, choices, bounds, preconditions, and action validation are identical on both sides of a fork."
+    },
+    {
+      "component_id": "public_contract.constitution_safety",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "world_law_spec.constitution_rules",
+        "TaskSpec.safety_limit",
+        "PhysicalConstitutionChecklist"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/foundation/constitution.py",
+        "src/chemworld/physchem/safety_envelope.py",
+        "src/chemworld/world/world_law.py"
+      ],
+      "description": "Conservation, boundedness, safety-envelope, and transactional constitution rules are held fixed."
+    },
+    {
+      "component_id": "public_contract.failures",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "operation_validation.invalid_reasons",
+        "transaction.rollback_semantics",
+        "agent_interface.failure_modes"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/agent_interface.py",
+        "src/chemworld/envs/chemworld_env.py",
+        "src/chemworld/operation_validator.py",
+        "src/chemworld/runtime/transactions.py"
+      ],
+      "description": "Invalid-action, precondition, rollback, termination, and resource-exhaustion semantics do not change with private physics."
+    },
+    {
+      "component_id": "public_contract.instruments",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "TaskSpec.allowed_instruments",
+        "instrument_contracts",
+        "instrument_runtime_contract_hash"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/runtime/observation_services.py",
+        "src/chemworld/world/instruments.py"
+      ],
+      "description": "Instrument availability, inputs, axes, calibration, noise, detection, cost, latency, and sample-consumption interfaces remain identical."
+    },
+    {
+      "component_id": "public_contract.material_catalog",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "public_material_catalog",
+        "material_choice_labels",
+        "action_material_indices"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/materials.py",
+        "src/chemworld/world/actions.py"
+      ],
+      "description": "Public material names or anonymous codes, selectable indices, disclosed properties, costs, and risks remain fixed under hidden material-law counterfactuals."
+    },
+    {
+      "component_id": "public_contract.observations",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "TaskSpec.observation_policy",
+        "TaskObservationContract",
+        "PUBLIC_OBSERVATION_KEYS",
+        "observation_schema"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/schemas/observation_schema.json",
+        "src/chemworld/world/observation_contracts.py",
+        "src/chemworld/world/operations.py"
+      ],
+      "description": "Observable field names, masks, packet structure, and disclosure rules remain fixed even when physical values diverge."
+    },
+    {
+      "component_id": "public_contract.resources",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "TaskSpec.budget",
+        "CampaignResourceCard",
+        "operation_resource_debits",
+        "instrument_resource_debits"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/campaign_resources.py",
+        "src/chemworld/eval/resource_accounting.py",
+        "src/chemworld/world/instruments.py",
+        "src/chemworld/world/operations.py"
+      ],
+      "description": "Operation, material stock, vessel, instrument-use, assay, cost, sample, and time budgets are the same for a base and its fork."
+    },
+    {
+      "component_id": "public_contract.scoring",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "TaskSpec.success_metrics",
+        "TaskScoringContract",
+        "task_metric_endpoint_contract"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/eval/task_metric_endpoints.py",
+        "src/chemworld/tasks.py",
+        "src/chemworld/world/scoring.py"
+      ],
+      "description": "Endpoint definitions, component weights, success metrics, threshold semantics, and evaluator bindings remain unchanged."
+    },
+    {
+      "component_id": "public_contract.task",
+      "layer": "public_contract",
+      "visibility": "public",
+      "fork_policy": "invariant",
+      "allowed_intervention_classes": [],
+      "canonical_payload_sources": [
+        "TaskSpec.to_dict",
+        "TaskSpec.contract_hash",
+        "ScenarioSpec.public_fields"
+      ],
+      "implementation_anchors": [
+        "src/chemworld/tasks.py",
+        "src/chemworld/world/scenario.py"
+      ],
+      "description": "Task identity, objective, lifecycle, allowed capabilities, difficulty, and public scenario declaration are matched across the pair."
+    }
+  ],
+  "cross_component_rules": [
+    {
+      "rule_id": "single_private_physics_target",
+      "component_ids": [
+        "private_physics.constitutive_laws",
+        "private_physics.material_laws",
+        "private_physics.reaction_mechanism"
+      ],
+      "requirement": "Each child world declares one intervention class and changes exactly one compatible private-physics component relative to its parent."
+    },
+    {
+      "rule_id": "matched_initialization_and_randomness",
+      "component_ids": [
+        "private_physics.initial_conditions",
+        "private_physics.randomness"
+      ],
+      "requirement": "A base-fork pair uses matched initial physical state and random seed contracts; exact replay reproduces each side independently."
+    },
+    {
+      "rule_id": "fixed_execution_substrate",
+      "component_ids": [
+        "private_physics.runtime_kernels",
+        "public_contract.constitution_safety"
+      ],
+      "requirement": "Forks change data-bound physical laws, not the runtime engine, provider path, transaction system, or constitution implementation."
+    },
+    {
+      "rule_id": "public_interface_invariance",
+      "component_ids": [
+        "public_contract.actions",
+        "public_contract.constitution_safety",
+        "public_contract.failures",
+        "public_contract.instruments",
+        "public_contract.material_catalog",
+        "public_contract.observations",
+        "public_contract.resources",
+        "public_contract.scoring",
+        "public_contract.task"
+      ],
+      "requirement": "Every public-contract component has the same canonical digest for the parent and child world."
+    },
+    {
+      "rule_id": "audit_identity_non_disclosure",
+      "component_ids": [
+        "identity.lineage",
+        "identity.world",
+        "public_contract.observations"
+      ],
+      "requirement": "World and fork lineage are available to the evaluator but absent from agent-facing observations, reports, schemas, and material labels."
+    }
+  ]
+}

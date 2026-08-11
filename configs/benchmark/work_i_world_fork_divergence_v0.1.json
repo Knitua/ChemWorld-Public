@@ -1,0 +1,120 @@
+{
+  "suite_version": "chemworld-work-i-divergence-suite-0.1",
+  "evidence_status": "definition_fixture_not_execution_evidence",
+  "oracles": [
+    {
+      "schema_version": "chemworld-world-fork-divergence-oracle-0.1",
+      "intervention_class": "mechanism_or_constitutive_law",
+      "target_component_id": "private_physics.constitutive_laws",
+      "expectations": [
+        {
+          "expectation_id": "physical_reaction_extent",
+          "channel": "physical_state",
+          "checkpoint_id": "post_probe",
+          "field_path": [
+            "reaction_extent"
+          ],
+          "direction": "decrease",
+          "minimum_absolute_delta": 0.05,
+          "minimum_relative_delta": 0.05,
+          "relative_scale_floor": 0.01
+        },
+        {
+          "expectation_id": "observed_yield_response",
+          "channel": "public_observation",
+          "checkpoint_id": "post_probe",
+          "field_path": [
+            "yield"
+          ],
+          "direction": "decrease",
+          "minimum_absolute_delta": 0.05,
+          "minimum_relative_delta": 0.05,
+          "relative_scale_floor": 0.01
+        }
+      ],
+      "oracle_id": "chemworld-divergence-2cc9cba31d465cbd"
+    },
+    {
+      "schema_version": "chemworld-world-fork-divergence-oracle-0.1",
+      "intervention_class": "material_law_counterfactual",
+      "target_component_id": "private_physics.material_laws",
+      "expectations": [
+        {
+          "expectation_id": "physical_material_response",
+          "channel": "physical_state",
+          "checkpoint_id": "post_probe",
+          "field_path": [
+            "selected_material_response"
+          ],
+          "direction": "decrease",
+          "minimum_absolute_delta": 0.1,
+          "minimum_relative_delta": 0.1,
+          "relative_scale_floor": 0.01
+        },
+        {
+          "expectation_id": "observed_conversion_response",
+          "channel": "public_observation",
+          "checkpoint_id": "post_probe",
+          "field_path": [
+            "conversion"
+          ],
+          "direction": "decrease",
+          "minimum_absolute_delta": 0.08,
+          "minimum_relative_delta": 0.1,
+          "relative_scale_floor": 0.01
+        }
+      ],
+      "oracle_id": "chemworld-divergence-b4eb13fe66906b3c"
+    }
+  ],
+  "qualification_fixtures": [
+    {
+      "oracle_id": "chemworld-divergence-2cc9cba31d465cbd",
+      "world_seed": 0,
+      "parent_checkpoints": {
+        "post_probe": {
+          "physical_state": {
+            "reaction_extent": 0.62
+          },
+          "public_observation": {
+            "yield": 0.6
+          }
+        }
+      },
+      "child_checkpoints": {
+        "post_probe": {
+          "physical_state": {
+            "reaction_extent": 0.48
+          },
+          "public_observation": {
+            "yield": 0.46
+          }
+        }
+      }
+    },
+    {
+      "oracle_id": "chemworld-divergence-b4eb13fe66906b3c",
+      "world_seed": 0,
+      "parent_checkpoints": {
+        "post_probe": {
+          "physical_state": {
+            "selected_material_response": 1.0
+          },
+          "public_observation": {
+            "conversion": 0.68
+          }
+        }
+      },
+      "child_checkpoints": {
+        "post_probe": {
+          "physical_state": {
+            "selected_material_response": 0.72
+          },
+          "public_observation": {
+            "conversion": 0.51
+          }
+        }
+      }
+    }
+  ]
+}

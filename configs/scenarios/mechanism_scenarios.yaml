@@ -1,0 +1,317 @@
+schema_version: mechanism_scenario_card_v1
+cards:
+  - card_id: simple-batch-reaction-card
+    mechanism_id: simple_batch_reaction
+    mechanism_path: configs/mechanisms/simple_batch_reaction.yaml
+    scenario_id: reaction-optimization
+    family: reaction
+    recommended_reactor: batch
+    module_tags: [reaction, thermal, observation, catalysis]
+    initial_amounts_mol:
+      A: 1.0
+      P: 0.0
+      B: 0.0
+      D: 0.0
+      E: 0.0
+      Cat_active: 0.01
+      Cat_dead: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 360.0
+      duration_s: 8000.0
+    operating_window:
+      temperature_K: {min: 300.0, max: 430.0}
+      duration_s: {min: 300.0, max: 24000.0}
+      volume_L: {min: 0.25, max: 2.0}
+    target_species: [P]
+    impurity_species: [B, D, E, Cat_dead]
+    recommended_tasks: [reaction-optimization-standard, reaction-to-assay]
+    expected_qualitative_behavior:
+      - target product rises before late degradation dominates
+      - catalyst activity accelerates target formation
+      - higher temperature improves conversion but can increase side products
+    validation_notes:
+      - balanced five-reaction reference mechanism for the unified world
+
+  - card_id: parallel-series-reaction-card
+    mechanism_id: parallel_series_reaction
+    mechanism_path: configs/mechanisms/parallel_series_reaction.yaml
+    scenario_id: multi-reaction-network-optimization
+    family: reaction
+    recommended_reactor: batch
+    module_tags: [reaction, thermal, selectivity]
+    initial_amounts_mol:
+      A: 1.0
+      P: 0.0
+      S: 0.0
+      D: 0.0
+      E: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 355.0
+      duration_s: 7000.0
+    operating_window:
+      temperature_K: {min: 295.0, max: 430.0}
+      duration_s: {min: 300.0, max: 26000.0}
+      volume_L: {min: 0.2, max: 2.0}
+    target_species: [P]
+    impurity_species: [S, D, E]
+    recommended_tasks: [multi-reaction-network-optimization]
+    expected_qualitative_behavior:
+      - target and side products compete directly for reactant
+      - product selectivity peaks at an intermediate time
+      - coupling loss grows when product and side product coexist
+    validation_notes:
+      - exercises arbitrary stoichiometric matrices beyond the original batch mechanism
+
+  - card_id: reversible-reaction-card
+    mechanism_id: reversible_reaction
+    mechanism_path: configs/mechanisms/reversible_reaction.yaml
+    scenario_id: reversible-reaction-equilibrium
+    family: reaction_equilibrium
+    recommended_reactor: batch
+    module_tags: [reaction, equilibrium]
+    initial_amounts_mol:
+      A: 1.0
+      B: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 350.0
+      duration_s: 20000.0
+    operating_window:
+      temperature_K: {min: 290.0, max: 410.0}
+      duration_s: {min: 500.0, max: 40000.0}
+      volume_L: {min: 0.25, max: 2.0}
+    target_species: [B]
+    impurity_species: []
+    recommended_tasks: [reversible-reaction-equilibrium]
+    expected_qualitative_behavior:
+      - reversible reaction approaches the declared equilibrium ratio
+      - long runtime cannot exceed the thermodynamic plateau
+    validation_notes:
+      - minimal equilibrium-like smoke case for reversible Arrhenius kinetics
+
+  - card_id: catalyst-deactivation-card
+    mechanism_id: catalyst_deactivation
+    mechanism_path: configs/mechanisms/catalyst_deactivation.yaml
+    scenario_id: reaction-calorimetry-safety
+    family: catalytic_reaction
+    recommended_reactor: batch
+    module_tags: [reaction, thermal, catalysis, deactivation]
+    initial_amounts_mol:
+      A: 1.0
+      P: 0.0
+      B: 0.0
+      D: 0.0
+      Cat_active: 0.015
+      Cat_dead: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 365.0
+      duration_s: 9000.0
+    operating_window:
+      temperature_K: {min: 300.0, max: 440.0}
+      duration_s: {min: 300.0, max: 30000.0}
+      volume_L: {min: 0.25, max: 2.0}
+    target_species: [P]
+    impurity_species: [B, D, Cat_dead]
+    recommended_tasks: [reaction-safety-constrained, reaction-calorimetry-safety]
+    expected_qualitative_behavior:
+      - excessive temperature can destroy catalyst faster than it improves yield
+      - active catalyst amount is a hidden driver of target rate
+      - product degradation remains possible after conversion is high
+    validation_notes:
+      - tests catalyst activity and deactivation contracts independently
+
+  - card_id: autocatalytic-reaction-card
+    mechanism_id: autocatalytic_reaction
+    mechanism_path: configs/mechanisms/autocatalytic_reaction.yaml
+    scenario_id: low-budget-characterization
+    family: nonlinear_reaction
+    recommended_reactor: batch
+    module_tags: [reaction, nonlinear_dynamics, mechanism_learning]
+    initial_amounts_mol:
+      A: 1.0
+      P: 0.01
+      D: 0.0
+      E: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 335.0
+      duration_s: 6000.0
+    operating_window:
+      temperature_K: {min: 290.0, max: 390.0}
+      duration_s: {min: 100.0, max: 20000.0}
+      volume_L: {min: 0.25, max: 2.0}
+    target_species: [P]
+    impurity_species: [D, E]
+    recommended_tasks: [low-budget-characterization, reaction-mechanism-explanation]
+    expected_qualitative_behavior:
+      - product seeding shortens the induction period
+      - rate can accelerate as product accumulates
+      - too much time creates degradation and dimer impurity
+    validation_notes:
+      - useful for distinguishing local surrogate models from monotonic black-box fits
+
+  - card_id: reaction-extraction-card
+    mechanism_id: reaction_extraction
+    mechanism_path: configs/mechanisms/reaction_extraction.yaml
+    scenario_id: reaction-to-purification
+    family: reaction_separation
+    recommended_reactor: batch_plus_extraction
+    module_tags: [reaction, phase_partition, separation, observation]
+    initial_amounts_mol:
+      A: 1.0
+      P_aq: 0.0
+      P_org: 0.0
+      B_aq: 0.0
+      B_org: 0.0
+      D: 0.0
+      E: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 350.0
+      duration_s: 9000.0
+    operating_window:
+      temperature_K: {min: 295.0, max: 410.0}
+      duration_s: {min: 300.0, max: 30000.0}
+      organic_to_aqueous_volume_ratio: {min: 0.2, max: 4.0}
+    target_species: [P_org]
+    impurity_species: [B_aq, B_org, D, E]
+    recommended_tasks: [reaction-to-purification, lle-extraction-design]
+    expected_qualitative_behavior:
+      - product partition favors organic phase more strongly than byproduct partition
+      - extraction improves isolated recovery only if reaction quality is adequate
+      - organic coupling loss appears when product and byproduct co-extract
+    validation_notes:
+      - binds reaction chemistry to downstream phase-transfer planning
+
+  - card_id: reactive-distillation-lite-card
+    mechanism_id: reactive_distillation_lite
+    mechanism_path: configs/mechanisms/reactive_distillation_lite.yaml
+    scenario_id: reactive-separation
+    family: reactive_separation
+    recommended_reactor: reactive_distillation
+    module_tags: [reaction, equilibrium, vapor_liquid, distillation]
+    initial_amounts_mol:
+      Acid: 1.0
+      Alcohol: 1.25
+      Ester: 0.0
+      Water: 0.0
+      Ether: 0.0
+      Ester_vapor: 0.0
+      Alcohol_vapor: 0.0
+      Water_vapor: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 370.0
+      duration_s: 18000.0
+    operating_window:
+      temperature_K: {min: 320.0, max: 430.0}
+      duration_s: {min: 1000.0, max: 50000.0}
+      reflux_ratio: {min: 0.5, max: 8.0}
+    target_species: [Ester, Ester_vapor]
+    impurity_species: [Acid, Alcohol, Water, Ether, Alcohol_vapor, Water_vapor]
+    recommended_tasks: [reactive-separation, vle-flash-distillation]
+    expected_qualitative_behavior:
+      - reversible esterification is limited unless products are removed
+      - volatile alcohol and water compete with ester recovery
+      - higher reflux-like effort improves purity but raises cost
+    validation_notes:
+      - lightweight reactive distillation case without a full column model
+
+  - card_id: cstr-multiplicity-card
+    mechanism_id: cstr_multiplicity
+    mechanism_path: configs/mechanisms/cstr_multiplicity.yaml
+    scenario_id: cstr-steady-state-control
+    family: continuous_reactor
+    recommended_reactor: cstr
+    module_tags: [reaction, cstr, thermal_feedback, control]
+    initial_amounts_mol:
+      A: 1.0
+      P: 0.02
+      B: 0.0
+      D: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 345.0
+      duration_s: 12000.0
+      residence_time_s: 3600.0
+    operating_window:
+      temperature_K: {min: 300.0, max: 430.0}
+      residence_time_s: {min: 300.0, max: 12000.0}
+      cooling_UA_W_per_K: {min: 2.0, max: 80.0}
+    target_species: [P]
+    impurity_species: [B, D]
+    recommended_tasks: [cstr-steady-state-control]
+    expected_qualitative_behavior:
+      - heat removal changes the apparent optimum residence time
+      - autocatalysis can create sharp transitions in conversion
+      - safest operating point may be below the maximum conversion branch
+    validation_notes:
+      - scenario card prepares future dynamic CSTR multiplicity tasks
+
+  - card_id: pfr-hotspot-card
+    mechanism_id: pfr_hotspot
+    mechanism_path: configs/mechanisms/pfr_hotspot.yaml
+    scenario_id: pfr-hotspot-avoidance
+    family: continuous_reactor
+    recommended_reactor: pfr
+    module_tags: [reaction, pfr, hotspot, heat_transfer]
+    initial_amounts_mol:
+      A: 1.0
+      P: 0.0
+      B: 0.0
+      D: 0.0
+      E: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 360.0
+      duration_s: 5000.0
+      residence_time_s: 2400.0
+    operating_window:
+      temperature_K: {min: 300.0, max: 450.0}
+      residence_time_s: {min: 100.0, max: 9000.0}
+      heat_transfer_area_m2: {min: 0.05, max: 5.0}
+    target_species: [P]
+    impurity_species: [B, D, E]
+    recommended_tasks: [pfr-hotspot-avoidance]
+    expected_qualitative_behavior:
+      - hotspot risk grows when heat release outruns removal
+      - side product activation is more temperature sensitive than target formation
+      - distributed residence time can beat a single high-temperature push
+    validation_notes:
+      - pfr-oriented mechanism for future axial thermal profile tasks
+
+  - card_id: electrochemical-conversion-card
+    mechanism_id: electrochemical_conversion
+    mechanism_path: configs/mechanisms/electrochemical_conversion.yaml
+    scenario_id: electrochemical-conversion
+    family: electrochemical
+    recommended_reactor: electrochemical_cell
+    module_tags: [reaction, electrochemistry, energy, selectivity]
+    initial_amounts_mol:
+      Ox: 1.0
+      Red: 0.0
+      SideRed: 0.0
+    default_conditions:
+      volume_L: 1.0
+      temperature_K: 298.15
+      duration_s: 7200.0
+      potential_V: 1.20
+      current_mA: 50.0
+    operating_window:
+      temperature_K: {min: 285.0, max: 330.0}
+      duration_s: {min: 1.0, max: 14400.0}
+      potential_V: {min: 0.60, max: 1.80}
+      current_mA: {min: 0.001, max: 220.0}
+    target_species: [Red]
+    impurity_species: [SideRed]
+    recommended_tasks: [electrochemical-conversion]
+    expected_qualitative_behavior:
+      - potential controls selectivity between desired and side paths
+      - duration increases conversion until charge, transport, or inventory limits dominate
+      - energy efficiency and selectivity trade off under high current
+    validation_notes:
+      - species are lumped inventory pools, not claims about literal molecular identities
+      - runtime owns Nernst, Butler-Volmer, transport, double-layer, and Faraday accounting

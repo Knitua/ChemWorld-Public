@@ -1,0 +1,64 @@
+schema_version: chemworld_mechanism_v1
+network_id: autocatalytic_reaction
+metadata:
+  description: >
+    Autocatalytic conversion with a small initiation path, product-catalyzed
+    acceleration, and late product degradation.
+  mechanism_family: nonlinear_reaction
+  qualitative_tags: [autocatalysis, induction_period, seed_sensitivity]
+species:
+  - species_id: A
+    formula: C3H6O3
+    phase: liquid
+    observable_aliases: [reactant]
+  - species_id: P
+    formula: C3H6O3
+    phase: liquid
+    observable_aliases: [product, autocatalyst]
+  - species_id: D
+    formula: C3H6O3
+    phase: liquid
+    observable_aliases: [degradation_product]
+  - species_id: E
+    formula: C6H12O6
+    phase: liquid
+    observable_aliases: [dimer_impurity]
+reactions:
+  - reaction_id: slow_initiation
+    equation: A => P
+    delta_h_J_per_mol: -6000.0
+    rate_law:
+      rate_law_id: initiation_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.002
+        Ea_J_per_mol: 9000.0
+  - reaction_id: autocatalytic_growth
+    equation: A => P
+    delta_h_J_per_mol: -26000.0
+    rate_law:
+      rate_law_id: autocatalytic_rate
+      equation_id: catalytic_activity
+      parameters:
+        A: 0.06
+        Ea_J_per_mol: 0.0
+        catalyst_species: P
+        reference_concentration_mol_L: 0.05
+        activity_order: 1.0
+  - reaction_id: product_degradation
+    equation: P => D
+    delta_h_J_per_mol: 10000.0
+    rate_law:
+      rate_law_id: degradation_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.0025
+        Ea_J_per_mol: 11500.0
+  - reaction_id: product_dimerization
+    equation: 2 P => E
+    delta_h_J_per_mol: -5000.0
+    rate_law:
+      rate_law_id: dimerization_rate
+      equation_id: mass_action
+      parameters:
+        k: 0.0015

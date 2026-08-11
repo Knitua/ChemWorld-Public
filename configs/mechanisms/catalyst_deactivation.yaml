@@ -1,0 +1,76 @@
+schema_version: chemworld_mechanism_v1
+network_id: catalyst_deactivation
+metadata:
+  description: >
+    Catalytic target reaction with side formation, product degradation, and
+    thermally accelerated catalyst loss.
+  mechanism_family: catalytic_reaction
+  qualitative_tags: [catalyst_activity, deactivation, temperature_tradeoff]
+species:
+  - species_id: A
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [reactant]
+  - species_id: P
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [product]
+  - species_id: B
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [byproduct]
+  - species_id: D
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [degradation_product]
+  - species_id: Cat_active
+    formula: Pt
+    phase: solid
+    catalyst: true
+    observable_aliases: []
+  - species_id: Cat_dead
+    formula: Pt
+    phase: solid
+    catalyst: true
+    observable_aliases: []
+reactions:
+  - reaction_id: catalytic_target
+    equation: A => P
+    delta_h_J_per_mol: -32000.0
+    rate_law:
+      rate_law_id: catalytic_target_rate
+      equation_id: catalytic_activity
+      parameters:
+        A: 0.055
+        Ea_J_per_mol: 23500.0
+        catalyst_species: Cat_active
+        reference_concentration_mol_L: 0.004
+        activity_order: 0.85
+  - reaction_id: uncatalyzed_side
+    equation: A => B
+    delta_h_J_per_mol: -8000.0
+    rate_law:
+      rate_law_id: side_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.01
+        Ea_J_per_mol: 14500.0
+  - reaction_id: product_degradation
+    equation: P => D
+    delta_h_J_per_mol: 9000.0
+    rate_law:
+      rate_law_id: degradation_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.003
+        Ea_J_per_mol: 11500.0
+  - reaction_id: catalyst_deactivation
+    equation: Cat_active => Cat_dead
+    delta_h_J_per_mol: 0.0
+    rate_law:
+      rate_law_id: catalyst_deactivation_rate
+      equation_id: catalyst_deactivation
+      parameters:
+        A: 0.0008
+        Ea_J_per_mol: 12500.0
+        species: Cat_active

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemWorld trajectory record",
+  "type": "object",
+  "required": [
+    "action",
+    "affected_ledgers",
+    "agent_metadata",
+    "agent_visible_observation",
+    "benchmark_task_id",
+    "budget",
+    "campaign_id",
+    "constitution_checks",
+    "constraint_flags",
+    "env_id",
+    "env_version",
+    "environment_outcome",
+    "episode_mode",
+    "evaluation_outcome",
+    "experiment_index",
+    "explanation",
+    "initial_state_id",
+    "instrument",
+    "instrument_source",
+    "kernel_id",
+    "kernel_maturity",
+    "kernel_version",
+    "leaderboard_score",
+    "measurement_cost",
+    "mechanism_hash",
+    "mechanism_id",
+    "objective",
+    "observation",
+    "observation_contract_hash",
+    "observed_keys",
+    "observed_mask",
+    "observed_reward",
+    "operation_id",
+    "operation_type",
+    "physics_maturity",
+    "preconditions",
+    "processed_estimate",
+    "proxy_allowed",
+    "raw_signal",
+    "reward",
+    "reward_source",
+    "rollback_reason",
+    "run_id",
+    "runtime_profile_hash",
+    "safety_limit",
+    "sample_consumed",
+    "scenario_id",
+    "schema_version",
+    "scoring_contract_hash",
+    "seed",
+    "state_delta_summary",
+    "state_patches_summary",
+    "step",
+    "task_contract_hash",
+    "task_id",
+    "terminated",
+    "timestamp",
+    "transaction_status",
+    "truncated",
+    "uncertainty",
+    "world_events",
+    "world_family_version",
+    "world_id",
+    "world_split"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "chemworld-trajectory-0.2"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment_outcome": {
+      "type": "object"
+    },
+    "agent_visible_observation": {
+      "type": "object"
+    },
+    "evaluation_outcome": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schema_version": "chemworld-world-composition-0.1",
+  "composition_id": "composed-reaction-purification-demo",
+  "world_split": "public-test",
+  "components": [
+    {
+      "kind": "reaction",
+      "role": "transformation",
+      "parameters": {
+        "family": "declared-reaction-family",
+        "controls": [
+          "reagent",
+          "catalyst",
+          "solvent",
+          "temperature",
+          "time"
+        ]
+      }
+    },
+    {
+      "kind": "thermal",
+      "role": "temperature-and-energy",
+      "parameters": {
+        "temperature_range_K": [
+          280.0,
+          420.0
+        ],
+        "duration_range_s": [
+          1.0,
+          3600.0
+        ]
+      }
+    },
+    {
+      "kind": "phase",
+      "role": "phase-state",
+      "parameters": {
+        "phases": [
+          "reactor_liquid",
+          "aqueous",
+          "organic"
+        ]
+      }
+    },
+    {
+      "kind": "separation",
+      "role": "downstream-processing",
+      "parameters": {
+        "operations": [
+          "add_phase",
+          "add_extractant",
+          "mix",
+          "settle",
+          "separate_phase",
+          "wash",
+          "dry",
+          "concentrate",
+          "transfer"
+        ]
+      }
+    },
+    {
+      "kind": "observation",
+      "role": "public-process-measurement",
+      "parameters": {
+        "instruments": [
+          "hplc",
+          "final_assay"
+        ]
+      }
+    }
+  ],
+  "task": {
+    "objective": "balanced",
+    "budget": 20,
+    "operations": [
+      "add_reagent",
+      "add_solvent",
+      "add_catalyst",
+      "heat",
+      "wait",
+      "sample",
+      "quench",
+      "terminate",
+      "measure",
+      "add_phase",
+      "add_extractant",
+      "mix",
+      "settle",
+      "separate_phase",
+      "wash",
+      "dry",
+      "concentrate",
+      "transfer"
+    ],
+    "instruments": [
+      "hplc",
+      "final_assay"
+    ],
+    "observations": "partial-instrument-observation",
+    "resources": {
+      "operation_budget": 20,
+      "sample_volume_L": 0.001,
+      "time_s": 3600.0,
+      "instrument_uses": 2,
+      "final_assays": 1
+    },
+    "termination": "final-assay-or-budget",
+    "evaluation": {
+      "metrics": [
+        "score",
+        "purity",
+        "recovery",
+        "process_mass_balance_error"
+      ],
+      "threshold": 0.7
+    },
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "episode_mode": "single_experiment",
+    "safety_limit": 0.65,
+    "difficulty": "standard",
+    "description": "A multi-stage reaction, phase handling and purification world with a frozen failed-precondition and recovery reference path.",
+    "tags": [
+      "authoring-example",
+      "multi-stage"
+    ]
+  }
+}

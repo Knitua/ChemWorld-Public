@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemWorld mechanism",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "network_id",
+    "species",
+    "reactions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "chemworld_mechanism_v1"
+    },
+    "network_id": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "species": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "species_id",
+          "formula"
+        ],
+        "properties": {
+          "species_id": {
+            "type": "string"
+          },
+          "formula": {
+            "type": "string"
+          },
+          "phase": {
+            "type": "string"
+          },
+          "charge": {
+            "type": "integer"
+          },
+          "catalyst": {
+            "type": "boolean"
+          },
+          "observable_aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "reactions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "reaction_id",
+          "rate_law"
+        ],
+        "properties": {
+          "reaction_id": {
+            "type": "string"
+          },
+          "equation": {
+            "type": "string"
+          },
+          "stoichiometry": {
+            "type": "object"
+          },
+          "reversible": {
+            "type": "boolean"
+          },
+          "delta_h_J_per_mol": {
+            "type": "number"
+          },
+          "equilibrium_model_id": {
+            "type": "string"
+          },
+          "rate_law": {
+            "type": "object",
+            "required": [
+              "rate_law_id",
+              "equation_id"
+            ],
+            "properties": {
+              "rate_law_id": {
+                "type": "string"
+              },
+              "equation_id": {
+                "type": "string",
+                "enum": [
+                  "runtime_owned",
+                  "mass_action",
+                  "arrhenius",
+                  "modified_arrhenius",
+                  "reversible_arrhenius",
+                  "third_body_arrhenius",
+                  "lindemann_falloff",
+                  "troe_falloff",
+                  "catalytic_activity",
+                  "catalyst_deactivation",
+                  "langmuir_hinshelwood",
+                  "michaelis_menten"
+                ]
+              },
+              "parameters": {
+                "type": "object"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "equation_id": {
+                      "const": "runtime_owned"
+                    }
+                  },
+                  "required": [
+                    "equation_id"
+                  ]
+                },
+                "then": {
+                  "required": [
+                    "parameters"
+                  ],
+                  "properties": {
+                    "parameters": {
+                      "type": "object",
+                      "required": [
+                        "runtime_model_id"
+                      ],
+                      "properties": {
+                        "runtime_model_id": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

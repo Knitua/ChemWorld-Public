@@ -1,0 +1,18 @@
+{
+  "claim_boundary": {
+    "agent_performance_claim": false,
+    "divergence_claim": false,
+    "execution_claim": false
+  },
+  "example_id": "work-i-mechanism-law-authoring-example-v0.1",
+  "intervention_class": "mechanism_or_constitutive_law",
+  "intervention_payload": {
+    "kind": "mechanism_family",
+    "mode": "constitutive_law_family",
+    "severity": 1.0
+  },
+  "purpose": "Change one private constitutive-law family while preserving the complete public contract.",
+  "schema_version": "chemworld-world-authoring-example-0.1",
+  "target_component_id": "private_physics.constitutive_laws",
+  "world_seed": 0
+}

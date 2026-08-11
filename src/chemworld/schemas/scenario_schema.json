@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemWorld scenario spec",
+  "type": "object",
+  "required": ["scenario_id", "world_law_id", "family", "split"]
+}

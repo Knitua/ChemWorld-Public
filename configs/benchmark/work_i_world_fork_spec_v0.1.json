@@ -1,0 +1,85 @@
+{
+  "schema_version": "chemworld-world-fork-spec-0.1",
+  "fork_id": "chemworld-work-i-fork-7d3af0d24d520e64",
+  "inventory_id": "chemworld-work-i-world-components-v0.1",
+  "inventory_sha256": "654b710fcfb0a66232e4a3c6e14f1abb1dd6c24357e7eac995d23d11f64ee6da",
+  "world_seed": 0,
+  "intervention_class": "mechanism_or_constitutive_law",
+  "target_component_id": "private_physics.constitutive_laws",
+  "intervention_payload": {
+    "kind": "mechanism_family",
+    "mode": "constitutive_law_family",
+    "severity": 1.0,
+    "constitutive_law_change": {
+      "transform_id": "partition_power_response_stress"
+    }
+  },
+  "intervention_sha256": "ed89f1186a179997556b6dfaae84ce26ca09859182504daf302bfeeabe3a688c",
+  "parent": {
+    "world_sha256": "72571819a58fe8f9bfa50875588426ead50018d1d10e55c674195f9535f56aca",
+    "lineage_sha256": "eea2699841e629eb56454a61f4184c18edc37446067e8d29d0f3fe8a868cc114",
+    "component_sha256": {
+      "private_physics.constitutive_laws": "2e1eb3c2d97eb14dc221403c54a439fcfb0c2f265394dc516c2fcf5684089db4",
+      "private_physics.initial_conditions": "795b95bbdd2566dcdaee1be7d29041ef2cfda696444b17344dcbbea35b2c6472",
+      "private_physics.material_laws": "45b6be842aef4306b032b2f545c0c371ee59b9e51449a5d5a60ee01b4834d5ab",
+      "private_physics.randomness": "94c14eb2da4545e098abd9e9b2471b235a2149a586c79bfc9756c29cb1065f04",
+      "private_physics.reaction_mechanism": "25e94415ffc2185c42ede510fa563ddfd47206eb03b664ba205493d99a21cdc9",
+      "private_physics.runtime_kernels": "342ea008bd224893b7f6038f39350d27d0bd57103922478ff0fe726ddaceca50",
+      "public_contract.actions": "639a15d6cc4c5b21c8ab38accee5122ea2708e6dffacb30aa6048992fe77d4f1",
+      "public_contract.constitution_safety": "f5ee8ff7215e2d1569a1cc6029a593f5f54bb8d2a216d5858f665ea8a41e3c9f",
+      "public_contract.failures": "4479d7e05c8c0c459cc16d51a925d3b26d878f95fac2c41032f65a1fc036d2f6",
+      "public_contract.instruments": "f1e333df2f3f1e207263fddf7da8ceed99e7a8a48f0b98136b2fb0807e6081f9",
+      "public_contract.material_catalog": "084de6f909f010992d2df43d3f964b73271496e1b69c1a59b59a647db4533d6b",
+      "public_contract.observations": "86e0d3c0773089ca7350254ae199970402c9dd7e0a969fa09350703671e0839e",
+      "public_contract.resources": "f6a092c6324f7fa3fb63959864972572fa45ea58b431c2c9994f80326a8666e3",
+      "public_contract.scoring": "42d0556f4f3a99a976ac713f807d17b636a1e465958bd94cdb630a49c2e9541d",
+      "public_contract.task": "0b35082cd1d909adceb438f64dfab62223597e70c10befcb7409537efc878acf"
+    }
+  },
+  "child": {
+    "world_sha256": "a98d25b62948d165ee9ac97dbd5827f6967172f7bc7c3d5666a40f63f6a811b4",
+    "lineage_sha256": "7d3af0d24d520e6497318007c6f2937c43ca531927175ee8e680daac75ff7ab1",
+    "component_sha256": {
+      "private_physics.constitutive_laws": "151f051b3fe929d795b803332c7f372ed84eb7ba0a98a334253529d7c568999c",
+      "private_physics.initial_conditions": "795b95bbdd2566dcdaee1be7d29041ef2cfda696444b17344dcbbea35b2c6472",
+      "private_physics.material_laws": "45b6be842aef4306b032b2f545c0c371ee59b9e51449a5d5a60ee01b4834d5ab",
+      "private_physics.randomness": "94c14eb2da4545e098abd9e9b2471b235a2149a586c79bfc9756c29cb1065f04",
+      "private_physics.reaction_mechanism": "25e94415ffc2185c42ede510fa563ddfd47206eb03b664ba205493d99a21cdc9",
+      "private_physics.runtime_kernels": "342ea008bd224893b7f6038f39350d27d0bd57103922478ff0fe726ddaceca50",
+      "public_contract.actions": "639a15d6cc4c5b21c8ab38accee5122ea2708e6dffacb30aa6048992fe77d4f1",
+      "public_contract.constitution_safety": "f5ee8ff7215e2d1569a1cc6029a593f5f54bb8d2a216d5858f665ea8a41e3c9f",
+      "public_contract.failures": "4479d7e05c8c0c459cc16d51a925d3b26d878f95fac2c41032f65a1fc036d2f6",
+      "public_contract.instruments": "f1e333df2f3f1e207263fddf7da8ceed99e7a8a48f0b98136b2fb0807e6081f9",
+      "public_contract.material_catalog": "084de6f909f010992d2df43d3f964b73271496e1b69c1a59b59a647db4533d6b",
+      "public_contract.observations": "86e0d3c0773089ca7350254ae199970402c9dd7e0a969fa09350703671e0839e",
+      "public_contract.resources": "f6a092c6324f7fa3fb63959864972572fa45ea58b431c2c9994f80326a8666e3",
+      "public_contract.scoring": "42d0556f4f3a99a976ac713f807d17b636a1e465958bd94cdb630a49c2e9541d",
+      "public_contract.task": "0b35082cd1d909adceb438f64dfab62223597e70c10befcb7409537efc878acf"
+    }
+  },
+  "component_diff": {
+    "changed_component_ids": [
+      "private_physics.constitutive_laws"
+    ],
+    "invariant_component_ids": [
+      "private_physics.initial_conditions",
+      "private_physics.material_laws",
+      "private_physics.randomness",
+      "private_physics.reaction_mechanism",
+      "private_physics.runtime_kernels",
+      "public_contract.actions",
+      "public_contract.constitution_safety",
+      "public_contract.failures",
+      "public_contract.instruments",
+      "public_contract.material_catalog",
+      "public_contract.observations",
+      "public_contract.resources",
+      "public_contract.scoring",
+      "public_contract.task"
+    ],
+    "derived_identity_fields": [
+      "world_sha256",
+      "lineage_sha256"
+    ]
+  }
+}

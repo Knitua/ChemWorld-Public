@@ -1,0 +1,7 @@
+{
+  "description": "Public development split. Parameters are generated deterministically by split and seed.",
+  "env_id": "ChemWorld",
+  "world_split": "public-dev",
+  "default_budget": 30,
+  "default_objective": "balanced"
+}

@@ -1,0 +1,65 @@
+schema_version: chemworld_mechanism_v1
+network_id: cstr_multiplicity
+metadata:
+  description: >
+    Exothermic autocatalytic CSTR-oriented mechanism with competing side and
+    degradation paths; intended for residence-time and heat-removal tasks.
+  mechanism_family: continuous_reactor
+  qualitative_tags: [cstr, multiplicity, thermal_feedback, autocatalysis]
+species:
+  - species_id: A
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [reactant]
+  - species_id: P
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [product, autocatalyst]
+  - species_id: B
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [side_product]
+  - species_id: D
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [degradation_product]
+reactions:
+  - reaction_id: thermal_target
+    equation: A => P
+    delta_h_J_per_mol: -45000.0
+    rate_law:
+      rate_law_id: thermal_target_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.025
+        Ea_J_per_mol: 26000.0
+  - reaction_id: autocatalytic_target
+    equation: A => P
+    delta_h_J_per_mol: -55000.0
+    rate_law:
+      rate_law_id: autocatalytic_rate
+      equation_id: catalytic_activity
+      parameters:
+        A: 0.045
+        Ea_J_per_mol: 0.0
+        catalyst_species: P
+        reference_concentration_mol_L: 0.04
+        activity_order: 1.0
+  - reaction_id: side_formation
+    equation: A => B
+    delta_h_J_per_mol: -22000.0
+    rate_law:
+      rate_law_id: side_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.015
+        Ea_J_per_mol: 23000.0
+  - reaction_id: product_degradation
+    equation: P => D
+    delta_h_J_per_mol: 12000.0
+    rate_law:
+      rate_law_id: degradation_rate
+      equation_id: arrhenius
+      parameters:
+        A: 0.0035
+        Ea_J_per_mol: 15000.0

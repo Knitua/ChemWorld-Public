@@ -1,0 +1,66 @@
+schema_version: chemworld_mechanism_v1
+network_id: parallel_series_reaction
+metadata:
+  description: >
+    Balanced parallel-series liquid mechanism for target formation, competing
+    side formation, product degradation, and product/byproduct coupling.
+  mechanism_family: reaction_network
+  qualitative_tags: [parallel_reaction, series_degradation, selectivity_tradeoff]
+species:
+  - species_id: A
+    formula: C4H8O2
+    phase: liquid
+    observable_aliases: [reactant]
+  - species_id: P
+    formula: C4H8O2
+    phase: liquid
+    observable_aliases: [product]
+  - species_id: S
+    formula: C4H8O2
+    phase: liquid
+    observable_aliases: [side_product]
+  - species_id: D
+    formula: C4H8O2
+    phase: liquid
+    observable_aliases: [degradation_product]
+  - species_id: E
+    formula: C8H16O4
+    phase: liquid
+    observable_aliases: [coupling_impurity]
+reactions:
+  - reaction_id: target_formation
+    equation: A => P
+    delta_h_J_per_mol: -18000.0
+    rate_law:
+      rate_law_id: target_modified_arrhenius
+      equation_id: modified_arrhenius
+      parameters:
+        A: 0.035
+        b: 0.15
+        Ea_J_per_mol: 20500.0
+  - reaction_id: side_formation
+    equation: A => S
+    delta_h_J_per_mol: -9000.0
+    rate_law:
+      rate_law_id: side_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.016
+        Ea_J_per_mol: 15500.0
+  - reaction_id: product_degradation
+    equation: P => D
+    delta_h_J_per_mol: 6000.0
+    rate_law:
+      rate_law_id: degradation_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.004
+        Ea_J_per_mol: 12000.0
+  - reaction_id: product_side_coupling
+    equation: P + S => E
+    delta_h_J_per_mol: -4000.0
+    rate_law:
+      rate_law_id: coupling_mass_action
+      equation_id: mass_action
+      parameters:
+        k: 0.0025

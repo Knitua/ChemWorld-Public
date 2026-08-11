@@ -1,0 +1,180 @@
+{
+  "fixture_version": "chemworld-work-i-public-contract-fixture-0.1",
+  "evidence_status": "definition_fixture_not_execution_evidence",
+  "fork_spec": {
+    "schema_version": "chemworld-world-fork-spec-0.1",
+    "fork_id": "chemworld-work-i-fork-0076e41c3fdc2118",
+    "inventory_id": "chemworld-work-i-world-components-v0.1",
+    "inventory_sha256": "654b710fcfb0a66232e4a3c6e14f1abb1dd6c24357e7eac995d23d11f64ee6da",
+    "world_seed": 0,
+    "intervention_class": "mechanism_or_constitutive_law",
+    "target_component_id": "private_physics.constitutive_laws",
+    "intervention_payload": {
+      "kind": "mechanism_family",
+      "mode": "constitutive_law_family",
+      "severity": 1.0,
+      "constitutive_law_change": {
+        "transform_id": "partition_power_response_stress"
+      }
+    },
+    "intervention_sha256": "ed89f1186a179997556b6dfaae84ce26ca09859182504daf302bfeeabe3a688c",
+    "parent": {
+      "world_sha256": "b587a782e61e7e774cc8f0d42336b66b2deaa452a302a5a994874c91edb4cec2",
+      "lineage_sha256": "fdb5af30f2905f762b19b07da08dfe21a59416d91491a825e53629ec8ac17a32",
+      "component_sha256": {
+        "private_physics.constitutive_laws": "b3bd369e1ea63637c4cfbe240716f45cb059501922a16b0d57461cd0f00bae98",
+        "private_physics.initial_conditions": "31f1faccf3afafc79c534776342156a8cacd995cbed4b353b40015f1cbcda8a6",
+        "private_physics.material_laws": "1924660f182ad9a1e6748865baec17225e0f0927d4300cae8cd987abd9049c61",
+        "private_physics.randomness": "dba6c7de3e1d5161b5b483e98d7da17db50d831a5c7555ca8442aa5e441b9351",
+        "private_physics.reaction_mechanism": "4f3bb044385c77ee428b5ab9a5e2fec088249cf8a7af1999ed4edc73461d2ab2",
+        "private_physics.runtime_kernels": "fdfa340ffde72269c2fe5f5c310fcecaf0632594a5e3a9a86dbb0cb3d030c26c",
+        "public_contract.actions": "4ae842e6cc8c8faa2111e7e5e0b4669b9c2e1c1aa4211fc28a366817a821ef6d",
+        "public_contract.constitution_safety": "2fc216fd8c96215a17548e3d539d03a588316a21272281f6068c511b54180d14",
+        "public_contract.failures": "b09588e6373edcfd3389963f410e93fa9d0722127764ef2037e8d43dea74cf7b",
+        "public_contract.instruments": "1fab87b4cf44f9c5b3150c22df62e274c60ae29c897b737014779282b7ea5ae9",
+        "public_contract.material_catalog": "fdb808b47c2a168139e64944fdc1186b156820c896e8dd82780317a5e169a00b",
+        "public_contract.observations": "2da6d3d4705dc1223f81efedfc3c07fa94c90d979cbb125960f50d9261846da4",
+        "public_contract.resources": "332613c9bce34fd7d6a67b78430da1bff0361b0a427b41a75e84dc3fbef333a5",
+        "public_contract.scoring": "d796cd48f86bb80a65e4a37d3868434b86cfeeaf20c0de97d9506b119cf5d958",
+        "public_contract.task": "3fc3262722b6555a6ea6d776919297ace58d0a6315e13239445b7ead7485f1b7"
+      }
+    },
+    "child": {
+      "world_sha256": "05587c65b7f96c2a47fd1753e9b4c5e0f9ccb96245d5a1fc13032578b85b26c3",
+      "lineage_sha256": "0076e41c3fdc211832b24fb1f1ff633a81561eda999f72b6998e2f72a1e6e0d5",
+      "component_sha256": {
+        "private_physics.constitutive_laws": "71ad1cf8145fd9be8150b45542e5c8e99d51fcaa974cfff26877e9d4494e093f",
+        "private_physics.initial_conditions": "31f1faccf3afafc79c534776342156a8cacd995cbed4b353b40015f1cbcda8a6",
+        "private_physics.material_laws": "1924660f182ad9a1e6748865baec17225e0f0927d4300cae8cd987abd9049c61",
+        "private_physics.randomness": "dba6c7de3e1d5161b5b483e98d7da17db50d831a5c7555ca8442aa5e441b9351",
+        "private_physics.reaction_mechanism": "4f3bb044385c77ee428b5ab9a5e2fec088249cf8a7af1999ed4edc73461d2ab2",
+        "private_physics.runtime_kernels": "fdfa340ffde72269c2fe5f5c310fcecaf0632594a5e3a9a86dbb0cb3d030c26c",
+        "public_contract.actions": "4ae842e6cc8c8faa2111e7e5e0b4669b9c2e1c1aa4211fc28a366817a821ef6d",
+        "public_contract.constitution_safety": "2fc216fd8c96215a17548e3d539d03a588316a21272281f6068c511b54180d14",
+        "public_contract.failures": "b09588e6373edcfd3389963f410e93fa9d0722127764ef2037e8d43dea74cf7b",
+        "public_contract.instruments": "1fab87b4cf44f9c5b3150c22df62e274c60ae29c897b737014779282b7ea5ae9",
+        "public_contract.material_catalog": "fdb808b47c2a168139e64944fdc1186b156820c896e8dd82780317a5e169a00b",
+        "public_contract.observations": "2da6d3d4705dc1223f81efedfc3c07fa94c90d979cbb125960f50d9261846da4",
+        "public_contract.resources": "332613c9bce34fd7d6a67b78430da1bff0361b0a427b41a75e84dc3fbef333a5",
+        "public_contract.scoring": "d796cd48f86bb80a65e4a37d3868434b86cfeeaf20c0de97d9506b119cf5d958",
+        "public_contract.task": "3fc3262722b6555a6ea6d776919297ace58d0a6315e13239445b7ead7485f1b7"
+      }
+    },
+    "component_diff": {
+      "changed_component_ids": [
+        "private_physics.constitutive_laws"
+      ],
+      "invariant_component_ids": [
+        "private_physics.initial_conditions",
+        "private_physics.material_laws",
+        "private_physics.randomness",
+        "private_physics.reaction_mechanism",
+        "private_physics.runtime_kernels",
+        "public_contract.actions",
+        "public_contract.constitution_safety",
+        "public_contract.failures",
+        "public_contract.instruments",
+        "public_contract.material_catalog",
+        "public_contract.observations",
+        "public_contract.resources",
+        "public_contract.scoring",
+        "public_contract.task"
+      ],
+      "derived_identity_fields": [
+        "world_sha256",
+        "lineage_sha256"
+      ]
+    }
+  },
+  "public_contract_bundle": {
+    "schema_version": "chemworld-public-contract-bundle-0.1",
+    "component_payloads": {
+      "public_contract.actions": {
+        "operations": [
+          "add_reagent",
+          "heat",
+          "measure",
+          "terminate"
+        ],
+        "schema_version": "fixture-action-contract-0.1",
+        "typed_fields": true
+      },
+      "public_contract.constitution_safety": {
+        "constitution_rules": [
+          "material_conservation",
+          "nonnegative_state",
+          "safety_constraints"
+        ],
+        "safety_limit": 1.0
+      },
+      "public_contract.failures": {
+        "invalid_action": "rollback_without_state_change",
+        "precondition_failure": "typed_public_reason",
+        "resource_exhaustion": "reject_before_execution"
+      },
+      "public_contract.instruments": {
+        "contract_fields": [
+          "cost",
+          "latency_s",
+          "sample_consumption_L",
+          "requires_terminated"
+        ],
+        "instruments": [
+          "hplc",
+          "uvvis",
+          "final_assay"
+        ]
+      },
+      "public_contract.material_catalog": {
+        "catalysts": [
+          "catalyst-C0",
+          "catalyst-C1"
+        ],
+        "presentation": "anonymous_material_ids",
+        "solvents": [
+          "solvent-S0",
+          "solvent-S1"
+        ]
+      },
+      "public_contract.observations": {
+        "keys": [
+          "yield",
+          "selectivity",
+          "cost",
+          "safety_risk"
+        ],
+        "masked_hidden_state": true,
+        "schema_version": "fixture-observation-contract-0.1"
+      },
+      "public_contract.resources": {
+        "instrument_limits": {
+          "final_assay": 3,
+          "hplc": 6
+        },
+        "operation_limit": 20,
+        "stocks": {
+          "reagent_mol": 0.12,
+          "solvent_L": 0.24
+        }
+      },
+      "public_contract.scoring": {
+        "success_metrics": [
+          "final_assay_score"
+        ],
+        "threshold_semantics": "leaderboard_objective_score",
+        "weights": {
+          "selectivity": 0.4,
+          "yield": 0.6
+        }
+      },
+      "public_contract.task": {
+        "budget": 20,
+        "episode_mode": "experimental_lifecycle",
+        "objective": "maximize declared assay score",
+        "task_id": "work-i-public-contract-fixture"
+      }
+    }
+  },
+  "parent_bundle_ref": "public_contract_bundle",
+  "child_bundle_ref": "public_contract_bundle"
+}

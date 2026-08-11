@@ -1,0 +1,21 @@
+schema_version: chemworld_mechanism_v1
+network_id: reversible_reaction
+species:
+  - species_id: A
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: []
+  - species_id: B
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: []
+reactions:
+  - reaction_id: reversible_isomerization
+    equation: A <=> B
+    rate_law:
+      rate_law_id: reversible_arrhenius
+      equation_id: reversible_arrhenius
+      parameters:
+        A: 0.02
+        Ea_J_per_mol: 10000.0
+        K_eq: 4.0

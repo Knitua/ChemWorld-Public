@@ -1,0 +1,93 @@
+schema_version: chemworld_mechanism_v1
+network_id: reaction_extraction
+metadata:
+  description: >
+    Reaction mechanism with explicit aqueous/organic species labels for
+    reaction followed by extraction-like phase transfer.
+  mechanism_family: reaction_separation
+  qualitative_tags: [phase_transfer, extraction, recovery_purity_tradeoff]
+species:
+  - species_id: A
+    formula: C2H4O2
+    phase: aqueous
+    observable_aliases: [reactant]
+  - species_id: P_aq
+    formula: C2H4O2
+    phase: aqueous
+    observable_aliases: [product_aqueous]
+  - species_id: P_org
+    formula: C2H4O2
+    phase: organic
+    observable_aliases: [product_organic]
+  - species_id: B_aq
+    formula: C2H4O2
+    phase: aqueous
+    observable_aliases: [byproduct_aqueous]
+  - species_id: B_org
+    formula: C2H4O2
+    phase: organic
+    observable_aliases: [byproduct_organic]
+  - species_id: D
+    formula: C2H4O2
+    phase: aqueous
+    observable_aliases: [degradation_product]
+  - species_id: E
+    formula: C4H8O4
+    phase: organic
+    observable_aliases: [emulsion_loss]
+reactions:
+  - reaction_id: target_formation
+    equation: A => P_aq
+    delta_h_J_per_mol: -21000.0
+    rate_law:
+      rate_law_id: target_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.032
+        Ea_J_per_mol: 19500.0
+  - reaction_id: side_formation
+    equation: A => B_aq
+    delta_h_J_per_mol: -10000.0
+    rate_law:
+      rate_law_id: side_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.012
+        Ea_J_per_mol: 16000.0
+  - reaction_id: product_degradation
+    equation: P_aq => D
+    delta_h_J_per_mol: 8500.0
+    rate_law:
+      rate_law_id: degradation_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.002
+        Ea_J_per_mol: 11500.0
+  - reaction_id: product_partition
+    equation: P_aq <=> P_org
+    delta_h_J_per_mol: 1200.0
+    rate_law:
+      rate_law_id: product_partition_rate
+      equation_id: reversible_arrhenius
+      parameters:
+        A: 0.02
+        Ea_J_per_mol: 5000.0
+        K_eq: 3.5
+  - reaction_id: byproduct_partition
+    equation: B_aq <=> B_org
+    delta_h_J_per_mol: 800.0
+    rate_law:
+      rate_law_id: byproduct_partition_rate
+      equation_id: reversible_arrhenius
+      parameters:
+        A: 0.015
+        Ea_J_per_mol: 4500.0
+        K_eq: 0.75
+  - reaction_id: organic_coupling_loss
+    equation: P_org + B_org => E
+    delta_h_J_per_mol: -3000.0
+    rate_law:
+      rate_law_id: organic_coupling_rate
+      equation_id: mass_action
+      parameters:
+        k: 0.001

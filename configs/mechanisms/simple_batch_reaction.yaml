@@ -1,0 +1,88 @@
+schema_version: chemworld_mechanism_v1
+network_id: simple_batch_reaction
+metadata:
+  description: >
+    Balanced ChemWorld reaction network for A -> P target formation, A -> B
+    side reaction, P -> D degradation, A + P -> E coupling impurity, and
+    catalyst deactivation.
+species:
+  - species_id: A
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [reactant]
+  - species_id: P
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [product]
+  - species_id: B
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [byproduct]
+  - species_id: D
+    formula: C2H4O2
+    phase: liquid
+    observable_aliases: [degradation_product]
+  - species_id: E
+    formula: C4H8O4
+    phase: liquid
+    observable_aliases: [coupling_impurity]
+  - species_id: Cat_active
+    formula: Pt
+    phase: solid
+    catalyst: true
+    observable_aliases: []
+  - species_id: Cat_dead
+    formula: Pt
+    phase: solid
+    catalyst: true
+    observable_aliases: []
+reactions:
+  - reaction_id: target_formation
+    equation: A => P
+    delta_h_J_per_mol: -25000.0
+    rate_law:
+      rate_law_id: target_catalytic_arrhenius
+      equation_id: catalytic_activity
+      parameters:
+        A: 0.045
+        b: 0.25
+        Ea_J_per_mol: 22000.0
+        catalyst_species: Cat_active
+        reference_concentration_mol_L: 0.002
+        activity_order: 1.0
+  - reaction_id: side_formation
+    equation: A => B
+    delta_h_J_per_mol: -12000.0
+    rate_law:
+      rate_law_id: side_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.018
+        Ea_J_per_mol: 18000.0
+  - reaction_id: product_degradation
+    equation: P => D
+    delta_h_J_per_mol: 8000.0
+    rate_law:
+      rate_law_id: degradation_arrhenius
+      equation_id: arrhenius
+      parameters:
+        A: 0.003
+        Ea_J_per_mol: 11000.0
+  - reaction_id: coupling_impurity
+    equation: A + P => E
+    delta_h_J_per_mol: -5000.0
+    rate_law:
+      rate_law_id: coupling_mass_action
+      equation_id: mass_action
+      parameters:
+        k: 0.004
+  - reaction_id: catalyst_deactivation
+    equation: Cat_active => Cat_dead
+    delta_h_J_per_mol: 0.0
+    rate_law:
+      rate_law_id: cat_deactivation_arrhenius
+      equation_id: catalyst_deactivation
+      parameters:
+        A: 0.0004
+        Ea_J_per_mol: 9000.0
+        species: Cat_active

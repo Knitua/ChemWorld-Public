@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.pytest-tmp-*
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.venv/
+venv/
+runs/
+results/
+site/
+reference_repos/
+# Local API credentials must never enter source control.
+/deepseek_api.md
+/api.md
+/key2.md
+.env

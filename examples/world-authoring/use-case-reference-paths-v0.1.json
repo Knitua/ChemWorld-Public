@@ -1,0 +1,202 @@
+{
+  "schema_version": "chemworld-first-paper-use-case-reference-paths-0.1",
+  "status": "frozen_prelaunch_specification",
+  "claim_boundary": "These deterministic paths validate public authoring and lifecycle reachability; they are not agent-performance or physical-laboratory results.",
+  "cases": [
+    {
+      "use_case_id": "U02",
+      "composition_request": "examples/world-authoring/composed-equilibrium-characterization-v0.1.json",
+      "composition_id": "composed-equilibrium-characterization-demo",
+      "expected_pattern": "phase-observation",
+      "objective": "balanced",
+      "seed": 0,
+      "submitted_action_count": 5,
+      "actions": [
+        {
+          "operation": "add_solvent",
+          "volume_L": 0.025,
+          "solvent": 0
+        },
+        {
+          "operation": "add_reagent",
+          "amount_mol": 0.01
+        },
+        {
+          "operation": "measure",
+          "instrument": "ph_meter"
+        },
+        {
+          "operation": "terminate"
+        },
+        {
+          "operation": "measure",
+          "instrument": "final_assay"
+        }
+      ],
+      "expected_validation": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_transactions": [
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed"
+      ],
+      "expected_failure": null,
+      "expected_final": {
+        "transaction_status": "committed",
+        "terminated": true,
+        "truncated": false
+      }
+    },
+    {
+      "use_case_id": "U03",
+      "composition_request": "examples/world-authoring/composed-reaction-purification-v0.1.json",
+      "composition_id": "composed-reaction-purification-demo",
+      "expected_pattern": "reaction-phase-separation-observation",
+      "objective": "balanced",
+      "seed": 0,
+      "submitted_action_count": 19,
+      "actions": [
+        {
+          "operation": "separate_phase",
+          "target_phase": "organic"
+        },
+        {
+          "operation": "add_solvent",
+          "volume_L": 0.025,
+          "solvent": 2
+        },
+        {
+          "operation": "add_reagent",
+          "amount_mol": 0.01
+        },
+        {
+          "operation": "add_catalyst",
+          "catalyst_amount_mol": 0.0002,
+          "catalyst": 1
+        },
+        {
+          "operation": "heat",
+          "target_temperature_K": 370.0,
+          "duration_s": 1200.0,
+          "stirring_speed_rpm": 650.0
+        },
+        {
+          "operation": "quench"
+        },
+        {
+          "operation": "measure",
+          "instrument": "hplc"
+        },
+        {
+          "operation": "add_phase",
+          "phase": "aqueous",
+          "volume_L": 0.015
+        },
+        {
+          "operation": "add_extractant",
+          "extractant": 1,
+          "volume_L": 0.0175
+        },
+        {
+          "operation": "mix",
+          "duration_s": 180.0,
+          "stirring_speed_rpm": 650.0
+        },
+        {
+          "operation": "settle",
+          "duration_s": 360.0
+        },
+        {
+          "operation": "separate_phase",
+          "target_phase": "organic"
+        },
+        {
+          "operation": "wash",
+          "wash_volume_L": 0.0065
+        },
+        {
+          "operation": "dry"
+        },
+        {
+          "operation": "concentrate",
+          "duration_s": 600.0
+        },
+        {
+          "operation": "transfer",
+          "transfer_fraction": 0.8
+        },
+        {
+          "operation": "measure",
+          "instrument": "hplc"
+        },
+        {
+          "operation": "terminate"
+        },
+        {
+          "operation": "measure",
+          "instrument": "final_assay"
+        }
+      ],
+      "expected_validation": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_transactions": [
+        "rolled_back",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed",
+        "committed"
+      ],
+      "expected_failure": {
+        "step": 1,
+        "transaction_status": "rolled_back",
+        "rollback_reason": "precondition_failed",
+        "physical_state_preserved": true
+      },
+      "expected_final": {
+        "transaction_status": "committed",
+        "terminated": true,
+        "truncated": false
+      }
+    }
+  ]
+}

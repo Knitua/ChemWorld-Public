@@ -1,0 +1,23 @@
+{
+  "claim_boundary": {
+    "agent_performance_claim": false,
+    "divergence_claim": false,
+    "execution_claim": false
+  },
+  "example_id": "work-i-material-law-authoring-example-v0.1",
+  "intervention_class": "material_law_counterfactual",
+  "intervention_payload": {
+    "kind": "material_law_counterfactual",
+    "material_field": "electrolyte_profile",
+    "public_to_baseline": [
+      2,
+      1,
+      0,
+      3
+    ]
+  },
+  "purpose": "Change one private material-law mapping while preserving public material codes and interfaces.",
+  "schema_version": "chemworld-world-authoring-example-0.1",
+  "target_component_id": "private_physics.material_laws",
+  "world_seed": 0
+}

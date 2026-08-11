@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use ChemWorld, please cite this software release and the associated article."
+title: "ChemWorld: Programmable Chemical Worlds for Controlled and Replayable Agent Experimentation"
+type: software
+version: 0.2.0
+date-released: 2026-08-11
+url: "https://github.com/sunyrain/ChemWorld-Public"
+repository-code: "https://github.com/sunyrain/ChemWorld-Public"
+license: MIT
+authors:
+  - family-names: Qiu
+    given-names: Jiangjie
+  - family-names: Li
+    given-names: Yijun
+  - family-names: Wang
+    given-names: Xiaonan
+    email: wangxiaonan@tsinghua.edu.cn
+preferred-citation:
+  type: article
+  title: "ChemWorld: Programmable Chemical Worlds for Controlled and Replayable Agent Experimentation"
+  year: 2026
+  authors:
+    - family-names: Qiu
+      given-names: Jiangjie
+    - family-names: Li
+      given-names: Yijun
+    - family-names: Wang
+      given-names: Xiaonan

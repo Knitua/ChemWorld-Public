@@ -1,0 +1,2014 @@
+{
+  "excluded": [
+    "manuscript text, PDFs, figures and source packages",
+    "planning, TODO, workstream, draft, interim and pilot material",
+    "raw provider responses, private reasoning and provider session identifiers",
+    "private evaluator configuration, credentials, caches and local run directories",
+    "Work II and all post-freeze development artifacts"
+  ],
+  "files": [
+    {
+      "bytes": 172,
+      "path": ".gitattributes",
+      "sha256": "fddf6426a50cfe74f683e49b80b41d39cc82f0dd560d3a3bdd6702760adf5247"
+    },
+    {
+      "bytes": 275,
+      "path": ".gitignore",
+      "sha256": "5a63ade1f744b04c04eca9815db6c88ad007299b70371519e399c40ae57c595c"
+    },
+    {
+      "bytes": 903,
+      "path": "CITATION.cff",
+      "sha256": "011e43e840d660e4d59227a0dceba868e69aa30604a9384c335efcb7b91ae091"
+    },
+    {
+      "bytes": 1080,
+      "path": "LICENSE",
+      "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
+    },
+    {
+      "bytes": 4122,
+      "path": "README.md",
+      "sha256": "41d949cc1ed961f0d421252a7b5a5e99143f57d495cdb8a10cbbf60c11184ef7"
+    },
+    {
+      "bytes": 14591,
+      "path": "configs/benchmark/work_i_world_fork_component_inventory_v0.1.json",
+      "sha256": "84703cd7a6f218f88a3806222a4977638cdf40f4b2f48a15677f2532dc9dd33e"
+    },
+    {
+      "bytes": 3434,
+      "path": "configs/benchmark/work_i_world_fork_divergence_v0.1.json",
+      "sha256": "6aea6a0e721c07b7cb6e49f36a3e66a0a66909e77079aa18669347370cb53b0a"
+    },
+    {
+      "bytes": 7909,
+      "path": "configs/benchmark/work_i_world_fork_public_contract_v0.1.json",
+      "sha256": "61d83b0b1efc8978e71e262652175bacdf3f18ee74ac4233e5f12cfb4f629085"
+    },
+    {
+      "bytes": 4013,
+      "path": "configs/benchmark/work_i_world_fork_qualification_v0.1.json",
+      "sha256": "51d4129ee7b3c2fd891acf369efc395b6a957d3637a0eb211dddf601fb676a55"
+    },
+    {
+      "bytes": 5116,
+      "path": "configs/benchmark/work_i_world_fork_spec_v0.1.json",
+      "sha256": "43d063044783e0883f870edfcdb87f6e386a041cd300b18fea989399b2a25c27"
+    },
+    {
+      "bytes": 1764,
+      "path": "configs/mechanisms/autocatalytic_reaction.yaml",
+      "sha256": "340bb52d7435ab48b5147337367785376f6404696137d85d8be715b1cdc20932"
+    },
+    {
+      "bytes": 2045,
+      "path": "configs/mechanisms/catalyst_deactivation.yaml",
+      "sha256": "c82e901af952628442fc44982ea07b531907e170fba1cf012984461641161130"
+    },
+    {
+      "bytes": 1803,
+      "path": "configs/mechanisms/cstr_multiplicity.yaml",
+      "sha256": "8e4d1d2170140d98869788be4b56fd1a741a04d46d585b214b5dc18cea31e7b6"
+    },
+    {
+      "bytes": 2433,
+      "path": "configs/mechanisms/electrochemical_conversion.yaml",
+      "sha256": "5690c9369e743c2c283f328899f4692560a3d05095a9d936e1459b4b24831a72"
+    },
+    {
+      "bytes": 1816,
+      "path": "configs/mechanisms/parallel_series_reaction.yaml",
+      "sha256": "22520f3deaddfd1460e4e61308d6fa16b1d98038b86a4f8b3acb431311e60c56"
+    },
+    {
+      "bytes": 1785,
+      "path": "configs/mechanisms/pfr_hotspot.yaml",
+      "sha256": "03d1837b1b3c89cbf624b79d98fd7d6dd4bf97c6b52ccac86c54c458b55e1399"
+    },
+    {
+      "bytes": 2543,
+      "path": "configs/mechanisms/reaction_extraction.yaml",
+      "sha256": "392f6011de77dc72d1b6475d6746577b30de7dcde82aa70e1dabf7854d93587a"
+    },
+    {
+      "bytes": 2561,
+      "path": "configs/mechanisms/reactive_distillation_lite.yaml",
+      "sha256": "5f87ed3110616e1e33c2a28ffb0f19a006e2f98b7d877cfd63aed121f736c977"
+    },
+    {
+      "bytes": 497,
+      "path": "configs/mechanisms/reversible_reaction.yaml",
+      "sha256": "64495fb27919ac80f309c4b1aa5d1e6539fb3fca8cba98f0e548c694070b010f"
+    },
+    {
+      "bytes": 2329,
+      "path": "configs/mechanisms/simple_batch_reaction.yaml",
+      "sha256": "b7c3cef9c4e0a45225b967ea745ab1d271b611ea6af87eb207797a44f10874d2"
+    },
+    {
+      "bytes": 226,
+      "path": "configs/public_dev.json",
+      "sha256": "86766a792546ee69c063af87587918b1611624769b33a3654051c1d99d20cb1b"
+    },
+    {
+      "bytes": 198,
+      "path": "configs/public_test.json",
+      "sha256": "3ff5314c048ebc9c1d5f8d13fb14d020053617fd9e192d86c4e9d2e06f472f2f"
+    },
+    {
+      "bytes": 11642,
+      "path": "configs/scenarios/mechanism_scenarios.yaml",
+      "sha256": "5551bd91f6d6776a527324cce713cfb63edb92b1033701be264c12e6cf48f7ba"
+    },
+    {
+      "bytes": 2256,
+      "path": "docs/action_schema.md",
+      "sha256": "dc021916f916ce0d5cede411cd4567955ee91fa80960818013d043b58465f0ed"
+    },
+    {
+      "bytes": 3899,
+      "path": "docs/getting_started.md",
+      "sha256": "67266ea1d78b6dac71ea529d2fd31010f8547a5c839e372cc8889f74cba206de"
+    },
+    {
+      "bytes": 2352,
+      "path": "docs/operations.md",
+      "sha256": "ad2f3da1af9a144960141ed3c08894a96108da372574b88d114904041ee4ae6b"
+    },
+    {
+      "bytes": 8271,
+      "path": "docs/world-capability-map.md",
+      "sha256": "4d62ef6696aed73ad3267168c5d6968dce7f7e2a6175aec66cd84d27abbb86a5"
+    },
+    {
+      "bytes": 12819,
+      "path": "docs/world-composition-contract.md",
+      "sha256": "c3a1e3ebe6be33561198c4428bf8225f7a33550840f266dd9b0f28fca34377d5"
+    },
+    {
+      "bytes": 4413,
+      "path": "docs/world-composition-coverage.md",
+      "sha256": "92a93030e2e7b93bbfe5e8ee6867643c3730036bb0bdcd8a75a2b8799d15943e"
+    },
+    {
+      "bytes": 6381,
+      "path": "docs/world-composition-examples.md",
+      "sha256": "d9f96a4d59d99167854cccd6a4cfa26c980279c006080f3413a1671dd6422cd3"
+    },
+    {
+      "bytes": 1657,
+      "path": "evidence/README.md",
+      "sha256": "f741dd666a66083bb54fe7dc3c0b54346cdc06fd92e47a4d8c19378007b324f1"
+    },
+    {
+      "bytes": 20071,
+      "path": "evidence/reports/agent-instrument-use.json.gz",
+      "sha256": "ca9d899b35723ae18c6893e1c6a3a038d5f00febbd23b9bb3ca6db773d316f04"
+    },
+    {
+      "bytes": 1383,
+      "path": "evidence/reports/agent-instrument-use.md",
+      "sha256": "615bb976d972894b9628fd416c6f3bc8bc66db898c96ae42573b7b8dd8674bfd"
+    },
+    {
+      "bytes": 6710668,
+      "path": "evidence/reports/composition-qualification.json.gz",
+      "sha256": "86753daf649086735fa9dd78a94fc1d143bd470c2890be60ef8fa1ec15c95bdd"
+    },
+    {
+      "bytes": 3671,
+      "path": "evidence/reports/composition-qualification.md",
+      "sha256": "fedf4fa1f88bf8f388d4b836bc07ba34529c695cdeb2a8c7826df4bdd64508f7"
+    },
+    {
+      "bytes": 117282,
+      "path": "evidence/reports/controlled-world-forks.json.gz",
+      "sha256": "291080316a82e3f85b083bd6f01894a7c59b1cd4418e4807775851915adcfd63"
+    },
+    {
+      "bytes": 88862,
+      "path": "evidence/reports/deterministic-use-cases.json.gz",
+      "sha256": "08322ec3e9eb8c37ed48b612f6314322eada6c929464b5c13a0ad1efdb3ee1e8"
+    },
+    {
+      "bytes": 2160,
+      "path": "evidence/reports/deterministic-use-cases.md",
+      "sha256": "d9098898435d4bfbacd1b6f9134cbf463043f517a1ddb26dead6d5af2d85a16c"
+    },
+    {
+      "bytes": 1439,
+      "path": "examples/demo_agent_facing_api.py",
+      "sha256": "4b408227d5b6924f635901f70a8176bc0eee68421d60feff69fc27054bb54bd2"
+    },
+    {
+      "bytes": 923,
+      "path": "examples/demo_compare_baselines.py",
+      "sha256": "c49b0ffb8ec9de2fff3b931a7f19f7caee110cb7a947be8d17722b54a21ef419"
+    },
+    {
+      "bytes": 2597,
+      "path": "examples/demo_dataset_agent_trace_export.py",
+      "sha256": "f79fe7d854c3042085d63f9296f2ee30e6c0373cd7f4b9a1a82f94ca7279366c"
+    },
+    {
+      "bytes": 1600,
+      "path": "examples/demo_llm_replay_harness.py",
+      "sha256": "42536d1338f7289c9a9b671f8cdf6481b1834e0eff8c5de905380ac27138cc5a"
+    },
+    {
+      "bytes": 1969,
+      "path": "examples/demo_manual_event_sequence.py",
+      "sha256": "68a6809531a7a83828e22cb301798ea0cfe47eb3f441889839dd07c84cd4ce5d"
+    },
+    {
+      "bytes": 997,
+      "path": "examples/demo_rl_vector_wrapper.py",
+      "sha256": "e5d068d515c3432ca4d7ff18efe58eb9d0858fbcbfbbc56bc87b4ef5c0086c7d"
+    },
+    {
+      "bytes": 538,
+      "path": "examples/demo_submission_bundle.py",
+      "sha256": "309a5b66e740cfa6c349c13bba730ef26ed64d2b1bc2d868dadd718f4c8d5d30"
+    },
+    {
+      "bytes": 1133,
+      "path": "examples/demo_verify_and_inspect.py",
+      "sha256": "b629fb414ea5446137f2e55919d871b76be8dc1b5d19fe6406c2b9a76e7ef4d2"
+    },
+    {
+      "bytes": 3541,
+      "path": "examples/fixtures/llm_replay/reaction_to_assay_public_trace.jsonl",
+      "sha256": "2e19703f4a0c354b66a1d6ef5448cf3d935e021a661d3d5505a07125a6b77cc6"
+    },
+    {
+      "bytes": 483,
+      "path": "examples/run_random.py",
+      "sha256": "49e6f55f0f13b13a3324c4fa96ae098d68d94210905ba3770b95ec449e86bfeb"
+    },
+    {
+      "bytes": 1652,
+      "path": "examples/world-authoring/composed-equilibrium-characterization-v0.1.json",
+      "sha256": "2aebad0a18d35d0c9b1c89474c4d8760cd74ada10f06a1a5e23baedbaa7e5de1"
+    },
+    {
+      "bytes": 1351,
+      "path": "examples/world-authoring/composed-reaction-assay-v0.1.json",
+      "sha256": "aed1e0856b97ccc0b2d5386bfe1bf21d982ff7687e9547dc86e0b1bb46155fe1"
+    },
+    {
+      "bytes": 2706,
+      "path": "examples/world-authoring/composed-reaction-purification-v0.1.json",
+      "sha256": "a5faa8a07ad52fd47a9b714fd7e756c548e74d10aabadec8ba9c5cfcf01e09c1"
+    },
+    {
+      "bytes": 684,
+      "path": "examples/world-authoring/material-law-fork-v0.1.json",
+      "sha256": "b8b2e6a1358af59d5f3bf5aef3daf392f783e9b86cdae121f05f9ebd78b6d2f5"
+    },
+    {
+      "bytes": 620,
+      "path": "examples/world-authoring/mechanism-fork-v0.1.json",
+      "sha256": "1c91ac939dacf03de11816709c41ba95ec27c695c79543cf5a89ec609a858d65"
+    },
+    {
+      "bytes": 2868,
+      "path": "examples/world-authoring/reference-task-contract-map-v0.1.json",
+      "sha256": "cce195857b9d9e1f10aa436eff0784f103c8930e1bf05a24e8384be0fc65a4d7"
+    },
+    {
+      "bytes": 4798,
+      "path": "examples/world-authoring/use-case-reference-paths-v0.1.json",
+      "sha256": "5aa69e3bbdeb1198b7ee42f183be93f73a497a515dede5b0eb2626b1c274c8a0"
+    },
+    {
+      "bytes": 1934,
+      "path": "protocols/agent-instrument-use.md",
+      "sha256": "e20a225898266dd85b8dd4c3916db264af96b3ae728c4d917f9132197b377069"
+    },
+    {
+      "bytes": 1787,
+      "path": "protocols/composition-qualification.md",
+      "sha256": "6a34d2056c0a8bfacb2c29be9a87b65c2a0e0dcbb02d50e53bd27c80147d6a3f"
+    },
+    {
+      "bytes": 1064,
+      "path": "protocols/controlled-world-forks.md",
+      "sha256": "3fe4883ff80e325b8b347bec6bcb9203174fb8297efa6475643879dfeb1a2306"
+    },
+    {
+      "bytes": 1298,
+      "path": "protocols/deterministic-use-cases.md",
+      "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
+    },
+    {
+      "bytes": 3073,
+      "path": "pyproject.toml",
+      "sha256": "c5c821528ed51dd0ad985796d15c91c1cfa4c187d9466b78589db9f8ad6942d4"
+    },
+    {
+      "bytes": 4803,
+      "path": "scripts/build_release_manifest.py",
+      "sha256": "a32589246f4d4ff4cb873b712eaab10c4327406c926175c66488ed165a57a7ed"
+    },
+    {
+      "bytes": 5409,
+      "path": "scripts/run_controlled_world_forks.py",
+      "sha256": "1ed81e583e96918b57e6dfe71f00e104762efe013fb1103a25300ca24090c60f"
+    },
+    {
+      "bytes": 7627,
+      "path": "scripts/sanitize_public_evidence.py",
+      "sha256": "801d3394e140340260bba4dac16c0fe7f9b4c45d2b883d15cd5f9bf998a5cb6f"
+    },
+    {
+      "bytes": 12210,
+      "path": "scripts/summarize_controlled_world_forks.py",
+      "sha256": "30bb938a701e3efa3db7bd637f79eae244a15fa9825dc392b385e58764138bf0"
+    },
+    {
+      "bytes": 12455,
+      "path": "scripts/verify_release.py",
+      "sha256": "fbf5c0bf5a2be8ad93f4d3f7b862f0c3212811f169187a7868c96c120692b625"
+    },
+    {
+      "bytes": 1621,
+      "path": "src/chemworld/__init__.py",
+      "sha256": "74988966244de11703c941503a2eb9b0503b3baa4d850b3dec446a05f2374821"
+    },
+    {
+      "bytes": 13937,
+      "path": "src/chemworld/action_codec.py",
+      "sha256": "1634789a7ee3cd3e0b6dfb659ede088b63d740323d2da96ff4959125d1d887e4"
+    },
+    {
+      "bytes": 64652,
+      "path": "src/chemworld/agent_interface.py",
+      "sha256": "b8d19f24c86175f40cc44eb31c7c41ecae05aa58612afacb1c9597d1e55dfac0"
+    },
+    {
+      "bytes": 2115,
+      "path": "src/chemworld/agents/__init__.py",
+      "sha256": "683687095e14f16f9adca0587947b16f370a68a16afbdf27650fd4392e5f2de5"
+    },
+    {
+      "bytes": 3163,
+      "path": "src/chemworld/agents/base.py",
+      "sha256": "39af61c23589891d3f99bed3d092c62393c1f2d951a88fc2cec6c850fc94c3f1"
+    },
+    {
+      "bytes": 26579,
+      "path": "src/chemworld/agents/bo.py",
+      "sha256": "6422aef3cd13056c88750c950b380ec492d5a2591a43c490353f7f801e3ff903"
+    },
+    {
+      "bytes": 7461,
+      "path": "src/chemworld/agents/diagnostic_live_llm.py",
+      "sha256": "c856cdd99fc073f504c0e2b180a0cf1f00f19379fca3ddf56dee09ff8c2d1d3b"
+    },
+    {
+      "bytes": 8127,
+      "path": "src/chemworld/agents/event.py",
+      "sha256": "e55511cc53a1a46045aa5a1ec7f34d3e16833ded5150c17b698773ca2d84603e"
+    },
+    {
+      "bytes": 39907,
+      "path": "src/chemworld/agents/experiment_codex_ipc.py",
+      "sha256": "ff79dc8738abb6ec30ae147978f68804be7c7ed75ac02d5e967d16dd5535b8b2"
+    },
+    {
+      "bytes": 17670,
+      "path": "src/chemworld/agents/experiment_codex_mcp.py",
+      "sha256": "27604523ee6bfa33e731d59414a21a3f9543b71fd3902aea1b53d1158fbc6e89"
+    },
+    {
+      "bytes": 4020,
+      "path": "src/chemworld/agents/greedy.py",
+      "sha256": "5e49861990ed249f309d55bd5922fe94ba831c584ecd46579d156f134f656fa0"
+    },
+    {
+      "bytes": 13645,
+      "path": "src/chemworld/agents/interaction.py",
+      "sha256": "f41232d6d4c662b7ffb63812901b338419a343d572b1e5304a915e6e893a1473"
+    },
+    {
+      "bytes": 65366,
+      "path": "src/chemworld/agents/interactive_codex_experiment.py",
+      "sha256": "e67766d1f04e435a8919b526d32fb82ef3737055b4bf75f83d0e3c7de0db86eb"
+    },
+    {
+      "bytes": 1451,
+      "path": "src/chemworld/agents/lhs.py",
+      "sha256": "38d257cefdcae0c111aead1c6dc0bc5d9ed1132839dbf57c2d29b9b8b2515e47"
+    },
+    {
+      "bytes": 51446,
+      "path": "src/chemworld/agents/live_llm.py",
+      "sha256": "5bc71ad415dcab155dbfc762e28d26689954fbf2fcc14a729458d053cb6d2a9f"
+    },
+    {
+      "bytes": 25306,
+      "path": "src/chemworld/agents/llm.py",
+      "sha256": "acabff801100edd01c963a69fbdd69ba4d23f3835c1766203f0b827a5ca2ed26"
+    },
+    {
+      "bytes": 36796,
+      "path": "src/chemworld/agents/prompt_context.py",
+      "sha256": "0dbb0fad8545bf95b07ee624a185850c973347334688fd89ea3e571c33a3ca11"
+    },
+    {
+      "bytes": 1021,
+      "path": "src/chemworld/agents/random.py",
+      "sha256": "ff77576e5caf72e477eba5bc7956c6fd84d134160eeb6e507125ce1c737fe6bd"
+    },
+    {
+      "bytes": 3415,
+      "path": "src/chemworld/agents/recipe_sequence.py",
+      "sha256": "2f272f58ea26c089ff0243c833e458c7597402223d4cb9ded6e7355a32986420"
+    },
+    {
+      "bytes": 20489,
+      "path": "src/chemworld/agents/rl.py",
+      "sha256": "a493b56f2f87c143de7a49eb07a6eb8e29b1a38c835afb9155bf8f81880cef74"
+    },
+    {
+      "bytes": 38424,
+      "path": "src/chemworld/agents/task_recipes.py",
+      "sha256": "afee6765e259d8a2ea66031e45814dc8f90bea6cf4f5c80fc8ca094193675352"
+    },
+    {
+      "bytes": 211,
+      "path": "src/chemworld/backends/__init__.py",
+      "sha256": "efe2bfdb8c1930ca648503c31b222fbfddecf6f837ae94f24a0886bec42e9054"
+    },
+    {
+      "bytes": 1609,
+      "path": "src/chemworld/backends/spec.py",
+      "sha256": "165c644a0c43bbf945b79fc6151ab8e92c2889a5e281b1361b4cd72e0fe56b15"
+    },
+    {
+      "bytes": 48102,
+      "path": "src/chemworld/campaign_resources.py",
+      "sha256": "bbf1a2def3f58053d32c4815182943ccba66fa72f4c1747053f2ab3790173d7b"
+    },
+    {
+      "bytes": 26317,
+      "path": "src/chemworld/cli.py",
+      "sha256": "cb8500c98e68f08e72d1111da973a9ecf4602fff9eb55f6a12da06e0279a1ca0"
+    },
+    {
+      "bytes": 918,
+      "path": "src/chemworld/data/__init__.py",
+      "sha256": "902ec25b4f24006c07a079fe2f2013c54f665202400d0999bb6695592d781ad7"
+    },
+    {
+      "bytes": 14710,
+      "path": "src/chemworld/data/datasets.py",
+      "sha256": "d8ffeacb6c2b70d378eab149b61cb42e2fa1ccb6b4b261b27114f0c425a0450a"
+    },
+    {
+      "bytes": 15087,
+      "path": "src/chemworld/data/logging.py",
+      "sha256": "140f736b5eda7bf897041ef9072efbf1285fad55edaae4a6761b728c797d49ea"
+    },
+    {
+      "bytes": 2880,
+      "path": "src/chemworld/data/schema.py",
+      "sha256": "680f33cdc097febcc93586b8d9db1dbb424bdf73e96df18f99e3ab2a75c18e65"
+    },
+    {
+      "bytes": 22332,
+      "path": "src/chemworld/data/submission.py",
+      "sha256": "b2a205f2a04228c2201dafd221171b6453f7b493f53041e28761ee36ef545861"
+    },
+    {
+      "bytes": 4969,
+      "path": "src/chemworld/data/validation.py",
+      "sha256": "fa7bef55713bbcb6d4c72d8860b8dace3be75eabce5f726ca0ba4d60f860a27c"
+    },
+    {
+      "bytes": 113,
+      "path": "src/chemworld/envs/__init__.py",
+      "sha256": "663f8c7a98e6f3d4c5ef96d5ea4335ec9bb41887ef7b6730bb5caa7e0da26960"
+    },
+    {
+      "bytes": 64836,
+      "path": "src/chemworld/envs/chemworld_env.py",
+      "sha256": "c1e91ad67b64f432965ab74caf36a10cd1633a9f63d8f248ff8cd78218273976"
+    },
+    {
+      "bytes": 2731,
+      "path": "src/chemworld/envs/observation_noise.py",
+      "sha256": "009ae86890d4810cb856ec6df453afb9d80ea4049ae58b7b1d12e89bcd64343f"
+    },
+    {
+      "bytes": 22026,
+      "path": "src/chemworld/envs/reports.py",
+      "sha256": "6422a0a6a5ba66e1b2c814b82ce5d4c1d94ff1a324f2e8bd08c0c7701e98d695"
+    },
+    {
+      "bytes": 6521,
+      "path": "src/chemworld/envs/spaces.py",
+      "sha256": "b5acb46cc9969bac934db84f12a7a3a55e21771a1d38eeea1b958fc6414d732c"
+    },
+    {
+      "bytes": 1796,
+      "path": "src/chemworld/eval/__init__.py",
+      "sha256": "fb9da33b49dfa53612fc495ec8e960cb31ae1310338acdf8fa645c743642c560"
+    },
+    {
+      "bytes": 96772,
+      "path": "src/chemworld/eval/agent_instrument_use.py",
+      "sha256": "59c60a2097b1eeecb639fb14ed4a29576ef18a1fbe8f95fbf02cae065e5d27b9"
+    },
+    {
+      "bytes": 2923,
+      "path": "src/chemworld/eval/artifact_paths.py",
+      "sha256": "748a23d7993d69348c2872497b85e88b05e3ee0f3eed3543fc3da7e0143da5d0"
+    },
+    {
+      "bytes": 15469,
+      "path": "src/chemworld/eval/baseline_report.py",
+      "sha256": "4467f49bfc8c81e243bac120e48ad2ab79389188a48ebdec4b5d3628b34c0969"
+    },
+    {
+      "bytes": 11176,
+      "path": "src/chemworld/eval/benchmark_validation.py",
+      "sha256": "ef772d430e83c84f8478f8006cd47b1235f889fa51939b01c4bc9aeb1bf46416"
+    },
+    {
+      "bytes": 963,
+      "path": "src/chemworld/eval/campaign_resources.py",
+      "sha256": "69b5148a097383d163965c80cb9a9a2f613675171b46e6f16bb442347779de06"
+    },
+    {
+      "bytes": 82242,
+      "path": "src/chemworld/eval/composition_qualification.py",
+      "sha256": "75a97a94c4421aa6b0188a509fc853e802f8c2f81add6253532af1e25daeb696"
+    },
+    {
+      "bytes": 31011,
+      "path": "src/chemworld/eval/composition_qualification_design.py",
+      "sha256": "52c2775e16cb863a361f650c2ea2ad2e54e22dd67c1bb0e9777bec0a3bcc16a2"
+    },
+    {
+      "bytes": 69311,
+      "path": "src/chemworld/eval/cross_world_infrastructure_qualification.py",
+      "sha256": "e787e4d616cc546e11b3b900dc2a40afb330f17cf458b86ce16c4f79096c7dfc"
+    },
+    {
+      "bytes": 66600,
+      "path": "src/chemworld/eval/deterministic_use_cases.py",
+      "sha256": "383ee14f24ef438f21b27bd9e7c2cee1326ce04b1fc66fc017ad324f21f75cb3"
+    },
+    {
+      "bytes": 2886,
+      "path": "src/chemworld/eval/explanations.py",
+      "sha256": "28d5ee4ac992e2a56507d809ed301539c4a8326bf0b9ab56985eac001e453afb"
+    },
+    {
+      "bytes": 22674,
+      "path": "src/chemworld/eval/exploit_matrix.py",
+      "sha256": "0f568465bd070e8fb06b7e6ce7d7811dfddbf6a14529cc8c4cd4687a33def7f2"
+    },
+    {
+      "bytes": 40156,
+      "path": "src/chemworld/eval/flagship_diagnostics.py",
+      "sha256": "5a8e75e701c247bd543577b126e7e125f3d5d1ad307c2aa9e2b9a19fc8ff9c18"
+    },
+    {
+      "bytes": 5823,
+      "path": "src/chemworld/eval/generalization.py",
+      "sha256": "2d52c8eced6399a7597f21b6f369a4caef70f6e8669dfaf6490402c39649b996"
+    },
+    {
+      "bytes": 6961,
+      "path": "src/chemworld/eval/golden.py",
+      "sha256": "fbdcb0bff519abf43cfd7e424a6cfbe6257146a4e7864a1b9b6ec59b86668a9a"
+    },
+    {
+      "bytes": 15218,
+      "path": "src/chemworld/eval/layered_evaluation.py",
+      "sha256": "3b69392c62f9f13f3489bfeeb91ff2916f176d2104cc5a1815eef467fd647565"
+    },
+    {
+      "bytes": 3477,
+      "path": "src/chemworld/eval/leaderboard.py",
+      "sha256": "642712e9bbc10f71eafc35506400ccd1f7f10a540d1826e9344d165fff528488"
+    },
+    {
+      "bytes": 16358,
+      "path": "src/chemworld/eval/metrics.py",
+      "sha256": "a49564c641fbb1cbcf91ca7ce629bab3c412266389d28609c4c2272df30a6f26"
+    },
+    {
+      "bytes": 19761,
+      "path": "src/chemworld/eval/observation_identifiability.py",
+      "sha256": "cd4f1795dab295df45068b05cfdda262f15f20e9a03bef363d8c03824649ac88"
+    },
+    {
+      "bytes": 4123,
+      "path": "src/chemworld/eval/private_artifact.py",
+      "sha256": "dc5d66c90305259dd8b0fe83ea175e45553f774955f95e9e1d9be35a0e556a70"
+    },
+    {
+      "bytes": 8696,
+      "path": "src/chemworld/eval/provenance.py",
+      "sha256": "8f2fa53beb3982360aaf44ef1ea03afc5e8a83d11afe117309f62b3dc1450ed5"
+    },
+    {
+      "bytes": 19402,
+      "path": "src/chemworld/eval/public_harness.py",
+      "sha256": "10774b20b94a647c03eeff1a2583c322f8e8625ee34972cfa307b3242ea45dff"
+    },
+    {
+      "bytes": 17569,
+      "path": "src/chemworld/eval/resource_accounting.py",
+      "sha256": "d3128d9b2248c408f2c389e8f8eb3c672870401f6824ec8bb5e748815767a8fb"
+    },
+    {
+      "bytes": 6113,
+      "path": "src/chemworld/eval/response_surface.py",
+      "sha256": "a790abc3eb6f36a4c77571b97af851c532193dbb2b493396f1b00cabf2985896"
+    },
+    {
+      "bytes": 9551,
+      "path": "src/chemworld/eval/result_artifacts.py",
+      "sha256": "77036354138f3d00fa6f7919ebb1fd59dda7407053abd536d676f26135981e00"
+    },
+    {
+      "bytes": 3289,
+      "path": "src/chemworld/eval/risk_policy.py",
+      "sha256": "20daaee476933f764a3aab59d9092cc20a5f64a246f4bfda9add46b5cc1ef3f8"
+    },
+    {
+      "bytes": 27038,
+      "path": "src/chemworld/eval/runner.py",
+      "sha256": "f27d37618c333ded63615af7d4d07b53e32fadfdaa974c0f58226d584664f990"
+    },
+    {
+      "bytes": 18341,
+      "path": "src/chemworld/eval/runtime_domain_affordance_audit.py",
+      "sha256": "e38afe2ba075c1801ff12dffe630f9b7fff15258c91c3fc3ad69ab065fb3d1fd"
+    },
+    {
+      "bytes": 9827,
+      "path": "src/chemworld/eval/score_replay_audit.py",
+      "sha256": "b119a49834c9e3324813d7df289f3d17f3cc2352ca22d1b25cf89b2400a3cdd3"
+    },
+    {
+      "bytes": 9346,
+      "path": "src/chemworld/eval/scoring_audit.py",
+      "sha256": "13e8bc7b1ca7e31ae475dd3c2acb58e51e45e6e198bca3cf8053b4c83d58b429"
+    },
+    {
+      "bytes": 5286,
+      "path": "src/chemworld/eval/seed_suite.py",
+      "sha256": "0c0e3a1c525b362dd145bb1fcd1a8fb65b1aecebddb977dbd756a8680d801e49"
+    },
+    {
+      "bytes": 21694,
+      "path": "src/chemworld/eval/semantic_invariance.py",
+      "sha256": "e5756ade88ee347449c1f39cd504b79f94328ffa433355d0712f7242d84ba98b"
+    },
+    {
+      "bytes": 5644,
+      "path": "src/chemworld/eval/suite.py",
+      "sha256": "a8cd4f6df2196a5dd9c34f84ef2ee569b624cf8c6f87dae7483d93a90e6d32ce"
+    },
+    {
+      "bytes": 22601,
+      "path": "src/chemworld/eval/task_metric_endpoints.py",
+      "sha256": "aba257199ce29f45f370aeabffed8d08316f1226a222bb4626662c20a9cdb259"
+    },
+    {
+      "bytes": 12890,
+      "path": "src/chemworld/eval/trial_store.py",
+      "sha256": "324f90048550605449c75987d9cdab9717c260f434ad166b73c44ba1c8fd64fe"
+    },
+    {
+      "bytes": 17257,
+      "path": "src/chemworld/eval/validity_power.py",
+      "sha256": "8cd3820201c749a9b249c99e7b27c55388e551bee8b72b99c84b228062258f02"
+    },
+    {
+      "bytes": 17131,
+      "path": "src/chemworld/eval/verify.py",
+      "sha256": "ab75a91358bbe857b95b55570e7d478425b183e9edb2aa54c54756f491b5fb7f"
+    },
+    {
+      "bytes": 6992,
+      "path": "src/chemworld/eval/world_fork_audit.py",
+      "sha256": "1ac36892643a5a9964b37ee4f8c9b6a22cd2f9b036c122302bc2e48a6e81305f"
+    },
+    {
+      "bytes": 2648,
+      "path": "src/chemworld/foundation/__init__.py",
+      "sha256": "1123f466e0b29252253aa205714a08def5d3ddfb9857cac391d714d1e86b65d9"
+    },
+    {
+      "bytes": 12594,
+      "path": "src/chemworld/foundation/constitution.py",
+      "sha256": "a83ab5d98d135d1dde574d11cb8159792e463e27f67fd6bc06faddf25c02aded"
+    },
+    {
+      "bytes": 7644,
+      "path": "src/chemworld/foundation/constitution_preconditions.py",
+      "sha256": "9d0e768c541395c2ebdfcbc56d2868856582bf15553e6fe9b2d15cc46c57182f"
+    },
+    {
+      "bytes": 1010,
+      "path": "src/chemworld/foundation/constitution_reports.py",
+      "sha256": "5a121878715afb40289c15044a7d70d06f46d219ed62460540c932b4de27e658"
+    },
+    {
+      "bytes": 12113,
+      "path": "src/chemworld/foundation/constitution_state_checks.py",
+      "sha256": "a36f1f468bc5286b2964569ec7b5ee7b0b2329caf19dc69a152bd8669af5ad9e"
+    },
+    {
+      "bytes": 12863,
+      "path": "src/chemworld/foundation/dimensions.py",
+      "sha256": "59bc37dfab07a6e036057780e3eea15ab91b0d967781f00af63cc76b98215685"
+    },
+    {
+      "bytes": 778,
+      "path": "src/chemworld/foundation/kernels.py",
+      "sha256": "8787a544b91fe9f8dc6147637d254bd6d16242c04cccaf168a4419e184af4e92"
+    },
+    {
+      "bytes": 12298,
+      "path": "src/chemworld/foundation/ledger_audit.py",
+      "sha256": "7e208de2343a8b7f2a474ad4d7da7bd13112e4e8d4437acfc175b0540e97b253"
+    },
+    {
+      "bytes": 2389,
+      "path": "src/chemworld/foundation/ontology.py",
+      "sha256": "7840c45e8ecf3851c6e6d1c4f50d0e70cd5540780722c076340c8624d6329886"
+    },
+    {
+      "bytes": 4912,
+      "path": "src/chemworld/foundation/public_leakage.py",
+      "sha256": "6a20a2c9939cf888f6074fe7b38c12af3735a6ab2e7300209ad390256b1acdeb"
+    },
+    {
+      "bytes": 10073,
+      "path": "src/chemworld/foundation/state.py",
+      "sha256": "835fd7cceb0505c1c05f4065cf1a3aecb1bada593f3b58d8c33d7ab537170cf1"
+    },
+    {
+      "bytes": 4447,
+      "path": "src/chemworld/foundation/state_helpers.py",
+      "sha256": "6829d6ce94db7e991c36e2130a9b48fd1b7f5f6b0a7a8ea365ad4a0139ded165"
+    },
+    {
+      "bytes": 8479,
+      "path": "src/chemworld/foundation/state_ledgers.py",
+      "sha256": "fdb925b61729f022e30276d57bafddcf1fa3c4a59758818bdbafbcf44567474c"
+    },
+    {
+      "bytes": 4707,
+      "path": "src/chemworld/foundation/units.py",
+      "sha256": "489abae344f0a2d847cee53b222b190964e90cefb32ac45de4a0113ff364edf8"
+    },
+    {
+      "bytes": 14881,
+      "path": "src/chemworld/foundation/world_fork_divergence.py",
+      "sha256": "1bb4939b3aa14f243a883ba397bb0cd05ca24f769a2fce4a82747fc15c6fda7f"
+    },
+    {
+      "bytes": 26480,
+      "path": "src/chemworld/foundation/world_fork_manifest.py",
+      "sha256": "a641d91f787aba9d5ccaf4a40233fa4525a33a49c3347e64b1f732e090fd7f59"
+    },
+    {
+      "bytes": 13622,
+      "path": "src/chemworld/foundation/world_fork_public_contract.py",
+      "sha256": "ad9e50fe65dda6151ec10a3ffba7f92bf5a71c0f4d2eed89d06e6abfc666ffbc"
+    },
+    {
+      "bytes": 25694,
+      "path": "src/chemworld/foundation/world_fork_runtime.py",
+      "sha256": "6802679b95543933d07a9cc6ebcf5775333392034388bd70c009e6393e8a62af"
+    },
+    {
+      "bytes": 21040,
+      "path": "src/chemworld/foundation/world_fork_spec.py",
+      "sha256": "fdffd085c6704d55db8b5f0431862bef03f584135941a777b47d85a5963cac24"
+    },
+    {
+      "bytes": 1426,
+      "path": "src/chemworld/foundation/world_law.py",
+      "sha256": "6f17102501d3fa61d50bbd50ea8eafa750505a00e8e02791bffb42bb9580fbed"
+    },
+    {
+      "bytes": 25550,
+      "path": "src/chemworld/materials.py",
+      "sha256": "4ebf43efb4f472ab95f0dd5081394597af04ea4c434217d44069d19f8a0fcda7"
+    },
+    {
+      "bytes": 179,
+      "path": "src/chemworld/models/__init__.py",
+      "sha256": "e1938e99967644998ebee75650f395a9671f54d90fc606ff1be8f2ed5ccabbd8"
+    },
+    {
+      "bytes": 2816,
+      "path": "src/chemworld/models/surrogates.py",
+      "sha256": "589cc6cde155570315398dd6ab5a737302f08b48f11382781c17968a464c1782"
+    },
+    {
+      "bytes": 47581,
+      "path": "src/chemworld/operation_validator.py",
+      "sha256": "8bf65772742dd0a2d4dd785a04ffda49d460b20df68f725fde5b98071fae2f3a"
+    },
+    {
+      "bytes": 13417,
+      "path": "src/chemworld/physchem/README.md",
+      "sha256": "1ba216f134d3531d17db73e2895e08fe0579546389ba79e0ce77e64cf520f180"
+    },
+    {
+      "bytes": 15734,
+      "path": "src/chemworld/physchem/__init__.py",
+      "sha256": "f19791579ee5b879c2ea99044b767cadd3e530dcf2103217e5f6a34efc92c5dd"
+    },
+    {
+      "bytes": 21796,
+      "path": "src/chemworld/physchem/batch_reactors.py",
+      "sha256": "b2fc69796bdc8905574cc78b787a98d5a03065b93bb7cc6c29ec6a5fd25740a7"
+    },
+    {
+      "bytes": 5832,
+      "path": "src/chemworld/physchem/chromatography_method_cards.py",
+      "sha256": "99344e6019345f0611e88975e5adacef79dc1d20de5355a960831fd032ae66f1"
+    },
+    {
+      "bytes": 14145,
+      "path": "src/chemworld/physchem/chromatography_methods.py",
+      "sha256": "836a1bae1f2b1c868eab99a42d39dfc3fa16da0cd57162f761a137833fa134d3"
+    },
+    {
+      "bytes": 3972,
+      "path": "src/chemworld/physchem/component_registry.py",
+      "sha256": "26be0997f5fc275ff2ac8737d2803f36ba8072e332aaea28b86147bcf73b66d1"
+    },
+    {
+      "bytes": 6116,
+      "path": "src/chemworld/physchem/concentration_adapter_manifest.py",
+      "sha256": "39c0f5d563428f13aa8ea5e820c55a1a2a57dd467d82cbca3025d6e6fde9884a"
+    },
+    {
+      "bytes": 41321,
+      "path": "src/chemworld/physchem/concentration_units.py",
+      "sha256": "314950c82b4f7e59d054e77a5b494c7e4889903e851ea3b8341731eb2c40dc2c"
+    },
+    {
+      "bytes": 15654,
+      "path": "src/chemworld/physchem/crystallization_adapter_manifest.py",
+      "sha256": "0a17b93846d697bb32e89837ee7e78cd38a0fba5ee768f89d7fb3accbee30bbb"
+    },
+    {
+      "bytes": 6808,
+      "path": "src/chemworld/physchem/crystallization_cards.py",
+      "sha256": "f8267a8b631ebe7c5d2213a440d5d7e0652ef9bce3a0bc4a74fc484bdd6f3a70"
+    },
+    {
+      "bytes": 30001,
+      "path": "src/chemworld/physchem/crystallization_units.py",
+      "sha256": "61c084a2932f89d4c0f546431e67f29318c21cb42ebd2b7ab6b3f254fd5c4cee"
+    },
+    {
+      "bytes": 18537,
+      "path": "src/chemworld/physchem/crystallization_validation.py",
+      "sha256": "4553bfa7bae89e6a2da896b2f805116186248b8b61ecb2a782a7dc471061ca51"
+    },
+    {
+      "bytes": 13520,
+      "path": "src/chemworld/physchem/cstr_multiplicity.py",
+      "sha256": "3453f30c73dcfeeba82d82336b80141e7c02de423c51b9995e28e3157ee76be2"
+    },
+    {
+      "bytes": 11964,
+      "path": "src/chemworld/physchem/cstr_reactors.py",
+      "sha256": "02d95f42c9834831c59952a846455cffb46da7b679c1e49dd9a363cf38ec630d"
+    },
+    {
+      "bytes": 16159,
+      "path": "src/chemworld/physchem/curated_properties.py",
+      "sha256": "77acdddbd017b6f98d7e54ed62778403d4c6fffaf190bcadfae8195721a1cff3"
+    },
+    {
+      "bytes": 5582,
+      "path": "src/chemworld/physchem/curated_property_cards.py",
+      "sha256": "6217a0489369029353b3dc1bba8bc99a7f3fadbd23ef0ec719d7fe28848030a7"
+    },
+    {
+      "bytes": 11054,
+      "path": "src/chemworld/physchem/data_conflicts.py",
+      "sha256": "127556c8ed5ab9e1c5ed73d2d706ada908edd867f9d4df83c0c6b30e80c04795"
+    },
+    {
+      "bytes": 8265,
+      "path": "src/chemworld/physchem/data_foundation_cards.py",
+      "sha256": "5dad754456b548a7e15e7f09b0c7b8b50f866fc6a1b22ed04cfad8cefd2c0201"
+    },
+    {
+      "bytes": 8815,
+      "path": "src/chemworld/physchem/distillation_adapter_manifest.py",
+      "sha256": "70d8e603eaa14b0ef433b0b402f3400bd57c3560d4a7e3d8ce88dfb28dcf579f"
+    },
+    {
+      "bytes": 44710,
+      "path": "src/chemworld/physchem/distillation_units.py",
+      "sha256": "612348f12bc2077f7ff0e427afc2b2e9ee488026e17afe4a18e6ac980622e4ab"
+    },
+    {
+      "bytes": 6535,
+      "path": "src/chemworld/physchem/drying_adapter_manifest.py",
+      "sha256": "c07c4637e5f8b578623c2e7140b7db429915e22ff3de4254379661addfeb790d"
+    },
+    {
+      "bytes": 29465,
+      "path": "src/chemworld/physchem/drying_units.py",
+      "sha256": "82411521f753d4e08c3d000832b7d2685185d81869a8172da727fa63f44c9262"
+    },
+    {
+      "bytes": 13586,
+      "path": "src/chemworld/physchem/electrochem_control.py",
+      "sha256": "29c78f35a9c1340903c64de978bffc2a2e8615ec05477027c9d18078cd6cd37d"
+    },
+    {
+      "bytes": 5031,
+      "path": "src/chemworld/physchem/electrochem_control_cards.py",
+      "sha256": "8bac0d1d1cf42548bdca597d2ddbe85b755c6d249b739752755b57dd1148dd96"
+    },
+    {
+      "bytes": 10984,
+      "path": "src/chemworld/physchem/electrochem_double_layer.py",
+      "sha256": "42e8408eff48d7feba06ff57cb74a1ad4ad2500fcc626d2fbdd6da13e2ce8f5d"
+    },
+    {
+      "bytes": 5955,
+      "path": "src/chemworld/physchem/electrochem_double_layer_cards.py",
+      "sha256": "4c3516557073132455b04299d1f783c5f0cf6cce7b72fd05dec4feac944d82fa"
+    },
+    {
+      "bytes": 10490,
+      "path": "src/chemworld/physchem/electrochem_transport.py",
+      "sha256": "c96becbeaeade7f4a9bc25b42ce675d16ac13d3b15ee9891fffa520be543ced7"
+    },
+    {
+      "bytes": 4972,
+      "path": "src/chemworld/physchem/electrochem_transport_cards.py",
+      "sha256": "d55793c6a74d2c30613c0e65ba97d7b6b080b7ef912cc57bc28943ef7ecedbf4"
+    },
+    {
+      "bytes": 5837,
+      "path": "src/chemworld/physchem/electrochemical_scenario_model_cards.py",
+      "sha256": "69b388936c71c44fd0aed631f993222cc15a2309ab483a17d69c6cf169e3bb94"
+    },
+    {
+      "bytes": 19130,
+      "path": "src/chemworld/physchem/electrochemical_scenarios.py",
+      "sha256": "d6ebc31c10cfbf32039d2b3fae18f3ba2f96ad5ee68dd747949e8064578a5d93"
+    },
+    {
+      "bytes": 8620,
+      "path": "src/chemworld/physchem/electrochemical_task_contract.py",
+      "sha256": "71c8f7bbd9b9ee4573b13f5630b3195d4034532cffdff5ba8175b03b4c6c3127"
+    },
+    {
+      "bytes": 27063,
+      "path": "src/chemworld/physchem/electrochemistry.py",
+      "sha256": "0f191b0f5cb670b0e09b8beb24ef7522f44aeff60ba7b57db94738da6cb7b1fe"
+    },
+    {
+      "bytes": 5287,
+      "path": "src/chemworld/physchem/electrochemistry_cards.py",
+      "sha256": "0b515ab6922ad5abadc152181302e987e768da4168385557e7a65c3c5376fc28"
+    },
+    {
+      "bytes": 7397,
+      "path": "src/chemworld/physchem/elements.py",
+      "sha256": "317313f44160dfe33cbaa98c29e3a0e11d5ccb4be0d86ae22e774de419f16f0b"
+    },
+    {
+      "bytes": 21668,
+      "path": "src/chemworld/physchem/enthalpy.py",
+      "sha256": "68abdbabfd410802a54ceadc643d84bef5586975951662417227be37f78d9655"
+    },
+    {
+      "bytes": 48010,
+      "path": "src/chemworld/physchem/eos.py",
+      "sha256": "e61bcd75733d36ab1550a2ef5d8344ac3b5283d80c41fd20ce52022b5565b324"
+    },
+    {
+      "bytes": 9813,
+      "path": "src/chemworld/physchem/eos_cards.py",
+      "sha256": "7ab910d87be3ba3b167707b19cef0aa9351ecdfe069d948736a332d1edd28086"
+    },
+    {
+      "bytes": 86121,
+      "path": "src/chemworld/physchem/equilibrium.py",
+      "sha256": "13174f82c98884f4fa623ec24f2d3fd08c646f5b492283850e76cd587adabed5"
+    },
+    {
+      "bytes": 21062,
+      "path": "src/chemworld/physchem/equilibrium_cards.py",
+      "sha256": "8ed027f72b91f69852866b41d1a194fc639672b3b66cb72e9e2d9e7a1e462b55"
+    },
+    {
+      "bytes": 76174,
+      "path": "src/chemworld/physchem/equilibrium_chemistry.py",
+      "sha256": "831d6459930eb6f031f1cc8fa3a8b70595e2db57d4deec20efa2d7adc9b03be3"
+    },
+    {
+      "bytes": 11404,
+      "path": "src/chemworld/physchem/equilibrium_chemistry_cards.py",
+      "sha256": "823938f27dfb09ca5a2db56dc838d89752376060c3d76251d04ac068eaa1aaa0"
+    },
+    {
+      "bytes": 5285,
+      "path": "src/chemworld/physchem/equipment_spec_cards.py",
+      "sha256": "a85e294027845bf2b7ced4851d47694ca4db7c3602f9716097d141a4f4cb2dd2"
+    },
+    {
+      "bytes": 19990,
+      "path": "src/chemworld/physchem/equipment_specs.py",
+      "sha256": "abe17fe24575ea54c2e38c247db171bb0938108d2a1862a6d272ba743dcc83ca"
+    },
+    {
+      "bytes": 5506,
+      "path": "src/chemworld/physchem/extraction_cards.py",
+      "sha256": "54aff22916e36167ae71ff07ea2584efea5e3638702d3d915a1b30f54da855c1"
+    },
+    {
+      "bytes": 19033,
+      "path": "src/chemworld/physchem/extraction_units.py",
+      "sha256": "5899a16caa915fd492ba4936699d191cf5f041607d025fa794e16bf0c8642f39"
+    },
+    {
+      "bytes": 5694,
+      "path": "src/chemworld/physchem/flash_cards.py",
+      "sha256": "5560e39e813e431f299b17f7bd37d8b8b9ead509d7242f556b88254d7439a0e3"
+    },
+    {
+      "bytes": 9120,
+      "path": "src/chemworld/physchem/flash_units.py",
+      "sha256": "2ea5ef169aa21d7c5066dc71c2c1b792f0a881a47aa94c603816dd2bcaa9f27d"
+    },
+    {
+      "bytes": 1864,
+      "path": "src/chemworld/physchem/hazard_properties.py",
+      "sha256": "c842205154980a1a8ef24adab4e07b74fc3718fcabf9ed344d46aec1ffcbffc5"
+    },
+    {
+      "bytes": 5459,
+      "path": "src/chemworld/physchem/heat_transfer_cards.py",
+      "sha256": "a524a441b4c10960678cad955888c5de6fae70d132b4431502e34ae37ec08d12"
+    },
+    {
+      "bytes": 19570,
+      "path": "src/chemworld/physchem/heat_transfer_units.py",
+      "sha256": "07f2c7d8cd5e183dc95b0a4c54c7720a512b1c57d919ae70347bbc5bb3ae6412"
+    },
+    {
+      "bytes": 12572,
+      "path": "src/chemworld/physchem/mass_spectrometry.py",
+      "sha256": "34096e2dd82c91b897809ad1398c35093e6ef9dde25ffc19ad7590ec6294a862"
+    },
+    {
+      "bytes": 5306,
+      "path": "src/chemworld/physchem/mass_spectrometry_cards.py",
+      "sha256": "a24d66b673d2ef3e38556ea51df30670be9a217f46469ff67d58397812c53a88"
+    },
+    {
+      "bytes": 20265,
+      "path": "src/chemworld/physchem/maturity.py",
+      "sha256": "bfe0d5d26d15153ebdde79457e46370185017f69fb578b3869951d6c0863fbc2"
+    },
+    {
+      "bytes": 13934,
+      "path": "src/chemworld/physchem/mechanism_library.py",
+      "sha256": "189c8a1113fd3590ffbb0266f08bd1b4ea36ee1002b2a699703ffb0b82e85174"
+    },
+    {
+      "bytes": 13084,
+      "path": "src/chemworld/physchem/nmr.py",
+      "sha256": "3ac203096bfb4c5738a0fd33c735b4fe98c1a380037425880fd85ba0c07a5728"
+    },
+    {
+      "bytes": 5361,
+      "path": "src/chemworld/physchem/nmr_cards.py",
+      "sha256": "db3e31eb0d66664cc2ccd0e24bf009064c429a6a92c93beb30e70c18e79d29c7"
+    },
+    {
+      "bytes": 23165,
+      "path": "src/chemworld/physchem/pfr_reactors.py",
+      "sha256": "44086aa13550afe8cee78886a523bb3da0c08a61f9ddfd1c2cc86f17b3aa5a47"
+    },
+    {
+      "bytes": 6978,
+      "path": "src/chemworld/physchem/phase_equilibrium_adapter_manifest.py",
+      "sha256": "9d6bb4d8496f7ebf4c18e70f5c7e4185e5c09d9bb3db68ab305609d49023e25f"
+    },
+    {
+      "bytes": 37873,
+      "path": "src/chemworld/physchem/phase_equilibrium_units.py",
+      "sha256": "eeac378a663ece4f4f33ae7358366def2c49c0f01c01d9ffd1558ecc01013b6f"
+    },
+    {
+      "bytes": 3531,
+      "path": "src/chemworld/physchem/properties.py",
+      "sha256": "8dba48d63943dd522dcc20f3d60272d5028464f18279ca19e4c12b672e342c72"
+    },
+    {
+      "bytes": 25206,
+      "path": "src/chemworld/physchem/property_cards.py",
+      "sha256": "7fb5aa3af1fae73d8b808c9dd93a98f4c47ba563d07f6ec1f618e5cf4a9561ae"
+    },
+    {
+      "bytes": 11765,
+      "path": "src/chemworld/physchem/property_equations.py",
+      "sha256": "752f8331314ac804a3cded4b25d7d96767933e1ed177ab8785d8eb3211070dab"
+    },
+    {
+      "bytes": 7127,
+      "path": "src/chemworld/physchem/property_packages.py",
+      "sha256": "eb26591c4a7f5d40f4afb6cd74b932b2e8a08e39c68dd0d76eaab8a8c2d9720c"
+    },
+    {
+      "bytes": 3180,
+      "path": "src/chemworld/physchem/property_reports.py",
+      "sha256": "a91a2972be1065ae442a00458c548eeb0fed981a234ef633683dae971927d5b9"
+    },
+    {
+      "bytes": 9376,
+      "path": "src/chemworld/physchem/reaction_adapter_manifest.py",
+      "sha256": "583150a7ae1143a182118d90b23f6b935eb0c0405852e344c0ef8fff25098286"
+    },
+    {
+      "bytes": 36453,
+      "path": "src/chemworld/physchem/reaction_network.py",
+      "sha256": "3784d999e3a486b0bc98f036cc6078a2511c804e92e2dd73799450c4af5e8d41"
+    },
+    {
+      "bytes": 11110,
+      "path": "src/chemworld/physchem/reaction_network_cards.py",
+      "sha256": "5971a265b3e388b1bee05636d59a1d1d43912cb5af4ae106b78b2ec10e18f5b3"
+    },
+    {
+      "bytes": 13113,
+      "path": "src/chemworld/physchem/reaction_network_specs.py",
+      "sha256": "545ad9da54b3601ce618c42eccfc19e4b68d60b73b2d3f1ff28de142aec8eb3f"
+    },
+    {
+      "bytes": 21543,
+      "path": "src/chemworld/physchem/reaction_rate_contracts.py",
+      "sha256": "88032397e72e122b7ba939aaca739a6445a1425cf64a3b0fa6e9061bf97f39e8"
+    },
+    {
+      "bytes": 23312,
+      "path": "src/chemworld/physchem/reaction_rate_laws.py",
+      "sha256": "59109674fa34b6963ca070dd2b4f32a6ff6733644115917fd905bfd08524c48c"
+    },
+    {
+      "bytes": 22800,
+      "path": "src/chemworld/physchem/reaction_reference_cases.py",
+      "sha256": "de12eb153ff596d3e432eee1dae5c6945cbb1695f51ce65a92ed15117278d93c"
+    },
+    {
+      "bytes": 13490,
+      "path": "src/chemworld/physchem/reaction_sensitivity.py",
+      "sha256": "927dd6319dcdc91932cd6b326d03e161fc7cd0f4a25e9c53cdfee5df78d8c6ab"
+    },
+    {
+      "bytes": 22481,
+      "path": "src/chemworld/physchem/reactor_cards.py",
+      "sha256": "f7d422db6f303d344f22cb7f5ead39b5b934096d83f6aa10c7b6a8f7575c9f1d"
+    },
+    {
+      "bytes": 20845,
+      "path": "src/chemworld/physchem/reactor_shared.py",
+      "sha256": "7e35fa84a7567f450c88e99da986f6d179b477a164c58df8a8fb4e5a07172d97"
+    },
+    {
+      "bytes": 12062,
+      "path": "src/chemworld/physchem/reactor_solvers.py",
+      "sha256": "12c83143ef877e1fc9a145196c35afdea757da2183bc3af4ec8c8646adc96b6b"
+    },
+    {
+      "bytes": 1726,
+      "path": "src/chemworld/physchem/reactors.py",
+      "sha256": "ffb532bd312e6700d7fdb0ec1a923e597fd173178ee31b46f616e1df0a518150"
+    },
+    {
+      "bytes": 24444,
+      "path": "src/chemworld/physchem/reference_validation.py",
+      "sha256": "61b9f229c36c010c36abf154cdb2d43c7a0250a229e3bbfc66efaca4da2c99d5"
+    },
+    {
+      "bytes": 5648,
+      "path": "src/chemworld/physchem/safety_cards.py",
+      "sha256": "43cb779531797c2e6d429244f6cd7ac60dfcc74590fdd22d743c650ed44fae29"
+    },
+    {
+      "bytes": 14323,
+      "path": "src/chemworld/physchem/safety_envelope.py",
+      "sha256": "c6076fc7a8704338a57a083d1061109f366508acbab9bf56bd8ce603428dc774"
+    },
+    {
+      "bytes": 17103,
+      "path": "src/chemworld/physchem/saturation.py",
+      "sha256": "f9889fb7320a0b37138941134f886c3ad07ce008f72d1b6396ff2be177454724"
+    },
+    {
+      "bytes": 6158,
+      "path": "src/chemworld/physchem/semibatch_reactors.py",
+      "sha256": "846d456ccb47e794d653792d7d7001ff0e3bf9a9569a119cbe11f9a070771dc7"
+    },
+    {
+      "bytes": 15407,
+      "path": "src/chemworld/physchem/separation_cards.py",
+      "sha256": "fa9ef704f8f6449a4e59d3c500b9e40efa8adaa2f23ec053bdedb168d676308b"
+    },
+    {
+      "bytes": 42968,
+      "path": "src/chemworld/physchem/separations.py",
+      "sha256": "70855f593b679f7b31514a2cd0bbfc1d0315962493f96965e284fd42a3ce5272"
+    },
+    {
+      "bytes": 10199,
+      "path": "src/chemworld/physchem/solver_backend.py",
+      "sha256": "b14add96dc78444a0ab850cbb11c622b0faf09e0190b0c97a8f44f6a9b87d15a"
+    },
+    {
+      "bytes": 43999,
+      "path": "src/chemworld/physchem/specs.py",
+      "sha256": "46f4cb95d67f5c86b136ebb17a050ab746bf74ce9a8f2077f2f6614ea07ed6f9"
+    },
+    {
+      "bytes": 70315,
+      "path": "src/chemworld/physchem/spectroscopy.py",
+      "sha256": "c86b33e70698eaa6e6d556b72d059581c1d7c63567b5b04ba262dac580d07102"
+    },
+    {
+      "bytes": 23069,
+      "path": "src/chemworld/physchem/spectroscopy_adapter_manifest.py",
+      "sha256": "16cf94e10a71d992a2630c477b0d113cba16dea6dd2584567ce1cf3531e204f7"
+    },
+    {
+      "bytes": 19309,
+      "path": "src/chemworld/physchem/spectroscopy_cards.py",
+      "sha256": "ff8b6e63a5861f0536ecf4b301495296891a4e1e5818180b6974abbb93911ba2"
+    },
+    {
+      "bytes": 12871,
+      "path": "src/chemworld/physchem/spectroscopy_identifiability.py",
+      "sha256": "a62821d9bf807079565946a8cd1be69d8c23698534be957575cca9a1baf2174c"
+    },
+    {
+      "bytes": 15335,
+      "path": "src/chemworld/physchem/thermochemistry.py",
+      "sha256": "9c2ae27e0ae8fd3e192c23502317166f333e880931f021baf2ab379e1d6f76e5"
+    },
+    {
+      "bytes": 5403,
+      "path": "src/chemworld/physchem/thermochemistry_cards.py",
+      "sha256": "e85bfdbd32effc2dbe90df4a913d48779b3bc39dc7212dd7ffa4f36a355af3c8"
+    },
+    {
+      "bytes": 5032,
+      "path": "src/chemworld/physchem/transfer_adapter_manifest.py",
+      "sha256": "0bf6e91868e8e388fc2fa54f26c6b837887537682b1c86cf6600f677a1fcdcba"
+    },
+    {
+      "bytes": 21191,
+      "path": "src/chemworld/physchem/transfer_units.py",
+      "sha256": "30f3afb62125e52639e4484cfc3a1cbcf7d693384a3b762abfd0f7e2b595d3ca"
+    },
+    {
+      "bytes": 38187,
+      "path": "src/chemworld/physchem/transport.py",
+      "sha256": "74d65b3f8332816aa4c3fd75cbf4ec43cae3928317489274b43dcb78c324d634"
+    },
+    {
+      "bytes": 8908,
+      "path": "src/chemworld/physchem/transport_cards.py",
+      "sha256": "077a5f452318cdacfa6fc0572334f6a8b2810890136d20746e16ad6a97750c95"
+    },
+    {
+      "bytes": 20572,
+      "path": "src/chemworld/physchem/transport_properties.py",
+      "sha256": "970661e42482347e499825247dade42435670e7e9ff7d08abb214447ac7000ba"
+    },
+    {
+      "bytes": 6181,
+      "path": "src/chemworld/physchem/two_phase_flow.py",
+      "sha256": "71306d2b41351cdf570867acf0f7b1473f3a0a40400093643012504c561d83ee"
+    },
+    {
+      "bytes": 4972,
+      "path": "src/chemworld/physchem/two_phase_flow_cards.py",
+      "sha256": "42784d0591d97d07804cc1d39a6da4ac6c87faceab6a965cdc27b479b5e56bb7"
+    },
+    {
+      "bytes": 5480,
+      "path": "src/chemworld/physchem/vapor_pressure.py",
+      "sha256": "6d84c613b316b7036a8f56ab38abe0be9ac773118808d5b39867780d3a54fc63"
+    },
+    {
+      "bytes": 14419,
+      "path": "src/chemworld/physchem/volume_properties.py",
+      "sha256": "c44daf18d77463f809df45ac1cfc90a28e3641fbc0f297d784f19d9351284eff"
+    },
+    {
+      "bytes": 479,
+      "path": "src/chemworld/providers/__init__.py",
+      "sha256": "611651717e722a728a3bd8f4f27c098bf7f0f7d291287465422d165f6efbdcc9"
+    },
+    {
+      "bytes": 23971,
+      "path": "src/chemworld/providers/codex_subscription.py",
+      "sha256": "6bc451ba26f11ef15283d9597e3fde113115979d3928b66d1549c710238cefa5"
+    },
+    {
+      "bytes": 29373,
+      "path": "src/chemworld/providers/deepseek.py",
+      "sha256": "a68c5941511ccb96d14a4908615b841daa6094b1d9a9b831443b0e61c5cbe0c4"
+    },
+    {
+      "bytes": 6303,
+      "path": "src/chemworld/providers/wellau.py",
+      "sha256": "b6328ec578610798b7bc2e65beda3fce1797269d1692f8ce4f29a55ac01afafb"
+    },
+    {
+      "bytes": 457,
+      "path": "src/chemworld/registration.py",
+      "sha256": "811be0e1b672ef28b7f6218a458e47feb1d9c677f7a9abe7f44b5c394086dd0d"
+    },
+    {
+      "bytes": 641,
+      "path": "src/chemworld/rl/__init__.py",
+      "sha256": "a4952bb4cdef48c64a3dfe2fb96ad3212b5a8d820141eacf4590d79cd7b0fb2f"
+    },
+    {
+      "bytes": 6510,
+      "path": "src/chemworld/rl/batched_vec_env.py",
+      "sha256": "336da7d43e907014f67fe283839510ca430b55218943f2262e07e690956d6dc7"
+    },
+    {
+      "bytes": 570,
+      "path": "src/chemworld/rl/checkpoint_contract.py",
+      "sha256": "f73f80ae64391893129a55a2a4d54e794463e5c8d7d72f680c8293c482305e11"
+    },
+    {
+      "bytes": 6202,
+      "path": "src/chemworld/rl/environment.py",
+      "sha256": "5ba94f726bdf7595f5bddd4f2239c702481da6b7c36f99dc7306aca7ca423415"
+    },
+    {
+      "bytes": 25360,
+      "path": "src/chemworld/rl/evaluation.py",
+      "sha256": "9b58d1f4495ce9c10030942718c2593c35ebbc8871fa2e59b7cb8f1addeef9b0"
+    },
+    {
+      "bytes": 15399,
+      "path": "src/chemworld/rl/hybrid_actions.py",
+      "sha256": "72eb534243fbdb056ad2cfac3746a22f744e0f35837a4adc95a515bc3582f06c"
+    },
+    {
+      "bytes": 10110,
+      "path": "src/chemworld/rl/hybrid_policy.py",
+      "sha256": "a54c5766b5a9c64e5a0058ce76e795b332cb9c1f2f1f60d70a4360516eb0d3c8"
+    },
+    {
+      "bytes": 6946,
+      "path": "src/chemworld/rl/observation_contract.py",
+      "sha256": "06553c46b31ad61d161f474bf612ddf196eef3013e8cf6f827946ce1590436a5"
+    },
+    {
+      "bytes": 11456,
+      "path": "src/chemworld/rl/rewards.py",
+      "sha256": "aa4148be33ac7899955d6876139f21b297b991c3c267ee0d5dfdc371e6430315"
+    },
+    {
+      "bytes": 23259,
+      "path": "src/chemworld/rl/training.py",
+      "sha256": "21adc2716d40d1972f41c1840d530cf28a60e8b297b7dd82be3169bfbe4230e3"
+    },
+    {
+      "bytes": 5204,
+      "path": "src/chemworld/runtime/__init__.py",
+      "sha256": "38b03a19df48ea1a421b5d45f7814854559a7a5c91af1796ad4805708eefc44d"
+    },
+    {
+      "bytes": 894,
+      "path": "src/chemworld/runtime/constitution_factory.py",
+      "sha256": "f984440faa3c1da00ec0059fbbcca2af63796a8449678d56f57c1f02cc12e50b"
+    },
+    {
+      "bytes": 25841,
+      "path": "src/chemworld/runtime/crystallization_services.py",
+      "sha256": "ed1fe681b6ab181caf61d415f457dd7f883e693d018d55eb7bde29ded79be3d9"
+    },
+    {
+      "bytes": 14518,
+      "path": "src/chemworld/runtime/distillation_services.py",
+      "sha256": "fbff7ea06d01fcae4e0813324ff0c37a37fe0a60817bcaacbf2e54e89fa14a9b"
+    },
+    {
+      "bytes": 7918,
+      "path": "src/chemworld/runtime/domain_service_registry.py",
+      "sha256": "3b921505d4390257f3d6dbe7b68e4c6ed0bde8138d8508cef8200b55d4c9710d"
+    },
+    {
+      "bytes": 7286,
+      "path": "src/chemworld/runtime/domain_services.py",
+      "sha256": "818ecc2de120d517f5235c30f040e8d35d1ee37a65af936678379fba8b8018d8"
+    },
+    {
+      "bytes": 37660,
+      "path": "src/chemworld/runtime/electrochemical_services.py",
+      "sha256": "e6c6f9a9ad6cc39ef7838d16ec50adaf107079f986d86f0fb599bb7e559ab46b"
+    },
+    {
+      "bytes": 9065,
+      "path": "src/chemworld/runtime/engine.py",
+      "sha256": "85deee684c13b5e02c3f477b2c41e1c23a666e3ca282f948ea6d1aef405b5eee"
+    },
+    {
+      "bytes": 17141,
+      "path": "src/chemworld/runtime/flow_services.py",
+      "sha256": "6d2cc77fd8ed2a8060d36941dc7cbf2fa4b3db36c382572ac10b179c9b963d6f"
+    },
+    {
+      "bytes": 5048,
+      "path": "src/chemworld/runtime/instrument_cost_services.py",
+      "sha256": "22155cb3b6d31bb733fbf773ef8df7072b8092e82e291e50e935cf3696073469"
+    },
+    {
+      "bytes": 6947,
+      "path": "src/chemworld/runtime/kernel_contracts.py",
+      "sha256": "7e09af5a3f7567603e7e8669e83a5718161ae08b4b0f5bffd75a578995defec4"
+    },
+    {
+      "bytes": 9833,
+      "path": "src/chemworld/runtime/kernel_registry.py",
+      "sha256": "aea8c33758f34f74ab2572b8de1f7b5501028ed375a56737c37f26f60239bd2a"
+    },
+    {
+      "bytes": 12992,
+      "path": "src/chemworld/runtime/maturity_audit.py",
+      "sha256": "57910ed2e98e79002eaba325bc6b4045803a8ada38085b9ec398cd95e4f01eff"
+    },
+    {
+      "bytes": 6029,
+      "path": "src/chemworld/runtime/mechanism_manifest.py",
+      "sha256": "1e9631216467020a80a5d1ec11cf26bc9d2f28c092b304b7564d029ae9ef18f4"
+    },
+    {
+      "bytes": 5448,
+      "path": "src/chemworld/runtime/mechanism_validation.py",
+      "sha256": "a3868c0597cbb848ca6d4a12d91c74546052d2d83a965b9e5666a15412a49b97"
+    },
+    {
+      "bytes": 4912,
+      "path": "src/chemworld/runtime/mechanisms.py",
+      "sha256": "c342ca6f35af99929fdc86e1da9d31500616ab767a0e40e9681a0c9afad1f679"
+    },
+    {
+      "bytes": 31448,
+      "path": "src/chemworld/runtime/model_reachability.py",
+      "sha256": "a68e5064d93721e21ad443d70ca2ecdd2b5206feeae5e62dde058732eaecc22e"
+    },
+    {
+      "bytes": 23299,
+      "path": "src/chemworld/runtime/observation_services.py",
+      "sha256": "3c5e462961c3dd8ae0632babec9d14628b1a8531be3a9aecd23dd951df0cff86"
+    },
+    {
+      "bytes": 15217,
+      "path": "src/chemworld/runtime/phase_ledger_services.py",
+      "sha256": "8dcbc51a7581112d7660149533299fe1ba3be0d70c8afc329e09d1f5a8f864ba"
+    },
+    {
+      "bytes": 27409,
+      "path": "src/chemworld/runtime/phase_separation_services.py",
+      "sha256": "b8830565fb7c04a705698fbff04db9eb75d53e9dcb6682a9473d26025663201b"
+    },
+    {
+      "bytes": 8052,
+      "path": "src/chemworld/runtime/primitive_services.py",
+      "sha256": "ca76752aba51c65e32912dbb4e2645565d955f958619b487d338193c362a6dc8"
+    },
+    {
+      "bytes": 3399,
+      "path": "src/chemworld/runtime/profiles.py",
+      "sha256": "200fc8135eeab15c03800c9f0132c96c1438fe399f7461be75b6a7b2578dcf4d"
+    },
+    {
+      "bytes": 7236,
+      "path": "src/chemworld/runtime/reaction_thermal_services.py",
+      "sha256": "b316509a6e53cf45948fc0bf2b2205b5aa8665c6fefd1694148020f3994274eb"
+    },
+    {
+      "bytes": 5466,
+      "path": "src/chemworld/runtime/record_services.py",
+      "sha256": "74d1b31f957580dab02ccdc6474b4902191fd9de001353b341c5a96a7b9132c2"
+    },
+    {
+      "bytes": 8481,
+      "path": "src/chemworld/runtime/species.py",
+      "sha256": "4b7d43a670462bc33139e114374f30bb47d7b070eb0c68c7d29fade4ad84b954"
+    },
+    {
+      "bytes": 6343,
+      "path": "src/chemworld/runtime/transactions.py",
+      "sha256": "5ae8a609638710da1f87daa4b510184accc6a1bdf76f071d044ff5ac522d18ad"
+    },
+    {
+      "bytes": 9467,
+      "path": "src/chemworld/runtime/vnext_downstream.py",
+      "sha256": "3ea090887ef819423ce944b25d4c582e015b495672495ebb986bc5c79fe0fa8f"
+    },
+    {
+      "bytes": 1019,
+      "path": "src/chemworld/schemas/__init__.py",
+      "sha256": "e8b36076744b3641bc94d6631be1efa575cd4b5d9675894e20474dc7df24a514"
+    },
+    {
+      "bytes": 1703,
+      "path": "src/chemworld/schemas/action_schema.json",
+      "sha256": "c91cba47189b935fe44aed5a9bdc352ca66cd8b8ccc11900e8d58296e55e5bae"
+    },
+    {
+      "bytes": 1075,
+      "path": "src/chemworld/schemas/files.py",
+      "sha256": "f6780f1ae6b1de0d3df497e459fb63ce554d2c3b9b3904c9c4afd68caae61e8c"
+    },
+    {
+      "bytes": 212,
+      "path": "src/chemworld/schemas/manifest_schema.json",
+      "sha256": "0618df9bbc1c5d014f799c1f13399ff5f30fc069c3afba80a57ecb69f9b0f12e"
+    },
+    {
+      "bytes": 3867,
+      "path": "src/chemworld/schemas/mechanism_schema.json",
+      "sha256": "98571cbcab5883b1b1dd55b9005d3e89525e5b4a0bbe939d0cba76d443b6be49"
+    },
+    {
+      "bytes": 176,
+      "path": "src/chemworld/schemas/observation_schema.json",
+      "sha256": "2b3a76fd20f9b1327378d0a9c04b6fb167a613169fad975d0630fab2341e5598"
+    },
+    {
+      "bytes": 2404,
+      "path": "src/chemworld/schemas/recipe_schema.json",
+      "sha256": "8c0e569200a87a73dc13134941ab0e26078efd4bede6c35049a2c81c833ca8bb"
+    },
+    {
+      "bytes": 188,
+      "path": "src/chemworld/schemas/scenario_schema.json",
+      "sha256": "ee3baef805df40ab312b77f50ffda6bf47c323fb019ce532b0db7ccf35f25ea4"
+    },
+    {
+      "bytes": 3179,
+      "path": "src/chemworld/schemas/task_schema.json",
+      "sha256": "6e04b3bbf98cc205b3e03c8a639e5515dac449896d9175defae831484f9302f2"
+    },
+    {
+      "bytes": 1886,
+      "path": "src/chemworld/schemas/trajectory_schema.json",
+      "sha256": "c3786b1fb1c287a287b3a0ad699a3de5dfa12040f8ba77d6970eebf73e64dc67"
+    },
+    {
+      "bytes": 23711,
+      "path": "src/chemworld/schemas/validation.py",
+      "sha256": "a117ab3e7252a873608d87f935510cdb87cdb6ef25031c4f34325e497a33c0bb"
+    },
+    {
+      "bytes": 20254,
+      "path": "src/chemworld/task_design.py",
+      "sha256": "1f3ccc6b4f7262249f0f7d20d7aafa71f983ce411544d695b6e0520f130c857a"
+    },
+    {
+      "bytes": 37186,
+      "path": "src/chemworld/tasks.py",
+      "sha256": "6de5df77c30ad7ef850051b10fae5de4d48ce98e1e2ba81de95ac36582e815f8"
+    },
+    {
+      "bytes": 1568,
+      "path": "src/chemworld/validation.py",
+      "sha256": "d8e1108901f5376bfbc6674f75078ea603acf59f1e6b8b25c22b5ccc77f05a04"
+    },
+    {
+      "bytes": 4372,
+      "path": "src/chemworld/world/__init__.py",
+      "sha256": "404b33a6b71777b09675c1eda6040f121bde31f2673d6354d0e26b6b4a0d850e"
+    },
+    {
+      "bytes": 5264,
+      "path": "src/chemworld/world/actions.py",
+      "sha256": "66b3eb14bda0ddd7ed596e63021514dd8121df81bf431b811e4f33a7f3d63cd7"
+    },
+    {
+      "bytes": 53025,
+      "path": "src/chemworld/world/composition.py",
+      "sha256": "093e1039c804319564ac6c56cd26ff7de29291901d004a1c04e5da7d3f85fea7"
+    },
+    {
+      "bytes": 24885,
+      "path": "src/chemworld/world/composition_coverage.py",
+      "sha256": "b809ffbc6e957b81909b936a1534d2742721954b8e29426f71d0f302c74c0243"
+    },
+    {
+      "bytes": 1403,
+      "path": "src/chemworld/world/continuous_flow.py",
+      "sha256": "d27816bf1c288df7b04ee0b4b3af5d1bbc6082c8517502e73221cd137fe99877"
+    },
+    {
+      "bytes": 1504,
+      "path": "src/chemworld/world/crystallization.py",
+      "sha256": "8dad194822f44b814c8c9a777175bb74f2460d4fefe4fd1bc6ae6a68b45472b6"
+    },
+    {
+      "bytes": 9975,
+      "path": "src/chemworld/world/crystallization_material_family.py",
+      "sha256": "15b8d127c71fd37dfb6c1670ccd1e667208826e84b7f8dc55343a68155359771"
+    },
+    {
+      "bytes": 969,
+      "path": "src/chemworld/world/distillation.py",
+      "sha256": "81a710cedbdd7ee74116a6b1663dd5bc61ed3a2c50ff436739f59d9cfd1c7e0d"
+    },
+    {
+      "bytes": 19554,
+      "path": "src/chemworld/world/electrochemical_material_family.py",
+      "sha256": "ff549d7f356a684eab406436d1b36f730633ffe90059021f80eaf986fcfe9ca3"
+    },
+    {
+      "bytes": 1511,
+      "path": "src/chemworld/world/electrochemistry.py",
+      "sha256": "05eadb54baaaf0dda87006848c60456ff3ee79a911467766a3be494271acf215"
+    },
+    {
+      "bytes": 14417,
+      "path": "src/chemworld/world/instruments.py",
+      "sha256": "7fce183ef3799bbb551561ddfdd2b481264804e93155499bf3afaa0f2bf8dd4e"
+    },
+    {
+      "bytes": 6164,
+      "path": "src/chemworld/world/material_counterfactual.py",
+      "sha256": "a2bfcb865ec00718944f626912594f10aa02fdbc1a790abd014eeafb5c543e6b"
+    },
+    {
+      "bytes": 38852,
+      "path": "src/chemworld/world/mechanism_family.py",
+      "sha256": "f4f55e25b4bbf8fa4e40a1c55949cfc75143cb696b4369fbd60c75b904264e1f"
+    },
+    {
+      "bytes": 6487,
+      "path": "src/chemworld/world/observation_contracts.py",
+      "sha256": "9730a38d4c40ffbbc85f88fe255a31c473d66693caefeea98ee1d24ddd57ed0f"
+    },
+    {
+      "bytes": 5293,
+      "path": "src/chemworld/world/observation_kernel.py",
+      "sha256": "046109adfc4a2aa30e95aa082204936612df0cc70a95a6395b707a16d49a4163"
+    },
+    {
+      "bytes": 2984,
+      "path": "src/chemworld/world/ontology.py",
+      "sha256": "dc58f484d3da7c2f42b7e45f62012cff61e34812610f2ef7c5c7257ccd330431"
+    },
+    {
+      "bytes": 14054,
+      "path": "src/chemworld/world/operations.py",
+      "sha256": "023753613046d98a5f3045e078f307e8761d630dd8c392ea3a7f27eb531f4920"
+    },
+    {
+      "bytes": 16587,
+      "path": "src/chemworld/world/parameters.py",
+      "sha256": "34662ef987c1381c339e08eb5653c1352276af8832ed6a46f86145cefced9148"
+    },
+    {
+      "bytes": 9987,
+      "path": "src/chemworld/world/phase_kernel.py",
+      "sha256": "361944ffcf78de943ed667978a9c428cc2be04c157a683ca64bedb16731f3e7c"
+    },
+    {
+      "bytes": 13313,
+      "path": "src/chemworld/world/process_time_budget.py",
+      "sha256": "4e0e9e3644da95c20798aed0c6e066157644e79e4f2611f73dd3a4238666af15"
+    },
+    {
+      "bytes": 22784,
+      "path": "src/chemworld/world/reaction_kernel.py",
+      "sha256": "6f270809f299d9386f1f0486d8cfbe740559cf3902de144fb541e26789b8a196"
+    },
+    {
+      "bytes": 6142,
+      "path": "src/chemworld/world/reaction_reference.py",
+      "sha256": "001ed94c88acd715e432094c04e0de3c400751facf065261c6fa5ab6af3bbc43"
+    },
+    {
+      "bytes": 6515,
+      "path": "src/chemworld/world/recipes.py",
+      "sha256": "7fdb8a84aa266faa14b523a313f0fe5b678febd58a35fa654c18eb7563496bb6"
+    },
+    {
+      "bytes": 26676,
+      "path": "src/chemworld/world/scenario.py",
+      "sha256": "2706023e4cdd55ee4d48ff238a04b4cb04b6a2364f0992b90dbd3c599ed023ef"
+    },
+    {
+      "bytes": 15678,
+      "path": "src/chemworld/world/scoring.py",
+      "sha256": "8ef1328dd891c153186140123cb3c99f417e3873d41511dcf1a6a54476219885"
+    },
+    {
+      "bytes": 7906,
+      "path": "src/chemworld/world/separation_kernel.py",
+      "sha256": "dccbdec1b32b585b7cab1ac38615bf0920ca4879fbd5d5c1904bfbaa855cfb67"
+    },
+    {
+      "bytes": 176,
+      "path": "src/chemworld/world/species_roles.py",
+      "sha256": "524665690b77002bdcb10d480cd14f54889c79cad5646b35745b549237bfaecc"
+    },
+    {
+      "bytes": 19657,
+      "path": "src/chemworld/world/spectra.py",
+      "sha256": "8a94a7ee6ed8c42c1a68888545deefcd04b5164ef9dff653d9d6ab76651aea10"
+    },
+    {
+      "bytes": 2075,
+      "path": "src/chemworld/world/state_factory.py",
+      "sha256": "a0db7a8ccd5c697c79994ef99e2d1fc6094c203f0efb6854cc570e269639d19a"
+    },
+    {
+      "bytes": 5532,
+      "path": "src/chemworld/world/thermal_kernel.py",
+      "sha256": "0f21fbfc08fd3f7559900dde82a90f305d19a4c698565a81f33e97a578edaa09"
+    },
+    {
+      "bytes": 12790,
+      "path": "src/chemworld/world/world_family.py",
+      "sha256": "8220e000f30e1cfc7cce5fe829a1634c1d929ee198076e3d2cf8c7dc11ba424a"
+    },
+    {
+      "bytes": 4194,
+      "path": "src/chemworld/world/world_law.py",
+      "sha256": "ad986446c77c1ec3df91f0eceb329570cb912e007667ed633009a79285344029"
+    },
+    {
+      "bytes": 34207,
+      "path": "src/chemworld/wrappers.py",
+      "sha256": "36760504b37b6317ec91adb8f30ae46fd03de5b8ff89c25d254b5c39935d41b6"
+    },
+    {
+      "bytes": 1683,
+      "path": "tests/conftest.py",
+      "sha256": "4d470b4484956c59c1fb41f00707e97814f1cb9ca2a262e2b80add535da15d91"
+    },
+    {
+      "bytes": 408947,
+      "path": "tests/fixtures/golden/core_scripted_trajectories.json",
+      "sha256": "4c9b9fc0edb6400038c1371f5f11264581099f1639c54243af0dda0d5afe8967"
+    },
+    {
+      "bytes": 23796,
+      "path": "tests/test_interactive_codex_experiment.py",
+      "sha256": "37fb6f9d40179393372e2a4f475b088cdb0b0872c24664b0d6eaa3949461466d"
+    },
+    {
+      "bytes": 3152,
+      "path": "tests/test_release_boundary.py",
+      "sha256": "0cf3850f42062a293f06c375c38f9c0ee356ed1fa28f0f40a8d0e62fbcaf9ded"
+    },
+    {
+      "bytes": 14843,
+      "path": "tests/test_world_composition.py",
+      "sha256": "bfe5823940cfe5daefaf72ef9dd85d3f39198ec66c1b924d8fa384eed345edc2"
+    },
+    {
+      "bytes": 8751,
+      "path": "tests/test_world_composition_coverage.py",
+      "sha256": "703ba42f205e220a32e6c64b98b48f5ece881ad95d25d3e1d4aaad383fadd23c"
+    },
+    {
+      "bytes": 7302,
+      "path": "tests/test_world_composition_examples.py",
+      "sha256": "7acfc871ce824b1c5a82cd56909397c5afe739429787ee1b823aa9c18b6e3d91"
+    },
+    {
+      "bytes": 9459,
+      "path": "tests/test_world_fork_divergence.py",
+      "sha256": "eeb50f0872d5ab234f34d5328e7956b9312937c3154af7d033d0c3497766e408"
+    },
+    {
+      "bytes": 6276,
+      "path": "tests/test_world_fork_manifest.py",
+      "sha256": "ab639363cce1cc37256b47f653d9126c2e5152b8017af5ec191fe0e8f0a91b72"
+    },
+    {
+      "bytes": 7117,
+      "path": "tests/test_world_fork_public_contract.py",
+      "sha256": "a1a63359328b8aba5db06f991bd816f6a9dca522920223cc8b9d10c62bbf17dc"
+    },
+    {
+      "bytes": 1347,
+      "path": "tests/test_world_fork_report.py",
+      "sha256": "f130bd03376b3d0e985ee3f24764f1356a645c5c7dab068afba84f630cb21f22"
+    },
+    {
+      "bytes": 5631,
+      "path": "tests/test_world_fork_runtime.py",
+      "sha256": "f073c57456c7982b8193277eb3f4f55e77dfb0bed9c5bb5bd6fe4a47419710fb"
+    },
+    {
+      "bytes": 9087,
+      "path": "tests/test_world_fork_spec.py",
+      "sha256": "f3ff376dc645e3edcfa06e9c5e272859a9242d1bb32548cc48691497ed3afa6a"
+    },
+    {
+      "bytes": 588945,
+      "path": "uv.lock",
+      "sha256": "4a4a2dc44844f8f583af94e4d2dbc55c53c3b3f98753afda5d03e84c36830b29"
+    }
+  ],
+  "headline_denominators": {
+    "controlled_world_fork_pairs": [
+      6,
+      6
+    ],
+    "controlled_world_fork_traces": [
+      24,
+      24
+    ],
+    "deterministic_use_cases": [
+      8,
+      8
+    ],
+    "generated_compositions": [
+      52,
+      52
+    ],
+    "independent_agent_actions": [
+      15,
+      15
+    ],
+    "independent_agent_lifecycles": [
+      1,
+      1
+    ],
+    "interface_paths": [
+      7,
+      7
+    ],
+    "invalid_action_probes": [
+      192,
+      192
+    ],
+    "invalid_declarations": [
+      7,
+      7
+    ],
+    "module_probes": [
+      32,
+      32
+    ],
+    "non_reference_distillation_compositions": [
+      8,
+      8
+    ],
+    "reference_recipes": [
+      1786,
+      1786
+    ],
+    "reference_task_world_units": [
+      64,
+      64
+    ],
+    "submitted_deterministic_actions": [
+      89,
+      89
+    ]
+  },
+  "manifest_self_exclusion": {
+    "path": "release/manifest.json",
+    "reason": "the manifest cannot hash itself without circularity"
+  },
+  "provenance": {
+    "construction": "allowlisted tree rebuilt as one clean root commit",
+    "frozen_public_snapshot": "9df278371a030de2d6fd582d797931fdf90cd618",
+    "runtime_and_evidence_snapshot": "6729ed6d422f479e687ed8e9a0f9d7b1e35e5261",
+    "scope": "stable_runtime_protocols_final_sanitized_evidence"
+  },
+  "release_date": "2026-08-11",
+  "release_version": "0.2.0",
+  "repository": "https://github.com/sunyrain/ChemWorld-Public",
+  "sanitization_receipts": {
+    "evidence/reports/agent-instrument-use.json.gz": {
+      "public_protocol": {
+        "path": "protocols/agent-instrument-use.md",
+        "sha256": "e20a225898266dd85b8dd4c3916db264af96b3ae728c4d917f9132197b377069"
+      },
+      "removed_metadata": {
+        "categories": {
+          "internal_source_binding": 3,
+          "private_execution_registry": 1,
+          "provider_session_identifier": 32
+        },
+        "entry_count": 36,
+        "summary_sha256": "6edbf600f919f0590873e14de4a0f42482f67d29a3bd61fcc0a290cc2f307e4a"
+      },
+      "sanitizer_version": "chemworld-public-evidence-sanitizer-1.0",
+      "schema_version": "chemworld-public-evidence-sanitization-receipt-1.0",
+      "serialization": {
+        "gzip_compresslevel": 9,
+        "gzip_mtime": 0,
+        "json": "utf-8; sort_keys=true; separators=(',', ':'); trailing_newline=true"
+      },
+      "source_report": {
+        "canonical_json_sha256": "b5a58bd292ab7cbe53d73704480ef2c6be2bfb968b8f4489ecf25391fc3f1cb0",
+        "compressed_sha256": "fc828231d6b09b8a163d2a286190e68c076707891d0a664cf15989a54441546a"
+      }
+    },
+    "evidence/reports/composition-qualification.json.gz": {
+      "public_protocol": {
+        "path": "protocols/composition-qualification.md",
+        "sha256": "6a34d2056c0a8bfacb2c29be9a87b65c2a0e0dcbb02d50e53bd27c80147d6a3f"
+      },
+      "removed_metadata": {
+        "categories": {
+          "internal_source_binding": 1,
+          "private_execution_registry": 1
+        },
+        "entry_count": 2,
+        "summary_sha256": "86042a40e6aa41fb10723c7b90d47e8c4483025b246b6ad0aff9d5d6bf2c0a79"
+      },
+      "sanitizer_version": "chemworld-public-evidence-sanitizer-1.0",
+      "schema_version": "chemworld-public-evidence-sanitization-receipt-1.0",
+      "serialization": {
+        "gzip_compresslevel": 9,
+        "gzip_mtime": 0,
+        "json": "utf-8; sort_keys=true; separators=(',', ':'); trailing_newline=true"
+      },
+      "source_report": {
+        "canonical_json_sha256": "eaf0ed12e51b3eaa2fced5891274433600b9dacf3f0929b884839225d71aeb8c",
+        "compressed_sha256": "1fd037b0b3437e025bf6ce05763f471266906c39808b028dbeb36e2a7c28e761"
+      }
+    },
+    "evidence/reports/controlled-world-forks.json.gz": {
+      "public_protocol": {
+        "path": "protocols/controlled-world-forks.md",
+        "sha256": "3fe4883ff80e325b8b347bec6bcb9203174fb8297efa6475643879dfeb1a2306"
+      },
+      "removed_metadata": {
+        "categories": {},
+        "entry_count": 0,
+        "summary_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "sanitizer_version": "chemworld-public-evidence-sanitizer-1.0",
+      "schema_version": "chemworld-public-evidence-sanitization-receipt-1.0",
+      "serialization": {
+        "gzip_compresslevel": 9,
+        "gzip_mtime": 0,
+        "json": "utf-8; sort_keys=true; separators=(',', ':'); trailing_newline=true"
+      },
+      "source_report": {
+        "canonical_json_sha256": "c60ed4fc76b4f81babeb6637cd18c5553e295a5970230ee2733d33c073798f2a",
+        "compressed_sha256": "b95631190d92b2edab319ed50b7e26bccd6bc346eef66ec34c5f60750a80cfd6"
+      }
+    },
+    "evidence/reports/deterministic-use-cases.json.gz": {
+      "public_protocol": {
+        "path": "protocols/deterministic-use-cases.md",
+        "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
+      },
+      "removed_metadata": {
+        "categories": {
+          "internal_source_binding": 11,
+          "private_execution_registry": 1
+        },
+        "entry_count": 12,
+        "summary_sha256": "f076cf76e1fc7d1e5cd3bb6d95b4dbcf3e6339e78e46b7d4ced588810709d1b4"
+      },
+      "sanitizer_version": "chemworld-public-evidence-sanitizer-1.0",
+      "schema_version": "chemworld-public-evidence-sanitization-receipt-1.0",
+      "serialization": {
+        "gzip_compresslevel": 9,
+        "gzip_mtime": 0,
+        "json": "utf-8; sort_keys=true; separators=(',', ':'); trailing_newline=true"
+      },
+      "source_report": {
+        "canonical_json_sha256": "4dbb57100b357c0fbb2d8097d07d66f0616a4b4f48659b6dbeb3ddf698571d55",
+        "compressed_sha256": "b906dd3ef56b90a53abdf1dff42e6249d876127eba159a40db06785a86e9ee5e"
+      }
+    }
+  },
+  "schema_version": "chemworld-stable-software-evidence-release-0.2",
+  "status": "stable_software_evidence_release"
+}
