@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the deterministic manifest for the ChemWorld v0.2.0 public release."""
+"""Build the deterministic manifest for the ChemWorld v0.3.0 public release."""
 
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ OUTPUT = ROOT / "release" / "manifest.json"
 OUTPUT_RELATIVE = OUTPUT.relative_to(ROOT).as_posix()
 FROZEN_PUBLIC_SNAPSHOT = "9df278371a030de2d6fd582d797931fdf90cd618"
 RUNTIME_EVIDENCE_SNAPSHOT = "6729ed6d422f479e687ed8e9a0f9d7b1e35e5261"
+PUBLIC_V020_RELEASE = "03e8026301c185fd6ba5bdbda7460765d9b3e724"
 REPORT_NAMES = (
     "composition-qualification.json.gz",
     "deterministic-use-cases.json.gz",
@@ -78,16 +79,17 @@ def main() -> int:
         sanitization_receipts[f"evidence/reports/{name}"] = receipt
 
     payload = {
-        "schema_version": "chemworld-stable-software-evidence-release-0.2",
+        "schema_version": "chemworld-stable-software-evidence-release-0.3",
         "status": "stable_software_evidence_release",
-        "release_version": "0.2.0",
-        "release_date": "2026-08-11",
+        "release_version": "0.3.0",
+        "release_date": "2026-08-12",
         "repository": "https://github.com/sunyrain/ChemWorld-Public",
         "provenance": {
             "frozen_public_snapshot": FROZEN_PUBLIC_SNAPSHOT,
             "runtime_and_evidence_snapshot": RUNTIME_EVIDENCE_SNAPSHOT,
-            "construction": "allowlisted tree rebuilt as one clean root commit",
-            "scope": "stable_runtime_protocols_final_sanitized_evidence",
+            "presentation_and_tutorial_base": PUBLIC_V020_RELEASE,
+            "construction": "additive presentation and tutorial release on the clean public root",
+            "scope": "stable_runtime_protocols_final_sanitized_evidence_docs_and_tutorials",
         },
         "headline_denominators": {
             "reference_task_world_units": [64, 64],
@@ -107,11 +109,11 @@ def main() -> int:
         },
         "sanitization_receipts": sanitization_receipts,
         "excluded": [
-            "manuscript text, PDFs, figures and source packages",
+            "manuscript text, PDFs, manuscript figures and source packages",
             "planning, TODO, workstream, draft, interim and pilot material",
             "raw provider responses, private reasoning and provider session identifiers",
             "private evaluator configuration, credentials, caches and local run directories",
-            "Work II and all post-freeze development artifacts",
+            "unpublished experiment matrices and all post-freeze development artifacts",
         ],
         "manifest_self_exclusion": {
             "path": OUTPUT_RELATIVE,

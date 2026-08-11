@@ -1,16 +1,21 @@
 {
   "excluded": [
-    "manuscript text, PDFs, figures and source packages",
+    "manuscript text, PDFs, manuscript figures and source packages",
     "planning, TODO, workstream, draft, interim and pilot material",
     "raw provider responses, private reasoning and provider session identifiers",
     "private evaluator configuration, credentials, caches and local run directories",
-    "Work II and all post-freeze development artifacts"
+    "unpublished experiment matrices and all post-freeze development artifacts"
   ],
   "files": [
     {
       "bytes": 172,
       "path": ".gitattributes",
       "sha256": "fddf6426a50cfe74f683e49b80b41d39cc82f0dd560d3a3bdd6702760adf5247"
+    },
+    {
+      "bytes": 1342,
+      "path": ".github/workflows/docs.yml",
+      "sha256": "fe067d689e28d0a9178d93f735d242b9b27029b41ab5a6fa94c258e9d3c8a905"
     },
     {
       "bytes": 275,
@@ -20,7 +25,7 @@
     {
       "bytes": 903,
       "path": "CITATION.cff",
-      "sha256": "011e43e840d660e4d59227a0dceba868e69aa30604a9384c335efcb7b91ae091"
+      "sha256": "b4a80d93c46469e6b32d957e07d30b55a51a3ab653b5886ffc7ac7d548327fb3"
     },
     {
       "bytes": 1080,
@@ -28,9 +33,9 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 4122,
+      "bytes": 5019,
       "path": "README.md",
-      "sha256": "41d949cc1ed961f0d421252a7b5a5e99143f57d495cdb8a10cbbf60c11184ef7"
+      "sha256": "77d989e24ff69f06afc8b8d116ff60a3653b8788b296df46a7e7700eb30f830e"
     },
     {
       "bytes": 14591,
@@ -128,14 +133,119 @@
       "sha256": "dc021916f916ce0d5cede411cd4567955ee91fa80960818013d043b58465f0ed"
     },
     {
-      "bytes": 3899,
+      "bytes": 24893,
+      "path": "docs/assets/data/representative-behavior-and-forks.json",
+      "sha256": "e04f1a16337c135f393054c6364196faa7b824bc0a067eb9822d0b18675e2bee"
+    },
+    {
+      "bytes": 7023,
+      "path": "docs/assets/javascripts/experiment-explorer.js",
+      "sha256": "54157cf3b2cb908b116652798751669c9e617ea0aef84c89b157d40a60934d78"
+    },
+    {
+      "bytes": 836869,
+      "path": "docs/assets/og.png",
+      "sha256": "58b93ef166cb4aff6f17a5cee6a559a48bb9a29b2438b4f3298799b0c2b3d5fc"
+    },
+    {
+      "bytes": 16430,
+      "path": "docs/assets/representative-agent-and-world-change.svg",
+      "sha256": "b0aab8f56cfaa9821c3bee000c3c540c4c1f785e3df2a7dfa9e5710a2cd5a481"
+    },
+    {
+      "bytes": 7347,
+      "path": "docs/assets/stylesheets/site.css",
+      "sha256": "0649d6b1d006fdb5758df8de330c9d45fbc8c812bf4d526d33f546151c6451e9"
+    },
+    {
+      "bytes": 1641,
+      "path": "docs/evidence.md",
+      "sha256": "5dfebddf978f13bdb6748d62a39df4a4edba8498a32b325250961f13a9abfdb4"
+    },
+    {
+      "bytes": 1472,
+      "path": "docs/evidence.zh.md",
+      "sha256": "a61799baf1f711fc2260bb9c9dbfac74e400273199fd061c4f6dd925d34b538f"
+    },
+    {
+      "bytes": 3950,
       "path": "docs/getting_started.md",
-      "sha256": "67266ea1d78b6dac71ea529d2fd31010f8547a5c839e372cc8889f74cba206de"
+      "sha256": "12080c0cd88558be2c150267bafedcdafc6e00a36a35072149b0dc06d65b5e3a"
+    },
+    {
+      "bytes": 2987,
+      "path": "docs/index.md",
+      "sha256": "0cf474cfb6afcb2dc1a07ed9a6fbb147eb5a9ee8f5d99e13bf4984f50110d6f5"
+    },
+    {
+      "bytes": 2853,
+      "path": "docs/index.zh.md",
+      "sha256": "cd057833f3ba045634bb05dfa744bbbcd09cd7729800064e778b3d8d3f47c521"
+    },
+    {
+      "bytes": 1045,
+      "path": "docs/limitations.md",
+      "sha256": "75cc525fbe8b0079a4dba33c216371ebb5b93eb1cde63948e97b2577daf5c71c"
+    },
+    {
+      "bytes": 885,
+      "path": "docs/limitations.zh.md",
+      "sha256": "63247e0ead859ad42c5370753f58cc968cd39b6a4026a4b6a1af5918baf5dde8"
+    },
+    {
+      "bytes": 1798,
+      "path": "docs/notebooks.md",
+      "sha256": "212b3dfdc71ff9eec93a0b220bd7e34867377358546e1fc98ef2d375adc24bf2"
+    },
+    {
+      "bytes": 1671,
+      "path": "docs/notebooks.zh.md",
+      "sha256": "3a20e44a4dbffb863ac3ccd5d548b3e1441e393c5e5e913fe6d0056d59d1fad0"
+    },
+    {
+      "bytes": 2461,
+      "path": "docs/one-experiment.md",
+      "sha256": "6460f7975b989989d789033db93caf927b174465e3a6b339bae3a69e9ebfa7e0"
+    },
+    {
+      "bytes": 2178,
+      "path": "docs/one-experiment.zh.md",
+      "sha256": "8db7cb1979681367af934cf207ea984f43737caebf60abb16df56b0e2dd6dedc"
     },
     {
       "bytes": 2352,
       "path": "docs/operations.md",
       "sha256": "ad2f3da1af9a144960141ed3c08894a96108da372574b88d114904041ee4ae6b"
+    },
+    {
+      "bytes": 911,
+      "path": "docs/overrides/main.html",
+      "sha256": "e444eee130fdeaafabb1637bfa1a4c1af356203d4b4baba690239d4bd4b164f8"
+    },
+    {
+      "bytes": 1181,
+      "path": "docs/quickstart.md",
+      "sha256": "3e07eeb7e22c61c984dbb4eaa73bcb412e551db1d3c80ad30887d30ac4dba6a1"
+    },
+    {
+      "bytes": 1172,
+      "path": "docs/quickstart.zh.md",
+      "sha256": "4727f88955d43b1f30664a99e0df713b29acef3211958176b9f7be10ad5e0e25"
+    },
+    {
+      "bytes": 930,
+      "path": "docs/reference.md",
+      "sha256": "05aa922c471d8f474d168322155ee0d080b19a6700ce09e95aa876f845ce0c8a"
+    },
+    {
+      "bytes": 863,
+      "path": "docs/reference.zh.md",
+      "sha256": "02c61543e760474ed089435be9e8fd4296e7dce6b3c1229bfb48259d6652a2df"
+    },
+    {
+      "bytes": 5736,
+      "path": "docs/representative-behavior.md",
+      "sha256": "4bd698e760cc9de592f3cb38c104eb11f14877065c4d21ff4021cb824717c50d"
     },
     {
       "bytes": 8271,
@@ -158,9 +268,24 @@
       "sha256": "d9f96a4d59d99167854cccd6a4cfa26c980279c006080f3413a1671dd6422cd3"
     },
     {
+      "bytes": 1697,
+      "path": "docs/world-foundations.md",
+      "sha256": "e3cfacd61ffd64f4398ef6e3910e8447001489b0647f7df8599324d71751dff4"
+    },
+    {
+      "bytes": 1446,
+      "path": "docs/world-foundations.zh.md",
+      "sha256": "cdacf897c2e3bed0b235ce35030fe66038d3b348f16909a6e79df525f7ac5308"
+    },
+    {
       "bytes": 1657,
       "path": "evidence/README.md",
       "sha256": "f741dd666a66083bb54fe7dc3c0b54346cdc06fd92e47a4d8c19378007b324f1"
+    },
+    {
+      "bytes": 24893,
+      "path": "evidence/derived/representative-behavior-and-forks.json",
+      "sha256": "e04f1a16337c135f393054c6364196faa7b824bc0a067eb9822d0b18675e2bee"
     },
     {
       "bytes": 20071,
@@ -283,6 +408,26 @@
       "sha256": "5aa69e3bbdeb1198b7ee42f183be93f73a497a515dede5b0eb2626b1c274c8a0"
     },
     {
+      "bytes": 2501,
+      "path": "mkdocs.yml",
+      "sha256": "0209d633722acdf78f97ab43aecf15b651420f6ca121ec263065aa01a36ef796"
+    },
+    {
+      "bytes": 72208,
+      "path": "notebooks/01_first_experiment.ipynb",
+      "sha256": "9ba7f2ccf98d9070d0f95858ed2f0a75100639362870d7a5b9a52e86fe23efdd"
+    },
+    {
+      "bytes": 53900,
+      "path": "notebooks/02_reaction_to_purification.ipynb",
+      "sha256": "683a9311d6bf7231616fa4fa59c5413cf96d09423d01e2f83278bea18f28a583"
+    },
+    {
+      "bytes": 60948,
+      "path": "notebooks/03_controlled_world_change.ipynb",
+      "sha256": "fb222b32856a0b5ad70620f7b9a116b8317f7410e078c3ad2f18ddd89dbe4297"
+    },
+    {
       "bytes": 1934,
       "path": "protocols/agent-instrument-use.md",
       "sha256": "e20a225898266dd85b8dd4c3916db264af96b3ae728c4d917f9132197b377069"
@@ -303,14 +448,29 @@
       "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
     },
     {
-      "bytes": 3073,
+      "bytes": 3133,
       "path": "pyproject.toml",
-      "sha256": "c5c821528ed51dd0ad985796d15c91c1cfa4c187d9466b78589db9f8ad6942d4"
+      "sha256": "348b28af7cfad632b6bcc721326aefe48dddf0781fd9474da4271c98764f5f3f"
     },
     {
-      "bytes": 4803,
+      "bytes": 53,
+      "path": "scripts/__init__.py",
+      "sha256": "30d5752a6469e65cad726aae46e32e7da77675710b7ef84128085efef835bcac"
+    },
+    {
+      "bytes": 31291,
+      "path": "scripts/build_readme_visuals.py",
+      "sha256": "158620362c98a610dac51224968f8b4bafd7269af909f88c7944f9064f1d2f87"
+    },
+    {
+      "bytes": 5007,
       "path": "scripts/build_release_manifest.py",
-      "sha256": "a32589246f4d4ff4cb873b712eaab10c4327406c926175c66488ed165a57a7ed"
+      "sha256": "a70e6620ebc9953a7c67ac2d2cea2922d21915a448928a97d0268ae8c165437f"
+    },
+    {
+      "bytes": 21200,
+      "path": "scripts/build_tutorial_notebooks.py",
+      "sha256": "affcaf2e0ca17804d0f5f592ae3dca3c8c6cb78e3b2429f79eb19e783627c012"
     },
     {
       "bytes": 5409,
@@ -328,14 +488,14 @@
       "sha256": "30bb938a701e3efa3db7bd637f79eae244a15fa9825dc392b385e58764138bf0"
     },
     {
-      "bytes": 12455,
+      "bytes": 15028,
       "path": "scripts/verify_release.py",
-      "sha256": "fbf5c0bf5a2be8ad93f4d3f7b862f0c3212811f169187a7868c96c120692b625"
+      "sha256": "c98896262c4ff2bdf7ee74abbc21d954cbcef50a77a613ca2c7916da06b050dc"
     },
     {
       "bytes": 1621,
       "path": "src/chemworld/__init__.py",
-      "sha256": "74988966244de11703c941503a2eb9b0503b3baa4d850b3dec446a05f2374821"
+      "sha256": "9056e71a386219a193c20e126d64aa1ce58b5f8c18312615f6cfcbf6b98b491d"
     },
     {
       "bytes": 13937,
@@ -1783,9 +1943,19 @@
       "sha256": "37fb6f9d40179393372e2a4f475b088cdb0b0872c24664b0d6eaa3949461466d"
     },
     {
-      "bytes": 3152,
+      "bytes": 1658,
+      "path": "tests/test_public_readme_visuals.py",
+      "sha256": "08308584a4d89216fd451d69fd3e80fbc7ac840128f1b6bbf1605db543761b98"
+    },
+    {
+      "bytes": 3097,
+      "path": "tests/test_public_tutorial_release.py",
+      "sha256": "cf62c8babe01180fffe2adad8d765f374adf7ca70023bb27eb458b56c0d89448"
+    },
+    {
+      "bytes": 3156,
       "path": "tests/test_release_boundary.py",
-      "sha256": "0cf3850f42062a293f06c375c38f9c0ee356ed1fa28f0f40a8d0e62fbcaf9ded"
+      "sha256": "be9b04893b27dab0e5b21f21e17ffd36e5a3b82efaa472b2a9384cdce18ab0d5"
     },
     {
       "bytes": 14843,
@@ -1901,13 +2071,14 @@
     "reason": "the manifest cannot hash itself without circularity"
   },
   "provenance": {
-    "construction": "allowlisted tree rebuilt as one clean root commit",
+    "construction": "additive presentation and tutorial release on the clean public root",
     "frozen_public_snapshot": "9df278371a030de2d6fd582d797931fdf90cd618",
+    "presentation_and_tutorial_base": "03e8026301c185fd6ba5bdbda7460765d9b3e724",
     "runtime_and_evidence_snapshot": "6729ed6d422f479e687ed8e9a0f9d7b1e35e5261",
-    "scope": "stable_runtime_protocols_final_sanitized_evidence"
+    "scope": "stable_runtime_protocols_final_sanitized_evidence_docs_and_tutorials"
   },
-  "release_date": "2026-08-11",
-  "release_version": "0.2.0",
+  "release_date": "2026-08-12",
+  "release_version": "0.3.0",
   "repository": "https://github.com/sunyrain/ChemWorld-Public",
   "sanitization_receipts": {
     "evidence/reports/agent-instrument-use.json.gz": {
@@ -2009,6 +2180,6 @@
       }
     }
   },
-  "schema_version": "chemworld-stable-software-evidence-release-0.2",
+  "schema_version": "chemworld-stable-software-evidence-release-0.3",
   "status": "stable_software_evidence_release"
 }

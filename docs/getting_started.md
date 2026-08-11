@@ -115,14 +115,13 @@ python -m apps.task_lab.server --port 8876
 - [Agent Observatory](http://127.0.0.1:8876/agent/)：观看 Agent 的逐步决策、谱图与资源消耗。
 - [Student Lab](http://127.0.0.1:8876/student/)：手动选择操作，观察实验状态变化。
 
-经典算法和 Student Lab 不需要在线模型密钥。在线模型的配置方式见
-[接入 LLM Agent](llm_agent_harness.md)。
+经典算法和本地实验不需要在线模型密钥。Provider 凭据和私有评测配置不属于本公开版本。
 
 ## 接下来做什么
 
 | 如果你想…… | 继续阅读 |
 | --- | --- |
-| 换一个更复杂的任务 | [选择一个任务](tasks.md) |
-| 编写自己的 Agent | [从 Agent 接口开始](agent_interface.md) |
+| 换一个更复杂的任务 | [查看世界能力地图](world-capability-map.md) |
+| 编写自己的 Agent | [从动作 schema 开始](action_schema.md) |
 | 理解每种操作的含义 | [认识操作语言](operations.md) |
-| 做可复现的方法比较 | [设计公平评测](benchmark_protocol.md) |
+| 做可复现的方法比较 | [阅读公开协议](https://github.com/sunyrain/ChemWorld-Public/tree/main/protocols) |

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "chemworld-bench"
-version = "0.2.0"
+version = "0.3.0"
 description = "Programmable chemical worlds for controlled and replayable agent experimentation."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -55,6 +55,8 @@ notebooks = [
   "ipykernel>=6.29",
   "jupyter>=1.1",
   "matplotlib>=3.8,<3.11",
+  "nbclient>=0.10,<0.11",
+  "nbformat>=5.10,<6.0",
 ]
 rl = [
   "stable-baselines3>=2.9,<3.0",
@@ -71,7 +73,7 @@ chemworld = "chemworld.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/sunyrain/ChemWorld-Public"
-Documentation = "https://github.com/sunyrain/ChemWorld-Public#readme"
+Documentation = "https://sunyrain.github.io/ChemWorld-Public/"
 Issues = "https://github.com/sunyrain/ChemWorld-Public/issues"
 
 [tool.hatch.build.targets.wheel]
@@ -90,7 +92,7 @@ select = ["E", "F", "I", "N", "UP", "B", "C4", "SIM", "RUF"]
 ignore = ["N803", "N806", "N815"]
 
 [tool.ruff.lint.per-file-ignores]
-"*.ipynb" = ["E501", "RUF001"]
+"*.ipynb" = ["E501", "F401", "I001", "RUF001"]
 "apps/task_lab/*.py" = ["RUF001"]
 
 [tool.mypy]

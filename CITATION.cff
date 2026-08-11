@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: "If you use ChemWorld, please cite this software release and the associated article."
 title: "ChemWorld: Programmable Chemical Worlds for Controlled and Replayable Agent Experimentation"
 type: software
-version: 0.2.0
-date-released: 2026-08-11
-url: "https://github.com/sunyrain/ChemWorld-Public"
+version: 0.3.0
+date-released: 2026-08-12
+url: "https://sunyrain.github.io/ChemWorld-Public/"
 repository-code: "https://github.com/sunyrain/ChemWorld-Public"
 license: MIT
 authors:

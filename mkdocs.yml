@@ -1,0 +1,95 @@
+site_name: ChemWorld
+site_description: Programmable chemical worlds for controlled, replayable agent experimentation.
+site_url: https://sunyrain.github.io/ChemWorld-Public/
+repo_url: https://github.com/sunyrain/ChemWorld-Public
+repo_name: sunyrain/ChemWorld-Public
+edit_uri: edit/main/docs/
+copyright: ChemWorld · Software-model experiments, not instructions for physical laboratory work
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search:
+      lang:
+        - en
+        - zh
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
+          site_description: 用于受控、可回放 Agent 实验的可编程化学世界。
+          copyright: ChemWorld · 软件模型实验环境，不用于指导真实化学实验
+          nav_translations:
+            Home: 首页
+            5-minute quickstart: 五分钟开始
+            One experiment: 一次完整实验
+            World foundations: 世界基座
+            Evidence: 证据
+            Notebooks: Notebook 教程
+            API reference: API 参考
+            Limitations: 适用边界
+
+extra_css:
+  - assets/stylesheets/site.css
+
+extra_javascript:
+  - assets/javascripts/experiment-explorer.js
+
+nav:
+  - Home: index.md
+  - 5-minute quickstart: quickstart.md
+  - One experiment: one-experiment.md
+  - World foundations: world-foundations.md
+  - Evidence: evidence.md
+  - Notebooks: notebooks.md
+  - API reference: reference.md
+  - Limitations: limitations.md
+
+strict: true

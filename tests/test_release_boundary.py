@@ -1,4 +1,4 @@
-"""Release-boundary tests for the clean v0.2.0 public tree."""
+"""Release-boundary tests for the clean v0.3.0 public tree."""
 
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def test_evidence_denominators_failures_and_replay() -> None:
     _load_verifier().verify_evidence()
 
 
-def test_public_boundary_and_single_commit_history() -> None:
+def test_public_boundary_and_single_clean_root_history() -> None:
     verifier = _load_verifier()
     verifier.verify_public_boundary(_manifest())
     verifier.verify_history()

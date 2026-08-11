@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Fail-closed offline verification for the ChemWorld v0.2.0 release."""
+# ruff: noqa: E501
+"""Fail-closed offline verification for the ChemWorld v0.3.0 release."""
 
 from __future__ import annotations
 
@@ -8,6 +9,7 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -30,6 +32,20 @@ _CREDENTIAL = re.compile(
     r"gh[pousr]_[A-Za-z0-9]{20,}|"
     r"AKIA[0-9A-Z]{16}|"
     r"-----BEGIN [A-Z ]*PRIVATE KEY-----",
+    re.IGNORECASE,
+)
+TUTORIAL_NOTEBOOKS = (
+    "01_first_experiment.ipynb",
+    "02_reaction_to_purification.ipynb",
+    "03_controlled_world_change.ipynb",
+)
+_TUTORIAL_FORBIDDEN = re.compile(
+    r"private-eval|work\s*ii|"
+    + re.escape(_INTERNAL_WORKSTREAM)
+    + "|"
+    + re.escape(_INTERNAL_TODO)
+    + r"|/(?:root|home|mnt)/(?:[^\s\"']+)|"
+    + r"(?:sk-|gh[pousr]_)[A-Za-z0-9_-]{16,}",
     re.IGNORECASE,
 )
 
@@ -76,7 +92,7 @@ def verify_manifest(manifest: dict[str, Any]) -> None:
         manifest.get("status") == "stable_software_evidence_release",
         "release status is not stable_software_evidence_release",
     )
-    require(manifest.get("release_version") == "0.2.0", "release version is not 0.2.0")
+    require(manifest.get("release_version") == "0.3.0", "release version is not 0.3.0")
     self_exclusion = manifest.get("manifest_self_exclusion")
     require(
         isinstance(self_exclusion, dict) and self_exclusion.get("path") == MANIFEST_RELATIVE,
@@ -231,6 +247,15 @@ def verify_public_boundary(manifest: dict[str, Any]) -> None:
         if relative.endswith(".json.gz"):
             with gzip.open(path, "rt", encoding="utf-8") as handle:
                 text = handle.read()
+        elif relative.endswith(".ipynb"):
+            notebook = json.loads(path.read_text(encoding="utf-8"))
+            for cell in notebook.get("cells", []):
+                for output in cell.get("outputs", []):
+                    data = output.get("data")
+                    if isinstance(data, dict):
+                        data.pop("image/png", None)
+                        data.pop("image/jpeg", None)
+            text = json.dumps(notebook, sort_keys=True)
         else:
             try:
                 text = path.read_text(encoding="utf-8")
@@ -250,7 +275,8 @@ def verify_public_boundary(manifest: dict[str, Any]) -> None:
 def verify_history() -> None:
     commits = [line for line in git_output("rev-list", "--all").splitlines() if line]
     roots = [line for line in git_output("rev-list", "--max-parents=0", "--all").splitlines() if line]
-    require(len(commits) == 1 and len(roots) == 1, "Git history is not a single root commit")
+    require(commits, "Git history is empty")
+    require(len(roots) == 1, "Git history does not have exactly one clean root")
     for line in git_output("rev-list", "--objects", "--all").splitlines():
         _, separator, path = line.partition(" ")
         if not separator:
@@ -265,6 +291,45 @@ def verify_history() -> None:
         )
 
 
+def verify_tutorials() -> None:
+    for name in TUTORIAL_NOTEBOOKS:
+        path = ROOT / "notebooks" / name
+        require(path.is_file(), f"tutorial notebook is missing: {name}")
+        raw = path.read_text(encoding="utf-8")
+        require(_TUTORIAL_FORBIDDEN.search(raw) is None, f"forbidden tutorial content: {name}")
+        notebook = json.loads(raw)
+        metadata = notebook.get("metadata", {}).get("chemworld", {})
+        require(metadata.get("runtime_release") == "0.3.0", f"tutorial release mismatch: {name}")
+        require(
+            metadata.get("output_scope") == "deterministic_public_tutorial",
+            f"tutorial output scope mismatch: {name}",
+        )
+        code_cells = [
+            cell for cell in notebook.get("cells", []) if cell.get("cell_type") == "code"
+        ]
+        require(bool(code_cells), f"tutorial has no code cells: {name}")
+        require(
+            all(cell.get("execution_count") is not None for cell in code_cells),
+            f"tutorial has an unexecuted code cell: {name}",
+        )
+        require(
+            all(
+                output.get("output_type") != "error"
+                for cell in code_cells
+                for output in cell.get("outputs", [])
+            ),
+            f"tutorial retains an error output: {name}",
+        )
+
+    subprocess.run(
+        [sys.executable, "scripts/build_readme_visuals.py", "--check"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+
 def main() -> int:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     require(isinstance(manifest, dict), "manifest must be a JSON object")
@@ -272,6 +337,7 @@ def main() -> int:
     verify_evidence()
     verify_public_boundary(manifest)
     verify_history()
+    verify_tutorials()
     print(json.dumps({
         "status": "passed",
         "manifest_file_count": len(manifest["files"]),
@@ -280,7 +346,8 @@ def main() -> int:
         "deterministic_cases": "8/8",
         "controlled_forks": "6 pairs / 24 traces",
         "agent_lifecycles": "1/1",
-        "git_history": "1 root commit",
+        "tutorial_notebooks": "3/3 executed and sanitized",
+        "git_history": f"1 clean root / {len(git_output('rev-list', '--all').splitlines())} commits",
     }, sort_keys=True))
     return 0
 
