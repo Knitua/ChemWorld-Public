@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the deterministic manifest for the ChemWorld v0.3.1 public release."""
+"""Build the deterministic manifest for the ChemWorld v0.4.0 public release."""
 
 from __future__ import annotations
 
@@ -79,9 +79,9 @@ def main() -> int:
         sanitization_receipts[f"evidence/reports/{name}"] = receipt
 
     payload = {
-        "schema_version": "chemworld-stable-software-evidence-release-0.3",
+        "schema_version": "chemworld-stable-software-evidence-release-0.4",
         "status": "stable_software_evidence_release",
-        "release_version": "0.3.1",
+        "release_version": "0.4.0",
         "release_date": "2026-08-12",
         "repository": "https://github.com/sunyrain/ChemWorld-Public",
         "provenance": {
@@ -89,10 +89,10 @@ def main() -> int:
             "runtime_and_evidence_snapshot": RUNTIME_EVIDENCE_SNAPSHOT,
             "presentation_and_tutorial_base": PUBLIC_V020_RELEASE,
             "construction": (
-                "release infrastructure and agent onboarding added to the frozen v0.3 runtime"
+                "provider-free Student Lab added to the stable public runtime"
             ),
             "scope": (
-                "stable_runtime_protocols_final_sanitized_evidence_docs_tutorials_and_agent_onboarding"
+                "stable_runtime_evidence_docs_tutorials_agent_onboarding_and_student_lab"
             ),
         },
         "headline_denominators": {

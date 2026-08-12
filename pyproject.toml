@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "chemworld-bench"
-version = "0.3.1"
+version = "0.4.0"
 description = "Programmable chemical worlds for controlled and replayable agent experimentation."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -70,6 +70,7 @@ physchem-ref = [
 
 [project.scripts]
 chemworld = "chemworld.cli:main"
+chemworld-lab = "chemworld.lab.server:main"
 
 [project.urls]
 Homepage = "https://github.com/sunyrain/ChemWorld-Public"
@@ -94,6 +95,7 @@ ignore = ["N803", "N806", "N815"]
 [tool.ruff.lint.per-file-ignores]
 "*.ipynb" = ["E501", "F401", "I001", "RUF001"]
 "apps/task_lab/*.py" = ["RUF001"]
+"src/chemworld/lab/session.py" = ["RUF001"]
 
 [tool.mypy]
 python_version = "3.11"

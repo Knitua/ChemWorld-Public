@@ -51,8 +51,10 @@ jobs:
           "$RUNNER_TEMP/chemworld-wheel/bin/python" - <<'PY'
           import gymnasium as gym
           import chemworld
+          from importlib.resources import files
 
-          assert chemworld.__version__ == "0.3.1"
+          assert chemworld.__version__ == "0.4.0"
+          assert files("chemworld.lab").joinpath("static", "index.html").is_file()
           env = gym.make("ChemWorld", task_id="reaction-to-assay", seed=0)
           _, info = env.reset(seed=0)
           assert info["task_id"] == "reaction-to-assay"

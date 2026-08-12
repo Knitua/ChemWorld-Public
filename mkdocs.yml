@@ -86,7 +86,8 @@ extra_javascript:
 nav:
   - Home: index.md
   - 5-minute quickstart: quickstart.md
-  - Connect an agent: agents.md
+        - Connect an agent: agents.md
+        - Student Lab: student-lab.md
   - One experiment: one-experiment.md
   - World foundations: world-foundations.md
   - Evidence: evidence.md

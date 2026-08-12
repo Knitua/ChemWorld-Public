@@ -6,6 +6,7 @@
 
 [Documentation](https://sunyrain.github.io/ChemWorld-Public/) ·
 [First experiment](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/01_first_experiment.ipynb) ·
+[Student Lab](#student-lab-no-model-required) ·
 [Connect an agent](docs/agents.md) ·
 [Evidence](docs/evidence.md) ·
 [Release verification](scripts/verify_release.py)
@@ -35,6 +36,18 @@ The tutorials require no provider key:
 
 Checked-in notebook outputs are deterministic public demonstrations, not benchmark results or optimized laboratory procedures.
 
+## Student Lab (no model required)
+
+Launch the animated browser workbench after installing the package:
+
+```bash
+chemworld lab
+```
+
+The Lab runs locally on `127.0.0.1`, uses the same typed action schemas and transactional Gym
+runtime as normal experiments, and requires no model, provider account or API key. It visualizes
+only public action effects and observations; the animation does not infer hidden composition.
+
 ## Bring your own agent
 
 The public runner accepts any Python object implementing the small ChemWorld agent protocol. Start
@@ -54,8 +67,8 @@ resource and model provenance separately from environment score.
 
 ## Frozen evidence
 
-Version 0.3.1 adds release automation and agent-onboarding documentation without changing the
-frozen v0.3.0 runtime or its v0.2.0 evidence:
+Version 0.4.0 adds the provider-free Student Lab on top of the stable runtime. The Lab is an
+interaction surface, not new benchmark evidence; the frozen v0.3.0 runtime evidence remains intact:
 
 ![Evidence-derived agent lifecycle, rollback recovery and controlled world changes](docs/assets/representative-agent-and-world-change.svg)
 

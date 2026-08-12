@@ -442,6 +442,12 @@ def _inspect_constitution(args: argparse.Namespace) -> None:
         env.close()
 
 
+def _lab(args: argparse.Namespace) -> None:
+    from chemworld.lab.server import serve
+
+    serve(args.host, args.port, open_browser=not args.no_browser)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="chemworld")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -671,6 +677,15 @@ def build_parser() -> argparse.ArgumentParser:
     constitution_parser.add_argument("--objective", default="balanced")
     constitution_parser.add_argument("--seed", type=int, default=42)
     constitution_parser.set_defaults(func=_inspect_constitution)
+
+    lab_parser = subparsers.add_parser(
+        "lab",
+        help="Open the provider-free Student Lab in a local browser.",
+    )
+    lab_parser.add_argument("--host", default="127.0.0.1")
+    lab_parser.add_argument("--port", type=int, default=8876)
+    lab_parser.add_argument("--no-browser", action="store_true")
+    lab_parser.set_defaults(func=_lab)
     return parser
 
 

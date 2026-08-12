@@ -14,6 +14,7 @@ PAGES = (
     "index",
     "quickstart",
     "agents",
+    "student-lab",
     "one-experiment",
     "world-foundations",
     "evidence",
