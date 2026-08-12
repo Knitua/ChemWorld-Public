@@ -33,9 +33,9 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 5019,
+      "bytes": 4789,
       "path": "README.md",
-      "sha256": "77d989e24ff69f06afc8b8d116ff60a3653b8788b296df46a7e7700eb30f830e"
+      "sha256": "d355826e69fcd93809c6adb09c565b62db36a46ea115b21025b9119aa9b37dc5"
     },
     {
       "bytes": 14591,
@@ -133,14 +133,19 @@
       "sha256": "dc021916f916ce0d5cede411cd4567955ee91fa80960818013d043b58465f0ed"
     },
     {
+      "bytes": 1705737,
+      "path": "docs/assets/chemworld-hero.png",
+      "sha256": "335b451b25dadece93e60705e14da4cce815fa6a20114a85fa94bced14e6f78d"
+    },
+    {
       "bytes": 24893,
       "path": "docs/assets/data/representative-behavior-and-forks.json",
       "sha256": "e04f1a16337c135f393054c6364196faa7b824bc0a067eb9822d0b18675e2bee"
     },
     {
-      "bytes": 7023,
+      "bytes": 10339,
       "path": "docs/assets/javascripts/experiment-explorer.js",
-      "sha256": "54157cf3b2cb908b116652798751669c9e617ea0aef84c89b157d40a60934d78"
+      "sha256": "c33e2848262640222d7c3ecd64e456953c28262b9900212ffd30a05d1bb7df9f"
     },
     {
       "bytes": 836869,
@@ -153,9 +158,9 @@
       "sha256": "b0aab8f56cfaa9821c3bee000c3c540c4c1f785e3df2a7dfa9e5710a2cd5a481"
     },
     {
-      "bytes": 7347,
+      "bytes": 18468,
       "path": "docs/assets/stylesheets/site.css",
-      "sha256": "0649d6b1d006fdb5758df8de330c9d45fbc8c812bf4d526d33f546151c6451e9"
+      "sha256": "a75ae3d17bded5cfa59e301263a7b39d53fe7c7083254cd507cc79da112e30c7"
     },
     {
       "bytes": 1641,
@@ -173,14 +178,14 @@
       "sha256": "12080c0cd88558be2c150267bafedcdafc6e00a36a35072149b0dc06d65b5e3a"
     },
     {
-      "bytes": 2987,
+      "bytes": 4601,
       "path": "docs/index.md",
-      "sha256": "0cf474cfb6afcb2dc1a07ed9a6fbb147eb5a9ee8f5d99e13bf4984f50110d6f5"
+      "sha256": "5f485f13d944e9e886c715cb51b55e13eda3e63994d867a4ba4c3544846c8a51"
     },
     {
-      "bytes": 2853,
+      "bytes": 4410,
       "path": "docs/index.zh.md",
-      "sha256": "cd057833f3ba045634bb05dfa744bbbcd09cd7729800064e778b3d8d3f47c521"
+      "sha256": "68f7c6bce4937c1652fbffc553411d3ac64143f52445fa3c44771d3239ec29fa"
     },
     {
       "bytes": 1045,
@@ -1948,9 +1953,9 @@
       "sha256": "08308584a4d89216fd451d69fd3e80fbc7ac840128f1b6bbf1605db543761b98"
     },
     {
-      "bytes": 3097,
+      "bytes": 4092,
       "path": "tests/test_public_tutorial_release.py",
-      "sha256": "cf62c8babe01180fffe2adad8d765f374adf7ca70023bb27eb458b56c0d89448"
+      "sha256": "fa35a2d95d6a5164c6e8619bbb39ef8e62b28f23835ebd7d9e065d9e52d8cf07"
     },
     {
       "bytes": 3156,

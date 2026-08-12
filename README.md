@@ -1,5 +1,7 @@
 # ChemWorld
 
+![ChemWorld — an agent moves through a replayable experimental lifecycle](docs/assets/chemworld-hero.png)
+
 **Programmable chemical worlds for controlled, replayable agent experimentation.**
 
 [Documentation](https://sunyrain.github.io/ChemWorld-Public/) ·
@@ -7,15 +9,7 @@
 [Evidence](docs/evidence.md) ·
 [Release verification](scripts/verify_release.py)
 
-![Representative ChemWorld agent behavior and controlled world changes](docs/assets/representative-agent-and-world-change.svg)
-
 ChemWorld gives experimental agents a typed laboratory interface rather than an answer-only benchmark. An agent inspects a public task contract, commits physically constrained operations, uses instruments, spends explicit resources, encounters recoverable failures and leaves a transaction-complete trace that can replay exactly.
-
-The figure above is regenerated from the frozen public reports. It shows:
-
-- one persistent agent completing a 15-action reaction–distillation lifecycle;
-- a rejected operation that rolls back and remains part of the replayable record;
-- controlled parent–child worlds in which one registered law changes while the public experiment stays fixed.
 
 [Explore every action and observation in the interactive documentation →](https://sunyrain.github.io/ChemWorld-Public/one-experiment/)
 
@@ -51,6 +45,8 @@ Checked-in notebook outputs are deterministic public demonstrations, not benchma
 ## Frozen evidence
 
 Version 0.3.0 adds presentation and tutorials without changing the frozen v0.2.0 runtime evidence:
+
+![Evidence-derived agent lifecycle, rollback recovery and controlled world changes](docs/assets/representative-agent-and-world-change.svg)
 
 - 64/64 registered task–world units and 1,786/1,786 reference recipes completed.
 - 52/52 coverage-generated compositions completed, including 8/8 non-reference reaction–distillation worlds.

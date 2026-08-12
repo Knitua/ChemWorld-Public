@@ -91,3 +91,25 @@ def test_interactive_payload_matches_readme_visual_payload() -> None:
     assert len(site["agent_lifecycle"]["actions"]) == 15
     assert site["rollback_recovery"]["summary"]["rolled_back_actions"] == 1
     assert site["controlled_world_forks"]["summary"]["pairs"] == 6
+
+
+def test_showcase_home_uses_the_public_hero_and_frozen_trace() -> None:
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    hero_marker = "docs/assets/chemworld-hero.png"
+    evidence_marker = "docs/assets/representative-agent-and-world-change.svg"
+    assert (ROOT / hero_marker).is_file()
+    assert readme.index(hero_marker) < readme.index("## Start in five minutes")
+    assert readme.index(evidence_marker) > readme.index("## Frozen evidence")
+
+    for suffix in ("", ".zh"):
+        home = (ROOT / "docs" / f"index{suffix}.md").read_text(encoding="utf-8")
+        assert 'class="cw-studio-hero"' in home
+        assert "data-cw-autoplay" in home
+        assert "representative-behavior-and-forks.json" in home
+        assert "<noscript>" in home
+
+    script = (ROOT / "docs/assets/javascripts/experiment-explorer.js").read_text(
+        encoding="utf-8"
+    )
+    assert "initializeAutoplay" in script
+    assert 'document.querySelectorAll("[data-cw-autoplay]")' in script

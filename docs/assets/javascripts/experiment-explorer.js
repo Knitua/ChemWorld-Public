@@ -151,6 +151,74 @@
   };
 
   const boot = () => document.querySelectorAll("[data-cw-explorer]").forEach(initialize);
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
-  else boot();
+  const initializeAutoplay = async (root) => {
+    try {
+      const response = await fetch(root.dataset.source, { credentials: "same-origin" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      const actions = payload.agent_lifecycle.actions;
+      const locale = root.dataset.locale || "en";
+      const rail = root.querySelector("[data-cw-live-rail]");
+      const label = root.querySelector("[data-cw-live-label]");
+      const detail = root.querySelector("[data-cw-live-detail]");
+      const family = root.querySelector("[data-cw-live-family]");
+      const score = root.querySelector("[data-cw-live-score]");
+      const step = root.querySelector("[data-cw-live-step]");
+      const progress = root.querySelector("[data-cw-live-progress]");
+      const familyNames = locale === "zh"
+        ? { setup: "准备", thermal: "过程", instrument: "仪器", workup: "后处理", terminal: "终止", assay: "终检" }
+        : { setup: "SETUP", thermal: "PROCESS", instrument: "INSTRUMENT", workup: "WORKUP", terminal: "TERMINAL", assay: "ASSAY" };
+      let active = 0;
+      let timer = null;
+
+      const select = (index) => {
+        active = index;
+        const action = actions[index];
+        const actionFamily = familyFor(action);
+        rail.querySelectorAll("button").forEach((button, buttonIndex) => {
+          button.classList.toggle("is-active", buttonIndex === index);
+          button.setAttribute("aria-pressed", buttonIndex === index ? "true" : "false");
+        });
+        label.textContent = localizedAction(action, locale);
+        detail.textContent = localizedDetails(action.details, locale);
+        family.textContent = familyNames[actionFamily];
+        score.textContent = number(action.public_score);
+        step.textContent = String(action.step).padStart(2, "0");
+        progress.style.width = `${(action.step / actions.length) * 100}%`;
+        root.dataset.activeFamily = actionFamily;
+      };
+
+      const play = () => {
+        window.clearInterval(timer);
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        timer = window.setInterval(() => select((active + 1) % actions.length), 2200);
+      };
+
+      actions.forEach((action, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.family = familyFor(action);
+        button.setAttribute("aria-pressed", "false");
+        button.setAttribute("aria-label", `${locale === "zh" ? "显示步骤" : "Show step"} ${action.step}: ${localizedAction(action, locale)}`);
+        button.innerHTML = `<span>${String(action.step).padStart(2, "0")}</span><i></i>`;
+        button.addEventListener("click", () => select(index));
+        rail.append(button);
+      });
+      select(0);
+      play();
+      root.addEventListener("mouseenter", () => window.clearInterval(timer));
+      root.addEventListener("mouseleave", play);
+      root.addEventListener("focusin", () => window.clearInterval(timer));
+      root.addEventListener("focusout", play);
+    } catch (error) {
+      root.classList.add("cw-autoplay-error");
+    }
+  };
+
+  const bootAll = () => {
+    boot();
+    document.querySelectorAll("[data-cw-autoplay]").forEach(initializeAutoplay);
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bootAll);
+  else bootAll();
 })();

@@ -1,35 +1,67 @@
-<div class="cw-hero">
-  <div class="cw-eyebrow">Programmable chemical worlds</div>
-  <h1>Teach agents to experiment, not just answer.</h1>
-  <p class="cw-lead">ChemWorld is an executable physical-chemistry environment where agents choose typed operations, use instruments, spend explicit resources, encounter recoverable failures and leave traces that replay exactly.</p>
-  <div class="cw-button-row">
-    <a class="cw-button cw-button-primary" href="notebooks/">Run the first experiment →</a>
-    <a class="cw-button" href="one-experiment/">Explore all 15 steps</a>
-    <a class="cw-button" href="evidence/">Inspect the evidence</a>
+<section class="cw-studio-hero" data-cw-autoplay data-source="assets/data/representative-behavior-and-forks.json" data-locale="en">
+  <div class="cw-studio-glow cw-studio-glow-a"></div>
+  <div class="cw-studio-glow cw-studio-glow-b"></div>
+  <div class="cw-studio-copy">
+    <div class="cw-studio-brand"><span class="cw-live-dot"></span> LIVE PUBLIC DEMONSTRATION</div>
+    <h1>Give experimental agents a world to act in.</h1>
+    <p>ChemWorld turns physical-chemistry models into a typed, replayable laboratory. Watch one frozen public agent trace move from materials and process actions to instruments, workup and final assay.</p>
+    <div class="cw-button-row">
+      <a class="cw-button cw-button-primary" href="one-experiment/">Explore all 15 actions →</a>
+      <a class="cw-button" href="notebooks/">Run it yourself</a>
+      <a class="cw-button" href="world-foundations/">How worlds are built</a>
+    </div>
+    <div class="cw-studio-stats">
+      <span><strong data-cw-live-step>01</strong> current action</span>
+      <span><strong>15 / 15</strong> committed</span>
+      <span><strong>exact</strong> replay</span>
+    </div>
   </div>
-  <div class="cw-pill-row">
-    <span class="cw-pill">Python 3.11–3.12</span>
-    <span class="cw-pill">Gymnasium API</span>
-    <span class="cw-pill">Provider-free demos</span>
-    <span class="cw-pill">Exact replay</span>
-  </div>
-</div>
 
-## One contract, a complete experimental lifecycle
+  <div class="cw-studio-stage" aria-label="Animated replay of a frozen public ChemWorld experiment">
+    <div class="cw-agent-orbit" aria-hidden="true">
+      <span class="cw-orbit-ring cw-orbit-ring-a"></span>
+      <span class="cw-orbit-ring cw-orbit-ring-b"></span>
+      <span class="cw-agent-face"><i></i><i></i></span>
+    </div>
+    <div class="cw-studio-readout">
+      <span data-cw-live-family>SETUP</span>
+      <strong data-cw-live-label>Reagent</strong>
+      <small data-cw-live-detail>0.04 mol</small>
+    </div>
+    <div class="cw-mini-vessel" aria-hidden="true">
+      <div class="cw-mini-liquid"></div><i></i><i></i><i></i>
+    </div>
+    <div class="cw-signal-card" aria-hidden="true">
+      <span class="cw-signal-line cw-signal-one"></span>
+      <span class="cw-signal-line cw-signal-two"></span>
+      <span class="cw-signal-line cw-signal-three"></span>
+    </div>
+    <div class="cw-stage-score"><span>PUBLIC SCORE</span><strong data-cw-live-score>0.000</strong></div>
+    <div class="cw-stage-progress"><i data-cw-live-progress></i></div>
+  </div>
+
+  <div class="cw-studio-rail" data-cw-live-rail aria-label="Frozen 15-action lifecycle"></div>
+</section>
+
+<noscript><p class="cw-noscript">The animation requires JavaScript. The complete accessible action table is available on <a href="one-experiment/">One Experiment</a>.</p></noscript>
+
+## From action to evidence
 
 <div class="cw-grid">
-  <div class="cw-card"><h3>Act</h3><p>Inspect the public task contract, validate an operation and commit a typed experimental action.</p></div>
-  <div class="cw-card"><h3>Observe</h3><p>Use HPLC, GC and final-assay packets without reading evaluator-owned world state.</p></div>
-  <div class="cw-card"><h3>Learn</h3><p>Compare repeatable interventions, update a world model and choose the next informative experiment.</p></div>
+  <div class="cw-card"><span class="cw-card-index">01</span><h3>Act</h3><p>Read the public task contract, validate parameters and commit a typed experimental operation.</p></div>
+  <div class="cw-card"><span class="cw-card-index">02</span><h3>Observe</h3><p>Use HPLC, GC and final assay while hidden world state remains evaluator-owned.</p></div>
+  <div class="cw-card"><span class="cw-card-index">03</span><h3>Update</h3><p>Compare interventions, account for resources and choose the next informative experiment.</p></div>
 </div>
 
-<div class="cw-figure-frame">
-  <img src="assets/representative-agent-and-world-change.svg" alt="Three evidence-derived views: a 15-step agent lifecycle, one rolled-back operation followed by recovery, and controlled world-law changes under a fixed public experiment.">
+## Three ways in
+
+<div class="cw-entry-grid">
+  <a class="cw-entry-card" href="one-experiment/"><span>INTERACTIVE TRACE</span><strong>Inspect one complete lifecycle</strong><p>Click through parameters, transaction state, observations, resources and final assay.</p><b>Open the observatory →</b></a>
+  <a class="cw-entry-card" href="notebooks/"><span>RUN LOCALLY OR IN COLAB</span><strong>Execute a guided experiment</strong><p>Three provider-free notebooks cover first assay, purification and controlled world change.</p><b>Choose a notebook →</b></a>
+  <a class="cw-entry-card" href="world-foundations/"><span>WORLD DESIGN</span><strong>Build controlled scientific worlds</strong><p>Separate public contracts from registered private laws and auditable interventions.</p><b>Read the foundations →</b></a>
 </div>
 
-The figure is generated from the frozen public reports—not from a hand-authored success story. It shows a complete agent lifecycle, a failed transaction that remains in the scientific record, and controlled world changes under the same public experiment.
-
-## Verified surfaces
+## Evidence, kept separate from the showcase
 
 <div class="cw-proof-grid">
   <div class="cw-proof"><strong>64 / 64</strong><span>registered task–world units qualified</span></div>
@@ -37,11 +69,4 @@ The figure is generated from the frozen public reports—not from a hand-authore
   <div class="cw-proof"><strong>6 pairs</strong><span>controlled world forks with exact replay</span></div>
 </div>
 
-These are finite software-model qualification results. They do not establish universal chemical fidelity or transfer to a physical laboratory.
-
-## Choose an entry path
-
-<div class="cw-path-grid">
-  <div class="cw-path-card"><h3>I want to use ChemWorld</h3><p>Start with the five-minute setup, then run the guided Reaction-to-Assay notebook.</p><p><a href="quickstart/">Open the quickstart →</a></p></div>
-  <div class="cw-path-card"><h3>I want to understand the research substrate</h3><p>See how public contracts, private world components and repeated interventions fit together.</p><p><a href="world-foundations/">Read World Foundations →</a></p></div>
-</div>
+The demonstration above is generated from sanitized frozen evidence. These are finite software-model qualification results—not claims of universal chemical fidelity, agent superiority or physical-laboratory transfer. [Inspect the evidence and its limits →](evidence.md)
