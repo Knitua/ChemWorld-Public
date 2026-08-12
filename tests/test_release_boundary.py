@@ -1,4 +1,4 @@
-"""Release-boundary tests for the clean v0.3.0 public tree."""
+"""Release-boundary tests for the clean v0.3.1 public tree."""
 
 from __future__ import annotations
 

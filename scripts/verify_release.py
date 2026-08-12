@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ruff: noqa: E501
-"""Fail-closed offline verification for the ChemWorld v0.3.0 release."""
+"""Fail-closed offline verification for the ChemWorld v0.3.1 release."""
 
 from __future__ import annotations
 
@@ -92,7 +92,7 @@ def verify_manifest(manifest: dict[str, Any]) -> None:
         manifest.get("status") == "stable_software_evidence_release",
         "release status is not stable_software_evidence_release",
     )
-    require(manifest.get("release_version") == "0.3.0", "release version is not 0.3.0")
+    require(manifest.get("release_version") == "0.3.1", "release version is not 0.3.1")
     self_exclusion = manifest.get("manifest_self_exclusion")
     require(
         isinstance(self_exclusion, dict) and self_exclusion.get("path") == MANIFEST_RELATIVE,

@@ -101,7 +101,7 @@ def _sanitize_value(
                     {
                         "category": category,
                         "field": key,
-                        "path_sha256": _sha256_bytes(f"{path}.{key}".encode("utf-8")),
+                        "path_sha256": _sha256_bytes(f"{path}.{key}".encode()),
                         "value_sha256": _sha256_bytes(_canonical_bytes(child)),
                     }
                 )

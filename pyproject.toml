@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "chemworld-bench"
-version = "0.3.0"
+version = "0.3.1"
 description = "Programmable chemical worlds for controlled and replayable agent experimentation."
 readme = "README.md"
 requires-python = ">=3.11"

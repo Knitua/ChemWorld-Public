@@ -603,7 +603,7 @@ def validate_launch_preconditions(
         protocol_text = protocol_path.read_text(encoding="utf-8")
         required = (
             "frozen before qualification execution",
-            "64 registered task–world units",
+            "64 registered task-world units",
             "52 coverage-generated compositions",
             "192 invalid-action probes",
         )
@@ -2015,8 +2015,8 @@ __all__ = [
     "EXPECTED_NEGATIVE_PROBE_COUNT",
     "EXPECTED_REFERENCE_RECIPE_COUNT",
     "EXPECTED_REFERENCE_UNIT_COUNT",
-    "QUALIFICATION_ID",
     "PROTOCOL",
+    "QUALIFICATION_ID",
     "REPORT_SCHEMA_VERSION",
     "build_interface_receipts",
     "build_report",

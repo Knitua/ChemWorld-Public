@@ -2313,7 +2313,6 @@ def write_outputs(
 __all__ = [
     "COMPOSITION_EVIDENCE",
     "CONTROLLED_FORK_EVIDENCE",
-    "PROTOCOL",
     "FROZEN_AGENT_SEED",
     "FROZEN_AUDITED_CUMULATIVE_INPUT_BASELINE",
     "FROZEN_CASE_ID",
@@ -2335,6 +2334,7 @@ __all__ = [
     "FROZEN_WALL_TIME_RESERVE_S",
     "FROZEN_WORLD_SEED",
     "METHOD_ID",
+    "PROTOCOL",
     "QUALIFICATION_ID",
     "REPORT_SCHEMA_VERSION",
     "CompleteAgentQualificationError",

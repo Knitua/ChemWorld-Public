@@ -6,6 +6,7 @@
 
 [Documentation](https://sunyrain.github.io/ChemWorld-Public/) ·
 [First experiment](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/01_first_experiment.ipynb) ·
+[Connect an agent](docs/agents.md) ·
 [Evidence](docs/evidence.md) ·
 [Release verification](scripts/verify_release.py)
 
@@ -34,6 +35,15 @@ The tutorials require no provider key:
 
 Checked-in notebook outputs are deterministic public demonstrations, not benchmark results or optimized laboratory procedures.
 
+## Bring your own agent
+
+The public runner accepts any Python object implementing the small ChemWorld agent protocol. Start
+with an offline agent, then opt into the audited DeepSeek or Codex subscription adapters only when
+you need a live model. Provider credentials stay in environment variables and live runs record
+resource and model provenance separately from environment score.
+
+[Follow the custom and live-agent guide →](docs/agents.md)
+
 ## What ChemWorld exposes
 
 - **Composable worlds:** reaction, thermal, phase, separation, crystallization, distillation, flow, electrochemical and observation components behind one compatibility-checked contract.
@@ -44,7 +54,8 @@ Checked-in notebook outputs are deterministic public demonstrations, not benchma
 
 ## Frozen evidence
 
-Version 0.3.0 adds presentation and tutorials without changing the frozen v0.2.0 runtime evidence:
+Version 0.3.1 adds release automation and agent-onboarding documentation without changing the
+frozen v0.3.0 runtime or its v0.2.0 evidence:
 
 ![Evidence-derived agent lifecycle, rollback recovery and controlled world changes](docs/assets/representative-agent-and-world-change.svg)
 

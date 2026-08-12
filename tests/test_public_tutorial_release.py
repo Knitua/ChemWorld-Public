@@ -13,6 +13,7 @@ NOTEBOOKS = (
 PAGES = (
     "index",
     "quickstart",
+    "agents",
     "one-experiment",
     "world-foundations",
     "evidence",
@@ -113,3 +114,17 @@ def test_showcase_home_uses_the_public_hero_and_frozen_trace() -> None:
     )
     assert "initializeAutoplay" in script
     assert 'document.querySelectorAll("[data-cw-autoplay]")' in script
+
+
+def test_agent_guide_exposes_custom_offline_and_live_paths() -> None:
+    for suffix in ("", ".zh"):
+        guide = (ROOT / "docs" / f"agents{suffix}.md").read_text(encoding="utf-8")
+        assert "BaseAgent" in guide
+        assert "run_agent" in guide
+        assert "LiveLLMAgent" in guide
+        assert "DEEPSEEK_API_KEY" in guide
+        assert "CodexSubscriptionClient" in guide
+        assert "private reasoning" in guide or "隐藏推理" in guide
+
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+    assert "Connect an agent: agents.md" in config

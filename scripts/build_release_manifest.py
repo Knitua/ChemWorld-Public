@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the deterministic manifest for the ChemWorld v0.3.0 public release."""
+"""Build the deterministic manifest for the ChemWorld v0.3.1 public release."""
 
 from __future__ import annotations
 
@@ -81,15 +81,19 @@ def main() -> int:
     payload = {
         "schema_version": "chemworld-stable-software-evidence-release-0.3",
         "status": "stable_software_evidence_release",
-        "release_version": "0.3.0",
+        "release_version": "0.3.1",
         "release_date": "2026-08-12",
         "repository": "https://github.com/sunyrain/ChemWorld-Public",
         "provenance": {
             "frozen_public_snapshot": FROZEN_PUBLIC_SNAPSHOT,
             "runtime_and_evidence_snapshot": RUNTIME_EVIDENCE_SNAPSHOT,
             "presentation_and_tutorial_base": PUBLIC_V020_RELEASE,
-            "construction": "additive presentation and tutorial release on the clean public root",
-            "scope": "stable_runtime_protocols_final_sanitized_evidence_docs_and_tutorials",
+            "construction": (
+                "release infrastructure and agent onboarding added to the frozen v0.3 runtime"
+            ),
+            "scope": (
+                "stable_runtime_protocols_final_sanitized_evidence_docs_tutorials_and_agent_onboarding"
+            ),
         },
         "headline_denominators": {
             "reference_task_world_units": [64, 64],

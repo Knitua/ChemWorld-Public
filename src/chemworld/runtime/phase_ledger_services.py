@@ -214,7 +214,7 @@ class ChemWorldPhaseLedgerServices:
         *,
         metadata_updates: dict[str, Any] | None = None,
         phase_settled: bool | None = None,
-        selected_phase: str | None | object = SELECTED_PHASE_UNSET,
+        selected_phase: str | object | None = SELECTED_PHASE_UNSET,
         ledger: Any | None = None,
         volume_L: float | None = None,
         equipment: EquipmentLedger | None = None,
