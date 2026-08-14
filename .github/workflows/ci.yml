@@ -58,7 +58,10 @@ jobs:
           env = gym.make("ChemWorld", task_id="reaction-to-assay", seed=0)
           _, info = env.reset(seed=0)
           assert info["task_id"] == "reaction-to-assay"
-          assert "add_solvent" in env.unwrapped.available_actions()
+          assert any(
+              action["operation"] == "add_solvent"
+              for action in env.unwrapped.available_actions()
+          )
           env.close()
           PY
 
