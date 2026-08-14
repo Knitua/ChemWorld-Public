@@ -36,6 +36,9 @@ python examples/demo_manual_event_sequence.py
 
 随后打开[第一个 notebook](notebooks.md)，逐步查看动作验证、中间 HPLC、终检和资源账本。
 
+如果希望先从浏览器体验，运行 `chemworld lab`：在 `/student/` 手动编排操作，或在 `/agent/`
+逐步观察无需 Provider 的本地策略。
+
 ## 验证发布版本
 
 ```bash

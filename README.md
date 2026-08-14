@@ -6,7 +6,7 @@
 
 [Documentation](https://sunyrain.github.io/ChemWorld-Public/) ·
 [First experiment](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/01_first_experiment.ipynb) ·
-[Student Lab](#student-lab-no-model-required) ·
+[Local Lab](#local-lab-no-model-required) ·
 [Connect an agent](docs/agents.md) ·
 [Evidence](docs/evidence.md) ·
 [Release verification](scripts/verify_release.py)
@@ -36,7 +36,7 @@ The tutorials require no provider key:
 
 Checked-in notebook outputs are deterministic public demonstrations, not benchmark results or optimized laboratory procedures.
 
-## Student Lab (no model required)
+## Local Lab (no model required)
 
 Launch the animated browser workbench after installing the package:
 
@@ -45,8 +45,17 @@ chemworld lab
 ```
 
 The Lab runs locally on `127.0.0.1`, uses the same typed action schemas and transactional Gym
-runtime as normal experiments, and requires no model, provider account or API key. It visualizes
-only public action effects and observations; the animation does not infer hidden composition.
+runtime as normal experiments, and requires no model, provider account or API key. It has two
+linked workspaces:
+
+- **Student Lab** (`/student/`) for composing and validating operations by hand.
+- **Agent Observatory** (`/agent/`) for stepping through provider-free policies, inspecting their
+  public decision context, spectra, transaction receipts and resource accounting, and making
+  same-task, same-seed exploratory comparisons.
+
+Both views visualize only committed public effects and observations; neither infers hidden
+composition. Online provider adapters remain an explicit Python workflow so credentials, model
+identity and resource limits cannot be hidden behind a one-click browser action.
 
 ## Bring your own agent
 
@@ -67,8 +76,9 @@ resource and model provenance separately from environment score.
 
 ## Frozen evidence
 
-Version 0.4.0 adds the provider-free Student Lab on top of the stable runtime. The Lab is an
-interaction surface, not new benchmark evidence; the frozen v0.3.0 runtime evidence remains intact:
+Version 0.4.0 adds the provider-free Student Lab and Agent Observatory on top of the stable runtime.
+The local Lab is an interaction surface, not new benchmark evidence; the frozen v0.3.0 runtime
+evidence remains intact:
 
 ![Evidence-derived agent lifecycle, rollback recovery and controlled world changes](docs/assets/representative-agent-and-world-change.svg)
 

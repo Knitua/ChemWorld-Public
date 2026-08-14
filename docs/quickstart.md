@@ -36,6 +36,9 @@ python examples/demo_manual_event_sequence.py
 
 Then open [the first notebook](notebooks.md) to see validation, intermediate HPLC feedback, final assay and resource accounting step by step.
 
+For a browser-first introduction, run `chemworld lab`: use `/student/` to compose operations by
+hand or `/agent/` to inspect provider-free policies step by step.
+
 ## Verify the release
 
 ```bash

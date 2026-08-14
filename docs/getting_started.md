@@ -107,7 +107,7 @@ else:
 ## 6. 打开可视化实验室
 
 ```bash
-python -m apps.task_lab.server --port 8876
+chemworld lab
 ```
 
 启动后可以打开：
@@ -115,7 +115,12 @@ python -m apps.task_lab.server --port 8876
 - [Agent Observatory](http://127.0.0.1:8876/agent/)：观看 Agent 的逐步决策、谱图与资源消耗。
 - [Student Lab](http://127.0.0.1:8876/student/)：手动选择操作，观察实验状态变化。
 
-经典算法和本地实验不需要在线模型密钥。Provider 凭据和私有评测配置不属于本公开版本。
+Agent Observatory 目前开放 `scripted_chemistry`、Random、LHS、Greedy、GP-BO、Safe GP-BO、
+Tool-agent Stub 和 LLM Trace Replay。它们都在本机运行且不调用在线模型。页面中的策略对比固定
+相同任务和 seed，但单 seed 结果只用于理解行为，不能当作 leaderboard 或模型优越性证据。
+
+自定义 Python Agent 和可选在线 Provider adapter 已由正式 runner 支持，接入方式见
+[接入 Agent](agents.md)。Provider 凭据不会进入浏览器服务。
 
 ## 接下来做什么
 

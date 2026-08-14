@@ -1,4 +1,4 @@
-const lab = { tasks: [], session: null, affordance: null };
+const lab = { tasks: [], session: null, affordance: null, selectionPending: false };
 const $ = (selector) => document.querySelector(selector);
 const fmt = (value, digits = 3) => value === null || value === undefined ? "—" : Number(value).toFixed(digits);
 const esc = (value) => String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
@@ -11,17 +11,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     $("#taskSelect").innerHTML = lab.tasks.map((task) => `<option value="${esc(task.task_id)}">${esc(task.title)}</option>`).join("");
     $("#taskSelect").value = payload.default_task;
     previewTask(currentTask());
+    updateSelectionState();
   } catch (error) {
     showValidation(false, error.message);
   }
 });
 
 function wire() {
-  $("#taskSelect").addEventListener("change", () => previewTask(currentTask()));
+  $("#taskSelect").addEventListener("change", handleSelectionChange);
+  $("#seedInput").addEventListener("input", handleSelectionChange);
   $("#createSession").addEventListener("click", createSession);
   $("#operationSelect").addEventListener("change", renderOperationFields);
   $("#submitAction").addEventListener("click", submitAction);
   $("#downloadLog").addEventListener("click", downloadLog);
+}
+
+function handleSelectionChange() {
+  previewTask(currentTask());
+  updateSelectionState();
 }
 
 function currentTask() {
@@ -35,6 +42,43 @@ function previewTask(task) {
   $("#missionBackground").textContent = task.background;
   $("#missionGoal").textContent = task.student_goal;
   $("#missionMetrics").textContent = task.success_metrics.join(" · ");
+  if (!lab.session || task.task_id !== lab.session.task_id || selectedSeed() !== lab.session.seed) {
+    previewApparatus(task);
+  }
+}
+
+function selectedSeed() { return Number($("#seedInput").value || 0); }
+
+function previewApparatus(task) {
+  if (!task) return;
+  $("#twinStage").dataset.apparatus = task.apparatus_family || "batch";
+  $("#apparatusLabel").textContent = task.apparatus_label || "批式反应器";
+}
+
+function updateSelectionState() {
+  const task = currentTask();
+  const pending = Boolean(lab.session) && (
+    task?.task_id !== lab.session.task_id || selectedSeed() !== lab.session.seed
+  );
+  lab.selectionPending = pending;
+  const state = $("#selectionState");
+  const message = state.querySelector("span");
+  const overlay = $("#sessionPending");
+  const composer = document.querySelector(".composer-panel");
+  state.dataset.state = pending ? "pending" : lab.session ? "active" : "ready";
+  message.textContent = pending
+    ? `已选择 ${task.title}，尚未应用`
+    : lab.session
+      ? `当前运行：${task.title} · seed ${selectedSeed()}`
+      : "选择任务后开始实验";
+  overlay.hidden = !pending;
+  $("#pendingTaskTitle").textContent = task?.title || "—";
+  composer.dataset.pending = pending ? "true" : "false";
+  $("#createSession").textContent = pending ? "应用并开始" : lab.session ? "重置当前实验" : "开始实验";
+  if (pending) {
+    $("#operationSelect").disabled = true;
+    $("#submitAction").disabled = true;
+  }
 }
 
 async function createSession() {
@@ -43,7 +87,7 @@ async function createSession() {
   try {
     const session = await api("/api/sessions", {
       method: "POST",
-      body: { task_id: $("#taskSelect").value, seed: Number($("#seedInput").value || 0) },
+      body: { task_id: $("#taskSelect").value, seed: selectedSeed() },
     });
     renderSession(session);
     showValidation(true, "实验已创建。以下字段与范围来自当前运行时的公开动作合同。");
@@ -85,6 +129,7 @@ function renderSession(session) {
   $("#taskSelect").value = session.task_id;
   $("#seedInput").value = session.seed;
   previewTask(task);
+  lab.selectionPending = false;
   $("#sessionCode").textContent = session.session_id.slice(0, 8).toUpperCase();
   $("#sessionState").textContent = session.done ? "Episode completed" : `${task.title} · seed ${session.seed}`;
   $("#experimentBadge").textContent = `EXPERIMENT ${Number(campaign.experiment_index) + 1}`;
@@ -97,16 +142,25 @@ function renderSession(session) {
   $("#costValue").textContent = fmt(visible.cost);
   $("#assayValue").textContent = campaign.final_assay_count ?? 0;
   $("#downloadLog").disabled = history.length === 0;
-  renderTwin(latest, session.public_vessel);
-  renderActions(session.available_actions, session.done);
+  renderTwin(latest, session.public_vessel, task);
+  renderActions(session.available_actions, session.all_actions || session.available_actions, session.done);
   renderReport(session.lab_report, visible);
   renderHistory(history);
+  updateSelectionState();
 }
 
-function renderTwin(latest, vessel) {
+function renderTwin(latest, vessel, task) {
   const effect = latest?.state_effects || {};
   const operation = latest?.action?.operation || "idle";
-  $("#twinStage").dataset.visual = effect.visual || "idle";
+  const stage = $("#twinStage");
+  stage.dataset.visual = effect.visual || "idle";
+  stage.dataset.apparatus = vessel?.apparatus_family || task?.apparatus_family || "batch";
+  stage.dataset.phaseActive = String(Boolean(vessel?.phase_active));
+  stage.dataset.solidActive = String(Boolean(vessel?.solid_active));
+  stage.dataset.flowConfigured = String(Boolean(vessel?.flow_configured));
+  stage.dataset.electrochemicalConfigured = String(Boolean(vessel?.electrochemical_configured));
+  stage.dataset.distillationActive = String(Boolean(vessel?.distillation_active));
+  $("#apparatusLabel").textContent = vessel?.apparatus_label || task?.apparatus_label || "批式反应器";
   $("#twinOperation").textContent = operation;
   $("#twinStatus").textContent = latest?.status || "Ready for setup";
   const netVolume = Number(vessel?.net_volume_delta_L || 0);
@@ -122,14 +176,38 @@ function renderTwin(latest, vessel) {
   ].map((item) => `<span>${esc(item)}</span>`).join("") : "<span>Δt —</span><span>ΔV —</span><span>Δrisk —</span>";
 }
 
-function renderActions(actions, done) {
+function renderActions(actions, allActions, done) {
   const select = $("#operationSelect");
-  select.innerHTML = actions.map((entry, index) => `<option value="${index}">${esc(entry.operation)}</option>`).join("");
+  select.innerHTML = actions.map((entry, index) => `<option value="${index}">${esc(entry.effect?.label || entry.operation)} · ${esc(entry.operation)}</option>`).join("");
   select.disabled = done || !actions.length;
   $("#submitAction").disabled = done || !actions.length;
   $("#validCount").textContent = `${actions.length} VALID`;
   lab.session.available_actions = actions;
+  lab.session.all_actions = allActions;
+  renderOperationRoadmap(allActions);
   renderOperationFields();
+}
+
+function renderOperationRoadmap(actions) {
+  const roadmap = $("#operationRoadmap");
+  roadmap.innerHTML = actions.map((entry) => {
+    const available = entry.valid !== false;
+    const reason = available
+      ? (entry.effect?.summary || "当前状态可执行。")
+      : [...new Set(entry.lock_reasons || ["等待前序实验条件满足。"])].join(" ");
+    return `<button type="button" class="operation-step ${available ? "available" : "locked"}" data-roadmap-operation="${esc(entry.operation)}" ${available ? "" : "disabled"}><b>${available ? "✓" : "🔒"}</b><span><strong>${esc(entry.effect?.label || entry.operation)}</strong><code>${esc(entry.operation)}</code><small>${esc(reason)}</small></span></button>`;
+  }).join("");
+  roadmap.querySelectorAll("[data-roadmap-operation]:not(:disabled)").forEach((button) => {
+    button.addEventListener("click", () => selectRoadmapOperation(button.dataset.roadmapOperation));
+  });
+}
+
+function selectRoadmapOperation(operation) {
+  const index = lab.session.available_actions.findIndex((entry) => entry.operation === operation);
+  if (index < 0 || lab.selectionPending) return;
+  $("#operationSelect").value = String(index);
+  renderOperationFields();
+  $("#operationSelect").focus();
 }
 
 function renderOperationFields() {
@@ -137,7 +215,7 @@ function renderOperationFields() {
   lab.affordance = lab.session.available_actions[Number($("#operationSelect").value || 0)];
   const effect = lab.affordance?.effect;
   $("#composeEffectLabel").textContent = effect?.label || "操作效果";
-  $("#composeEffectTitle").textContent = lab.affordance?.operation || "暂无合法操作";
+  $("#composeEffectTitle").textContent = lab.affordance ? `${effect?.label || "操作"} · ${lab.affordance.operation}` : "暂无合法操作";
   $("#composeEffectSummary").textContent = effect?.summary || "当前状态没有可公开执行的动作。";
   $("#operationFields").innerHTML = (lab.affordance?.fields || []).map(fieldControl).join("");
   document.querySelectorAll("[data-action-field]").forEach((input) => input.addEventListener("input", updatePreview));

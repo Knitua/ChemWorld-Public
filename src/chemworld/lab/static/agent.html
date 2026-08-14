@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ChemWorld Agent Observatory</title>
+  <link rel="stylesheet" href="/lab.css">
+  <link rel="stylesheet" href="/agent.css">
+</head>
+<body class="agent-page">
+  <header class="nav-shell">
+    <a class="brand" href="/" aria-label="ChemWorld Agent Observatory">
+      <span class="brand-orbit"><i></i><i></i><i></i></span>
+      <span><strong>ChemWorld</strong><small>Agent Observatory</small></span>
+    </a>
+    <div class="local-state"><i></i><span>LOCAL · PROVIDER-FREE</span></div>
+    <nav class="mode-nav" aria-label="Lab mode"><a href="/student/">Student Lab</a><a class="active" href="/agent/">Agent Observatory</a></nav>
+    <a class="repo-link" href="https://github.com/sunyrain/ChemWorld-Public">Public repository ↗</a>
+  </header>
+
+  <main class="observatory-shell">
+    <section class="observatory-hero">
+      <div>
+        <p class="eyebrow">OBSERVE · REPLAY · COMPARE</p>
+        <h1>看见 Agent 如何做实验。</h1>
+        <p>运行 Public 内置策略，逐步查看它收到的公开上下文、选择的动作、仪器信号、事务结果与资源账本。</p>
+      </div>
+      <div class="boundary-card"><span>EXECUTION BOUNDARY</span><strong>OFFLINE STRATEGIES ONLY</strong><p>此页面不调用在线模型。每个决策仍通过正式 runner 和环境合同。</p></div>
+    </section>
+
+    <section class="control-deck panel">
+      <div class="control-title"><span>01</span><div><p>RUN CONTROL</p><h2>配置一次可观察实验</h2></div><b id="runStatus" data-status="empty">NOT CREATED</b></div>
+      <div class="control-grid">
+        <label>实验任务<select id="agentTask"></select></label>
+        <label>公开策略<select id="agentSelect"></select></label>
+        <label>Seed<input id="agentSeed" type="number" min="0" value="0"></label>
+        <button id="createRun" class="primary-control">创建运行</button>
+      </div>
+      <div id="agentCard" class="agent-card"><span>策略说明</span><strong>载入中…</strong><p>正在读取 provider-free agent catalog。</p></div>
+      <div class="transport-controls">
+        <button id="stepRun" disabled><span>STEP</span>单步决策</button>
+        <button id="playRun" disabled><span>RUN</span>连续运行</button>
+        <button id="pauseRun" disabled><span>PAUSE</span>在下一步暂停</button>
+        <button id="downloadRun" disabled><span>EXPORT</span>下载公开轨迹</button>
+      </div>
+    </section>
+
+    <section class="observatory-grid">
+      <article class="panel live-lab">
+        <div class="agent-heading"><span>02</span><div><p>LIVE LAB</p><h2>实验与公开信号</h2></div><b id="apparatusBadge">APPARATUS —</b></div>
+        <div class="agent-stage twin-stage" id="agentStage" data-visual="idle" data-apparatus="batch" data-phase-active="false" data-solid-active="false">
+          <div class="grid-floor"></div>
+          <div class="agent-orbit"><i></i><i></i><b>AI</b></div>
+          <div class="apparatus">
+            <div class="feed"><i></i><b></b></div><div class="probe"><i></i></div>
+            <div class="separation-kit"><i></i><b></b><span></span></div><div class="flow-kit"><i></i><b></b><span></span></div>
+            <div class="electro-kit"><i></i><b></b><span></span></div><div class="distillation-kit"><i></i><b></b><span></span></div>
+            <div class="crystallization-kit"><i></i><b></b><span></span></div><div class="vessel-neck"></div>
+            <div class="vessel"><div id="agentLiquid" class="liquid"></div><div class="phase organic"></div><div class="phase aqueous"></div><div class="crystals"><i></i><i></i><i></i><i></i><i></i></div><div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="stirrer"></div></div>
+            <div class="hotplate"><i></i></div><div class="heat-wave h1"></div><div class="heat-wave h2"></div>
+          </div>
+          <div class="instrument"><i></i><span>PUBLIC SIGNAL</span></div>
+          <div class="stage-readout"><span id="stageEvent">WAITING FOR RUN</span><strong id="stageOperation">idle</strong><small id="stageTransaction">No transaction yet</small></div>
+          <div class="operation-pulse"></div>
+        </div>
+        <div class="run-kpis">
+          <div><span>Step</span><strong id="runStep">0 / —</strong></div><div><span>Score</span><strong id="runScore">—</strong></div><div><span>Risk</span><strong id="runRisk">0.000</strong></div><div><span>Cost</span><strong id="runCost">0.000</strong></div><div><span>Runtime</span><strong id="runRuntime">0.00 s</strong></div>
+        </div>
+      </article>
+
+      <article class="panel decision-panel">
+        <div class="agent-heading"><span>03</span><div><p>DECISION LENS</p><h2>Agent 当时看到了什么</h2></div><b id="decisionStage">NO CONTEXT</b></div>
+        <section class="decision-block"><span>AVAILABLE OPERATIONS</span><div id="availableOps" class="token-list"><i>尚未开始</i></div></section>
+        <section class="decision-block action-choice"><span>SELECTED ACTION</span><strong id="selectedAction">—</strong><pre id="selectedPayload">{}</pre></section>
+        <section class="decision-block"><span>DECISION EVIDENCE</span><dl id="decisionEvidence" class="decision-evidence"><div><dt>Expected effect</dt><dd>—</dd></div><div><dt>Diagnostic target</dt><dd>—</dd></div><div><dt>Information gain</dt><dd>—</dd></div></dl></section>
+        <section class="decision-block agent-reason"><span>AGENT TRACE</span><p id="reasoningSummary">当前策略尚未产生公开理由记录。</p><small id="memoryNote"></small></section>
+      </article>
+    </section>
+
+    <section class="evidence-grid">
+      <article class="panel spectrum-panel">
+        <div class="agent-heading compact"><span>04</span><div><p>INSTRUMENT VIEW</p><h2>公开光谱与测量</h2></div><select id="spectrumSelect" disabled aria-label="选择光谱"></select></div>
+        <div class="spectrum-shell"><svg id="spectrumChart" viewBox="0 0 800 260" role="img" aria-label="公开仪器信号"><g class="chart-grid"></g><path id="spectrumPath"></path></svg><div id="spectrumEmpty" class="spectrum-empty">Agent 使用仪器后，这里会绘制公开信号。</div></div>
+        <div class="spectrum-caption"><span id="spectrumKind">NO SIGNAL</span><small id="spectrumAxes">—</small></div>
+      </article>
+      <article class="panel report-agent-panel">
+        <div class="agent-heading compact"><span>05</span><div><p>OUTCOME</p><h2>事务与实验报告</h2></div><b id="outcomeStatus">NO EVENT</b></div>
+        <p id="outcomeText" class="outcome-text">单步运行后显示公开实验反馈。</p>
+        <div id="visibleMetrics" class="agent-metric-grid"></div>
+        <div class="resource-strip"><div><span>Decision time</span><strong id="decisionTime">—</strong></div><div><span>Model calls</span><strong id="modelCalls">0</strong></div><div><span>Tokens</span><strong id="tokenCount">0</strong></div><div><span>Accounting</span><strong id="accountingState">—</strong></div></div>
+      </article>
+    </section>
+
+    <section class="panel timeline-panel">
+      <div class="agent-heading compact"><span>06</span><div><p>REPLAY</p><h2>可回放决策时间线</h2></div><b id="replayState">FOLLOWING LIVE</b></div>
+      <div id="timeline" class="agent-timeline"><p>创建并运行 Agent 后，每个已提交或回滚的请求都会保留在这里。</p></div>
+    </section>
+
+    <section class="panel comparison-panel">
+      <div class="agent-heading compact"><span>07</span><div><p>EXPLORATORY COMPARISON</p><h2>同任务、同 Seed 的策略对照</h2></div><b>NOT A LEADERBOARD</b></div>
+      <p class="comparison-note">用于检查行为差异，不用于在单个 seed 上宣称策略优越。正式比较仍需固定协议和多 seed 评估。</p>
+      <div class="comparison-controls"><label>选择 2–4 个策略<select id="compareAgents" multiple size="5" aria-label="比较策略"></select></label><button id="startComparison">开始对照</button></div>
+      <div id="comparisonResults" class="comparison-results"><p>尚未运行策略对照。</p></div>
+    </section>
+  </main>
+
+  <footer><span>ChemWorld Public · Agent Observatory</span><p>Official runner · Public observations · Exact replay semantics</p></footer>
+  <script src="/agent.js" defer></script>
+</body>
+</html>

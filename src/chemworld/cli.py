@@ -680,7 +680,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     lab_parser = subparsers.add_parser(
         "lab",
-        help="Open the provider-free Student Lab in a local browser.",
+        help="Open the provider-free Student Lab and Agent Observatory locally.",
     )
     lab_parser.add_argument("--host", default="127.0.0.1")
     lab_parser.add_argument("--port", type=int, default=8876)

@@ -43,9 +43,9 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 5834,
+      "bytes": 6367,
       "path": "README.md",
-      "sha256": "dedd0955a55bd809f36e22849e45b9ed5e6bd5277afb2c260b511087c2abf403"
+      "sha256": "75c9a5252a38284ff64279afa9a0740c767b3761c4a1ae630edda323d5c7a6fb"
     },
     {
       "bytes": 14591,
@@ -143,9 +143,19 @@
       "sha256": "dc021916f916ce0d5cede411cd4567955ee91fa80960818013d043b58465f0ed"
     },
     {
-      "bytes": 5284,
+      "bytes": 2537,
+      "path": "docs/agent-observatory.md",
+      "sha256": "4e274562687b4233c1a7d4298ab4259e2f2068d7abe33bd44e56e1a00458d23f"
+    },
+    {
+      "bytes": 2209,
+      "path": "docs/agent-observatory.zh.md",
+      "sha256": "5c65cc5b9b1b0450a1deb04eac43a4dddc55f0a87cf0efa69db463aa51d13821"
+    },
+    {
+      "bytes": 6209,
       "path": "docs/agents.md",
-      "sha256": "be3b55d38d5c45e1bbdac150c45a224f90be1fd0a593ddc014da407162da7bec"
+      "sha256": "638e944213ccb3cc54989affe8e48649d91b9e4ed24705633b664bce633c9953"
     },
     {
       "bytes": 4717,
@@ -193,9 +203,9 @@
       "sha256": "a61799baf1f711fc2260bb9c9dbfac74e400273199fd061c4f6dd925d34b538f"
     },
     {
-      "bytes": 3950,
+      "bytes": 4315,
       "path": "docs/getting_started.md",
-      "sha256": "12080c0cd88558be2c150267bafedcdafc6e00a36a35072149b0dc06d65b5e3a"
+      "sha256": "eb250436ddb1ab9cc85f4ba205039ebc8b1a7915c6a611d17105ca0b70adc9f1"
     },
     {
       "bytes": 4601,
@@ -248,14 +258,14 @@
       "sha256": "e444eee130fdeaafabb1637bfa1a4c1af356203d4b4baba690239d4bd4b164f8"
     },
     {
-      "bytes": 1181,
+      "bytes": 1344,
       "path": "docs/quickstart.md",
-      "sha256": "3e07eeb7e22c61c984dbb4eaa73bcb412e551db1d3c80ad30887d30ac4dba6a1"
+      "sha256": "dcc1fa881adbe1b7144208169d3056fa6795eac326f43c8f874765cf0b33e1bd"
     },
     {
-      "bytes": 1172,
+      "bytes": 1335,
       "path": "docs/quickstart.zh.md",
-      "sha256": "4727f88955d43b1f30664a99e0df713b29acef3211958176b9f7be10ad5e0e25"
+      "sha256": "38b55138a929b528e110fdfb4b31750bfae4815f81b2803befdaadb8338088ad"
     },
     {
       "bytes": 930,
@@ -278,14 +288,14 @@
       "sha256": "4bd698e760cc9de592f3cb38c104eb11f14877065c4d21ff4021cb824717c50d"
     },
     {
-      "bytes": 1570,
+      "bytes": 1712,
       "path": "docs/student-lab.md",
-      "sha256": "c2e8c0cb877f31090cf3319b51ad4bb191709baf1f1819fa9957810330b19520"
+      "sha256": "1c122ee91ae98bc525b85c0686789d17a1c61440fa52913ea466c5666bd02a6d"
     },
     {
-      "bytes": 1372,
+      "bytes": 1510,
       "path": "docs/student-lab.zh.md",
-      "sha256": "64b9cc1618a2815b15f97fea13c715354c8e768b98b1e74f4e2888018f913a5b"
+      "sha256": "2860ee75a358b1f463a5cd7c4f3ed74fd60e15adbd9af9f6ff37e7d7c3ad2333"
     },
     {
       "bytes": 8271,
@@ -448,9 +458,9 @@
       "sha256": "5aa69e3bbdeb1198b7ee42f183be93f73a497a515dede5b0eb2626b1c274c8a0"
     },
     {
-      "bytes": 2620,
+      "bytes": 2740,
       "path": "mkdocs.yml",
-      "sha256": "d22e0c98916733942c13dbe8bb3fb8e01ca6c1377fb46936a314f55714710507"
+      "sha256": "6217a8f3aa447a6394dda954339a1edcc14b913df4de206348d07b5d6b9f0547"
     },
     {
       "bytes": 72208,
@@ -488,9 +498,9 @@
       "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
     },
     {
-      "bytes": 3221,
+      "bytes": 3267,
       "path": "pyproject.toml",
-      "sha256": "12e5b33c75505eb30170230a32c53f2bf52b63bc197b7c3184bf486fc55fabd6"
+      "sha256": "a0e2be7a3bff52eb6cb026c65a76632289fe57a42998b82a0389637c6e9d4466"
     },
     {
       "bytes": 53,
@@ -503,9 +513,9 @@
       "sha256": "158620362c98a610dac51224968f8b4bafd7269af909f88c7944f9064f1d2f87"
     },
     {
-      "bytes": 5067,
+      "bytes": 5087,
       "path": "scripts/build_release_manifest.py",
-      "sha256": "2f2564ea63a58a6db7875ed2d969a53e041aa0c09270caf6e952d3e7b0347611"
+      "sha256": "eb7688906f13d25fa6391dc8033f157bca0bfd01c378bb4159dc0a1aeee532d5"
     },
     {
       "bytes": 21200,
@@ -653,9 +663,9 @@
       "sha256": "bbf1a2def3f58053d32c4815182943ccba66fa72f4c1747053f2ab3790173d7b"
     },
     {
-      "bytes": 26831,
+      "bytes": 26842,
       "path": "src/chemworld/cli.py",
-      "sha256": "3d46d045201f88f1316d4751b5e2660e458a1c913a93db504cb7dc649007fd4d"
+      "sha256": "4764fad9226f9568d2ea718c2594f9bb512bc595e209bd2d85e25166da959f42"
     },
     {
       "bytes": 918,
@@ -1003,34 +1013,54 @@
       "sha256": "6f17102501d3fa61d50bbd50ea8eafa750505a00e8e02791bffb42bb9580fbed"
     },
     {
-      "bytes": 208,
+      "bytes": 372,
       "path": "src/chemworld/lab/__init__.py",
-      "sha256": "96600f9eecf2852102d056c88c446dbf146790682888725278026f510a8983c5"
+      "sha256": "e5b897447cc4a2bdab4b28f3e82c6bd445143b97f32de0031cd67c72d93bb0f9"
     },
     {
-      "bytes": 6830,
+      "bytes": 17754,
+      "path": "src/chemworld/lab/agent_run.py",
+      "sha256": "39286e4505e56e4f58a6a9e76f6c5fa86b93169d169d688a42935eb2dc2cbc8d"
+    },
+    {
+      "bytes": 9675,
       "path": "src/chemworld/lab/server.py",
-      "sha256": "98c4d74ba9245c0456c533dcc399e733d5ba829c2e7d1e1009945d6cfc295bb7"
+      "sha256": "f6e2aab872373748dfe7a1ba3d55304ff1833e3a9c1de9fd11a55482a3de6c12"
     },
     {
-      "bytes": 12904,
+      "bytes": 17903,
       "path": "src/chemworld/lab/session.py",
-      "sha256": "403158751a39fa47e43543c1807d34c26095d1fd9a534a75563096b56598c9d2"
+      "sha256": "6f0b0ee9358bcc657db30cedb1fd797b6c1fa9d3619d16374f9feb574d1b5895"
     },
     {
-      "bytes": 7158,
+      "bytes": 10384,
+      "path": "src/chemworld/lab/static/agent.css",
+      "sha256": "a4744a7ca4f49226bdcd4ade55377d4cd45abacb0556bfa64935895ad439c79f"
+    },
+    {
+      "bytes": 8536,
+      "path": "src/chemworld/lab/static/agent.html",
+      "sha256": "1eab9394a83549ca9c13d1ef2ce66502c5d26ab4c80c32eb470b9550978c5533"
+    },
+    {
+      "bytes": 14630,
+      "path": "src/chemworld/lab/static/agent.js",
+      "sha256": "327f134d6a57d252ee925f7026a1ef8fe65047689ebeab4ecc592b6ce4773a26"
+    },
+    {
+      "bytes": 8642,
       "path": "src/chemworld/lab/static/index.html",
-      "sha256": "440a54bc4b1a9d9278ee108661c641821646302ad6f0da1941010ce08c6c5103"
+      "sha256": "e1c815f5d6a6b356faf7e543a7eb21e2fc70408769e558f0dd06b2ce23219af1"
     },
     {
-      "bytes": 19839,
+      "bytes": 29532,
       "path": "src/chemworld/lab/static/lab.css",
-      "sha256": "3208fb63c32613ee3b49571ea0a7c424fb9e4249a5918654ccf20774832f018c"
+      "sha256": "3ace0b713556bb012dc2db933af43b57fe9eb88d8cc7fa46c4c94b962e8367bb"
     },
     {
-      "bytes": 10763,
+      "bytes": 14603,
       "path": "src/chemworld/lab/static/lab.js",
-      "sha256": "a711162baa098b8b8412ef373456286e24736ef51cb9d411c4a6a789b3e4e388"
+      "sha256": "8bf51d557ab1f3d73980cca736494e341d86696684f244796401d68b79bda870"
     },
     {
       "bytes": 25550,
@@ -2028,9 +2058,9 @@
       "sha256": "c6f18e6895b4176f381ecda18a5a9621b232dd333c7d26e8c98f88a7243857df"
     },
     {
-      "bytes": 4076,
+      "bytes": 9639,
       "path": "tests/test_student_lab.py",
-      "sha256": "95aa647fd8ca3d7acb33cc2561e1fc9661e4d3f09388124a64f036010171a43e"
+      "sha256": "05bc653fcbd57ceebb6d7b86de60931f6acc346330041339ac9bf19a8e17488d"
     },
     {
       "bytes": 14843,
@@ -2146,11 +2176,11 @@
     "reason": "the manifest cannot hash itself without circularity"
   },
   "provenance": {
-    "construction": "provider-free Student Lab added to the stable public runtime",
+    "construction": "provider-free Student Lab and Agent Observatory added to the stable public runtime",
     "frozen_public_snapshot": "9df278371a030de2d6fd582d797931fdf90cd618",
     "presentation_and_tutorial_base": "03e8026301c185fd6ba5bdbda7460765d9b3e724",
     "runtime_and_evidence_snapshot": "6729ed6d422f479e687ed8e9a0f9d7b1e35e5261",
-    "scope": "stable_runtime_evidence_docs_tutorials_agent_onboarding_and_student_lab"
+    "scope": "stable_runtime_evidence_docs_tutorials_agent_onboarding_and_local_lab"
   },
   "release_date": "2026-08-12",
   "release_version": "0.4.0",

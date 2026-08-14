@@ -79,9 +79,55 @@ _EFFECTS: dict[str, tuple[str, str, str]] = {
     "electrolyze": ("运行电解", "按当前配置继续处理组成。", "electro"),
 }
 
+_LOCK_REASON_COPY: dict[str, str] = {
+    "has_volume": "先加入溶剂或液相。",
+    "has_material": "先加入至少一种反应物料。",
+    "has_phase_system": "先建立包含两个液相的体系。",
+    "phase_settled": "先完成混合并静置分层。",
+    "measurement_sample_available": "先准备足够的可测样品。",
+    "terminate_requires_material": "加入物料后才能终止本次实验。",
+    "final_assay_sample_available": "需要为最终检测保留可用样品。",
+    "run_flow_requires_flow_setup": "先设置连续流流量。",
+    "electrolyze_requires_potential": "先设置电位和电流。",
+    "seed_crystals_requires_reaction_advance": "先推进反应，再进入结晶步骤。",
+    "seed_crystals_requires_current_reaction_assay": "先测量当前反应样品。",
+    "cool_crystallize_requires_reaction_or_seed": "先推进反应或加入晶种。",
+    "cool_crystallize_target_feed_available": "需要保留可供结晶的目标物流。",
+    "filter_requires_crystallization": "先完成冷却结晶。",
+    "collect_fraction_requires_distillation": "先执行蒸馏以生成馏分。",
+    "flagship_crystallization_requires_isolated_crystals": "先过滤并分离晶体。",
+    "flagship_electrochemistry_requires_outcome_assay": "先完成电化学结果检测。",
+    "electrochemical_flagship_phase_allows_operation": "当前电化学流程阶段尚未解锁。",
+    "campaign_resources_available": "当前实验预算或物料库存不足。",
+}
+
+_APPARATUS_LABELS: dict[str, str] = {
+    "batch": "批式反应器",
+    "separation": "液液分离系统",
+    "crystallization": "冷却结晶系统",
+    "distillation": "蒸馏与馏分收集",
+    "flow": "连续流反应器",
+    "electrochemical": "电化学反应池",
+}
+
 
 def _title(task_id: str) -> str:
     return task_id.replace("-", " ").title()
+
+
+def _apparatus_family(operations: tuple[str, ...]) -> str:
+    operation_set = set(operations)
+    if "electrolyze" in operation_set:
+        return "electrochemical"
+    if "run_flow" in operation_set:
+        return "flow"
+    if "cool_crystallize" in operation_set:
+        return "crystallization"
+    if "distill" in operation_set:
+        return "distillation"
+    if "separate_phase" in operation_set:
+        return "separation"
+    return "batch"
 
 
 def task_catalog() -> list[dict[str, Any]]:
@@ -93,6 +139,7 @@ def task_catalog() -> list[dict[str, Any]]:
             task.task_id,
             (_title(task.task_id), task.description, "设计合法、可回放且资源受控的实验路径。"),
         )
+        apparatus_family = _apparatus_family(task.allowed_operations)
         cards.append(
             {
                 "task_id": task.task_id,
@@ -106,6 +153,9 @@ def task_catalog() -> list[dict[str, Any]]:
                 "success_metrics": list(task.success_metrics),
                 "physics_maturity": task.kernel_maturity.lowest_level.value,
                 "proxy_allowed": task.kernel_maturity.proxy_allowed,
+                "allowed_operations": list(task.allowed_operations),
+                "apparatus_family": apparatus_family,
+                "apparatus_label": _APPARATUS_LABELS[apparatus_family],
             }
         )
     cards.sort(key=lambda item: (item["task_id"] != "reaction-to-assay", item["task_id"]))
@@ -123,8 +173,20 @@ def _effect(operation: str) -> dict[str, str]:
 def _affordance(entry: dict[str, Any]) -> dict[str, Any]:
     schema = dict(entry.get("schema") or entry)
     operation = str(entry.get("operation") or schema.get("operation") or "")
+    invalid_reasons = list(entry.get("invalid_reasons") or [])
     return {
         "operation": operation,
+        "valid": bool(entry.get("valid", True)),
+        "invalid_reasons": invalid_reasons,
+        "lock_reasons": [
+            _LOCK_REASON_COPY.get(
+                str(reason),
+                "等待前序实验条件满足。"
+                if not str(reason).startswith("campaign_resource:")
+                else "当前实验资源不足。",
+            )
+            for reason in invalid_reasons
+        ],
         "required_fields": list(schema.get("required_fields") or []),
         "fields": deepcopy(schema.get("fields") or []),
         "preconditions": list(schema.get("preconditions") or []),
@@ -177,6 +239,18 @@ class LabSession:
                 if int(row.get("experiment_index", -1)) == experiment_index
             ]
             effects = [dict(row.get("state_effects") or {}) for row in current]
+            operations = [str(row.get("action", {}).get("operation") or "") for row in current]
+            task = get_task(self.task_id)
+            apparatus_family = _apparatus_family(task.allowed_operations)
+            all_action_entries = {
+                str(item.get("operation") or ""): item
+                for item in base.available_actions(include_invalid=True)
+            }
+            all_actions = [
+                _affordance(all_action_entries[operation])
+                for operation in task.allowed_operations
+                if operation in all_action_entries
+            ]
             return {
                 "session_id": self.session_id,
                 "task_id": self.task_id,
@@ -184,6 +258,7 @@ class LabSession:
                 "campaign_state": campaign,
                 "lab_report": report,
                 "available_actions": [_affordance(item) for item in base.available_actions()],
+                "all_actions": all_actions,
                 "history": list(self._history),
                 "public_vessel": {
                     "experiment_index": experiment_index,
@@ -198,6 +273,35 @@ class LabSession:
                     "sampled_volume_L": sum(
                         float(item.get("sample_delta_L", 0.0)) for item in effects
                     ),
+                    "apparatus_family": apparatus_family,
+                    "apparatus_label": _APPARATUS_LABELS[apparatus_family],
+                    "phase_active": any(
+                        item
+                        in {
+                            "add_phase",
+                            "add_extractant",
+                            "mix",
+                            "settle",
+                            "separate_phase",
+                            "wash",
+                        }
+                        for item in operations
+                    ),
+                    "solid_active": any(
+                        item in {"seed_crystals", "cool_crystallize", "filter_crystals"}
+                        for item in operations
+                    ),
+                    "flow_configured": any(
+                        item in {"set_flow_rate", "run_flow"} for item in operations
+                    ),
+                    "electrochemical_configured": any(
+                        item in {"set_potential", "electrolyze"} for item in operations
+                    ),
+                    "distillation_active": any(
+                        item in {"evaporate", "distill", "collect_fraction"}
+                        for item in operations
+                    ),
+                    "terminated": "terminate" in operations,
                 },
                 "done": bool(campaign.get("done")),
             }

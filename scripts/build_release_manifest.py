@@ -89,10 +89,10 @@ def main() -> int:
             "runtime_and_evidence_snapshot": RUNTIME_EVIDENCE_SNAPSHOT,
             "presentation_and_tutorial_base": PUBLIC_V020_RELEASE,
             "construction": (
-                "provider-free Student Lab added to the stable public runtime"
+                "provider-free Student Lab and Agent Observatory added to the stable public runtime"
             ),
             "scope": (
-                "stable_runtime_evidence_docs_tutorials_agent_onboarding_and_student_lab"
+                "stable_runtime_evidence_docs_tutorials_agent_onboarding_and_local_lab"
             ),
         },
         "headline_denominators": {

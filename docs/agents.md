@@ -79,6 +79,25 @@ Other constructor-free names include `random`, `lhs`, `greedy`, `gp_bo`, `rf_ei`
 `safe_gp_bo`, `tool_using_llm_stub` and `llm_replay`. Use `make_agent(name)` from
 `chemworld.eval.runner` when composing runs in Python.
 
+## Inspect policies in the browser
+
+Run `chemworld lab` and open `http://127.0.0.1:8876/agent/`. The Agent Observatory exposes a
+deliberately provider-free subset of the built-ins. It calls the same official `run_agent()` path
+as the CLI and presents, step by step:
+
+- the public legal-operation context available before the choice;
+- the submitted typed action and transaction result;
+- public lab reports, processed estimates and spectra;
+- decision-audit fields and any declared Agent trace;
+- environment and method-resource accounting.
+
+You can pause at a step boundary, replay completed records, download the public run JSON, or launch
+two to four policies on the same task and seed. That comparison is a behavioral inspection aid, not
+a benchmark: formal claims require multiple registered seeds, fixed resource limits and the public
+evaluation protocol.
+
+[Read the Agent Observatory guide →](agent-observatory.md)
+
 ## Live DeepSeek adapter
 
 Keep the key out of source files and shell history:

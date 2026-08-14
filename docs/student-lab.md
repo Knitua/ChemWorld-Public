@@ -7,9 +7,12 @@ does not invoke an agent or a model. Install the package and run:
 chemworld lab
 ```
 
-The command opens `http://127.0.0.1:8876/`. Use `--no-browser` on a remote machine, or select a
+The command opens `http://127.0.0.1:8876/student/`. Use `--no-browser` on a remote machine, or select a
 different loopback port with `--port`. The server rejects non-loopback bind addresses because it
 has no authentication and is intended for local use only.
+
+Use the mode switch in the header to open the provider-free [Agent Observatory](agent-observatory.md)
+without restarting the server.
 
 ## What the animation means
 

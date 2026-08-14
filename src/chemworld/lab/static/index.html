@@ -14,6 +14,7 @@
       <span><strong>ChemWorld</strong><small>Student Lab</small></span>
     </a>
     <div class="local-state"><i></i><span>LOCAL · PROVIDER-FREE</span></div>
+    <nav class="mode-nav" aria-label="Lab mode"><a class="active" href="/student/">Student Lab</a><a href="/agent/">Agent Observatory</a></nav>
     <a class="repo-link" href="https://github.com/sunyrain/ChemWorld-Public">Public repository ↗</a>
   </header>
 
@@ -37,6 +38,7 @@
       <aside class="panel mission-panel">
         <div class="panel-heading"><span>01</span><div><p>MISSION</p><h2>实验任务</h2></div><b id="missionMaturity">—</b></div>
         <label>选择任务<select id="taskSelect"></select></label>
+        <div id="selectionState" class="selection-state" data-state="ready"><i></i><span>选择任务后开始实验</span></div>
         <div class="seed-row">
           <label>Seed<input id="seedInput" type="number" min="0" value="0"></label>
           <button id="createSession">开始 / 重置</button>
@@ -52,11 +54,22 @@
 
       <section class="panel twin-panel">
         <div class="panel-heading"><span>02</span><div><p>DIGITAL TWIN</p><h2>公开实验状态</h2></div><b id="experimentBadge">EXPERIMENT —</b></div>
-        <div class="twin-stage" id="twinStage" data-visual="idle">
+        <div class="twin-stage" id="twinStage" data-visual="idle" data-apparatus="batch" data-phase-active="false" data-solid-active="false">
           <div class="grid-floor"></div>
+          <div class="apparatus-mode"><span>APPARATUS</span><strong id="apparatusLabel">批式反应器</strong></div>
+          <div id="sessionPending" class="session-pending" hidden>
+            <span>任务尚未应用</span>
+            <strong id="pendingTaskTitle">—</strong>
+            <small>中间装置为所选任务预览；实验数据与操作已暂停，点击左侧按钮开始新 Session。</small>
+          </div>
           <div class="apparatus">
             <div class="feed"><i></i><b></b></div>
             <div class="probe"><i></i></div>
+            <div class="separation-kit"><i></i><b></b><span></span></div>
+            <div class="flow-kit"><i></i><b></b><span></span></div>
+            <div class="electro-kit"><i></i><b></b><span></span></div>
+            <div class="distillation-kit"><i></i><b></b><span></span></div>
+            <div class="crystallization-kit"><i></i><b></b><span></span></div>
             <div class="vessel-neck"></div>
             <div class="vessel">
               <div id="liquid" class="liquid"></div>
@@ -92,6 +105,10 @@
       <aside class="panel composer-panel">
         <div class="panel-heading"><span>03</span><div><p>COMPOSE</p><h2>操作编排器</h2></div><b id="validCount">0 VALID</b></div>
         <label>当前合法操作<select id="operationSelect" disabled></select></label>
+        <section class="operation-roadmap" aria-labelledby="roadmapTitle">
+          <div><span id="roadmapTitle">任务操作路径</span><small>✓ 当前可执行 · 🔒 等待条件</small></div>
+          <div id="operationRoadmap" class="operation-list"><p>创建实验后显示全部操作。</p></div>
+        </section>
         <div class="effect-card"><span id="composeEffectLabel">操作效果</span><strong id="composeEffectTitle">创建实验后查看</strong><p id="composeEffectSummary">字段、范围和枚举直接来自环境的公开 action schema。</p></div>
         <div id="operationFields" class="operation-fields"></div>
         <details><summary>检查 Action JSON</summary><pre id="actionPreview">{}</pre></details>

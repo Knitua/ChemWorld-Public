@@ -96,6 +96,7 @@ ignore = ["N803", "N806", "N815"]
 "*.ipynb" = ["E501", "F401", "I001", "RUF001"]
 "apps/task_lab/*.py" = ["RUF001"]
 "src/chemworld/lab/session.py" = ["RUF001"]
+"src/chemworld/lab/agent_run.py" = ["RUF001"]
 
 [tool.mypy]
 python_version = "3.11"
