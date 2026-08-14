@@ -8,7 +8,7 @@
 需要 Python 3.11 或更高版本。
 
 ```bash
-git clone https://github.com/sunyrain/ChemWorld-Public.git
+git clone https://github.com/Knitua/ChemWorld-Public.git
 cd ChemWorld-Public
 python -m pip install -e ".[dev]"
 ```
@@ -129,4 +129,4 @@ Tool-agent Stub 和 LLM Trace Replay。它们都在本机运行且不调用在�
 | 换一个更复杂的任务 | [查看世界能力地图](world-capability-map.md) |
 | 编写自己的 Agent | [从动作 schema 开始](action_schema.md) |
 | 理解每种操作的含义 | [认识操作语言](operations.md) |
-| 做可复现的方法比较 | [阅读公开协议](https://github.com/sunyrain/ChemWorld-Public/tree/main/protocols) |
+| 做可复现的方法比较 | [阅读公开协议](https://github.com/Knitua/ChemWorld-Public/tree/main/protocols) |

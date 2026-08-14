@@ -17,7 +17,7 @@ from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_ROOT = ROOT / "notebooks"
-NOTEBOOK_SCHEMA_VERSION = "chemworld-public-tutorial-notebook-0.3"
+NOTEBOOK_SCHEMA_VERSION = "chemworld-public-tutorial-notebook-0.4"
 _SERVER_PATHS = ("/" + "mnt/afs/", "/" + "root/")
 FORBIDDEN = re.compile(
     r"private[-_ ]?eval|workstreams?|first_paper|paper[_ /-]?2|arxiv|"
@@ -49,7 +49,7 @@ if importlib.util.find_spec("google") is not None and importlib.util.find_spec("
         "pip",
         "install",
         "-q",
-        "chemworld-bench[notebooks] @ git+https://github.com/sunyrain/ChemWorld-Public.git@v0.3.0",
+        "chemworld-bench[notebooks] @ git+https://github.com/Knitua/ChemWorld-Public.git@v0.4.0",
     ])
 
 import gymnasium as gym
@@ -464,7 +464,7 @@ def _notebook(notebook_id: str, cells: list[Any]) -> Any:
             "chemworld": {
                 "schema_version": NOTEBOOK_SCHEMA_VERSION,
                 "notebook_id": notebook_id,
-                "runtime_release": "0.3.0",
+                "runtime_release": "0.4.0",
                 "seed_policy": "fixed_zero",
                 "output_scope": "deterministic_public_tutorial",
             },

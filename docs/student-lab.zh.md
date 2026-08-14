@@ -8,10 +8,13 @@ chemworld lab
 ```
 
 命令会打开 `http://127.0.0.1:8876/student/`。远程机器可使用 `--no-browser`，也可用 `--port`
-更换本机端口。服务没有身份验证，因此会拒绝非 loopback 的监听地址，只允许本机访问。
+更换本机端口。默认命令拒绝非 loopback 的监听地址；显式受限的公开模式与本地流程保持隔离。
 
 通过页头的模式切换可直接打开无需 Provider 的 [Agent Observatory](agent-observatory.md)，无需
 重启服务。
+
+需要托管公网预览时，请使用[部署指南](deployment.md)中的独立受限模式；默认本地命令仍只允许
+loopback。
 
 ## 动画表达什么
 

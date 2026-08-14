@@ -2,107 +2,88 @@
 
 ![ChemWorld — an agent moves through a replayable experimental lifecycle](docs/assets/chemworld-hero.png)
 
-**Programmable chemical worlds for controlled, replayable agent experimentation.**
+**A programmable virtual chemistry lab for students, experimental agents, and reproducible research.**
 
-[Documentation](https://sunyrain.github.io/ChemWorld-Public/) ·
-[First experiment](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/01_first_experiment.ipynb) ·
-[Local Lab](#local-lab-no-model-required) ·
-[Connect an agent](docs/agents.md) ·
-[Evidence](docs/evidence.md) ·
-[Release verification](scripts/verify_release.py)
+ChemWorld turns a chemical task into a stateful, typed laboratory: every accepted operation changes
+the same virtual apparatus, instruments reveal public signals, resources are accounted for, and the
+complete trace can be replayed. It is a software experiment environment—not guidance for physical
+laboratory work.
 
-ChemWorld gives experimental agents a typed laboratory interface rather than an answer-only benchmark. An agent inspects a public task contract, commits physically constrained operations, uses instruments, spends explicit resources, encounters recoverable failures and leaves a transaction-complete trace that can replay exactly.
+[**Run the first experiment in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb)
+· [Browse all notebooks](https://github.com/Knitua/ChemWorld-Public/tree/main/notebooks)
+· [Open the documentation](https://knitua.github.io/ChemWorld-Public/)
+· [Launch the Lab locally](#live-lab)
 
-[Explore every action and observation in the interactive documentation →](https://sunyrain.github.io/ChemWorld-Public/one-experiment/)
+## Choose your entry point
 
-## Start in five minutes
+| I want to… | Start here | What runs |
+| --- | --- | --- |
+| Complete a guided experiment | [Open notebook 01 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) | A deterministic Reaction-to-Assay experiment; no provider key |
+| Continue through purification | [Open notebook 02 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/02_reaction_to_purification.ipynb) | Reaction, extraction, wash, drying and concentration |
+| Change one world component | [Open notebook 03 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/03_controlled_world_change.ipynb) | The same public intervention across a controlled world fork |
+| Operate the virtual apparatus by hand | [Student Lab guide](https://knitua.github.io/ChemWorld-Public/student-lab/) | The real public Gym runtime in an animated browser workbench |
+| Watch and compare agents | [Agent Observatory guide](https://knitua.github.io/ChemWorld-Public/agent-observatory/) | Provider-free scripted, random, DOE and Bayesian strategies |
+| Connect my own agent | [Agent integration guide](https://knitua.github.io/ChemWorld-Public/agents/) | A small Python agent protocol with auditable traces |
+
+## Live Lab
+
+The Student Lab and Agent Observatory are not mock-ups. They create real in-memory ChemWorld Gym
+sessions and execute the same public action, observation, validation, resource and replay contracts
+used by Python agents.
+
+```bash
+git clone https://github.com/Knitua/ChemWorld-Public.git
+cd ChemWorld-Public
+python -m pip install -e .
+chemworld lab
+```
+
+Open `http://127.0.0.1:8876/student/` to operate the apparatus, or
+`http://127.0.0.1:8876/agent/` to step through and compare provider-free policies. The local command
+binds only to loopback by design. The deployable public service uses a separate, explicitly limited
+mode so online visitors cannot enable providers or submit arbitrary code.
+
+[Deployment guide](https://knitua.github.io/ChemWorld-Public/deployment/) ·
+[Deploy a Render preview](https://render.com/deploy?repo=https://github.com/Knitua/ChemWorld-Public)
+
+## What is public
+
+- 15 typed experimental tasks spanning reaction, separation, crystallization, distillation, flow,
+  electrochemistry, characterization, optimization and planning.
+- Stateful material, apparatus and resource ledgers with atomic validation and recoverable failures.
+- Public instruments and spectra, final assays, explicit termination and transaction-complete traces.
+- Eight browser-visible provider-free policies, including scripted chemistry, random and Latin
+  hypercube designs, greedy search, Gaussian-process BO, safety-constrained BO and offline LLM-style
+  replay.
+- Three executed tutorial notebooks whose retained outputs are deterministic demonstrations rather
+  than benchmark claims or optimized laboratory procedures.
+
+## Install and integrate
 
 ChemWorld supports Python 3.11 and 3.12.
 
 ```bash
-git clone https://github.com/sunyrain/ChemWorld-Public.git
-cd ChemWorld-Public
 python -m pip install -e ".[notebooks]"
 python examples/demo_manual_event_sequence.py
 ```
 
-The tutorials require no provider key:
+Agents can implement the small `BaseAgent` protocol and run through `run_agent`. Online provider
+adapters are opt-in Python workflows; they are deliberately not exposed by the public Lab service.
+See the [agent guide](https://knitua.github.io/ChemWorld-Public/agents/) for offline, DeepSeek and Codex
+subscription examples and their provenance requirements.
 
-| Notebook | What you do | Run |
-| --- | --- | --- |
-| `01_first_experiment` | Inspect a Reaction-to-Assay contract, validate actions, use HPLC and complete a final assay | [Open in Colab](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/01_first_experiment.ipynb) |
-| `02_reaction_to_purification` | Continue through extraction, wash, drying and concentration | [Open in Colab](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/02_reaction_to_purification.ipynb) |
-| `03_controlled_world_change` | Hold the public experiment fixed while one registered world component changes | [Open in Colab](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/03_controlled_world_change.ipynb) |
+## Reproducibility and scope
 
-Checked-in notebook outputs are deterministic public demonstrations, not benchmark results or optimized laboratory procedures.
+Release `v0.4.0` adds the provider-free Student Lab and Agent Observatory to the stable public
+runtime. The software, schemas, tests, protocols, sanitized evidence and deterministic release
+manifest remain in this repository so the attractive entry points do not replace scientific audit.
 
-## Local Lab (no model required)
+- [Documentation](https://knitua.github.io/ChemWorld-Public/)
+- [Evidence map](evidence/README.md)
+- [Public protocols](protocols/README.md)
+- [Release manifest](release/manifest.json)
+- [Limitations and scientific boundary](https://knitua.github.io/ChemWorld-Public/limitations/)
 
-Launch the animated browser workbench after installing the package:
-
-```bash
-chemworld lab
-```
-
-The Lab runs locally on `127.0.0.1`, uses the same typed action schemas and transactional Gym
-runtime as normal experiments, and requires no model, provider account or API key. It has two
-linked workspaces:
-
-- **Student Lab** (`/student/`) for composing and validating operations by hand.
-- **Agent Observatory** (`/agent/`) for stepping through provider-free policies, inspecting their
-  public decision context, spectra, transaction receipts and resource accounting, and making
-  same-task, same-seed exploratory comparisons.
-
-Both views visualize only committed public effects and observations; neither infers hidden
-composition. Online provider adapters remain an explicit Python workflow so credentials, model
-identity and resource limits cannot be hidden behind a one-click browser action.
-
-## Bring your own agent
-
-The public runner accepts any Python object implementing the small ChemWorld agent protocol. Start
-with an offline agent, then opt into the audited DeepSeek or Codex subscription adapters only when
-you need a live model. Provider credentials stay in environment variables and live runs record
-resource and model provenance separately from environment score.
-
-[Follow the custom and live-agent guide →](docs/agents.md)
-
-## What ChemWorld exposes
-
-- **Composable worlds:** reaction, thermal, phase, separation, crystallization, distillation, flow, electrochemical and observation components behind one compatibility-checked contract.
-- **Agent-facing operations:** public task prompts, parameter schemas, action validation, instruments, observations, failure reasons, resources and termination.
-- **Transactional execution:** accepted actions commit atomically; failed runtime preconditions roll back physical state while retaining registered attempt consequences.
-- **Controlled world forks:** experiment authors can change one registered private component while holding the public contract and typed action sequence fixed.
-- **Exact replay:** submitted traces—including rolled-back requests—remain reconstructable and auditable.
-
-## Frozen evidence
-
-Version 0.4.0 adds the provider-free Student Lab and Agent Observatory on top of the stable runtime.
-The local Lab is an interaction surface, not new benchmark evidence; the frozen v0.3.0 runtime
-evidence remains intact:
-
-![Evidence-derived agent lifecycle, rollback recovery and controlled world changes](docs/assets/representative-agent-and-world-change.svg)
-
-- 64/64 registered task–world units and 1,786/1,786 reference recipes completed.
-- 52/52 coverage-generated compositions completed, including 8/8 non-reference reaction–distillation worlds.
-- Eight deterministic lifecycles checked all 89 submitted actions: 88 committed and one planned rollback.
-- Six controlled parent–child world pairs produced 24 provider-free traces.
-- One independent agent completed a 15-action public-instrument lifecycle.
-
-These are finite software-model qualification results. They do not establish universal chemical fidelity, general agent intelligence or transfer to a physical laboratory.
-
-## Verify offline
-
-```bash
-python -m pip install -e ".[dev]"
-python scripts/verify_release.py
-python scripts/build_readme_visuals.py --check
-python -m pytest -q
-```
-
-The release verifier checks the exact Git-tracked file set and hashes, evidence sanitization receipts, denominators, failures, replay outcomes and the clean public-history boundary.
-
-## Release boundary
-
-This repository contains the stable runtime, public protocols, final sanitized evidence, deterministic tutorial outputs, documentation, examples and focused tests. It excludes manuscript files and assets, planning notes, development matrices, draft/interim/pilot results, raw provider responses, provider session identifiers, private evaluator configuration, credentials and all unpublished post-freeze development artifacts.
-
-See [CITATION.cff](CITATION.cff) for citation metadata. The software is available under the [MIT License](LICENSE).
+ChemWorld is released under the [MIT License](LICENSE). If you use a frozen release in research,
+cite the repository metadata in [`CITATION.cff`](CITATION.cff) and record the release tag, task,
+world split, seed, action trace and provider provenance when applicable.

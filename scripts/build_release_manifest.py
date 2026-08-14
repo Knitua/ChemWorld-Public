@@ -83,7 +83,7 @@ def main() -> int:
         "status": "stable_software_evidence_release",
         "release_version": "0.4.0",
         "release_date": "2026-08-12",
-        "repository": "https://github.com/sunyrain/ChemWorld-Public",
+        "repository": "https://github.com/Knitua/ChemWorld-Public",
         "provenance": {
             "frozen_public_snapshot": FROZEN_PUBLIC_SNAPSHOT,
             "runtime_and_evidence_snapshot": RUNTIME_EVIDENCE_SNAPSHOT,

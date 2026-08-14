@@ -8,11 +8,14 @@ chemworld lab
 ```
 
 The command opens `http://127.0.0.1:8876/student/`. Use `--no-browser` on a remote machine, or select a
-different loopback port with `--port`. The server rejects non-loopback bind addresses because it
-has no authentication and is intended for local use only.
+different loopback port with `--port`. The default command rejects non-loopback bind addresses; an
+explicit, bounded public mode is kept separate from this local workflow.
 
 Use the mode switch in the header to open the provider-free [Agent Observatory](agent-observatory.md)
 without restarting the server.
+
+For a managed public preview, use the separate bounded mode described in the
+[deployment guide](deployment.md). The default local command remains loopback-only.
 
 ## What the animation means
 

@@ -11,6 +11,7 @@ from typing import Any
 from chemworld.agents.base import HistoryRecord
 from chemworld.data.logging import to_builtin
 from chemworld.eval.runner import make_agent, run_agent
+from chemworld.lab.limits import LabCapacityError
 from chemworld.tasks import get_task
 
 _AGENT_CARDS: tuple[dict[str, Any], ...] = (
@@ -273,6 +274,12 @@ class AgentRun:
                 self.status = "cancelled"
                 self._condition.notify_all()
 
+    def worker_active(self) -> bool:
+        """Return whether this run owns a live background worker."""
+
+        with self._condition:
+            return self._thread is not None and self._thread.is_alive()
+
     def _ensure_startable(self) -> None:
         if self.status in {"completed", "failed", "cancelled"}:
             raise ValueError(f"agent run is already {self.status}")
@@ -352,14 +359,14 @@ class AgentRun:
                 "error": self.error,
                 "step_count": len(self.records),
                 "budget": self._task_budget,
-            "score": score,
-            "cost": visible.get("cost", 0.0),
-            "safety_risk": visible.get("safety_risk", 0.0),
-            "runtime_s": (
-                float(latest.get("method_resources", {}).get("run_wall_time_s", 0.0))
-                if latest
-                else 0.0
-            ),
+                "score": score,
+                "cost": visible.get("cost", 0.0),
+                "safety_risk": visible.get("safety_risk", 0.0),
+                "runtime_s": (
+                    float(latest.get("method_resources", {}).get("run_wall_time_s", 0.0))
+                    if latest
+                    else 0.0
+                ),
                 "apparatus": {
                     "family": self._apparatus_family,
                     "label": _APPARATUS_LABELS[self._apparatus_family],
@@ -390,35 +397,138 @@ class AgentComparison:
 class AgentRunManager:
     """Thread-safe registry for observable agent runs and comparisons."""
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        *,
+        max_runs: int | None = None,
+        max_concurrent_runs: int | None = None,
+        run_ttl_s: float | None = None,
+    ) -> None:
+        if max_runs is not None and max_runs < 1:
+            raise ValueError("max_runs must be positive")
+        if max_concurrent_runs is not None and max_concurrent_runs < 1:
+            raise ValueError("max_concurrent_runs must be positive")
+        if run_ttl_s is not None and run_ttl_s <= 0:
+            raise ValueError("run_ttl_s must be positive")
+        self._max_runs = max_runs
+        self._max_concurrent_runs = max_concurrent_runs
+        self._run_ttl_s = run_ttl_s
         self._runs: dict[str, AgentRun] = {}
         self._comparisons: dict[str, AgentComparison] = {}
+        self._last_access: dict[str, float] = {}
         self._lock = threading.RLock()
 
     def create(self, task_id: str, agent_id: str, seed: int) -> AgentRun:
-        run = AgentRun(task_id=task_id, agent_id=agent_id, seed=seed)
         with self._lock:
+            self._prune_locked(monotonic())
+            self._make_room_locked(1)
+            run = AgentRun(task_id=task_id, agent_id=agent_id, seed=seed)
             self._runs[run.run_id] = run
+            self._last_access[run.run_id] = monotonic()
         return run
 
     def get(self, run_id: str) -> AgentRun:
         with self._lock:
+            self._prune_locked(monotonic())
             try:
-                return self._runs[run_id]
+                run = self._runs[run_id]
             except KeyError as exc:
                 raise KeyError(f"unknown agent run: {run_id}") from exc
+            self._last_access[run_id] = monotonic()
+            return run
+
+    def command(self, run_id: str, command: str) -> AgentRun:
+        """Apply a bounded public control command to a run."""
+
+        run = self.get(run_id)
+        commands = {
+            "step": run.step,
+            "run": run.run,
+            "pause": run.pause,
+            "cancel": run.cancel,
+        }
+        if command not in commands:
+            raise ValueError("command must be step, run, pause, or cancel")
+        with self._lock:
+            if (
+                command in {"step", "run"}
+                and not run.worker_active()
+                and self._max_concurrent_runs is not None
+                and self._active_workers_locked() >= self._max_concurrent_runs
+            ):
+                raise LabCapacityError("public Lab agent capacity is temporarily full")
+            commands[command]()
+        return run
 
     def compare(self, task_id: str, agent_ids: list[str], seed: int) -> AgentComparison:
         unique = list(dict.fromkeys(agent_ids))
         if not 2 <= len(unique) <= 4:
             raise ValueError("comparison requires two to four distinct agents")
-        runs = [self.create(task_id, agent_id, seed) for agent_id in unique]
-        comparison = AgentComparison(task_id, unique, seed, [run.run_id for run in runs])
         with self._lock:
+            self._prune_locked(monotonic())
+            if (
+                self._max_concurrent_runs is not None
+                and self._active_workers_locked() + len(unique) > self._max_concurrent_runs
+            ):
+                raise LabCapacityError("public Lab comparison capacity is temporarily full")
+            self._make_room_locked(len(unique))
+            runs = [AgentRun(task_id, agent_id, seed) for agent_id in unique]
+            accessed_at = monotonic()
+            for run in runs:
+                self._runs[run.run_id] = run
+                self._last_access[run.run_id] = accessed_at
+            comparison = AgentComparison(task_id, unique, seed, [run.run_id for run in runs])
             self._comparisons[comparison.comparison_id] = comparison
-        for run in runs:
-            run.run()
+            for run in runs:
+                run.run()
         return comparison
+
+    def _active_workers_locked(self) -> int:
+        return sum(run.worker_active() for run in self._runs.values())
+
+    def _terminal_ids_locked(self) -> list[str]:
+        terminal = {"completed", "failed", "cancelled"}
+        return sorted(
+            (
+                run_id
+                for run_id, run in self._runs.items()
+                if run.state()["status"] in terminal and not run.worker_active()
+            ),
+            key=lambda run_id: self._last_access.get(run_id, 0.0),
+        )
+
+    def _drop_locked(self, run_id: str) -> None:
+        self._runs.pop(run_id, None)
+        self._last_access.pop(run_id, None)
+        self._comparisons = {
+            comparison_id: comparison
+            for comparison_id, comparison in self._comparisons.items()
+            if run_id not in comparison.run_ids
+        }
+
+    def _prune_locked(self, now: float) -> None:
+        if self._run_ttl_s is None:
+            return
+        stale_ids = [
+            run_id
+            for run_id, accessed_at in self._last_access.items()
+            if now - accessed_at >= self._run_ttl_s
+        ]
+        for run_id in stale_ids:
+            run = self._runs[run_id]
+            run.cancel()
+            if not run.worker_active():
+                self._drop_locked(run_id)
+
+    def _make_room_locked(self, required: int) -> None:
+        if self._max_runs is None:
+            return
+        for run_id in self._terminal_ids_locked():
+            if len(self._runs) + required <= self._max_runs:
+                break
+            self._drop_locked(run_id)
+        if len(self._runs) + required > self._max_runs:
+            raise LabCapacityError("public Lab run registry is temporarily full")
 
     def comparison_state(self, comparison_id: str) -> dict[str, Any]:
         with self._lock:
@@ -461,6 +571,9 @@ class AgentRunManager:
     def close_all(self) -> None:
         with self._lock:
             runs = list(self._runs.values())
+            self._runs.clear()
+            self._comparisons.clear()
+            self._last_access.clear()
         for run in runs:
             run.cancel()
 

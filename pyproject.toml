@@ -73,9 +73,9 @@ chemworld = "chemworld.cli:main"
 chemworld-lab = "chemworld.lab.server:main"
 
 [project.urls]
-Homepage = "https://github.com/sunyrain/ChemWorld-Public"
-Documentation = "https://sunyrain.github.io/ChemWorld-Public/"
-Issues = "https://github.com/sunyrain/ChemWorld-Public/issues"
+Homepage = "https://github.com/Knitua/ChemWorld-Public"
+Documentation = "https://knitua.github.io/ChemWorld-Public/"
+Issues = "https://github.com/Knitua/ChemWorld-Public/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/chemworld"]

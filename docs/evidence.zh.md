@@ -1,6 +1,6 @@
 # 证据
 
-ChemWorld v0.3.0 完整保留 v0.2.0 的四组冻结净化证据。新增展示层不会引入新的 benchmark 实验。
+ChemWorld v0.4.0 完整保留 v0.3.0 的四组冻结净化证据。新增 Lab 与展示层不会引入新的 benchmark 实验。
 
 | 证据组 | 冻结结果 | 支持的判断 |
 | --- | ---: | --- |
@@ -17,7 +17,7 @@ ChemWorld v0.3.0 完整保留 v0.2.0 的四组冻结净化证据。新增展示�
 
 每份压缩报告都会绑定原报告 SHA-256、净化器版本、公开协议，以及被移除元数据的摘要哈希。规范化 JSON 与 gzip `mtime=0` 使净化过程可重复。
 
-参见[完整报告地图](https://github.com/sunyrain/ChemWorld-Public/blob/main/evidence/README.md)、[代表性行为表](representative-behavior.md)和[发布 manifest](https://github.com/sunyrain/ChemWorld-Public/blob/main/release/manifest.json)。
+参见[完整报告地图](https://github.com/Knitua/ChemWorld-Public/blob/main/evidence/README.md)、[代表性行为表](representative-behavior.md)和[发布 manifest](https://github.com/Knitua/ChemWorld-Public/blob/main/release/manifest.json)。
 
 !!! warning "有限声明边界"
     通过这些检查不代表普适化学保真度、通用 Agent 智能或能够安全迁移到真实实验室。

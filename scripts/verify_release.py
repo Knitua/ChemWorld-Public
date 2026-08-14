@@ -299,7 +299,7 @@ def verify_tutorials() -> None:
         require(_TUTORIAL_FORBIDDEN.search(raw) is None, f"forbidden tutorial content: {name}")
         notebook = json.loads(raw)
         metadata = notebook.get("metadata", {}).get("chemworld", {})
-        require(metadata.get("runtime_release") == "0.3.0", f"tutorial release mismatch: {name}")
+        require(metadata.get("runtime_release") == "0.4.0", f"tutorial release mismatch: {name}")
         require(
             metadata.get("output_scope") == "deterministic_public_tutorial",
             f"tutorial output scope mismatch: {name}",

@@ -1,6 +1,6 @@
 # Evidence
 
-ChemWorld v0.3.0 retains the four frozen, sanitized evidence groups from v0.2.0. The presentation layer adds no new benchmark experiment.
+ChemWorld v0.4.0 retains the four frozen, sanitized evidence groups from v0.3.0. The Lab and presentation layers add no new benchmark experiment.
 
 | Evidence group | Frozen result | What it supports |
 | --- | ---: | --- |
@@ -17,7 +17,7 @@ ChemWorld v0.3.0 retains the four frozen, sanitized evidence groups from v0.2.0.
 
 Every compressed report binds its original SHA-256, sanitizer version, public protocol and a digest of removed metadata. Canonical JSON and gzip `mtime=0` make repeated sanitization reproducible.
 
-See the [complete report map](https://github.com/sunyrain/ChemWorld-Public/blob/main/evidence/README.md), [representative behavior tables](representative-behavior.md) and [release manifest](https://github.com/sunyrain/ChemWorld-Public/blob/main/release/manifest.json).
+See the [complete report map](https://github.com/Knitua/ChemWorld-Public/blob/main/evidence/README.md), [representative behavior tables](representative-behavior.md) and [release manifest](https://github.com/Knitua/ChemWorld-Public/blob/main/release/manifest.json).
 
 !!! warning "Finite claim boundary"
     Passing these checks does not establish universal chemical fidelity, general agent intelligence or safe transfer to real laboratory practice.

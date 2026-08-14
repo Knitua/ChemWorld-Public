@@ -5,7 +5,7 @@ This path creates one environment, inspects the public contract and commits a va
 ## Install
 
 ```bash
-git clone https://github.com/sunyrain/ChemWorld-Public.git
+git clone https://github.com/Knitua/ChemWorld-Public.git
 cd ChemWorld-Public
 python -m pip install -e ".[notebooks]"
 ```

@@ -8,14 +8,19 @@
   ],
   "files": [
     {
+      "bytes": 148,
+      "path": ".dockerignore",
+      "sha256": "86223ae0353cbbdeae83f804f27637d979c65018fec7f9c41f02fed680770280"
+    },
+    {
       "bytes": 172,
       "path": ".gitattributes",
       "sha256": "fddf6426a50cfe74f683e49b80b41d39cc82f0dd560d3a3bdd6702760adf5247"
     },
     {
-      "bytes": 1843,
+      "bytes": 3175,
       "path": ".github/workflows/ci.yml",
-      "sha256": "e20669a4242a118b914171a3a5cd20b813b4a651ec1f44425dc179bd510994df"
+      "sha256": "7805995099c18be69a23112c5933e49b419fde372d4de4a935e102f978915390"
     },
     {
       "bytes": 1342,
@@ -33,9 +38,14 @@
       "sha256": "5a63ade1f744b04c04eca9815db6c88ad007299b70371519e399c40ae57c595c"
     },
     {
-      "bytes": 903,
+      "bytes": 899,
       "path": "CITATION.cff",
-      "sha256": "27be9fba254d691f656fce699ba2f007aae45674531d7ab0b6a0b7eb69894348"
+      "sha256": "08a0dc01095fbdec37040460a34d960c4186691bed43bc7121764aa17962949a"
+    },
+    {
+      "bytes": 889,
+      "path": "Dockerfile",
+      "sha256": "120d0c9ba5569c5d18bfd68a21ca6252b12582714331fa5bf5f65d0484ea8dcc"
     },
     {
       "bytes": 1080,
@@ -43,9 +53,9 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 6367,
+      "bytes": 5272,
       "path": "README.md",
-      "sha256": "75c9a5252a38284ff64279afa9a0740c767b3761c4a1ae630edda323d5c7a6fb"
+      "sha256": "82c3e398b6fce34aec0ee187f4c5ce16712aa3f9ee1db64b1f0f7a12f6f594a8"
     },
     {
       "bytes": 14591,
@@ -193,19 +203,29 @@
       "sha256": "a75ae3d17bded5cfa59e301263a7b39d53fe7c7083254cd507cc79da112e30c7"
     },
     {
-      "bytes": 1641,
+      "bytes": 2265,
+      "path": "docs/deployment.md",
+      "sha256": "e0c8a018f871db41515ce6a9caa3f29c1a4723e489d3e3f16bf5f7333990b92f"
+    },
+    {
+      "bytes": 2018,
+      "path": "docs/deployment.zh.md",
+      "sha256": "9d94bfcd92f979eb8fc40e5b925434ab83fd5955867eb530b8a2542e1ab035c6"
+    },
+    {
+      "bytes": 1645,
       "path": "docs/evidence.md",
-      "sha256": "5dfebddf978f13bdb6748d62a39df4a4edba8498a32b325250961f13a9abfdb4"
+      "sha256": "571ddf8b471c75a150fae0387d714472d82c944d7f8797f0e5c92a31bc7b776c"
     },
     {
-      "bytes": 1472,
+      "bytes": 1476,
       "path": "docs/evidence.zh.md",
-      "sha256": "a61799baf1f711fc2260bb9c9dbfac74e400273199fd061c4f6dd925d34b538f"
+      "sha256": "0bb8befacaef64d9f38ee8b7251f8e36891404ec80a75d3c2edf6c5dd0a65287"
     },
     {
-      "bytes": 4315,
+      "bytes": 4311,
       "path": "docs/getting_started.md",
-      "sha256": "eb250436ddb1ab9cc85f4ba205039ebc8b1a7915c6a611d17105ca0b70adc9f1"
+      "sha256": "4218ed7de6b89c53bfc18f743ab2888b451d49d183e347f1eae1ef7983a551c0"
     },
     {
       "bytes": 4601,
@@ -228,14 +248,14 @@
       "sha256": "63247e0ead859ad42c5370753f58cc968cd39b6a4026a4b6a1af5918baf5dde8"
     },
     {
-      "bytes": 1798,
+      "bytes": 1786,
       "path": "docs/notebooks.md",
-      "sha256": "212b3dfdc71ff9eec93a0b220bd7e34867377358546e1fc98ef2d375adc24bf2"
+      "sha256": "6a11e0830bcae1102d97cad2dc5a02ea8562eb40fe3a3d3d4e07621aebe56f0e"
     },
     {
-      "bytes": 1671,
+      "bytes": 1659,
       "path": "docs/notebooks.zh.md",
-      "sha256": "3a20e44a4dbffb863ac3ccd5d548b3e1441e393c5e5e913fe6d0056d59d1fad0"
+      "sha256": "bc9b0eaf9bac72a58ee835e83355fb45d7e629ec66a05181732d372f42edd6f0"
     },
     {
       "bytes": 2461,
@@ -253,19 +273,19 @@
       "sha256": "ad2f3da1af9a144960141ed3c08894a96108da372574b88d114904041ee4ae6b"
     },
     {
-      "bytes": 911,
+      "bytes": 907,
       "path": "docs/overrides/main.html",
-      "sha256": "e444eee130fdeaafabb1637bfa1a4c1af356203d4b4baba690239d4bd4b164f8"
+      "sha256": "1aab0ecf19ccf1c53b7ecb648a68a52ce637fa17ff0ae0ad3b1cea269aa4409d"
     },
     {
-      "bytes": 1344,
+      "bytes": 1342,
       "path": "docs/quickstart.md",
-      "sha256": "dcc1fa881adbe1b7144208169d3056fa6795eac326f43c8f874765cf0b33e1bd"
+      "sha256": "79bc0d51ba5cf0feb8daf94aee4ae5042c5de2a004f87e7537c386ce25fe1c41"
     },
     {
-      "bytes": 1335,
+      "bytes": 1333,
       "path": "docs/quickstart.zh.md",
-      "sha256": "38b55138a929b528e110fdfb4b31750bfae4815f81b2803befdaadb8338088ad"
+      "sha256": "b0fbddcebb510a3408be6d3c4ab061e0bd1f6ac7bb53011f607a9eb2a822c7bc"
     },
     {
       "bytes": 930,
@@ -273,14 +293,14 @@
       "sha256": "05aa922c471d8f474d168322155ee0d080b19a6700ce09e95aa876f845ce0c8a"
     },
     {
-      "bytes": 863,
+      "bytes": 879,
       "path": "docs/reference.zh.md",
-      "sha256": "02c61543e760474ed089435be9e8fd4296e7dce6b3c1229bfb48259d6652a2df"
+      "sha256": "8310711177827beba90151605c1844361432b72525b0c8e344b6e5be7c014b19"
     },
     {
-      "bytes": 973,
+      "bytes": 961,
       "path": "docs/repository-settings.md",
-      "sha256": "76dd9aea2eafc8a3aede4fe8a85f437e0f6eecf23795f65755c5d4711cb54d5b"
+      "sha256": "cc2e2c47094bb79a5d4cff0f1ccec0836a2cf23ce846bc9d9c397e3e50c2ce40"
     },
     {
       "bytes": 5736,
@@ -288,14 +308,14 @@
       "sha256": "4bd698e760cc9de592f3cb38c104eb11f14877065c4d21ff4021cb824717c50d"
     },
     {
-      "bytes": 1712,
+      "bytes": 1891,
       "path": "docs/student-lab.md",
-      "sha256": "1c122ee91ae98bc525b85c0686789d17a1c61440fa52913ea466c5666bd02a6d"
+      "sha256": "1dae63134c305c26f64122290a22295e7d444b5d7368085a76ec6db94701bdc9"
     },
     {
-      "bytes": 1510,
+      "bytes": 1658,
       "path": "docs/student-lab.zh.md",
-      "sha256": "2860ee75a358b1f463a5cd7c4f3ed74fd60e15adbd9af9f6ff37e7d7c3ad2333"
+      "sha256": "8ee8ab22c3cb7c63069e007ec9ebee0ab097b6a254e4c90433a5aa39684eddc6"
     },
     {
       "bytes": 8271,
@@ -458,24 +478,24 @@
       "sha256": "5aa69e3bbdeb1198b7ee42f183be93f73a497a515dede5b0eb2626b1c274c8a0"
     },
     {
-      "bytes": 2740,
+      "bytes": 2812,
       "path": "mkdocs.yml",
-      "sha256": "6217a8f3aa447a6394dda954339a1edcc14b913df4de206348d07b5d6b9f0547"
+      "sha256": "fb913be41761290d64b19443fac29b2eab33e0246a4b6ed57b330ec700ab1362"
     },
     {
-      "bytes": 72208,
+      "bytes": 72206,
       "path": "notebooks/01_first_experiment.ipynb",
-      "sha256": "9ba7f2ccf98d9070d0f95858ed2f0a75100639362870d7a5b9a52e86fe23efdd"
+      "sha256": "b8a26f1619e3eb5f01d82559e24a1136de9f04cc20e8e25fdf9cc432c0706059"
     },
     {
-      "bytes": 53900,
+      "bytes": 53898,
       "path": "notebooks/02_reaction_to_purification.ipynb",
-      "sha256": "683a9311d6bf7231616fa4fa59c5413cf96d09423d01e2f83278bea18f28a583"
+      "sha256": "2401f883b5626674c0528441690a07eb3535814d5a4c72877835c09bf99accc5"
     },
     {
-      "bytes": 60948,
+      "bytes": 60946,
       "path": "notebooks/03_controlled_world_change.ipynb",
-      "sha256": "fb222b32856a0b5ad70620f7b9a116b8317f7410e078c3ad2f18ddd89dbe4297"
+      "sha256": "d6a3e7e06a0a19edad3a4ff20d755a61243e6ec82c873a75564b71b8d837a40c"
     },
     {
       "bytes": 1934,
@@ -498,9 +518,14 @@
       "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
     },
     {
-      "bytes": 3267,
+      "bytes": 3261,
       "path": "pyproject.toml",
-      "sha256": "a0e2be7a3bff52eb6cb026c65a76632289fe57a42998b82a0389637c6e9d4466"
+      "sha256": "8f465f351bb1b5c9598455e23279ff84eb581bbbfcf7faa62368734a0b63964d"
+    },
+    {
+      "bytes": 209,
+      "path": "render.yaml",
+      "sha256": "d740c24209e7474cc8843b746f7727a99a7f9d0e01cff36846709c77be5c857e"
     },
     {
       "bytes": 53,
@@ -513,14 +538,14 @@
       "sha256": "158620362c98a610dac51224968f8b4bafd7269af909f88c7944f9064f1d2f87"
     },
     {
-      "bytes": 5087,
+      "bytes": 5085,
       "path": "scripts/build_release_manifest.py",
-      "sha256": "eb7688906f13d25fa6391dc8033f157bca0bfd01c378bb4159dc0a1aeee532d5"
+      "sha256": "9714cfcb7add760c5851126d1fbd28feb401d7d73526cc4f3f3d141ac9f0ef2b"
     },
     {
-      "bytes": 21200,
+      "bytes": 21198,
       "path": "scripts/build_tutorial_notebooks.py",
-      "sha256": "affcaf2e0ca17804d0f5f592ae3dca3c8c6cb78e3b2429f79eb19e783627c012"
+      "sha256": "523149ecbba45620f457b33d597deb712a79719f0d786d47af65dae1192e5d86"
     },
     {
       "bytes": 5409,
@@ -540,7 +565,7 @@
     {
       "bytes": 15028,
       "path": "scripts/verify_release.py",
-      "sha256": "518a5e30baf54fbe3585a007e2de67f1afc24dd63ebc2cd99a7d4e05d89abcb0"
+      "sha256": "229daa887f0374943e7158e577a7442d5c0cfe5c754dae96807d4e8d1a4ba026"
     },
     {
       "bytes": 1621,
@@ -663,9 +688,9 @@
       "sha256": "bbf1a2def3f58053d32c4815182943ccba66fa72f4c1747053f2ab3790173d7b"
     },
     {
-      "bytes": 26842,
+      "bytes": 27780,
       "path": "src/chemworld/cli.py",
-      "sha256": "4764fad9226f9568d2ea718c2594f9bb512bc595e209bd2d85e25166da959f42"
+      "sha256": "51abbaa1b71c4b53ca64ae2485da2e01df05194e500a13f2b70f65c270156f1b"
     },
     {
       "bytes": 918,
@@ -1018,19 +1043,24 @@
       "sha256": "e5b897447cc4a2bdab4b28f3e82c6bd445143b97f32de0031cd67c72d93bb0f9"
     },
     {
-      "bytes": 17754,
+      "bytes": 22202,
       "path": "src/chemworld/lab/agent_run.py",
-      "sha256": "39286e4505e56e4f58a6a9e76f6c5fa86b93169d169d688a42935eb2dc2cbc8d"
+      "sha256": "16de197fff773aafbd50acce5b5ad4904d948df9a474a95d0e71b18a744eec15"
     },
     {
-      "bytes": 9675,
+      "bytes": 241,
+      "path": "src/chemworld/lab/limits.py",
+      "sha256": "9fd50a4362fbd63f42031712cf94a1dc575b64e996c231e4d5bb7b8334639475"
+    },
+    {
+      "bytes": 14870,
       "path": "src/chemworld/lab/server.py",
-      "sha256": "f6e2aab872373748dfe7a1ba3d55304ff1833e3a9c1de9fd11a55482a3de6c12"
+      "sha256": "38afb67231e1105d02bc29de267fd3dff243759b94c6cf2a060de343e29aa8d5"
     },
     {
-      "bytes": 17903,
+      "bytes": 19712,
       "path": "src/chemworld/lab/session.py",
-      "sha256": "6f0b0ee9358bcc657db30cedb1fd797b6c1fa9d3619d16374f9feb574d1b5895"
+      "sha256": "6b74e915c0db8f2c78bb89f1584a2a5a6027cde8b9a64aa87bffcefdd722afea"
     },
     {
       "bytes": 10384,
@@ -1038,9 +1068,9 @@
       "sha256": "a4744a7ca4f49226bdcd4ade55377d4cd45abacb0556bfa64935895ad439c79f"
     },
     {
-      "bytes": 8536,
+      "bytes": 8534,
       "path": "src/chemworld/lab/static/agent.html",
-      "sha256": "1eab9394a83549ca9c13d1ef2ce66502c5d26ab4c80c32eb470b9550978c5533"
+      "sha256": "73c76067302c0a84deb176aa8aa508de51eb95729dda027c93b456a0119b58c6"
     },
     {
       "bytes": 14630,
@@ -1048,9 +1078,9 @@
       "sha256": "327f134d6a57d252ee925f7026a1ef8fe65047689ebeab4ecc592b6ce4773a26"
     },
     {
-      "bytes": 8642,
+      "bytes": 8640,
       "path": "src/chemworld/lab/static/index.html",
-      "sha256": "e1c815f5d6a6b356faf7e543a7eb21e2fc70408769e558f0dd06b2ce23219af1"
+      "sha256": "33547a43daa7a3d81857e07e6661861c5c39bf4f39f56b079b1b78f84a257142"
     },
     {
       "bytes": 29532,
@@ -2048,9 +2078,9 @@
       "sha256": "08308584a4d89216fd451d69fd3e80fbc7ac840128f1b6bbf1605db543761b98"
     },
     {
-      "bytes": 4701,
+      "bytes": 4637,
       "path": "tests/test_public_tutorial_release.py",
-      "sha256": "5407f037bf8a2f44d531122c75c749ec6164e45b4362b347f8ce8454879f5516"
+      "sha256": "122d26607a68bebded0626eb73d88a99b0f801c99dfde7e34416327199cc037e"
     },
     {
       "bytes": 3156,
@@ -2058,9 +2088,9 @@
       "sha256": "c6f18e6895b4176f381ecda18a5a9621b232dd333c7d26e8c98f88a7243857df"
     },
     {
-      "bytes": 9639,
+      "bytes": 12139,
       "path": "tests/test_student_lab.py",
-      "sha256": "05bc653fcbd57ceebb6d7b86de60931f6acc346330041339ac9bf19a8e17488d"
+      "sha256": "eac34c2068f13eee14bc220e1c28b23f7d20bdb5beee11c99bc9aff423021785"
     },
     {
       "bytes": 14843,
@@ -2184,7 +2214,7 @@
   },
   "release_date": "2026-08-12",
   "release_version": "0.4.0",
-  "repository": "https://github.com/sunyrain/ChemWorld-Public",
+  "repository": "https://github.com/Knitua/ChemWorld-Public",
   "sanitization_receipts": {
     "evidence/reports/agent-instrument-use.json.gz": {
       "public_protocol": {

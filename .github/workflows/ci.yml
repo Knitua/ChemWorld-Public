@@ -61,3 +61,43 @@ jobs:
           assert "add_solvent" in env.unwrapped.available_actions()
           env.close()
           PY
+
+  public-lab-container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build provider-free Lab image
+        run: docker build --tag chemworld-public-lab:test .
+      - name: Start bounded public service
+        run: docker run --detach --name chemworld-public-lab --publish 10000:10000 chemworld-public-lab:test
+      - name: Verify health and public boundary
+        run: |
+          python - <<'PY'
+          import json
+          import time
+          import urllib.request
+
+          url = "http://127.0.0.1:10000/api/health"
+          for _ in range(60):
+              try:
+                  with urllib.request.urlopen(url, timeout=2) as response:
+                      payload = json.load(response)
+                  break
+              except Exception:
+                  time.sleep(1)
+          else:
+              raise SystemExit("public Lab container did not become healthy")
+
+          assert payload == {
+              "provider_required": False,
+              "public_mode": True,
+              "release": "0.4.0",
+              "status": "ok",
+          }
+          PY
+      - name: Show logs after failure
+        if: failure()
+        run: docker logs chemworld-public-lab
+      - name: Stop service
+        if: always()
+        run: docker rm --force chemworld-public-lab

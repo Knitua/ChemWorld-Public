@@ -1,12 +1,12 @@
 # Maintainer release settings
 
 These repository settings cannot be enforced by source code. A maintainer should apply them before
-publishing v0.3.1.
+publishing v0.4.0.
 
-- Resolve the GitHub account billing lock so Actions jobs can start.
+- Confirm Actions workflows are enabled and able to start.
 - Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
 - Add repository description: `Programmable chemical worlds for controlled, replayable agent experimentation.`
-- Set the homepage to `https://sunyrain.github.io/ChemWorld-Public/`.
+- Set the homepage to `https://knitua.github.io/ChemWorld-Public/`.
 - Add topics: `ai4science`, `chemistry`, `agent-evaluation`, `gymnasium`, `world-model`, `reinforcement-learning`.
 - Require the `CI / quality` and `CI / wheel-smoke` checks on `main`.
 - Create releases by pushing a version-matching tag only after CI and Documentation both pass.

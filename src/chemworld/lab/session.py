@@ -6,12 +6,14 @@ import threading
 import uuid
 from copy import deepcopy
 from dataclasses import dataclass, field
+from time import monotonic
 from typing import Any
 
 import gymnasium as gym
 
 import chemworld  # noqa: F401
 from chemworld.data.logging import observation_to_json, to_builtin
+from chemworld.lab.limits import LabCapacityError
 from chemworld.materials import action_material_display
 from chemworld.tasks import get_task, list_tasks
 
@@ -359,28 +361,71 @@ class LabSession:
 class LabSessionManager:
     """Thread-safe in-memory session registry."""
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        *,
+        max_sessions: int | None = None,
+        session_ttl_s: float | None = None,
+    ) -> None:
+        if max_sessions is not None and max_sessions < 1:
+            raise ValueError("max_sessions must be positive")
+        if session_ttl_s is not None and session_ttl_s <= 0:
+            raise ValueError("session_ttl_s must be positive")
+        self._max_sessions = max_sessions
+        self._session_ttl_s = session_ttl_s
         self._sessions: dict[str, LabSession] = {}
+        self._last_access: dict[str, float] = {}
         self._lock = threading.RLock()
 
     def create(self, task_id: str, seed: int | None = None) -> LabSession:
-        task = get_task(task_id)
-        session = LabSession(task_id=task_id, seed=task.seeds[0] if seed is None else seed)
         with self._lock:
+            stale = self._prune_locked(monotonic())
+            for item in stale:
+                item.close()
+            if self._max_sessions is not None and len(self._sessions) >= self._max_sessions:
+                raise LabCapacityError("public Lab session capacity is temporarily full")
+            task = get_task(task_id)
+            session = LabSession(task_id=task_id, seed=task.seeds[0] if seed is None else seed)
             self._sessions[session.session_id] = session
+            self._last_access[session.session_id] = monotonic()
         return session
 
     def get(self, session_id: str) -> LabSession:
         with self._lock:
-            try:
-                return self._sessions[session_id]
-            except KeyError as exc:
-                raise KeyError(f"unknown lab session: {session_id}") from exc
+            stale = self._prune_locked(monotonic())
+            session = self._sessions.get(session_id)
+            if session is not None:
+                self._last_access[session_id] = monotonic()
+        for item in stale:
+            item.close()
+        if session is None:
+            raise KeyError(f"unknown lab session: {session_id}")
+        return session
+
+    def _prune_locked(self, now: float) -> list[LabSession]:
+        if self._session_ttl_s is None:
+            return []
+        stale_ids = [
+            session_id
+            for session_id, accessed_at in self._last_access.items()
+            if now - accessed_at >= self._session_ttl_s
+        ]
+        stale = [self._sessions.pop(session_id) for session_id in stale_ids]
+        for session_id in stale_ids:
+            self._last_access.pop(session_id, None)
+        return stale
+
+    def count(self) -> int:
+        """Return the number of retained in-memory sessions."""
+
+        with self._lock:
+            return len(self._sessions)
 
     def close_all(self) -> None:
         with self._lock:
             sessions = list(self._sessions.values())
             self._sessions.clear()
+            self._last_access.clear()
         for session in sessions:
             session.close()
 

@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: chemworld-public-lab
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    maxShutdownDelaySeconds: 30

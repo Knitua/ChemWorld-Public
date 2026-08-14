@@ -9,8 +9,9 @@ from pathlib import Path
 
 from chemworld.cli import build_parser
 from chemworld.lab.agent_run import AgentRunManager, agent_catalog
-from chemworld.lab.server import LabServer, serve
-from chemworld.lab.session import LabSession, task_catalog
+from chemworld.lab.limits import LabCapacityError
+from chemworld.lab.server import LabLimits, LabServer, serve
+from chemworld.lab.session import LabSession, LabSessionManager, task_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,6 +27,7 @@ def test_lab_catalog_and_cli_default_to_loopback() -> None:
     assert args.host == "127.0.0.1"
     assert args.port == 8876
     assert args.no_browser is True
+    assert args.public is False
 
 
 def test_browser_agent_catalog_is_provider_free() -> None:
@@ -56,6 +58,65 @@ def test_lab_rejects_non_loopback_bind_address() -> None:
         assert "loopback" in str(exc)
     else:  # pragma: no cover - defensive assertion
         raise AssertionError("non-loopback Student Lab bind was accepted")
+
+
+def test_public_lab_resource_managers_fail_closed_at_capacity() -> None:
+    sessions = LabSessionManager(max_sessions=1, session_ttl_s=60)
+    agents = AgentRunManager(max_runs=4, max_concurrent_runs=1, run_ttl_s=60)
+    try:
+        sessions.create("reaction-to-assay", seed=0)
+        try:
+            sessions.create("reaction-to-assay", seed=1)
+        except LabCapacityError as exc:
+            assert "session capacity" in str(exc)
+        else:  # pragma: no cover - defensive assertion
+            raise AssertionError("bounded public Lab accepted too many sessions")
+
+        try:
+            agents.compare("reaction-to-assay", ["scripted_chemistry", "llm_replay"], seed=0)
+        except LabCapacityError as exc:
+            assert "comparison capacity" in str(exc)
+        else:  # pragma: no cover - defensive assertion
+            raise AssertionError("bounded public Lab accepted too many concurrent agents")
+    finally:
+        sessions.close_all()
+        agents.close_all()
+
+
+def test_public_http_mode_exposes_health_headers_and_rate_limit() -> None:
+    server = LabServer(
+        ("127.0.0.1", 0),
+        public=True,
+        limits=LabLimits(max_sessions=2, post_rate_per_minute=1),
+    )
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    connection = HTTPConnection("127.0.0.1", server.server_port, timeout=5)
+    try:
+        connection.request("GET", "/api/health")
+        health = connection.getresponse()
+        payload = json.loads(health.read())
+        assert payload["public_mode"] is True
+        assert payload["provider_required"] is False
+        assert health.getheader("X-Frame-Options") == "DENY"
+        assert health.getheader("Strict-Transport-Security")
+
+        body = json.dumps({"task_id": "reaction-to-assay", "seed": 0})
+        headers = {"Content-Type": "application/json"}
+        connection.request("POST", "/api/sessions", body, headers)
+        created = connection.getresponse()
+        assert created.status == 201
+        created.read()
+
+        connection.request("POST", "/api/sessions", body, headers)
+        limited = connection.getresponse()
+        assert limited.status == 429
+        assert "rate limit" in json.loads(limited.read())["error"]
+    finally:
+        connection.close()
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=5)
 
 
 def test_rejected_action_does_not_spend_budget_and_valid_action_animates() -> None:

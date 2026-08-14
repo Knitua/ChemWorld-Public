@@ -43,7 +43,7 @@ def test_bilingual_public_site_routes_are_complete() -> None:
     assert "default: true" in config
     assert "locale: en" in config
     assert "locale: zh" in config
-    assert "https://sunyrain.github.io/ChemWorld-Public/" in config
+    assert "https://knitua.github.io/ChemWorld-Public/" in config
 
 
 def test_notebooks_retain_only_executed_public_tutorial_outputs() -> None:
@@ -53,7 +53,7 @@ def test_notebooks_retain_only_executed_public_tutorial_outputs() -> None:
         assert FORBIDDEN_TUTORIAL.search(raw) is None
         notebook = json.loads(raw)
         release = notebook["metadata"]["chemworld"]
-        assert release["runtime_release"] == "0.3.0"
+        assert release["runtime_release"] == "0.4.0"
         assert release["output_scope"] == "deterministic_public_tutorial"
         code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
         assert code_cells
@@ -74,7 +74,7 @@ def test_colab_links_are_pinned_to_the_release_tag() -> None:
         ]
     )
     for name in NOTEBOOKS:
-        expected = f"/blob/v0.3.0/notebooks/{name}"
+        expected = f"/blob/v0.4.0/notebooks/{name}"
         assert joined.count(expected) >= 3
 
 
@@ -98,10 +98,10 @@ def test_interactive_payload_matches_readme_visual_payload() -> None:
 def test_showcase_home_uses_the_public_hero_and_frozen_trace() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     hero_marker = "docs/assets/chemworld-hero.png"
-    evidence_marker = "docs/assets/representative-agent-and-world-change.svg"
     assert (ROOT / hero_marker).is_file()
-    assert readme.index(hero_marker) < readme.index("## Start in five minutes")
-    assert readme.index(evidence_marker) > readme.index("## Frozen evidence")
+    assert readme.index(hero_marker) < readme.index("## Choose your entry point")
+    assert "Run the first experiment in Colab" in readme
+    assert "## Live Lab" in readme
 
     for suffix in ("", ".zh"):
         home = (ROOT / "docs" / f"index{suffix}.md").read_text(encoding="utf-8")

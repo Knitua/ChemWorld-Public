@@ -443,9 +443,22 @@ def _inspect_constitution(args: argparse.Namespace) -> None:
 
 
 def _lab(args: argparse.Namespace) -> None:
-    from chemworld.lab.server import serve
+    from chemworld.lab.server import LabLimits, serve
 
-    serve(args.host, args.port, open_browser=not args.no_browser)
+    serve(
+        args.host,
+        args.port,
+        open_browser=not args.no_browser,
+        public=args.public,
+        limits=LabLimits(
+            max_sessions=args.max_sessions,
+            max_agent_runs=args.max_agent_runs,
+            max_concurrent_agent_runs=args.max_concurrent_agent_runs,
+            session_ttl_s=args.session_ttl_seconds,
+            run_ttl_s=args.run_ttl_seconds,
+            post_rate_per_minute=args.post_rate_per_minute,
+        ),
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -685,6 +698,13 @@ def build_parser() -> argparse.ArgumentParser:
     lab_parser.add_argument("--host", default="127.0.0.1")
     lab_parser.add_argument("--port", type=int, default=8876)
     lab_parser.add_argument("--no-browser", action="store_true")
+    lab_parser.add_argument("--public", action="store_true")
+    lab_parser.add_argument("--max-sessions", type=int, default=64)
+    lab_parser.add_argument("--max-agent-runs", type=int, default=64)
+    lab_parser.add_argument("--max-concurrent-agent-runs", type=int, default=4)
+    lab_parser.add_argument("--session-ttl-seconds", type=float, default=1800.0)
+    lab_parser.add_argument("--run-ttl-seconds", type=float, default=1800.0)
+    lab_parser.add_argument("--post-rate-per-minute", type=int, default=90)
     lab_parser.set_defaults(func=_lab)
     return parser
 

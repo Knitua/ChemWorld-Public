@@ -6,22 +6,22 @@ The notebooks are executable tutorials generated from the public runtime. They r
 
 Read a Reaction-to-Assay contract, validate every request, collect intermediate HPLC feedback, terminate explicitly and inspect the final assay and resource ledger.
 
-[Open in Colab](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/01_first_experiment.ipynb){ .md-button .md-button--primary }
-[View on GitHub](https://github.com/sunyrain/ChemWorld-Public/blob/main/notebooks/01_first_experiment.ipynb){ .md-button }
+[Open in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb){ .md-button .md-button--primary }
+[View on GitHub](https://github.com/Knitua/ChemWorld-Public/blob/main/notebooks/01_first_experiment.ipynb){ .md-button }
 
 ## 02 · Reaction to purification
 
 Continue from reaction into extraction, wash, drying and concentration while keeping validation and measurement receipts visible.
 
-[Open in Colab](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/02_reaction_to_purification.ipynb){ .md-button .md-button--primary }
-[View on GitHub](https://github.com/sunyrain/ChemWorld-Public/blob/main/notebooks/02_reaction_to_purification.ipynb){ .md-button }
+[Open in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/02_reaction_to_purification.ipynb){ .md-button .md-button--primary }
+[View on GitHub](https://github.com/Knitua/ChemWorld-Public/blob/main/notebooks/02_reaction_to_purification.ipynb){ .md-button }
 
 ## 03 · Controlled world change
 
 Run one public intervention in a parent and child world, verify the public contract and action sequence remain fixed, then compare the public responses.
 
-[Open in Colab](https://colab.research.google.com/github/sunyrain/ChemWorld-Public/blob/v0.3.0/notebooks/03_controlled_world_change.ipynb){ .md-button .md-button--primary }
-[View on GitHub](https://github.com/sunyrain/ChemWorld-Public/blob/main/notebooks/03_controlled_world_change.ipynb){ .md-button }
+[Open in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/03_controlled_world_change.ipynb){ .md-button .md-button--primary }
+[View on GitHub](https://github.com/Knitua/ChemWorld-Public/blob/main/notebooks/03_controlled_world_change.ipynb){ .md-button }
 
 ## Run locally
 

@@ -1,6 +1,6 @@
 # API 参考
 
-ChemWorld v0.3.0 保持与 v0.2.0 相同的运行时接口。可以先从 Agent-facing helper 开始，再进入世界构建和评测合同。
+ChemWorld v0.4.0 保持稳定运行时接口，并新增 provider-free Lab。可以先从 Agent-facing helper 开始，再进入世界构建和评测合同。
 
 | 主题 | 参考文档 |
 | --- | --- |

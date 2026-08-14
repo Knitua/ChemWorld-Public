@@ -1,8 +1,8 @@
 site_name: ChemWorld
 site_description: Programmable chemical worlds for controlled, replayable agent experimentation.
-site_url: https://sunyrain.github.io/ChemWorld-Public/
-repo_url: https://github.com/sunyrain/ChemWorld-Public
-repo_name: sunyrain/ChemWorld-Public
+site_url: https://knitua.github.io/ChemWorld-Public/
+repo_url: https://github.com/Knitua/ChemWorld-Public
+repo_name: Knitua/ChemWorld-Public
 edit_uri: edit/main/docs/
 copyright: ChemWorld · Software-model experiments, not instructions for physical laboratory work
 
@@ -72,6 +72,7 @@ plugins:
             Connect an agent: 接入 Agent
             Student Lab: 学生实验台
             Agent Observatory: Agent 观测台
+            Deploy the Lab: 部署实验室
             One experiment: 一次完整实验
             World foundations: 世界基座
             Evidence: 证据
@@ -91,6 +92,7 @@ nav:
   - Connect an agent: agents.md
   - Student Lab: student-lab.md
   - Agent Observatory: agent-observatory.md
+  - Deploy the Lab: deployment.md
   - One experiment: one-experiment.md
   - World foundations: world-foundations.md
   - Evidence: evidence.md
