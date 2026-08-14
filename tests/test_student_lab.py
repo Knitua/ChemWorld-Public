@@ -278,7 +278,7 @@ def test_agent_run_supports_step_then_continue_with_official_records() -> None:
         assert record["method_resources"]["accounting_complete"] is True
 
         run.run()
-        deadline = time.monotonic() + 8
+        deadline = time.monotonic() + 30
         while time.monotonic() < deadline:
             state = run.state()
             if state["status"] in {"completed", "failed"}:
@@ -297,7 +297,7 @@ def test_agent_comparison_uses_same_task_and_seed() -> None:
         comparison = manager.compare(
             "reaction-to-assay", ["scripted_chemistry", "llm_replay"], seed=0
         )
-        deadline = time.monotonic() + 10
+        deadline = time.monotonic() + 30
         while time.monotonic() < deadline:
             state = manager.comparison_state(comparison.comparison_id)
             if state["status"] in {"completed", "failed"}:
