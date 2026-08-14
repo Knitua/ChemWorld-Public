@@ -2088,9 +2088,9 @@
       "sha256": "c6f18e6895b4176f381ecda18a5a9621b232dd333c7d26e8c98f88a7243857df"
     },
     {
-      "bytes": 12140,
+      "bytes": 12142,
       "path": "tests/test_student_lab.py",
-      "sha256": "eb5d40479801e5563683843f7dac20b7e8268848f86525759154b615b271fe71"
+      "sha256": "7891c2d6c595ae0f5bcb8d50daca9c56192d83070d3636a8f0bd4507331a9355"
     },
     {
       "bytes": 14843,
