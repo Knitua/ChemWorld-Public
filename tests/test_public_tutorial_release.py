@@ -12,15 +12,25 @@ NOTEBOOKS = (
 )
 PAGES = (
     "index",
-    "quickstart",
-    "agents",
     "student-lab",
+    "agent-observatory",
     "one-experiment",
-    "world-foundations",
-    "evidence",
     "notebooks",
-    "reference",
+    "getting-started",
+    "vision",
+    "experimental-intelligence",
+    "causal-worlds",
+    "architecture",
+    "worlds",
+    "confirmatory-tasks",
+    "agent-tracks",
+    "agents",
+    "benchmark-design",
+    "evidence",
+    "real-world-bridge",
     "limitations",
+    "reference",
+    "deployment",
 )
 _INTERNAL_WORKSTREAM = "workstreams" + "/arxiv_v1"
 _INTERNAL_TODO = "FIRST_PAPER" + "_TODOLIST"
@@ -66,16 +76,23 @@ def test_notebooks_retain_only_executed_public_tutorial_outputs() -> None:
 
 
 def test_colab_links_are_pinned_to_the_release_tag() -> None:
-    joined = "\n".join(
+    notebook_guides = "\n".join(
         [
-            (ROOT / "README.md").read_text(encoding="utf-8"),
             (ROOT / "docs" / "notebooks.md").read_text(encoding="utf-8"),
             (ROOT / "docs" / "notebooks.zh.md").read_text(encoding="utf-8"),
         ]
     )
     for name in NOTEBOOKS:
         expected = f"/blob/v0.4.0/notebooks/{name}"
-        assert joined.count(expected) >= 3
+        assert notebook_guides.count(expected) == 2
+
+    readmes = "\n".join(
+        [
+            (ROOT / "README.md").read_text(encoding="utf-8"),
+            (ROOT / "README.zh-CN.md").read_text(encoding="utf-8"),
+        ]
+    )
+    assert readmes.count("/blob/v0.4.0/notebooks/01_first_experiment.ipynb") == 2
 
 
 def test_interactive_payload_matches_readme_visual_payload() -> None:
@@ -97,24 +114,40 @@ def test_interactive_payload_matches_readme_visual_payload() -> None:
 
 def test_showcase_home_uses_the_public_hero_and_frozen_trace() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    hero_marker = "docs/assets/chemworld-hero.png"
-    assert (ROOT / hero_marker).is_file()
-    assert readme.index(hero_marker) < readme.index("## Choose your entry point")
-    assert "Run the first experiment in Colab" in readme
-    assert "## Live Lab" in readme
+    hero_marker = "docs/assets/readme/chemworld-launch-hero.png"
+    animation_marker = "docs/assets/readme/lab-lifecycle.gif"
+    proof_marker = "docs/assets/readme/public-proof.svg"
+    triptych_marker = "docs/assets/readme/chemworld-three-ways.svg"
+    for marker in (hero_marker, animation_marker, proof_marker, triptych_marker):
+        assert (ROOT / marker).is_file()
+        assert marker in readme
+    assert readme.index(hero_marker) < readme.index(animation_marker)
+    assert readme.index(animation_marker) < readme.index(proof_marker)
+    assert "🚀 Try the Live Lab" in readme
+    assert "## 🔬 What we actually built" in readme
+
+    metadata = json.loads(
+        (ROOT / "docs/assets/readme/showcase-metadata.json").read_text(encoding="utf-8")
+    )
+    assert metadata["release"] == "0.4.0"
+    assert metadata["counts"] == {
+        "agent_actions": 15,
+        "fork_pairs": 6,
+        "fork_traces": 24,
+        "generated_compositions": 52,
+        "provider_free_policies": 8,
+        "public_tasks": 15,
+        "reference_units": 64,
+    }
 
     for suffix in ("", ".zh"):
         home = (ROOT / "docs" / f"index{suffix}.md").read_text(encoding="utf-8")
-        assert 'class="cw-studio-hero"' in home
-        assert "data-cw-autoplay" in home
-        assert "representative-behavior-and-forks.json" in home
-        assert "<noscript>" in home
-
-    script = (ROOT / "docs/assets/javascripts/experiment-explorer.js").read_text(
-        encoding="utf-8"
-    )
-    assert "initializeAutoplay" in script
-    assert 'document.querySelectorAll("[data-cw-autoplay]")' in script
+        assert 'class="cw-launch-hero"' in home
+        assert "chemworld-launch-hero.png" in home
+        assert "64 / 64" in home
+        assert "52 / 52" in home
+        assert "8 / 8" in home
+        assert "1 / 1" in home
 
 
 def test_agent_guide_exposes_custom_offline_and_live_paths() -> None:
@@ -128,4 +161,4 @@ def test_agent_guide_exposes_custom_offline_and_live_paths() -> None:
         assert "private reasoning" in guide or "隐藏推理" in guide
 
     config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
-    assert "Connect an agent: agents.md" in config
+    assert "Build an Agent: agents.md" in config

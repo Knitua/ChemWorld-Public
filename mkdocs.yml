@@ -68,17 +68,31 @@ plugins:
           copyright: ChemWorld · 软件模型实验环境，不用于指导真实化学实验
           nav_translations:
             Home: 首页
-            5-minute quickstart: 五分钟开始
-            Connect an agent: 接入 Agent
-            Student Lab: 学生实验台
+            Try ChemWorld: 体验 ChemWorld
+            Live Student Lab: 在线学生实验台
             Agent Observatory: Agent 观测台
-            Deploy the Lab: 部署实验室
-            One experiment: 一次完整实验
-            World foundations: 世界基座
-            Evidence: 证据
+            One Complete Experiment: 一次完整实验
             Notebooks: Notebook 教程
-            API reference: API 参考
+            Getting Started: 快速开始
+            Research Thesis: 研究主张
+            Why ChemWorld: 为什么是 ChemWorld
+            Experimental Intelligence: 实验智能
+            Causal Worlds: 因果世界
+            System Model: 系统模型
+            Worlds & Tasks: 世界与任务
+            Showcase Worlds: 展示世界
+            Confirmatory Tasks: 确认性任务
+            Agents & Evaluation: Agent 与评估
+            Agent Tracks: Agent 交互层级
+            Build an Agent: 构建 Agent
+            Benchmark Design: Benchmark 设计
+            Evidence & Bridge: 证据与桥接
+            Evidence & Current Status: 证据与当前状态
+            Real-world Bridge: 真实世界桥接
             Limitations: 适用边界
+            Reference: 参考
+            API Reference: API 参考
+            Deploy the Lab: 部署实验室
 
 extra_css:
   - assets/stylesheets/site.css
@@ -88,16 +102,30 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - 5-minute quickstart: quickstart.md
-  - Connect an agent: agents.md
-  - Student Lab: student-lab.md
-  - Agent Observatory: agent-observatory.md
-  - Deploy the Lab: deployment.md
-  - One experiment: one-experiment.md
-  - World foundations: world-foundations.md
-  - Evidence: evidence.md
-  - Notebooks: notebooks.md
-  - API reference: reference.md
-  - Limitations: limitations.md
+  - Try ChemWorld:
+      - Live Student Lab: student-lab.md
+      - Agent Observatory: agent-observatory.md
+      - One Complete Experiment: one-experiment.md
+      - Notebooks: notebooks.md
+      - Getting Started: getting-started.md
+  - Research Thesis:
+      - Why ChemWorld: vision.md
+      - Experimental Intelligence: experimental-intelligence.md
+      - Causal Worlds: causal-worlds.md
+      - System Model: architecture.md
+  - Worlds & Tasks:
+      - Showcase Worlds: worlds.md
+      - Confirmatory Tasks: confirmatory-tasks.md
+  - Agents & Evaluation:
+      - Agent Tracks: agent-tracks.md
+      - Build an Agent: agents.md
+      - Benchmark Design: benchmark-design.md
+  - Evidence & Bridge:
+      - Evidence & Current Status: evidence.md
+      - Real-world Bridge: real-world-bridge.md
+      - Limitations: limitations.md
+  - Reference:
+      - API Reference: reference.md
+      - Deploy the Lab: deployment.md
 
 strict: true

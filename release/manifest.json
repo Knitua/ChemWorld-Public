@@ -23,9 +23,9 @@
       "sha256": "bf00994c4d0e688e71970feeb337719b5a5b9101268c2357ce92133474d28284"
     },
     {
-      "bytes": 1342,
+      "bytes": 1412,
       "path": ".github/workflows/docs.yml",
-      "sha256": "fe067d689e28d0a9178d93f735d242b9b27029b41ab5a6fa94c258e9d3c8a905"
+      "sha256": "bf57e925fa1330404be69d51c4aa8dc291beeec41090500666bece4104304b56"
     },
     {
       "bytes": 1118,
@@ -38,9 +38,9 @@
       "sha256": "5a63ade1f744b04c04eca9815db6c88ad007299b70371519e399c40ae57c595c"
     },
     {
-      "bytes": 899,
+      "bytes": 2495,
       "path": "CITATION.cff",
-      "sha256": "08a0dc01095fbdec37040460a34d960c4186691bed43bc7121764aa17962949a"
+      "sha256": "ffc1d36bdbb73f77dbeacb3b40feb59aeeba100e5385d04b501f7f032c518532"
     },
     {
       "bytes": 889,
@@ -53,14 +53,14 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 5720,
+      "bytes": 4879,
       "path": "README.md",
-      "sha256": "c05aba33a8bb4127d74f6c0239a2d3c388df89280bfb500c85c825c13ebf3398"
+      "sha256": "e7abd7dddbf01e39e0ec5e143cb187e5082b6f7210ec4bbbadb4e1c96376b492"
     },
     {
-      "bytes": 5422,
+      "bytes": 4655,
       "path": "README.zh-CN.md",
-      "sha256": "c07d15f8e14b42c8b7921c9306ef06f7d39635f6c19eafa1f1fd4280937917cc"
+      "sha256": "5a8173a070b40daa51023ca1f654be8fe4b6ee675db5569b6bcf85b348a5f2c9"
     },
     {
       "bytes": 14591,
@@ -168,6 +168,16 @@
       "sha256": "9677761bfac396c6eb68ae1e06525246f909a895569ebca54aed1d0f510535f9"
     },
     {
+      "bytes": 2053,
+      "path": "docs/agent-tracks.md",
+      "sha256": "98429f44c9903343e9dafb772a6bc073c449378853119397c63cf6c371234a72"
+    },
+    {
+      "bytes": 1781,
+      "path": "docs/agent-tracks.zh.md",
+      "sha256": "b9a65f981c8844277849e73a1ccd385911461b14621114df30845a691569e996"
+    },
+    {
       "bytes": 6209,
       "path": "docs/agents.md",
       "sha256": "638e944213ccb3cc54989affe8e48649d91b9e4ed24705633b664bce633c9953"
@@ -176,6 +186,16 @@
       "bytes": 4717,
       "path": "docs/agents.zh.md",
       "sha256": "47372a5cf8690add273eb8987c1c68c33ed09ab359fc2f0e75d1af54f8ac139e"
+    },
+    {
+      "bytes": 2794,
+      "path": "docs/architecture.md",
+      "sha256": "887e1259299eff71cba46baa7100b03e0ece71027ae851aeddd910566285cc75"
+    },
+    {
+      "bytes": 2373,
+      "path": "docs/architecture.zh.md",
+      "sha256": "7ebc537ca348915ef3ce90fadd5b9a078608d66b0227c375bcc1a1c486637bd2"
     },
     {
       "bytes": 1705737,
@@ -198,14 +218,69 @@
       "sha256": "58b93ef166cb4aff6f17a5cee6a559a48bb9a29b2438b4f3298799b0c2b3d5fc"
     },
     {
+      "bytes": 1864597,
+      "path": "docs/assets/readme/chemworld-launch-hero.png",
+      "sha256": "c95b35fb8c3b3cbd94cf252f80f0a044ba63f7a2e438df410a4875240014ce65"
+    },
+    {
+      "bytes": 4929,
+      "path": "docs/assets/readme/chemworld-three-ways.svg",
+      "sha256": "130a08299de84237872f7b8e0b6dcd3cee17b1b19347326f30bccd546351bf15"
+    },
+    {
+      "bytes": 333696,
+      "path": "docs/assets/readme/lab-lifecycle.gif",
+      "sha256": "ecf7a6c8302b15f6ff8c6bcdb1db549802d9d68ab0d42b56531c3dc36d7ef598"
+    },
+    {
+      "bytes": 2052,
+      "path": "docs/assets/readme/public-proof.svg",
+      "sha256": "e18e7bce4eac2c8c8054a8ccc08a4079863d900bb3ea0228754f76d6ae309995"
+    },
+    {
+      "bytes": 1517,
+      "path": "docs/assets/readme/showcase-metadata.json",
+      "sha256": "b7396e08ad6a3eccd5a07194603ab6170fe5f8778ff0c3aba5fd42050fd7324e"
+    },
+    {
       "bytes": 16430,
       "path": "docs/assets/representative-agent-and-world-change.svg",
       "sha256": "b0aab8f56cfaa9821c3bee000c3c540c4c1f785e3df2a7dfa9e5710a2cd5a481"
     },
     {
-      "bytes": 18468,
+      "bytes": 19951,
       "path": "docs/assets/stylesheets/site.css",
-      "sha256": "a75ae3d17bded5cfa59e301263a7b39d53fe7c7083254cd507cc79da112e30c7"
+      "sha256": "f473274a3d9c21bcd1101f9bedb2fabba08d4feb1cd53b47ff0eb3828e248a54"
+    },
+    {
+      "bytes": 2642,
+      "path": "docs/benchmark-design.md",
+      "sha256": "6d2e760dd2b00f7bb975dbe1dfab34f394c9f96c4cb7de2da18ee1bdac27b3dd"
+    },
+    {
+      "bytes": 2214,
+      "path": "docs/benchmark-design.zh.md",
+      "sha256": "69e486408d1080da06b9a6131de8045410c0d7394842b8ade9bc1713d473a9cc"
+    },
+    {
+      "bytes": 2444,
+      "path": "docs/causal-worlds.md",
+      "sha256": "f41182a0cfd17d10a80bb19318aa997025f3b0c22cb8852bb34e6ee8b0fa8324"
+    },
+    {
+      "bytes": 2078,
+      "path": "docs/causal-worlds.zh.md",
+      "sha256": "f6bf3fb5b5baee769f833e499f98cf6c5d251cb80042250044cbdf8cf057bcb2"
+    },
+    {
+      "bytes": 2101,
+      "path": "docs/confirmatory-tasks.md",
+      "sha256": "a2119f7b14b4307e9aa8d33c762d083653749817e72e35b12fdd335a44d2e335"
+    },
+    {
+      "bytes": 1809,
+      "path": "docs/confirmatory-tasks.zh.md",
+      "sha256": "7592fa3a8092493188f37558277e62716f4269e20dfbb0e6edd8b42f41c7f75f"
     },
     {
       "bytes": 2520,
@@ -228,19 +303,39 @@
       "sha256": "0bb8befacaef64d9f38ee8b7251f8e36891404ec80a75d3c2edf6c5dd0a65287"
     },
     {
+      "bytes": 2533,
+      "path": "docs/experimental-intelligence.md",
+      "sha256": "fdf3b11319a0fbad5da37b88d52c08c6b8021ece6cb5dd513d13b793d9b64f89"
+    },
+    {
+      "bytes": 2148,
+      "path": "docs/experimental-intelligence.zh.md",
+      "sha256": "c47f39b51fc10196a568421c993b1a3b09293f51c6c7e990da66611ddb091be8"
+    },
+    {
+      "bytes": 1899,
+      "path": "docs/getting-started.md",
+      "sha256": "22cd8789eb7125b1f3f835f33d1f3a149868728524abdec50ef1987a88a131c8"
+    },
+    {
+      "bytes": 1800,
+      "path": "docs/getting-started.zh.md",
+      "sha256": "96995ff9f7274b209c50424f9cb9e7d88af8b14c2fbc2298be56f9e5d013feef"
+    },
+    {
       "bytes": 4311,
       "path": "docs/getting_started.md",
       "sha256": "4218ed7de6b89c53bfc18f743ab2888b451d49d183e347f1eae1ef7983a551c0"
     },
     {
-      "bytes": 4728,
+      "bytes": 3842,
       "path": "docs/index.md",
-      "sha256": "9752cd9062498fde9b170910577a0189b89843be46e979efbda8c67787222d71"
+      "sha256": "3313f2e133921d16d77da56c818398f196a7ad68958cb326b237fefb80ce1471"
     },
     {
-      "bytes": 4575,
+      "bytes": 3600,
       "path": "docs/index.zh.md",
-      "sha256": "332905d85d3d4279cc4385cfa3b539f727036c8c97cb2c44e2f6ec2d074ed516"
+      "sha256": "0cefe7ebe0a6a365282610cf89b32f5ba2426026f0b15ab63575582d87682b38"
     },
     {
       "bytes": 1045,
@@ -293,6 +388,16 @@
       "sha256": "b0fbddcebb510a3408be6d3c4ab061e0bd1f6ac7bb53011f607a9eb2a822c7bc"
     },
     {
+      "bytes": 2704,
+      "path": "docs/real-world-bridge.md",
+      "sha256": "149ec0c83413dcdfe6c605d5625c266d61e1748718b431f694ddee468537d1ee"
+    },
+    {
+      "bytes": 2264,
+      "path": "docs/real-world-bridge.zh.md",
+      "sha256": "bc5f8ab929d30adff4d921545edd4c29423fe2f86d4256bb5c9904318ccc8140"
+    },
+    {
       "bytes": 930,
       "path": "docs/reference.md",
       "sha256": "05aa922c471d8f474d168322155ee0d080b19a6700ce09e95aa876f845ce0c8a"
@@ -323,6 +428,16 @@
       "sha256": "2812486adcf37761e98030af1bb24651962b85810efeee3306ef0d63442660fc"
     },
     {
+      "bytes": 2617,
+      "path": "docs/vision.md",
+      "sha256": "92c7a6138be148957d42beb4526beeaac90ba6c9b5d614e616fac1e42ab1cad8"
+    },
+    {
+      "bytes": 2282,
+      "path": "docs/vision.zh.md",
+      "sha256": "4cc202636f97850be0f0641bfc074975bf7d5358b21b8a6ebe803b99419e2809"
+    },
+    {
       "bytes": 8271,
       "path": "docs/world-capability-map.md",
       "sha256": "4d62ef6696aed73ad3267168c5d6968dce7f7e2a6175aec66cd84d27abbb86a5"
@@ -343,14 +458,24 @@
       "sha256": "d9f96a4d59d99167854cccd6a4cfa26c980279c006080f3413a1671dd6422cd3"
     },
     {
-      "bytes": 1697,
+      "bytes": 999,
       "path": "docs/world-foundations.md",
-      "sha256": "e3cfacd61ffd64f4398ef6e3910e8447001489b0647f7df8599324d71751dff4"
+      "sha256": "2c66e6cab11e74cf570a59f00c4be1212ab8d3c1fab82a66ed42debcddb78095"
     },
     {
-      "bytes": 1446,
+      "bytes": 896,
       "path": "docs/world-foundations.zh.md",
-      "sha256": "cdacf897c2e3bed0b235ce35030fe66038d3b348f16909a6e79df525f7ac5308"
+      "sha256": "d6ade6df9aa9bc4b462393be8600e9aa22a8dce03a5a7d5159178d2a9ad24483"
+    },
+    {
+      "bytes": 2416,
+      "path": "docs/worlds.md",
+      "sha256": "bf705df4ee8a7ffa44be5ca97908dc1cb4ec09d054e325e77424c33ab8217334"
+    },
+    {
+      "bytes": 2014,
+      "path": "docs/worlds.zh.md",
+      "sha256": "1c0c657c2cbdba8593e5c18e7f2c26f662602d8515274a9c8c24abcfeab2c537"
     },
     {
       "bytes": 1657,
@@ -483,9 +608,9 @@
       "sha256": "5aa69e3bbdeb1198b7ee42f183be93f73a497a515dede5b0eb2626b1c274c8a0"
     },
     {
-      "bytes": 2812,
+      "bytes": 4021,
       "path": "mkdocs.yml",
-      "sha256": "fb913be41761290d64b19443fac29b2eab33e0246a4b6ed57b330ec700ab1362"
+      "sha256": "2d0e4722e7f65007dce8492d9e7c6f9e2b3f876af1c1a90553f0d61e8dd6123e"
     },
     {
       "bytes": 72206,
@@ -523,9 +648,9 @@
       "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
     },
     {
-      "bytes": 3261,
+      "bytes": 3281,
       "path": "pyproject.toml",
-      "sha256": "8f465f351bb1b5c9598455e23279ff84eb581bbbfcf7faa62368734a0b63964d"
+      "sha256": "f72b7768b03b8e91df66e3c3facfff7f8e1ec8c30a9bfb7dc0c09fb0ba08fa4a"
     },
     {
       "bytes": 177,
@@ -536,6 +661,11 @@
       "bytes": 53,
       "path": "scripts/__init__.py",
       "sha256": "30d5752a6469e65cad726aae46e32e7da77675710b7ef84128085efef835bcac"
+    },
+    {
+      "bytes": 18461,
+      "path": "scripts/build_readme_showcase.py",
+      "sha256": "35a0d2485f5fa19ff6b62a390aef59be53fb577d2d877737bbfb943289f65a57"
     },
     {
       "bytes": 31291,
@@ -2083,9 +2213,9 @@
       "sha256": "08308584a4d89216fd451d69fd3e80fbc7ac840128f1b6bbf1605db543761b98"
     },
     {
-      "bytes": 4637,
+      "bytes": 5686,
       "path": "tests/test_public_tutorial_release.py",
-      "sha256": "122d26607a68bebded0626eb73d88a99b0f801c99dfde7e34416327199cc037e"
+      "sha256": "3c1e8eb69cf50218c472ae5179eccecdd4e4c34b968290ae8097d4668466cc06"
     },
     {
       "bytes": 3156,

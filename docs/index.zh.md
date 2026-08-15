@@ -1,72 +1,58 @@
-<section class="cw-studio-hero" data-cw-autoplay data-source="../assets/data/representative-behavior-and-forks.json" data-locale="zh">
-  <div class="cw-studio-glow cw-studio-glow-a"></div>
-  <div class="cw-studio-glow cw-studio-glow-b"></div>
-  <div class="cw-studio-copy">
-    <div class="cw-studio-brand"><span class="cw-live-dot"></span> 公开轨迹实时演示</div>
-    <h1>让实验 Agent 拥有一个可以行动的世界。</h1>
-    <p>ChemWorld 把物理化学模型变成有类型、可回放的实验室。观看一条冻结公开轨迹，如何从材料与过程操作走向仪器、后处理和 final assay。</p>
+<section class="cw-launch-hero">
+  <div class="cw-launch-copy">
+    <p class="cw-eyebrow">PUBLIC v0.4 · 来自清华大学的研究团队</p>
+    <h1>让实验智能拥有一个可以行动的世界。</h1>
+    <p class="cw-lead">ChemWorld 是一座可编程虚拟化学实验室：Agent 可以选择证据、操作有类型装置、从失败中恢复，并留下可精确回放的轨迹。</p>
     <div class="cw-button-row">
-      <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">打开在线实验台 →</a>
-      <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">比较 Agent</a>
-      <a class="cw-button" href="notebooks/">亲手运行</a>
-    </div>
-    <div class="cw-studio-stats">
-      <span><strong data-cw-live-step>01</strong> 当前动作</span>
-      <span><strong>15 / 15</strong> 已提交</span>
-      <span><strong>精确</strong> 回放</span>
+      <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">打开在线 Lab →</a>
+      <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">观察 Agent</a>
+      <a class="cw-button" href="vision/">阅读研究主张</a>
     </div>
   </div>
-
-  <div class="cw-studio-stage" aria-label="冻结公开 ChemWorld 实验的动态回放">
-    <div class="cw-agent-orbit" aria-hidden="true">
-      <span class="cw-orbit-ring cw-orbit-ring-a"></span>
-      <span class="cw-orbit-ring cw-orbit-ring-b"></span>
-      <span class="cw-agent-face"><i></i><i></i></span>
-    </div>
-    <div class="cw-studio-readout">
-      <span data-cw-live-family>准备</span>
-      <strong data-cw-live-label>试剂</strong>
-      <small data-cw-live-detail>0.04 mol</small>
-    </div>
-    <div class="cw-mini-vessel" aria-hidden="true">
-      <div class="cw-mini-liquid"></div><i></i><i></i><i></i>
-    </div>
-    <div class="cw-signal-card" aria-hidden="true">
-      <span class="cw-signal-line cw-signal-one"></span>
-      <span class="cw-signal-line cw-signal-two"></span>
-      <span class="cw-signal-line cw-signal-three"></span>
-    </div>
-    <div class="cw-stage-score"><span>公开得分</span><strong data-cw-live-score>0.000</strong></div>
-    <div class="cw-stage-progress"><i data-cw-live-progress></i></div>
-  </div>
-
-  <div class="cw-studio-rail" data-cw-live-rail aria-label="冻结 15 步实验生命周期"></div>
+  <a class="cw-launch-visual" href="https://chemworld-public-lab.onrender.com/student/" aria-label="打开在线 Student Lab">
+    <img src="../assets/readme/chemworld-launch-hero.png" alt="由可审计 Agent 循环连接的可编程化学实验室概念图">
+  </a>
 </section>
 
-<noscript><p class="cw-noscript">动效需要 JavaScript。完整可访问动作表位于<a href="one-experiment/">一次完整实验</a>。</p></noscript>
+## 研究问题
 
-## 从动作走向证据
+语言模型可以描述实验。但 Agent 能否判断尚未知晓的部分、主动获取正确证据、在约束下操作、修正失败计划，并闭合完整实验生命周期？ChemWorld 把这个问题变成了可执行系统。
+
+| 静态 Benchmark | 可交互化学世界 |
+| --- | --- |
+| 固定提示已经包含证据。 | 测量本身是动作，会消耗成本、时间或样品。 |
+| 在单次输出上判断正确性。 | 每个合法或无效操作都会改变——或明确不改变——轨迹。 |
+| 新样本测试输入泛化。 | 受控 world fork 测试因果规律变化后策略能否适应。 |
+
+## 一个系统，三层合同
 
 <div class="cw-grid">
-  <div class="cw-card"><span class="cw-card-index">01</span><h3>操作</h3><p>阅读公开任务合同、验证参数，再提交有类型的实验操作。</p></div>
-  <div class="cw-card"><span class="cw-card-index">02</span><h3>观测</h3><p>使用 HPLC、GC 与终检，但隐藏世界状态始终由评测者持有。</p></div>
-  <div class="cw-card"><span class="cw-card-index">03</span><h3>更新</h3><p>比较干预、核算资源，再选择下一次信息量更高的实验。</p></div>
+  <div class="cw-card"><span class="cw-card-index">01</span><h3>物理因果世界</h3><p>有类型状态、隐藏动力学、装置、仪器与受控干预。</p></div>
+  <div class="cw-card"><span class="cw-card-index">02</span><h3>实验交互运行时</h3><p>校验、事务、测量、失败、资源、生命周期与回放。</p></div>
+  <div class="cw-card"><span class="cw-card-index">03</span><h3>任务与评估</h3><p>公开目标、权限、预算、终止规则与任务特定结果。</p></div>
 </div>
 
-## 三种进入方式
+## Public v0.4 已验证的内容
 
-<div class="cw-entry-grid">
-  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/student/"><span>在线 STUDENT LAB</span><strong>操作虚拟实验装置</strong><p>选择任务、编排合法动作，并在真实 Gym 运行时中观察公开状态响应。</p><b>打开实验台 →</b></a>
-  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/agent/"><span>AGENT 观测台</span><strong>单步执行并比较策略</strong><p>在相同公开任务合同上运行无需 Provider 的脚本、设计与贝叶斯策略。</p><b>比较 Agent →</b></a>
-  <a class="cw-entry-card" href="notebooks/"><span>本地或 COLAB 运行</span><strong>执行一个引导实验</strong><p>三个无需 Provider 的 notebook 覆盖首次终检、纯化和受控世界变化。</p><b>选择 Notebook →</b></a>
+<div class="cw-proof-grid cw-proof-grid-five">
+  <div class="cw-proof"><strong>64 / 64</strong><span>参考任务–世界单元</span></div>
+  <div class="cw-proof"><strong>52 / 52</strong><span>生成组合</span></div>
+  <div class="cw-proof"><strong>8 / 8</strong><span>确定性用例</span></div>
+  <div class="cw-proof"><strong>6 对</strong><span>24 条受控 fork 轨迹</span></div>
+  <div class="cw-proof"><strong>1 / 1</strong><span>完整 Agent 生命周期</span></div>
 </div>
 
-## 证据与展示分开呈现
+这些是有限的软件模型资格结果，用来建立已发布合同与回放边界；它们不建立 Agent 排名、普适化学保真度或真实实验室迁移结论。[检查证据 →](evidence.md)
 
-<div class="cw-proof-grid">
-  <div class="cw-proof"><strong>64 / 64</strong><span>注册任务–世界单元通过资格测试</span></div>
-  <div class="cw-proof"><strong>89 个动作</strong><span>覆盖八条确定性实验生命周期</span></div>
-  <div class="cw-proof"><strong>6 对世界</strong><span>受控 world fork 且可精确回放</span></div>
-</div>
+## 选择一条路径
 
-上面的演示由净化后的冻结证据生成。这些是有限的软件模型资格结果，并不声称普适化学保真度、Agent 优越性或真实实验室迁移。[查看证据和解释边界 →](evidence.md)
+| 目标 | 从这里开始 |
+| --- | --- |
+| 在浏览器中操作任务 | [在线 Student Lab](student-lab.md) |
+| 逐步观察内置策略 | [Agent Observatory](agent-observatory.md) |
+| 理解研究主张 | [为什么是 ChemWorld](vision.md) |
+| 了解隐藏因果规则如何变化 | [因果世界](causal-worlds.md) |
+| 接入自己的策略或模型 | [构建 Agent](agents.md) |
+| 设计可复现比较 | [Benchmark 设计](benchmark-design.md) |
+
+开发前沿功能与未发布证据仍留在 [ChemWorld 开发仓库](https://github.com/sunyrain/ChemWorld)；本网站只描述稳定公开版本。

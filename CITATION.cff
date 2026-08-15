@@ -10,11 +10,14 @@ license: MIT
 authors:
   - family-names: Qiu
     given-names: Jiangjie
+    affiliation: "Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University, Beijing 100084, China"
   - family-names: Li
     given-names: Yijun
+    affiliation: "Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University, Beijing 100084, China"
   - family-names: Wang
     given-names: Xiaonan
     email: wangxiaonan@tsinghua.edu.cn
+    affiliation: "Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University, Beijing 100084, China"
 preferred-citation:
   type: article
   title: "ChemWorld: Programmable Chemical Worlds for Controlled and Replayable Agent Experimentation"
@@ -22,7 +25,10 @@ preferred-citation:
   authors:
     - family-names: Qiu
       given-names: Jiangjie
+      affiliation: "Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University, Beijing 100084, China"
     - family-names: Li
       given-names: Yijun
+      affiliation: "Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University, Beijing 100084, China"
     - family-names: Wang
       given-names: Xiaonan
+      affiliation: "Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University, Beijing 100084, China"

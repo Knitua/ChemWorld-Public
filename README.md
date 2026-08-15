@@ -1,43 +1,60 @@
-# ChemWorld
+<div align="center">
 
-**English** | [简体中文](README.zh-CN.md)
+**English** · [简体中文](README.zh-CN.md)
 
-![ChemWorld — an agent moves through a replayable experimental lifecycle](docs/assets/chemworld-hero.png)
+<sub><strong>Built by researchers at Tsinghua University 🇨🇳</strong></sub>
 
-**A programmable virtual chemistry lab for students, experimental agents, and reproducible research.**
+# We didn’t just imagine a virtual chemistry lab.<br>We built one agents can actually experiment in. 🧪
 
-ChemWorld turns a chemical task into a stateful, typed laboratory: every accepted operation changes
-the same virtual apparatus, instruments reveal public signals, resources are accounted for, and the
-complete trace can be replayed. It is a software experiment environment—not guidance for physical
-laboratory work.
+ChemWorld lets agents act, observe, fail, recover—and replay every accepted step exactly.
 
-[**Run the first experiment in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb)
-· [Browse all notebooks](https://github.com/Knitua/ChemWorld-Public/tree/main/notebooks)
-· [Open the documentation](https://knitua.github.io/ChemWorld-Public/)
-· [Open the live Student Lab](https://chemworld-public-lab.onrender.com/student/)
+[![Open the live ChemWorld Student Lab](docs/assets/readme/chemworld-launch-hero.png)](https://chemworld-public-lab.onrender.com/student/)
 
-## Choose your entry point
+[**🚀 Try the Live Lab**](https://chemworld-public-lab.onrender.com/student/) · [**🤖 Watch Agents**](https://chemworld-public-lab.onrender.com/agent/) · [**📓 Run in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) · [**📚 Read the Research**](https://knitua.github.io/ChemWorld-Public/)
 
-| I want to… | Start here | What runs |
+</div>
+
+## One experiment, from action to assay
+
+![A deterministic public ChemWorld session moving through validated actions, public observations and exact replay](docs/assets/readme/lab-lifecycle.gif)
+
+This 7.2-second loop is generated from a frozen Public v0.4 lifecycle—not a staged UI recording. It follows legal material additions, process operations, instrument observations, termination and final assay while exposing only public state.
+
+## 🔬 What we actually built
+
+| Programmable chemical worlds | Complete agent experiments | Controlled forks and exact replay |
 | --- | --- | --- |
-| Complete a guided experiment | [Open notebook 01 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) | A deterministic Reaction-to-Assay experiment; no provider key |
-| Continue through purification | [Open notebook 02 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/02_reaction_to_purification.ipynb) | Reaction, extraction, wash, drying and concentration |
-| Change one world component | [Open notebook 03 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/03_controlled_world_change.ipynb) | The same public intervention across a controlled world fork |
-| Operate the virtual apparatus by hand | [Open the live Student Lab](https://chemworld-public-lab.onrender.com/student/) | The real public Gym runtime in an animated browser workbench |
-| Watch and compare agents | [Open the live Agent Observatory](https://chemworld-public-lab.onrender.com/agent/) | Provider-free scripted, random, DOE and Bayesian strategies |
-| Connect my own agent | [Agent integration guide](https://knitua.github.io/ChemWorld-Public/agents/) | A small Python agent protocol with auditable traces |
+| Typed tasks compose kinetics, phases, apparatus, instruments, constraints and budgets into stateful worlds. | An agent can design, operate, measure, fail, recover, terminate and close an experiment with a final assay. | Change one registered private law, keep the public contract fixed, then audit matched traces step by step. |
 
-## Live Lab
+![Public v0.4 evidence: 15 public tasks, 52 qualified generated compositions, 6 controlled fork pairs and 24 traces, and 8 provider-free policies](docs/assets/readme/public-proof.svg)
 
-The Student Lab and Agent Observatory are not mock-ups. They create real in-memory ChemWorld Gym
-sessions and execute the same public action, observation, validation, resource and replay contracts
-used by Python agents.
+The browser Observatory runs eight built-in provider-free policies. Your own policy or model connects through the small Python agent protocol, where decisions, tool use, resources and provenance can be retained in the trajectory.
 
-[**Open the public Student Lab**](https://chemworld-public-lab.onrender.com/student/) ·
-[**Open the Agent Observatory**](https://chemworld-public-lab.onrender.com/agent/)
+## 🌍 Why ChemWorld
 
-The free public preview may take a short time to wake after an idle period. To run a private local
-instance instead:
+| A static benchmark asks… | ChemWorld asks… |
+| --- | --- |
+| Can the model answer from a fixed prompt? | What evidence does the agent choose to acquire? |
+| Is the final answer correct? | Can it operate legally, learn from failure and finish the experimental lifecycle? |
+| Does performance survive new examples? | Does strategy survive a controlled change in the world’s causal rules? |
+
+![Student Lab, Agent Observatory and Programmable Worlds are three interfaces to the same public runtime](docs/assets/readme/chemworld-three-ways.svg)
+
+## 📚 Explore the research
+
+| Goal | Page |
+| --- | --- |
+| Understand the research thesis | [Why ChemWorld](https://knitua.github.io/ChemWorld-Public/vision/) |
+| Read the normative system model | [System Model](https://knitua.github.io/ChemWorld-Public/architecture/) |
+| See how causal worlds change | [Causal Worlds](https://knitua.github.io/ChemWorld-Public/causal-worlds/) |
+| Explore Showcase Worlds | [Worlds](https://knitua.github.io/ChemWorld-Public/worlds/) |
+| Inspect Confirmatory Benchmark Tasks | [Confirmatory Tasks](https://knitua.github.io/ChemWorld-Public/confirmatory-tasks/) |
+| Choose an agent interaction level | [Agent Tracks](https://knitua.github.io/ChemWorld-Public/agent-tracks/) |
+| Build an agent | [Getting Started](https://knitua.github.io/ChemWorld-Public/getting-started/) |
+| Design an evaluation | [Benchmark Design](https://knitua.github.io/ChemWorld-Public/benchmark-design/) |
+| Understand the real-world roadmap | [Real-world Bridge](https://knitua.github.io/ChemWorld-Public/real-world-bridge/) |
+
+## Run locally
 
 ```bash
 git clone https://github.com/Knitua/ChemWorld-Public.git
@@ -46,53 +63,12 @@ python -m pip install -e .
 chemworld lab
 ```
 
-Open `http://127.0.0.1:8876/student/` to operate the apparatus, or
-`http://127.0.0.1:8876/agent/` to step through and compare provider-free policies. The local command
-binds only to loopback by design. The deployable public service uses a separate, explicitly limited
-mode so online visitors cannot enable providers or submit arbitrary code.
+Then open `http://127.0.0.1:8876/student/`. Python 3.11 and 3.12 are supported.
 
-[Student Lab guide](https://knitua.github.io/ChemWorld-Public/student-lab/) ·
-[Agent Observatory guide](https://knitua.github.io/ChemWorld-Public/agent-observatory/) ·
-[Deployment guide](https://knitua.github.io/ChemWorld-Public/deployment/)
+## Team, citation and scope
 
-## What is public
+ChemWorld is built by **Jiangjie Qiu, Yijun Li and Xiaonan Wang** at the Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University.
 
-- 15 typed experimental tasks spanning reaction, separation, crystallization, distillation, flow,
-  electrochemistry, characterization, optimization and planning.
-- Stateful material, apparatus and resource ledgers with atomic validation and recoverable failures.
-- Public instruments and spectra, final assays, explicit termination and transaction-complete traces.
-- Eight browser-visible provider-free policies, including scripted chemistry, random and Latin
-  hypercube designs, greedy search, Gaussian-process BO, safety-constrained BO and offline LLM-style
-  replay.
-- Three executed tutorial notebooks whose retained outputs are deterministic demonstrations rather
-  than benchmark claims or optimized laboratory procedures.
+Use the machine-readable metadata in [`CITATION.cff`](CITATION.cff) and record the release tag, task, world split, seed, trace and provider provenance when applicable. The code is released under the [MIT License](LICENSE).
 
-## Install and integrate
-
-ChemWorld supports Python 3.11 and 3.12.
-
-```bash
-python -m pip install -e ".[notebooks]"
-python examples/demo_manual_event_sequence.py
-```
-
-Agents can implement the small `BaseAgent` protocol and run through `run_agent`. Online provider
-adapters are opt-in Python workflows; they are deliberately not exposed by the public Lab service.
-See the [agent guide](https://knitua.github.io/ChemWorld-Public/agents/) for offline, DeepSeek and Codex
-subscription examples and their provenance requirements.
-
-## Reproducibility and scope
-
-Release `v0.4.0` adds the provider-free Student Lab and Agent Observatory to the stable public
-runtime. The software, schemas, tests, protocols, sanitized evidence and deterministic release
-manifest remain in this repository so the attractive entry points do not replace scientific audit.
-
-- [Documentation](https://knitua.github.io/ChemWorld-Public/)
-- [Evidence map](evidence/README.md)
-- [Public protocols](protocols/README.md)
-- [Release manifest](release/manifest.json)
-- [Limitations and scientific boundary](https://knitua.github.io/ChemWorld-Public/limitations/)
-
-ChemWorld is released under the [MIT License](LICENSE). If you use a frozen release in research,
-cite the repository metadata in [`CITATION.cff`](CITATION.cff) and record the release tag, task,
-world split, seed, action trace and provider provenance when applicable.
+**Scientific boundary.** ChemWorld is a bounded software-model environment for experimental-interaction research. Its virtual quantities, policies and rankings are not physical-laboratory instructions, validated chemical recommendations or evidence of real-world transfer.

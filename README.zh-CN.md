@@ -1,39 +1,60 @@
-# ChemWorld
+<div align="center">
 
-[English](README.md) | **简体中文**
+[English](README.md) · **简体中文**
 
-![ChemWorld — Agent 在可回放的实验生命周期中行动](docs/assets/chemworld-hero.png)
+<sub><strong>来自清华大学的研究团队 🇨🇳</strong></sub>
 
-**面向学生、实验 Agent 与可复现研究的可编程虚拟化学实验室。**
+# 我们不只是在设想一座虚拟化学实验室。<br>我们真正把它搭了出来——Agent 可以在里面做实验。🧪
 
-ChemWorld 把化学任务转化为有状态、有类型的实验室：每个被接受的操作都会改变同一套虚拟装置，
-仪器提供公开信号，资源使用被完整记账，整条轨迹可以回放。它是软件实验环境，**不是真实化学实验指南**。
+Agent 可以行动、观测、失败、恢复，而每一个被接受的步骤都能被精确回放。
 
-[从 Colab 运行第一个实验](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb)
-· [浏览全部 Notebook](https://github.com/Knitua/ChemWorld-Public/tree/main/notebooks)
-· [打开中文文档](https://knitua.github.io/ChemWorld-Public/zh/)
-· [打开在线 Student Lab](https://chemworld-public-lab.onrender.com/student/)
+[![打开在线 ChemWorld Student Lab](docs/assets/readme/chemworld-launch-hero.png)](https://chemworld-public-lab.onrender.com/student/)
 
-## 选择你的入口
+[**🚀 体验在线 Lab**](https://chemworld-public-lab.onrender.com/student/) · [**🤖 观察 Agent**](https://chemworld-public-lab.onrender.com/agent/) · [**📓 在 Colab 运行**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) · [**📚 阅读研究文档**](https://knitua.github.io/ChemWorld-Public/zh/)
 
-| 我想要…… | 从这里开始 | 实际运行的内容 |
+</div>
+
+## 一次实验：从行动到终检
+
+![Public v0.4 确定性会话依次执行合法动作、获得公开观测并保留精确回放](docs/assets/readme/lab-lifecycle.gif)
+
+这段 7.2 秒循环动画由冻结的 Public v0.4 生命周期生成，不是摆拍的 UI 录像。它覆盖合法加料、过程操作、仪器观测、终止与 final assay，全程只展示公开状态。
+
+## 🔬 我们真正做成了什么
+
+| 可编程化学世界 | 完整 Agent 实验 | 受控 World Fork 与精确回放 |
 | --- | --- | --- |
-| 完成一个引导实验 | [在 Colab 中打开 Notebook 01](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) | 确定性“反应到终检”实验，无需 Provider Key |
-| 继续完成纯化 | [在 Colab 中打开 Notebook 02](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/02_reaction_to_purification.ipynb) | 反应、萃取、洗涤、干燥与浓缩 |
-| 只改变一个世界组件 | [在 Colab 中打开 Notebook 03](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/03_controlled_world_change.ipynb) | 在受控 world fork 中施加同一公开干预 |
-| 手动操作虚拟实验装置 | [打开在线 Student Lab](https://chemworld-public-lab.onrender.com/student/) | 在动画工作台中运行真实的公开 Gym Runtime |
-| 观察并比较 Agent | [打开在线 Agent Observatory](https://chemworld-public-lab.onrender.com/agent/) | 无需 Provider 的脚本、随机、DOE 与贝叶斯策略 |
-| 接入自己的 Agent | [Agent 接入指南](https://knitua.github.io/ChemWorld-Public/zh/agents/) | 小型 Python Agent 协议与可审计轨迹 |
+| 有类型任务把动力学、相态、装置、仪器、约束和预算组合为有状态世界。 | Agent 可以设计、操作、测量、失败、恢复、终止，并通过 final assay 闭合实验。 | 只改变一条已注册私有规律、保持公开合同不变，再逐步审计配对轨迹。 |
 
-## 在线实验室
+![Public v0.4 证据：15 个公开任务、52 个合格生成组合、6 对受控 fork 与 24 条轨迹，以及 8 种 provider-free 策略](docs/assets/readme/public-proof.svg)
 
-Student Lab 和 Agent Observatory 不是静态界面样稿。它们会创建真实的内存内 ChemWorld Gym Session，
-并执行与 Python Agent 完全相同的公开动作、观测、校验、资源和回放合同。
+浏览器 Observatory 可运行 8 种内置 provider-free 策略。你自己的策略或模型则通过小型 Python Agent 协议接入，其决策、工具调用、资源与来源信息都可以保留在轨迹中。
 
-[打开公网 Student Lab](https://chemworld-public-lab.onrender.com/student/) ·
-[打开 Agent Observatory](https://chemworld-public-lab.onrender.com/agent/)
+## 🌍 为什么是 ChemWorld
 
-免费公网预览在闲置后可能需要短暂唤醒。如果希望运行私有本地实例：
+| 静态 Benchmark 问…… | ChemWorld 问…… |
+| --- | --- |
+| 模型能否回答一个固定提示？ | Agent 会主动获取什么证据？ |
+| 最终答案是否正确？ | 它能否合法操作、从失败中恢复并完成实验生命周期？ |
+| 性能能否泛化到新样本？ | 当世界的因果规律受控改变时，策略还能否适应？ |
+
+![Student Lab、Agent Observatory 与 Programmable Worlds 是同一公开运行时的三个入口](docs/assets/readme/chemworld-three-ways.svg)
+
+## 📚 探索研究
+
+| 目标 | 页面 |
+| --- | --- |
+| 理解研究主张 | [为什么是 ChemWorld](https://knitua.github.io/ChemWorld-Public/zh/vision/) |
+| 阅读规范系统模型 | [系统模型](https://knitua.github.io/ChemWorld-Public/zh/architecture/) |
+| 了解因果世界如何变化 | [因果世界](https://knitua.github.io/ChemWorld-Public/zh/causal-worlds/) |
+| 探索 Showcase Worlds | [世界](https://knitua.github.io/ChemWorld-Public/zh/worlds/) |
+| 检查 Confirmatory Benchmark Tasks | [确认性任务](https://knitua.github.io/ChemWorld-Public/zh/confirmatory-tasks/) |
+| 选择 Agent 交互层级 | [Agent Tracks](https://knitua.github.io/ChemWorld-Public/zh/agent-tracks/) |
+| 构建 Agent | [开始接入](https://knitua.github.io/ChemWorld-Public/zh/getting-started/) |
+| 设计评估 | [Benchmark 设计](https://knitua.github.io/ChemWorld-Public/zh/benchmark-design/) |
+| 理解真实世界路线图 | [真实世界桥接](https://knitua.github.io/ChemWorld-Public/zh/real-world-bridge/) |
+
+## 本地运行
 
 ```bash
 git clone https://github.com/Knitua/ChemWorld-Public.git
@@ -42,46 +63,12 @@ python -m pip install -e .
 chemworld lab
 ```
 
-打开 `http://127.0.0.1:8876/student/` 操作实验装置，或打开
-`http://127.0.0.1:8876/agent/` 单步执行并比较 provider-free 策略。出于安全设计，默认本地命令只绑定
-loopback。可部署的公网服务使用独立、显式受限的模式，因此在线访客无法启用 Provider 或提交任意代码。
+随后打开 `http://127.0.0.1:8876/student/`。支持 Python 3.11 和 3.12。
 
-[Student Lab 指南](https://knitua.github.io/ChemWorld-Public/zh/student-lab/) ·
-[Agent Observatory 指南](https://knitua.github.io/ChemWorld-Public/zh/agent-observatory/) ·
-[部署指南](https://knitua.github.io/ChemWorld-Public/zh/deployment/)
+## 团队、引用与边界
 
-## 公开内容
+ChemWorld 由清华大学化工系的 **Jiangjie Qiu、Yijun Li 和 Xiaonan Wang** 共同开发。完整单位为：北京人工智能驱动的化工材料重点实验室、化学工程与低碳技术全国重点实验室、清华大学化学工程系。
 
-- 15 个有类型实验任务，覆盖反应、分离、结晶、蒸馏、流动化学、电化学、表征、优化与规划。
-- 有状态的材料、装置和资源账本，并支持原子化校验与可恢复失败。
-- 公开仪器与谱图、终检、显式终止机制，以及事务完整的轨迹。
-- 8 种可在浏览器中观察的 provider-free 策略，包括脚本化学、随机与拉丁超立方设计、贪心搜索、高斯过程 BO、
-  安全约束 BO 与离线 LLM-style Replay。
-- 3 个保留执行输出的教程 Notebook；其结果是确定性演示，不代表 Benchmark 结论或优化后的真实实验流程。
+引用时请使用 [`CITATION.cff`](CITATION.cff) 中的机器可读元数据，并在适用时记录版本标签、任务、world split、seed、轨迹与 provider provenance。代码采用 [MIT License](LICENSE)。
 
-## 安装与接入
-
-ChemWorld 支持 Python 3.11 和 3.12。
-
-```bash
-python -m pip install -e ".[notebooks]"
-python examples/demo_manual_event_sequence.py
-```
-
-Agent 可以实现小型 `BaseAgent` 协议，并通过 `run_agent` 运行。在线 Provider Adapter 是可选的 Python 工作流；
-出于安全原因，它们不会暴露在公开 Lab 服务中。离线、DeepSeek 和 Codex Subscription 示例及其 Provenance 要求见
-[Agent 指南](https://knitua.github.io/ChemWorld-Public/zh/agents/)。
-
-## 可复现性与范围
-
-`v0.4.0` 版本把 provider-free Student Lab 和 Agent Observatory 纳入稳定公开运行时。软件、Schema、测试、
-Protocol、净化证据和确定性发布清单仍保留在本仓库中，以确保友好的体验入口不会取代科学审计。
-
-- [中文文档](https://knitua.github.io/ChemWorld-Public/zh/)
-- [证据地图](evidence/README.md)
-- [公开 Protocol](protocols/README.md)
-- [发布清单](release/manifest.json)
-- [局限性与科学边界](https://knitua.github.io/ChemWorld-Public/zh/limitations/)
-
-ChemWorld 使用 [MIT License](LICENSE) 发布。如果在研究中使用冻结版本，请引用 [`CITATION.cff`](CITATION.cff)
-中的仓库元数据，并在适用时记录发布标签、任务、World Split、Seed、Action Trace 与 Provider Provenance。
+**科学边界。** ChemWorld 是用于实验交互研究的有边界软件模型环境。虚拟数值、策略与排名不构成真实实验室操作指南、经验证的化学建议，也不证明真实世界迁移。

@@ -32,7 +32,9 @@ jobs:
         run: python -m pip install ".[docs]"
 
       - name: Verify generated public visuals
-        run: python scripts/build_readme_visuals.py --check
+        run: |
+          python scripts/build_readme_visuals.py --check
+          python scripts/build_readme_showcase.py --check
 
       - name: Build documentation
         run: mkdocs build --strict

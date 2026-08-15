@@ -1,72 +1,58 @@
-<section class="cw-studio-hero" data-cw-autoplay data-source="assets/data/representative-behavior-and-forks.json" data-locale="en">
-  <div class="cw-studio-glow cw-studio-glow-a"></div>
-  <div class="cw-studio-glow cw-studio-glow-b"></div>
-  <div class="cw-studio-copy">
-    <div class="cw-studio-brand"><span class="cw-live-dot"></span> LIVE PUBLIC DEMONSTRATION</div>
-    <h1>Give experimental agents a world to act in.</h1>
-    <p>ChemWorld turns physical-chemistry models into a typed, replayable laboratory. Watch one frozen public agent trace move from materials and process actions to instruments, workup and final assay.</p>
+<section class="cw-launch-hero">
+  <div class="cw-launch-copy">
+    <p class="cw-eyebrow">PUBLIC v0.4 · BUILT AT TSINGHUA UNIVERSITY</p>
+    <h1>Give experimental intelligence a world to act in.</h1>
+    <p class="cw-lead">ChemWorld is a programmable virtual chemistry laboratory where agents choose evidence, operate typed apparatus, recover from failure and leave an exactly replayable trace.</p>
     <div class="cw-button-row">
       <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">Open the live Lab →</a>
-      <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">Compare agents</a>
-      <a class="cw-button" href="notebooks/">Run it yourself</a>
-    </div>
-    <div class="cw-studio-stats">
-      <span><strong data-cw-live-step>01</strong> current action</span>
-      <span><strong>15 / 15</strong> committed</span>
-      <span><strong>exact</strong> replay</span>
+      <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">Watch agents</a>
+      <a class="cw-button" href="vision/">Read the thesis</a>
     </div>
   </div>
-
-  <div class="cw-studio-stage" aria-label="Animated replay of a frozen public ChemWorld experiment">
-    <div class="cw-agent-orbit" aria-hidden="true">
-      <span class="cw-orbit-ring cw-orbit-ring-a"></span>
-      <span class="cw-orbit-ring cw-orbit-ring-b"></span>
-      <span class="cw-agent-face"><i></i><i></i></span>
-    </div>
-    <div class="cw-studio-readout">
-      <span data-cw-live-family>SETUP</span>
-      <strong data-cw-live-label>Reagent</strong>
-      <small data-cw-live-detail>0.04 mol</small>
-    </div>
-    <div class="cw-mini-vessel" aria-hidden="true">
-      <div class="cw-mini-liquid"></div><i></i><i></i><i></i>
-    </div>
-    <div class="cw-signal-card" aria-hidden="true">
-      <span class="cw-signal-line cw-signal-one"></span>
-      <span class="cw-signal-line cw-signal-two"></span>
-      <span class="cw-signal-line cw-signal-three"></span>
-    </div>
-    <div class="cw-stage-score"><span>PUBLIC SCORE</span><strong data-cw-live-score>0.000</strong></div>
-    <div class="cw-stage-progress"><i data-cw-live-progress></i></div>
-  </div>
-
-  <div class="cw-studio-rail" data-cw-live-rail aria-label="Frozen 15-action lifecycle"></div>
+  <a class="cw-launch-visual" href="https://chemworld-public-lab.onrender.com/student/" aria-label="Open the live Student Lab">
+    <img src="assets/readme/chemworld-launch-hero.png" alt="A conceptual programmable chemistry laboratory connected by an auditable agent loop">
+  </a>
 </section>
 
-<noscript><p class="cw-noscript">The animation requires JavaScript. The complete accessible action table is available on <a href="one-experiment/">One Experiment</a>.</p></noscript>
+## The research question
 
-## From action to evidence
+Language models can describe an experiment. But can an agent decide what remains unknown, acquire the right evidence, operate under constraints, revise a failing plan and finish the experimental lifecycle? ChemWorld makes that question executable.
+
+| Static benchmark | Interactive chemical world |
+| --- | --- |
+| A fixed prompt contains the evidence. | Measurements are actions with cost, time and sample consequences. |
+| Correctness is judged at one output. | Every legal and invalid operation changes—or deliberately does not change—the trajectory. |
+| New examples test input generalization. | Controlled world forks test whether strategy adapts when causal rules change. |
+
+## One system, three layers
 
 <div class="cw-grid">
-  <div class="cw-card"><span class="cw-card-index">01</span><h3>Act</h3><p>Read the public task contract, validate parameters and commit a typed experimental operation.</p></div>
-  <div class="cw-card"><span class="cw-card-index">02</span><h3>Observe</h3><p>Use HPLC, GC and final assay while hidden world state remains evaluator-owned.</p></div>
-  <div class="cw-card"><span class="cw-card-index">03</span><h3>Update</h3><p>Compare interventions, account for resources and choose the next informative experiment.</p></div>
+  <div class="cw-card"><span class="cw-card-index">01</span><h3>Physical causal world</h3><p>Typed state, hidden dynamics, equipment, instruments and controlled interventions.</p></div>
+  <div class="cw-card"><span class="cw-card-index">02</span><h3>Experimental runtime</h3><p>Validation, transactions, measurements, failures, resources, lifecycle and replay.</p></div>
+  <div class="cw-card"><span class="cw-card-index">03</span><h3>Task and evaluation</h3><p>Public goals, permissions, budgets, termination and task-specific outcomes.</p></div>
 </div>
 
-## Three ways in
+## What is verified in Public v0.4
 
-<div class="cw-entry-grid">
-  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/student/"><span>LIVE STUDENT LAB</span><strong>Operate the virtual apparatus</strong><p>Select a task, compose legal actions and watch the public state respond in the real Gym runtime.</p><b>Open the Lab →</b></a>
-  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/agent/"><span>AGENT OBSERVATORY</span><strong>Step through and compare policies</strong><p>Run provider-free scripted, design and Bayesian strategies on the same public task contract.</p><b>Compare agents →</b></a>
-  <a class="cw-entry-card" href="notebooks/"><span>RUN LOCALLY OR IN COLAB</span><strong>Execute a guided experiment</strong><p>Three provider-free notebooks cover first assay, purification and controlled world change.</p><b>Choose a notebook →</b></a>
+<div class="cw-proof-grid cw-proof-grid-five">
+  <div class="cw-proof"><strong>64 / 64</strong><span>reference task–world units</span></div>
+  <div class="cw-proof"><strong>52 / 52</strong><span>generated compositions</span></div>
+  <div class="cw-proof"><strong>8 / 8</strong><span>deterministic cases</span></div>
+  <div class="cw-proof"><strong>6 pairs</strong><span>24 controlled-fork traces</span></div>
+  <div class="cw-proof"><strong>1 / 1</strong><span>complete agent lifecycle</span></div>
 </div>
 
-## Evidence, kept separate from the showcase
+These are finite software-model qualification results. They establish the published contracts and replay boundary; they do not establish an Agent ranking, universal chemical fidelity or physical-laboratory transfer. [Inspect the evidence →](evidence.md)
 
-<div class="cw-proof-grid">
-  <div class="cw-proof"><strong>64 / 64</strong><span>registered task–world units qualified</span></div>
-  <div class="cw-proof"><strong>89 actions</strong><span>checked across eight deterministic lifecycles</span></div>
-  <div class="cw-proof"><strong>6 pairs</strong><span>controlled world forks with exact replay</span></div>
-</div>
+## Choose a path
 
-The demonstration above is generated from sanitized frozen evidence. These are finite software-model qualification results—not claims of universal chemical fidelity, agent superiority or physical-laboratory transfer. [Inspect the evidence and its limits →](evidence.md)
+| Goal | Start here |
+| --- | --- |
+| Operate a task in the browser | [Live Student Lab](student-lab.md) |
+| Step through built-in policies | [Agent Observatory](agent-observatory.md) |
+| Understand the research thesis | [Why ChemWorld](vision.md) |
+| See how hidden causal rules change | [Causal Worlds](causal-worlds.md) |
+| Connect your own policy or model | [Build an Agent](agents.md) |
+| Design a reproducible comparison | [Benchmark Design](benchmark-design.md) |
+
+Development-frontier features and unpublished evidence remain in the [ChemWorld development repository](https://github.com/sunyrain/ChemWorld); this site documents only the stable public release.

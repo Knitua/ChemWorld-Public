@@ -1,23 +1,15 @@
-# World foundations
+# World Foundations
 
-ChemWorld separates what an experimental agent may observe from what an experiment author may control. That separation makes causal world families possible without turning hidden evaluator state into an answer key.
+This URL remains available for compatibility. The former single overview has been expanded into a research path:
 
-## The public contract
+| Question | Current page |
+| --- | --- |
+| Why does ChemWorld need interactive worlds? | [Why ChemWorld](vision.md) |
+| What counts as experimental intelligence? | [Experimental Intelligence](experimental-intelligence.md) |
+| How can hidden causal rules change? | [Causal Worlds](causal-worlds.md) |
+| Which layer owns physics, interaction and evaluation? | [System Model](architecture.md) |
+| Which worlds are public? | [Showcase Worlds](worlds.md) |
 
-Every task exposes typed operations, parameter bounds, instruments, resource limits, termination rules and evaluation-facing outputs. The contract is stable enough for an agent, planner or RL policy to inspect before acting.
+The implementation references remain at [World Composition Contract](world-composition-contract.md), [World Capability Map](world-capability-map.md) and [Composition Coverage](world-composition-coverage.md).
 
-## The composed world
-
-World authors combine reaction, thermal, phase, separation, crystallization, distillation, flow, electrochemical and observation components through a compatibility-checked composition contract. A valid world must satisfy the registered interfaces before an episode starts.
-
-## Controlled changes
-
-Parent and child worlds can differ in one registered law while holding the public experiment fixed. This supports a precise question: can an agent notice that an old local model no longer predicts its observations, and choose a better next intervention?
-
-## Research directions
-
-The stable release enables future studies of repeated experimentation, belief updating, informative intervention selection and mechanism-level multiple-choice judgments. These are research directions, not claims about unpublished experiments or results.
-
-<div class="cw-status-note">Status: the software substrate and finite qualification evidence are public; ongoing experimental matrices, intermediate results and private evaluator materials are not part of this release.</div>
-
-Start with [the controlled-world notebook](notebooks.md) or read the [world composition contract](world-composition-contract.md).
+Public v0.4 documents only stable, qualified software-world capabilities. Development candidates and unpublished evidence remain in the [development repository](https://github.com/sunyrain/ChemWorld).

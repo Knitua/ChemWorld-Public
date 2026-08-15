@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" role="img" aria-labelledby="title desc">
+<title id="title">Three ways to enter ChemWorld</title>
+<desc id="desc">Student Lab, Agent Observatory and programmable worlds, all bound to the public runtime.</desc>
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#16332F" flood-opacity=".10"/></filter>
+<linearGradient id="vessel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#56D0B0"/><stop offset="1" stop-color="#087F73"/></linearGradient>
+</defs>
+<rect width="1500" height="560" rx="32" fill="#FBF8F0"/>
+<text x="60" y="70" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#087F73">THREE WAYS IN</text>
+<text x="60" y="118" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#16332F">Operate. Observe. Change the world.</text>
+<rect x="54" y="158" width="448" height="342" rx="24" fill="#FFFFFF" stroke="#B8D6CF" filter="url(#shadow)"/>
+<circle cx="100" cy="202" r="22" fill="#DDF3EB"/>
+<text x="100" y="209" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800" fill="#087F73">01</text>
+<text x="136" y="207" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="2" fill="#087F73">STUDENT LAB</text>
+<path d="M228 246v30h-16v98c0 44 26 72 68 72s68-28 68-72v-98h-16v-30" fill="none" stroke="#064E49" stroke-width="6" stroke-linecap="round"/>
+<path d="M215 365h130c-1 48-23 77-65 77s-64-29-65-77z" fill="url(#vessel)" opacity=".92"/>
+<circle cx="394" cy="306" r="10" fill="#F47B62"/>
+<path d="M384 306h-34" stroke="#F47B62" stroke-width="4" stroke-linecap="round"/>
+<text x="82" y="460" font-family="Georgia,serif" font-size="24" font-weight="700" fill="#16332F">Operate the apparatus</text>
+<text x="82" y="486" font-family="Inter,Arial,sans-serif" font-size="15" fill="#5B706B">15 typed public tasks</text>
+<rect x="526" y="158" width="448" height="342" rx="24" fill="#FFFFFF" stroke="#B8D6CF" filter="url(#shadow)"/>
+<circle cx="572" cy="202" r="22" fill="#DDF3EB"/>
+<text x="572" y="209" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800" fill="#087F73">02</text>
+<text x="608" y="207" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="2" fill="#087F73">AGENT OBSERVATORY</text>
+<circle cx="618" cy="320" r="18" fill="#DDF3EB" stroke="#087F73" stroke-width="3"/>
+<path d="M638 320h25" stroke="#087F73" stroke-width="3" stroke-linecap="round"/>
+<circle cx="683" cy="320" r="18" fill="#DDF3EB" stroke="#087F73" stroke-width="3"/>
+<path d="M703 320h25" stroke="#087F73" stroke-width="3" stroke-linecap="round"/>
+<circle cx="748" cy="320" r="18" fill="#DDF3EB" stroke="#087F73" stroke-width="3"/>
+<path d="M768 320h25" stroke="#087F73" stroke-width="3" stroke-linecap="round"/>
+<circle cx="813" cy="320" r="18" fill="#F47B62" stroke="#087F73" stroke-width="3"/>
+<path d="M833 320h25" stroke="#087F73" stroke-width="3" stroke-linecap="round"/>
+<circle cx="878" cy="320" r="18" fill="#DDF3EB" stroke="#087F73" stroke-width="3"/>
+<rect x="620" y="374" width="258" height="12" rx="6" fill="#DDF3EB"/>
+<rect x="620" y="374" width="189" height="12" rx="6" fill="#087F73"/>
+<circle cx="893" cy="380" r="14" fill="#F47B62"/>
+<text x="554" y="460" font-family="Georgia,serif" font-size="24" font-weight="700" fill="#16332F">Watch decisions unfold</text>
+<text x="554" y="486" font-family="Inter,Arial,sans-serif" font-size="15" fill="#5B706B">8 provider-free policies</text>
+<rect x="998" y="158" width="448" height="342" rx="24" fill="#FFFFFF" stroke="#B8D6CF" filter="url(#shadow)"/>
+<circle cx="1044" cy="202" r="22" fill="#DDF3EB"/>
+<text x="1044" y="209" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800" fill="#087F73">03</text>
+<text x="1080" y="207" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="2" fill="#087F73">PROGRAMMABLE WORLDS</text>
+<rect x="1070" y="262" width="120" height="126" rx="18" fill="#DDF3EB" stroke="#087F73" stroke-width="3"/>
+<rect x="1254" y="262" width="120" height="126" rx="18" fill="#FFF0EB" stroke="#F47B62" stroke-width="3"/>
+<path d="M1195 325h52" stroke="#16332F" stroke-width="4" stroke-linecap="round"/>
+<path d="M1234 312l14 13-14 13" fill="none" stroke="#16332F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1093 340c25-45 48 44 74-24M1277 340c25-25 48 20 74-48" fill="none" stroke="#087F73" stroke-width="4" stroke-linecap="round"/>
+<text x="1026" y="460" font-family="Georgia,serif" font-size="24" font-weight="700" fill="#16332F">Replay controlled change</text>
+<text x="1026" y="486" font-family="Inter,Arial,sans-serif" font-size="15" fill="#5B706B">6 fork pairs · 24 traces</text>
+</svg>

@@ -1,23 +1,15 @@
 # 世界基座
 
-ChemWorld 将实验 Agent 可以观测的内容，与实验设计者可以控制的内容明确分开。这样既能构造因果世界族，又不会把评测者的隐藏状态变成答案提示。
+这个 URL 作为兼容入口继续保留。原来的单页概览已经扩展为一条研究阅读路径：
 
-## 公开合同
+| 问题 | 当前页面 |
+| --- | --- |
+| 为什么 ChemWorld 需要可交互世界？ | [为什么是 ChemWorld](vision.md) |
+| 什么是实验智能？ | [实验智能](experimental-intelligence.md) |
+| 隐藏因果规律如何变化？ | [因果世界](causal-worlds.md) |
+| 物理、交互与评估分别由哪一层负责？ | [系统模型](architecture.md) |
+| 哪些世界已经公开？ | [展示世界](worlds.md) |
 
-每个任务都会公开有类型的操作、参数范围、仪器、资源上限、终止规则和评测输出。Agent、规划器或 RL 策略可以在行动前检查这份稳定合同。
+实现参考仍保留在[世界组合合同](world-composition-contract.md)、[世界能力地图](world-capability-map.md)与[组合覆盖](world-composition-coverage.md)。
 
-## 组合世界
-
-世界设计者通过带兼容性检查的 composition contract 组合反应、热过程、相行为、分离、结晶、蒸馏、流动、电化学和观测组件。一个世界必须先满足注册接口，才能开始 episode。
-
-## 受控变化
-
-父世界和子世界可以只在一个注册规律上不同，同时保持公开实验不变。这样可以提出一个精确问题：Agent 能否发现旧的局部模型已经不能预测观测，并选择信息量更高的下一次干预？
-
-## 研究方向
-
-稳定版本为多轮实验、belief 更新、信息性干预选择和机理层面的选择题判断提供基座。这些是未来研究方向，不代表任何未公开实验或结果。
-
-<div class="cw-status-note">当前状态：软件基座和有限资格证据已经公开；正在进行的实验矩阵、中间结果和私有评测材料不属于本版本。</div>
-
-可以先运行[受控世界 notebook](notebooks.md)，或者阅读[世界组合合同](world-composition-contract.md)。
+Public v0.4 只描述稳定、通过资格测试的软件世界能力。开发候选与未发布证据仍留在[开发仓库](https://github.com/sunyrain/ChemWorld)。
