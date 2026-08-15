@@ -523,9 +523,9 @@
       "sha256": "8f465f351bb1b5c9598455e23279ff84eb581bbbfcf7faa62368734a0b63964d"
     },
     {
-      "bytes": 209,
+      "bytes": 177,
       "path": "render.yaml",
-      "sha256": "d740c24209e7474cc8843b746f7727a99a7f9d0e01cff36846709c77be5c857e"
+      "sha256": "115cda6d05fba35414bca623e9252fe3cf65a398ac1f1289997c2a31ab478e8d"
     },
     {
       "bytes": 53,

@@ -6,4 +6,3 @@ services:
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/health
     autoDeploy: true
-    maxShutdownDelaySeconds: 30
