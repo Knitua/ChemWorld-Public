@@ -1,20 +1,20 @@
 # ChemWorld
 
-**English** | [简体中文](README.zh-CN.md)
+**简体中文** | [English](README.en.md)
 
-[![ChemWorld virtual chemistry laboratory](docs/assets/chemworld-hero.png)](https://chemworld-public-lab.onrender.com/student/)
+[![ChemWorld 虚拟化学实验室](docs/assets/chemworld-hero.png)](https://chemworld-public-lab.onrender.com/student/)
 
-ChemWorld is a programmable virtual chemistry environment developed by researchers in the Department of Chemical Engineering at Tsinghua University. We use it to study how agents plan experiments, choose measurements and adapt their actions as an experiment unfolds.
+ChemWorld 是清华大学化工系研究团队开发的可编程虚拟化学环境。我们用它研究 Agent 如何设计实验、选择测量，并根据实验过程调整下一步操作。
 
-[**🚀 Try the Live Lab**](https://chemworld-public-lab.onrender.com/student/) · [**🤖 Watch Agents**](https://chemworld-public-lab.onrender.com/agent/) · [**📓 Run in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) · [**📚 Read the Documentation**](https://knitua.github.io/ChemWorld-Public/)
+[**🚀 体验在线 Lab**](https://chemworld-public-lab.onrender.com/student/) · [**🤖 观察 Agent**](https://chemworld-public-lab.onrender.com/agent/) · [**📓 在 Colab 运行**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) · [**📚 阅读研究文档**](https://knitua.github.io/ChemWorld-Public/zh/)
 
-## About
+## 项目简介
 
-Most chemistry benchmarks begin with a fixed input and end with an answer or prediction. In ChemWorld, an agent works inside a stateful laboratory. It adds materials, operates apparatus, takes measurements and decides when an experiment is complete. The environment checks each operation, accounts for resources and records the resulting trace.
+大多数化学 Benchmark 从固定输入开始，以一个答案或预测结束。ChemWorld 则让 Agent 在有状态的实验室中工作：加料、操作装置、测量，并决定何时结束实验。环境会检查每一步操作、记录资源消耗，并保存完整轨迹。
 
-Public v0.4 contains 15 experimental tasks, eight provider-free reference policies and three executable notebooks. It also includes the task definitions, protocols and evidence used to check the release. The browser Lab and the Python package run the same public environment.
+Public v0.4 包含 15 个实验任务、8 个不依赖模型服务的参考策略和 3 个可直接运行的 Notebook。任务定义、实验协议和版本验证证据也一并公开。网页 Lab 与 Python 包使用的是同一套公开环境。
 
-## Run locally
+## 本地运行
 
 ```bash
 git clone https://github.com/Knitua/ChemWorld-Public.git
@@ -23,13 +23,13 @@ python -m pip install -e .
 chemworld lab
 ```
 
-Open `http://127.0.0.1:8876/student/` for the Lab or `http://127.0.0.1:8876/agent/` for the Agent view. Python 3.11 and 3.12 are supported.
+打开 `http://127.0.0.1:8876/student/` 进入实验台，或打开 `http://127.0.0.1:8876/agent/` 查看 Agent。支持 Python 3.11 和 3.12。
 
-## Four ways to use ChemWorld
+## 四种使用方式
 
-- [**🚀 Try the Live Lab**](https://chemworld-public-lab.onrender.com/student/) — Choose a task, compose operations and see how the apparatus and measurements respond in the browser.
-- [**🤖 Watch Agents**](https://chemworld-public-lab.onrender.com/agent/) — Step through the built-in policies and inspect their actions, observations and results on the same tasks.
-- [**📓 Run in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) — Open a notebook and run a reproducible first experiment without installing ChemWorld locally.
-- [**📚 Read the Documentation**](https://knitua.github.io/ChemWorld-Public/) — Read about the research question, system design, tasks, agent integration and evaluation.
+- [**🚀 体验在线 Lab**](https://chemworld-public-lab.onrender.com/student/)：在浏览器中选择任务、编排操作，直接观察装置状态和测量结果。
+- [**🤖 观察 Agent**](https://chemworld-public-lab.onrender.com/agent/)：逐步运行内置策略，查看 Agent 在相同任务中的动作、观测和结果。
+- [**📓 在 Colab 运行**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb)：无需本地安装，打开 Notebook 即可完成第一个可复现实验。
+- [**📚 阅读研究文档**](https://knitua.github.io/ChemWorld-Public/zh/)：了解 ChemWorld 的研究问题、系统设计、任务、Agent 接入和评估方法。
 
-Citation metadata is provided in [`CITATION.cff`](https://github.com/Knitua/ChemWorld-Public/blob/main/CITATION.cff). The code is released under the [MIT License](https://github.com/Knitua/ChemWorld-Public/blob/main/LICENSE).
+引用信息见 [`CITATION.cff`](https://github.com/Knitua/ChemWorld-Public/blob/main/CITATION.cff)。代码采用 [MIT License](https://github.com/Knitua/ChemWorld-Public/blob/main/LICENSE)。

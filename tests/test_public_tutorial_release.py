@@ -89,7 +89,7 @@ def test_colab_links_are_pinned_to_the_release_tag() -> None:
     readmes = "\n".join(
         [
             (ROOT / "README.md").read_text(encoding="utf-8"),
-            (ROOT / "README.zh-CN.md").read_text(encoding="utf-8"),
+            (ROOT / "README.en.md").read_text(encoding="utf-8"),
         ]
     )
     # Each README exposes Colab once in the primary links and once in the
@@ -120,7 +120,7 @@ def test_home_uses_the_original_hero_and_four_primary_routes() -> None:
 
     readmes = [
         (ROOT / "README.md").read_text(encoding="utf-8"),
-        (ROOT / "README.zh-CN.md").read_text(encoding="utf-8"),
+        (ROOT / "README.en.md").read_text(encoding="utf-8"),
     ]
     routes = (
         "https://chemworld-public-lab.onrender.com/student/",
@@ -134,8 +134,10 @@ def test_home_uses_the_original_hero_and_four_primary_routes() -> None:
             assert route in readme
         assert "docs/assets/readme/" not in readme
 
-    assert routes[3] in readmes[0]
-    assert f"{routes[3]}zh/" in readmes[1]
+    assert f"{routes[3]}zh/" in readmes[0]
+    assert routes[3] in readmes[1]
+    assert "**简体中文** | [English](README.en.md)" in readmes[0]
+    assert "[简体中文](README.md) | **English**" in readmes[1]
 
     for suffix in ("", ".zh"):
         home = (ROOT / "docs" / f"index{suffix}.md").read_text(encoding="utf-8")

@@ -53,14 +53,14 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 2801,
-      "path": "README.md",
-      "sha256": "7085c4f7249acd08f052fa0636296973b2de35292118a44c698974b5f5395a83"
+      "bytes": 2795,
+      "path": "README.en.md",
+      "sha256": "017e9ce599af0bd76a2a754fa1c3d32a474e51f85627ea2f6c72547de5248e72"
     },
     {
-      "bytes": 2548,
-      "path": "README.zh-CN.md",
-      "sha256": "b597fcbb870f5c8dd9a435b3e556d2f2d9202ba95f33dfb1fdcd58787c4ba152"
+      "bytes": 2551,
+      "path": "README.md",
+      "sha256": "444294114733a5a4013ddfdea46b86309f364484b11c44118d039f4983edf42a"
     },
     {
       "bytes": 14591,
@@ -2183,9 +2183,9 @@
       "sha256": "08308584a4d89216fd451d69fd3e80fbc7ac840128f1b6bbf1605db543761b98"
     },
     {
-      "bytes": 5533,
+      "bytes": 5664,
       "path": "tests/test_public_tutorial_release.py",
-      "sha256": "871e572726c43f02ca8fef9ca979236be5fb7f0349420874aa84d71af8e76c43"
+      "sha256": "36906fbe86faf656f11ab8e358fcf6355a231f5b2cd3ad98af8946310871ad94"
     },
     {
       "bytes": 3156,
