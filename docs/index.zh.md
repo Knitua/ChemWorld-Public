@@ -1,8 +1,8 @@
 <section class="cw-launch-hero">
   <div class="cw-launch-copy">
-    <p class="cw-eyebrow">PUBLIC v0.4 · 来自清华大学的研究团队</p>
-    <h1>让实验智能拥有一个可以行动的世界。</h1>
-    <p class="cw-lead">ChemWorld 是一座可编程虚拟化学实验室：Agent 可以选择证据、操作有类型装置、从失败中恢复，并留下可精确回放的轨迹。</p>
+    <p class="cw-eyebrow">CHEMWORLD PUBLIC v0.4</p>
+    <h1>可编程虚拟化学实验室</h1>
+    <p class="cw-lead">ChemWorld 提供有状态的实验环境，用于研究 Agent 如何规划实验、操作装置、使用测量并处理失败。</p>
     <div class="cw-button-row">
       <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">打开在线 Lab →</a>
       <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">观察 Agent</a>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <a class="cw-launch-visual" href="https://chemworld-public-lab.onrender.com/student/" aria-label="打开在线 Student Lab">
-    <img src="../assets/readme/chemworld-launch-hero.png" alt="由可审计 Agent 循环连接的可编程化学实验室概念图">
+    <img src="../assets/chemworld-hero.png" alt="ChemWorld 虚拟化学实验室">
   </a>
 </section>
 

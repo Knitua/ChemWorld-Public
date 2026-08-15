@@ -112,38 +112,34 @@ def test_interactive_payload_matches_readme_visual_payload() -> None:
     assert site["controlled_world_forks"]["summary"]["pairs"] == 6
 
 
-def test_showcase_home_uses_the_public_hero_and_frozen_trace() -> None:
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    hero_marker = "docs/assets/readme/chemworld-launch-hero.png"
-    animation_marker = "docs/assets/readme/lab-lifecycle.gif"
-    proof_marker = "docs/assets/readme/public-proof.svg"
-    triptych_marker = "docs/assets/readme/chemworld-three-ways.svg"
-    for marker in (hero_marker, animation_marker, proof_marker, triptych_marker):
-        assert (ROOT / marker).is_file()
-        assert marker in readme
-    assert readme.index(hero_marker) < readme.index(animation_marker)
-    assert readme.index(animation_marker) < readme.index(proof_marker)
-    assert "🚀 Try the Live Lab" in readme
-    assert "## 🔬 What we actually built" in readme
+def test_home_uses_the_original_hero_and_four_primary_routes() -> None:
+    hero_marker = "docs/assets/chemworld-hero.png"
+    assert (ROOT / hero_marker).is_file()
 
-    metadata = json.loads(
-        (ROOT / "docs/assets/readme/showcase-metadata.json").read_text(encoding="utf-8")
+    readmes = [
+        (ROOT / "README.md").read_text(encoding="utf-8"),
+        (ROOT / "README.zh-CN.md").read_text(encoding="utf-8"),
+    ]
+    routes = (
+        "https://chemworld-public-lab.onrender.com/student/",
+        "https://chemworld-public-lab.onrender.com/agent/",
+        "https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb",
+        "https://knitua.github.io/ChemWorld-Public/",
     )
-    assert metadata["release"] == "0.4.0"
-    assert metadata["counts"] == {
-        "agent_actions": 15,
-        "fork_pairs": 6,
-        "fork_traces": 24,
-        "generated_compositions": 52,
-        "provider_free_policies": 8,
-        "public_tasks": 15,
-        "reference_units": 64,
-    }
+    for readme in readmes:
+        assert hero_marker in readme
+        for route in routes[:3]:
+            assert route in readme
+        assert "docs/assets/readme/" not in readme
+
+    assert routes[3] in readmes[0]
+    assert f"{routes[3]}zh/" in readmes[1]
 
     for suffix in ("", ".zh"):
         home = (ROOT / "docs" / f"index{suffix}.md").read_text(encoding="utf-8")
         assert 'class="cw-launch-hero"' in home
-        assert "chemworld-launch-hero.png" in home
+        assert "chemworld-hero.png" in home
+        assert "chemworld-launch-hero.png" not in home
         assert "64 / 64" in home
         assert "52 / 52" in home
         assert "8 / 8" in home

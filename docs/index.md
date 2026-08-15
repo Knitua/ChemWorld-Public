@@ -1,8 +1,8 @@
 <section class="cw-launch-hero">
   <div class="cw-launch-copy">
-    <p class="cw-eyebrow">PUBLIC v0.4 · BUILT AT TSINGHUA UNIVERSITY</p>
-    <h1>Give experimental intelligence a world to act in.</h1>
-    <p class="cw-lead">ChemWorld is a programmable virtual chemistry laboratory where agents choose evidence, operate typed apparatus, recover from failure and leave an exactly replayable trace.</p>
+    <p class="cw-eyebrow">CHEMWORLD PUBLIC v0.4</p>
+    <h1>A programmable virtual chemistry laboratory.</h1>
+    <p class="cw-lead">ChemWorld provides stateful experiments for studying how agents plan, operate equipment, use measurements and respond to failure.</p>
     <div class="cw-button-row">
       <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">Open the live Lab →</a>
       <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">Watch agents</a>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <a class="cw-launch-visual" href="https://chemworld-public-lab.onrender.com/student/" aria-label="Open the live Student Lab">
-    <img src="assets/readme/chemworld-launch-hero.png" alt="A conceptual programmable chemistry laboratory connected by an auditable agent loop">
+    <img src="assets/chemworld-hero.png" alt="ChemWorld virtual chemistry laboratory">
   </a>
 </section>
 

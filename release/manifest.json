@@ -23,9 +23,9 @@
       "sha256": "bf00994c4d0e688e71970feeb337719b5a5b9101268c2357ce92133474d28284"
     },
     {
-      "bytes": 1412,
+      "bytes": 1342,
       "path": ".github/workflows/docs.yml",
-      "sha256": "bf57e925fa1330404be69d51c4aa8dc291beeec41090500666bece4104304b56"
+      "sha256": "fe067d689e28d0a9178d93f735d242b9b27029b41ab5a6fa94c258e9d3c8a905"
     },
     {
       "bytes": 1118,
@@ -53,14 +53,14 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 4879,
+      "bytes": 2724,
       "path": "README.md",
-      "sha256": "e7abd7dddbf01e39e0ec5e143cb187e5082b6f7210ec4bbbadb4e1c96376b492"
+      "sha256": "b183964dd87574ad330359337615f9eed04ed8db0f6c5b31bee76b43884d9219"
     },
     {
-      "bytes": 4655,
+      "bytes": 2386,
       "path": "README.zh-CN.md",
-      "sha256": "5a8173a070b40daa51023ca1f654be8fe4b6ee675db5569b6bcf85b348a5f2c9"
+      "sha256": "53fe9cfe18c18580a36caf3ce8fb8c4e655bfbb4df55a7c3b5b23c89ae1e823b"
     },
     {
       "bytes": 14591,
@@ -218,31 +218,6 @@
       "sha256": "58b93ef166cb4aff6f17a5cee6a559a48bb9a29b2438b4f3298799b0c2b3d5fc"
     },
     {
-      "bytes": 1864597,
-      "path": "docs/assets/readme/chemworld-launch-hero.png",
-      "sha256": "c95b35fb8c3b3cbd94cf252f80f0a044ba63f7a2e438df410a4875240014ce65"
-    },
-    {
-      "bytes": 4929,
-      "path": "docs/assets/readme/chemworld-three-ways.svg",
-      "sha256": "130a08299de84237872f7b8e0b6dcd3cee17b1b19347326f30bccd546351bf15"
-    },
-    {
-      "bytes": 333696,
-      "path": "docs/assets/readme/lab-lifecycle.gif",
-      "sha256": "ecf7a6c8302b15f6ff8c6bcdb1db549802d9d68ab0d42b56531c3dc36d7ef598"
-    },
-    {
-      "bytes": 2052,
-      "path": "docs/assets/readme/public-proof.svg",
-      "sha256": "e18e7bce4eac2c8c8054a8ccc08a4079863d900bb3ea0228754f76d6ae309995"
-    },
-    {
-      "bytes": 1517,
-      "path": "docs/assets/readme/showcase-metadata.json",
-      "sha256": "b7396e08ad6a3eccd5a07194603ab6170fe5f8778ff0c3aba5fd42050fd7324e"
-    },
-    {
       "bytes": 16430,
       "path": "docs/assets/representative-agent-and-world-change.svg",
       "sha256": "b0aab8f56cfaa9821c3bee000c3c540c4c1f785e3df2a7dfa9e5710a2cd5a481"
@@ -328,14 +303,14 @@
       "sha256": "4218ed7de6b89c53bfc18f743ab2888b451d49d183e347f1eae1ef7983a551c0"
     },
     {
-      "bytes": 3842,
+      "bytes": 3714,
       "path": "docs/index.md",
-      "sha256": "3313f2e133921d16d77da56c818398f196a7ad68958cb326b237fefb80ce1471"
+      "sha256": "b0bc738480c82c961d759899a847da1868f889c0fa68b77fd2689688aa6ab808"
     },
     {
-      "bytes": 3600,
+      "bytes": 3470,
       "path": "docs/index.zh.md",
-      "sha256": "0cefe7ebe0a6a365282610cf89b32f5ba2426026f0b15ab63575582d87682b38"
+      "sha256": "73b00e7ae60f5394ad2c110ad9cdf0fa481fae656ecca56a778750071c75e642"
     },
     {
       "bytes": 1045,
@@ -648,9 +623,9 @@
       "sha256": "20608e3a46c06a78dfcdd3a30f685bf49012e7a9e45d1b2c3fac915a5ca7de61"
     },
     {
-      "bytes": 3281,
+      "bytes": 3261,
       "path": "pyproject.toml",
-      "sha256": "f72b7768b03b8e91df66e3c3facfff7f8e1ec8c30a9bfb7dc0c09fb0ba08fa4a"
+      "sha256": "8f465f351bb1b5c9598455e23279ff84eb581bbbfcf7faa62368734a0b63964d"
     },
     {
       "bytes": 177,
@@ -661,11 +636,6 @@
       "bytes": 53,
       "path": "scripts/__init__.py",
       "sha256": "30d5752a6469e65cad726aae46e32e7da77675710b7ef84128085efef835bcac"
-    },
-    {
-      "bytes": 18461,
-      "path": "scripts/build_readme_showcase.py",
-      "sha256": "35a0d2485f5fa19ff6b62a390aef59be53fb577d2d877737bbfb943289f65a57"
     },
     {
       "bytes": 31291,
@@ -2213,9 +2183,9 @@
       "sha256": "08308584a4d89216fd451d69fd3e80fbc7ac840128f1b6bbf1605db543761b98"
     },
     {
-      "bytes": 5686,
+      "bytes": 5425,
       "path": "tests/test_public_tutorial_release.py",
-      "sha256": "3c1e8eb69cf50218c472ae5179eccecdd4e4c34b968290ae8097d4668466cc06"
+      "sha256": "8c65d0185debdc60458ac16764634766d079d16b1c4772a1b0dbb29a345f874f"
     },
     {
       "bytes": 3156,
