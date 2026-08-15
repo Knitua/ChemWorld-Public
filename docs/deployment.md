@@ -30,8 +30,13 @@ unprivileged user and stores sessions only in memory. A restart intentionally di
 
 ## Render preview
 
-The checked-in `render.yaml` defines a provider-free web service and health check. Use the repository
-Blueprint to create a preview service:
+The live provider-free preview is deployed from the checked-in `render.yaml` and passes its public
+health check:
+
+[Open the Student Lab](https://chemworld-public-lab.onrender.com/student/){ .md-button .md-button--primary }
+[Open the Agent Observatory](https://chemworld-public-lab.onrender.com/agent/){ .md-button }
+
+To create a separate preview from your own fork, use the repository Blueprint:
 
 [Deploy on Render](https://render.com/deploy?repo=https://github.com/Knitua/ChemWorld-Public){ .md-button .md-button--primary }
 

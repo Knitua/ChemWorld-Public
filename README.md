@@ -12,7 +12,7 @@ laboratory work.
 [**Run the first experiment in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb)
 · [Browse all notebooks](https://github.com/Knitua/ChemWorld-Public/tree/main/notebooks)
 · [Open the documentation](https://knitua.github.io/ChemWorld-Public/)
-· [Launch the Lab locally](#live-lab)
+· [Open the live Student Lab](https://chemworld-public-lab.onrender.com/student/)
 
 ## Choose your entry point
 
@@ -21,8 +21,8 @@ laboratory work.
 | Complete a guided experiment | [Open notebook 01 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) | A deterministic Reaction-to-Assay experiment; no provider key |
 | Continue through purification | [Open notebook 02 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/02_reaction_to_purification.ipynb) | Reaction, extraction, wash, drying and concentration |
 | Change one world component | [Open notebook 03 in Colab](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/03_controlled_world_change.ipynb) | The same public intervention across a controlled world fork |
-| Operate the virtual apparatus by hand | [Student Lab guide](https://knitua.github.io/ChemWorld-Public/student-lab/) | The real public Gym runtime in an animated browser workbench |
-| Watch and compare agents | [Agent Observatory guide](https://knitua.github.io/ChemWorld-Public/agent-observatory/) | Provider-free scripted, random, DOE and Bayesian strategies |
+| Operate the virtual apparatus by hand | [Open the live Student Lab](https://chemworld-public-lab.onrender.com/student/) | The real public Gym runtime in an animated browser workbench |
+| Watch and compare agents | [Open the live Agent Observatory](https://chemworld-public-lab.onrender.com/agent/) | Provider-free scripted, random, DOE and Bayesian strategies |
 | Connect my own agent | [Agent integration guide](https://knitua.github.io/ChemWorld-Public/agents/) | A small Python agent protocol with auditable traces |
 
 ## Live Lab
@@ -30,6 +30,12 @@ laboratory work.
 The Student Lab and Agent Observatory are not mock-ups. They create real in-memory ChemWorld Gym
 sessions and execute the same public action, observation, validation, resource and replay contracts
 used by Python agents.
+
+[**Open the public Student Lab**](https://chemworld-public-lab.onrender.com/student/) ·
+[**Open the Agent Observatory**](https://chemworld-public-lab.onrender.com/agent/)
+
+The free public preview may take a short time to wake after an idle period. To run a private local
+instance instead:
 
 ```bash
 git clone https://github.com/Knitua/ChemWorld-Public.git
@@ -43,8 +49,9 @@ Open `http://127.0.0.1:8876/student/` to operate the apparatus, or
 binds only to loopback by design. The deployable public service uses a separate, explicitly limited
 mode so online visitors cannot enable providers or submit arbitrary code.
 
-[Deployment guide](https://knitua.github.io/ChemWorld-Public/deployment/) ·
-[Deploy a Render preview](https://render.com/deploy?repo=https://github.com/Knitua/ChemWorld-Public)
+[Student Lab guide](https://knitua.github.io/ChemWorld-Public/student-lab/) ·
+[Agent Observatory guide](https://knitua.github.io/ChemWorld-Public/agent-observatory/) ·
+[Deployment guide](https://knitua.github.io/ChemWorld-Public/deployment/)
 
 ## What is public
 

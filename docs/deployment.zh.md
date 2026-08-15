@@ -27,7 +27,12 @@ Session 只保存在内存中；重启后主动丢弃。
 
 ## Render 预览
 
-仓库中的 `render.yaml` 已定义 provider-free Web Service 和健康检查：
+当前公网 provider-free 预览由仓库中的 `render.yaml` 部署，并已通过公网健康检查：
+
+[打开 Student Lab](https://chemworld-public-lab.onrender.com/student/){ .md-button .md-button--primary }
+[打开 Agent Observatory](https://chemworld-public-lab.onrender.com/agent/){ .md-button }
+
+如需从自己的 fork 创建独立预览，可使用仓库 Blueprint：
 
 [部署到 Render](https://render.com/deploy?repo=https://github.com/Knitua/ChemWorld-Public){ .md-button .md-button--primary }
 

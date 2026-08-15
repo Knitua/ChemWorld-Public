@@ -6,9 +6,9 @@
     <h1>让实验 Agent 拥有一个可以行动的世界。</h1>
     <p>ChemWorld 把物理化学模型变成有类型、可回放的实验室。观看一条冻结公开轨迹，如何从材料与过程操作走向仪器、后处理和 final assay。</p>
     <div class="cw-button-row">
-      <a class="cw-button cw-button-primary" href="one-experiment/">查看完整 15 步 →</a>
+      <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">打开在线实验台 →</a>
+      <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">比较 Agent</a>
       <a class="cw-button" href="notebooks/">亲手运行</a>
-      <a class="cw-button" href="world-foundations/">世界如何搭建</a>
     </div>
     <div class="cw-studio-stats">
       <span><strong data-cw-live-step>01</strong> 当前动作</span>
@@ -56,9 +56,9 @@
 ## 三种进入方式
 
 <div class="cw-entry-grid">
-  <a class="cw-entry-card" href="one-experiment/"><span>交互轨迹</span><strong>检查一次完整实验生命周期</strong><p>逐步查看参数、事务状态、观测、资源和 final assay。</p><b>打开观测台 →</b></a>
+  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/student/"><span>在线 STUDENT LAB</span><strong>操作虚拟实验装置</strong><p>选择任务、编排合法动作，并在真实 Gym 运行时中观察公开状态响应。</p><b>打开实验台 →</b></a>
+  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/agent/"><span>AGENT 观测台</span><strong>单步执行并比较策略</strong><p>在相同公开任务合同上运行无需 Provider 的脚本、设计与贝叶斯策略。</p><b>比较 Agent →</b></a>
   <a class="cw-entry-card" href="notebooks/"><span>本地或 COLAB 运行</span><strong>执行一个引导实验</strong><p>三个无需 Provider 的 notebook 覆盖首次终检、纯化和受控世界变化。</p><b>选择 Notebook →</b></a>
-  <a class="cw-entry-card" href="world-foundations/"><span>世界设计</span><strong>构建受控科学世界</strong><p>把公开合同、注册私有规律和可审计干预分离开来。</p><b>阅读世界基座 →</b></a>
 </div>
 
 ## 证据与展示分开呈现

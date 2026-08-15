@@ -1,7 +1,11 @@
 # Student Lab
 
-Student Lab 是一个在本机运行的动画实验台，用于体验 ChemWorld 的公开动作合同。它不会调用
-Agent 或模型。安装包后运行：
+Student Lab 是用于体验 ChemWorld 公开动作合同的动画实验台。它不会调用 Agent 或模型。
+
+[打开公网 Student Lab](https://chemworld-public-lab.onrender.com/student/){ .md-button .md-button--primary }
+[打开 Agent Observatory](https://chemworld-public-lab.onrender.com/agent/){ .md-button }
+
+免费预览实例闲置后可能需要短暂唤醒。如需在私有本地进程中运行同一实验台，安装包后执行：
 
 ```bash
 chemworld lab
@@ -32,5 +36,5 @@ loopback。
 4. 淬灭或终止后，在合法时请求 `final_assay`。
 5. 下载 JSON 记录，对比动作效果、成本、安全风险与终点分数。
 
-Lab 只在内存中保存 session，不向外部服务发送数据。进程关闭后 session 即销毁；如需保留，
-请先下载记录。
+Lab 只在内存中保存 session。托管预览会把动作发送到受限的 Render 服务，但不会调用在线
+模型或 Provider；本地实例则完全留在当前机器。任一进程重启都会销毁 session；如需保留，请先下载记录。

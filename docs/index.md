@@ -6,9 +6,9 @@
     <h1>Give experimental agents a world to act in.</h1>
     <p>ChemWorld turns physical-chemistry models into a typed, replayable laboratory. Watch one frozen public agent trace move from materials and process actions to instruments, workup and final assay.</p>
     <div class="cw-button-row">
-      <a class="cw-button cw-button-primary" href="one-experiment/">Explore all 15 actions →</a>
+      <a class="cw-button cw-button-primary" href="https://chemworld-public-lab.onrender.com/student/">Open the live Lab →</a>
+      <a class="cw-button" href="https://chemworld-public-lab.onrender.com/agent/">Compare agents</a>
       <a class="cw-button" href="notebooks/">Run it yourself</a>
-      <a class="cw-button" href="world-foundations/">How worlds are built</a>
     </div>
     <div class="cw-studio-stats">
       <span><strong data-cw-live-step>01</strong> current action</span>
@@ -56,9 +56,9 @@
 ## Three ways in
 
 <div class="cw-entry-grid">
-  <a class="cw-entry-card" href="one-experiment/"><span>INTERACTIVE TRACE</span><strong>Inspect one complete lifecycle</strong><p>Click through parameters, transaction state, observations, resources and final assay.</p><b>Open the observatory →</b></a>
+  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/student/"><span>LIVE STUDENT LAB</span><strong>Operate the virtual apparatus</strong><p>Select a task, compose legal actions and watch the public state respond in the real Gym runtime.</p><b>Open the Lab →</b></a>
+  <a class="cw-entry-card" href="https://chemworld-public-lab.onrender.com/agent/"><span>AGENT OBSERVATORY</span><strong>Step through and compare policies</strong><p>Run provider-free scripted, design and Bayesian strategies on the same public task contract.</p><b>Compare agents →</b></a>
   <a class="cw-entry-card" href="notebooks/"><span>RUN LOCALLY OR IN COLAB</span><strong>Execute a guided experiment</strong><p>Three provider-free notebooks cover first assay, purification and controlled world change.</p><b>Choose a notebook →</b></a>
-  <a class="cw-entry-card" href="world-foundations/"><span>WORLD DESIGN</span><strong>Build controlled scientific worlds</strong><p>Separate public contracts from registered private laws and auditable interventions.</p><b>Read the foundations →</b></a>
 </div>
 
 ## Evidence, kept separate from the showcase

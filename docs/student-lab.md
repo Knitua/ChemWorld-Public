@@ -1,7 +1,13 @@
 # Student Lab
 
-Student Lab is a local, animated workbench for learning the public ChemWorld action contract. It
-does not invoke an agent or a model. Install the package and run:
+Student Lab is an animated workbench for learning the public ChemWorld action contract. It does not
+invoke an agent or a model.
+
+[Open the public Student Lab](https://chemworld-public-lab.onrender.com/student/){ .md-button .md-button--primary }
+[Open the Agent Observatory](https://chemworld-public-lab.onrender.com/agent/){ .md-button }
+
+The free preview may take a short time to wake after an idle period. To run the same workbench in a
+private local process, install the package and run:
 
 ```bash
 chemworld lab
@@ -35,5 +41,6 @@ rejected action leaves physical state and operation budget unchanged.
 4. Quench or terminate, then request `final_assay` when it becomes legal.
 5. Download the JSON notebook and compare action effects, cost, safety risk and endpoint score.
 
-The Lab keeps sessions in memory and sends no data to an external service. Closing the process
-destroys the sessions. Download the record before closing if you want to retain it.
+The Lab keeps sessions in memory. The hosted preview sends actions to the bounded Render service but
+does not call an online model or Provider; a local instance remains entirely on that machine.
+Restarting either process destroys its sessions. Download the record first if you want to retain it.

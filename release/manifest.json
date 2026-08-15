@@ -53,9 +53,9 @@
       "sha256": "a3ce536e88e1516b44e94754511f6e801956c6f545fe0d4ed8cb34602a504b28"
     },
     {
-      "bytes": 5272,
+      "bytes": 5673,
       "path": "README.md",
-      "sha256": "82c3e398b6fce34aec0ee187f4c5ce16712aa3f9ee1db64b1f0f7a12f6f594a8"
+      "sha256": "76913bb26386c941706efad0f71d6b766e46a91104b4dda48ebd81c949dab743"
     },
     {
       "bytes": 14591,
@@ -153,14 +153,14 @@
       "sha256": "dc021916f916ce0d5cede411cd4567955ee91fa80960818013d043b58465f0ed"
     },
     {
-      "bytes": 2537,
+      "bytes": 2957,
       "path": "docs/agent-observatory.md",
-      "sha256": "4e274562687b4233c1a7d4298ab4259e2f2068d7abe33bd44e56e1a00458d23f"
+      "sha256": "929f97752484a9528c916cb8fdfde1a8cd50827200579b603818405389ad87dc"
     },
     {
-      "bytes": 2209,
+      "bytes": 2599,
       "path": "docs/agent-observatory.zh.md",
-      "sha256": "5c65cc5b9b1b0450a1deb04eac43a4dddc55f0a87cf0efa69db463aa51d13821"
+      "sha256": "9677761bfac396c6eb68ae1e06525246f909a895569ebca54aed1d0f510535f9"
     },
     {
       "bytes": 6209,
@@ -203,14 +203,14 @@
       "sha256": "a75ae3d17bded5cfa59e301263a7b39d53fe7c7083254cd507cc79da112e30c7"
     },
     {
-      "bytes": 2265,
+      "bytes": 2520,
       "path": "docs/deployment.md",
-      "sha256": "e0c8a018f871db41515ce6a9caa3f29c1a4723e489d3e3f16bf5f7333990b92f"
+      "sha256": "a4bb826b6570af9865f822d53e088b6e08b7ed0a7046476efc13140a45d0c8ae"
     },
     {
-      "bytes": 2018,
+      "bytes": 2316,
       "path": "docs/deployment.zh.md",
-      "sha256": "9d94bfcd92f979eb8fc40e5b925434ab83fd5955867eb530b8a2542e1ab035c6"
+      "sha256": "b6bc3742f36f677dc846f9eb33515d33dd0d05c2607f683ffd1f7e4aa10e332f"
     },
     {
       "bytes": 1645,
@@ -228,14 +228,14 @@
       "sha256": "4218ed7de6b89c53bfc18f743ab2888b451d49d183e347f1eae1ef7983a551c0"
     },
     {
-      "bytes": 4601,
+      "bytes": 4728,
       "path": "docs/index.md",
-      "sha256": "5f485f13d944e9e886c715cb51b55e13eda3e63994d867a4ba4c3544846c8a51"
+      "sha256": "9752cd9062498fde9b170910577a0189b89843be46e979efbda8c67787222d71"
     },
     {
-      "bytes": 4410,
+      "bytes": 4575,
       "path": "docs/index.zh.md",
-      "sha256": "68f7c6bce4937c1652fbffc553411d3ac64143f52445fa3c44771d3239ec29fa"
+      "sha256": "332905d85d3d4279cc4385cfa3b539f727036c8c97cb2c44e2f6ec2d074ed516"
     },
     {
       "bytes": 1045,
@@ -308,14 +308,14 @@
       "sha256": "4bd698e760cc9de592f3cb38c104eb11f14877065c4d21ff4021cb824717c50d"
     },
     {
-      "bytes": 1891,
+      "bytes": 2336,
       "path": "docs/student-lab.md",
-      "sha256": "1dae63134c305c26f64122290a22295e7d444b5d7368085a76ec6db94701bdc9"
+      "sha256": "4d101c80310a79f62f418a60a963d420d0af91332964912657f57527c7aa80e4"
     },
     {
-      "bytes": 1658,
+      "bytes": 2061,
       "path": "docs/student-lab.zh.md",
-      "sha256": "8ee8ab22c3cb7c63069e007ec9ebee0ab097b6a254e4c90433a5aa39684eddc6"
+      "sha256": "2812486adcf37761e98030af1bb24651962b85810efeee3306ef0d63442660fc"
     },
     {
       "bytes": 8271,

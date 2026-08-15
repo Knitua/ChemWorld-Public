@@ -4,6 +4,11 @@ Agent Observatory is the provider-free policy workbench included with `chemworld
 understanding how an Agent acts through the public ChemWorld contract—not for displaying private
 reasoning or claiming leaderboard performance.
 
+[Open the public Agent Observatory](https://chemworld-public-lab.onrender.com/agent/){ .md-button .md-button--primary }
+[Open the Student Lab](https://chemworld-public-lab.onrender.com/student/){ .md-button }
+
+The free preview may take a short time to wake after an idle period. For a private local instance:
+
 ```bash
 chemworld lab
 ```
@@ -45,5 +50,6 @@ ChemWorld supports custom Python Agents and optional DeepSeek and Codex adapters
 explicit Python API because live runs require credential handling, model identity, prompt-contract
 provenance, retry policy and resource limits. See [Connect an agent](agents.md) for those paths.
 
-The local web server binds only to loopback, has no authentication, stores runs in memory and sends
-no data to an external service.
+The local web server binds only to loopback and sends no data to an external service. The hosted
+preview runs the same provider-free catalog behind explicit capacity, expiry, concurrency and rate
+limits. Both modes store runs only in memory.

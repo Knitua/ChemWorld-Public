@@ -4,6 +4,11 @@ Agent Observatory 是 `chemworld lab` 内置的、无需 Provider 的策略观�
 如何通过 ChemWorld 的公开合同采取行动，不展示私有推理，也不把一次运行包装成 leaderboard
 结论。
 
+[打开公网 Agent Observatory](https://chemworld-public-lab.onrender.com/agent/){ .md-button .md-button--primary }
+[打开 Student Lab](https://chemworld-public-lab.onrender.com/student/){ .md-button }
+
+免费预览实例闲置后可能需要短暂唤醒。如需私有本地实例：
+
 ```bash
 chemworld lab
 ```
@@ -40,4 +45,5 @@ ChemWorld 已支持自定义 Python Agent，以及可选的 DeepSeek 和 Codex a
 凭据、模型身份、prompt 合同、重试策略和资源上限，因此保留在显式 Python API 中。接入方式见
 [接入 Agent](agents.md)。
 
-本地网页服务只绑定 loopback，没有身份验证；运行只保存在内存中，也不会向外部服务发送数据。
+本地网页服务只绑定 loopback，不会向外部服务发送数据。托管预览运行相同的 provider-free
+目录，并显式启用容量、过期、并发和限流边界。两种模式的运行都只保存在内存中。
