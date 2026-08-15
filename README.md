@@ -1,5 +1,7 @@
 # ChemWorld
 
+**English** | [简体中文](README.zh-CN.md)
+
 ![ChemWorld — an agent moves through a replayable experimental lifecycle](docs/assets/chemworld-hero.png)
 
 **A programmable virtual chemistry lab for students, experimental agents, and reproducible research.**
