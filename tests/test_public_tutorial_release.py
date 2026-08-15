@@ -92,7 +92,9 @@ def test_colab_links_are_pinned_to_the_release_tag() -> None:
             (ROOT / "README.zh-CN.md").read_text(encoding="utf-8"),
         ]
     )
-    assert readmes.count("/blob/v0.4.0/notebooks/01_first_experiment.ipynb") == 2
+    # Each README exposes Colab once in the primary links and once in the
+    # four-way explanation below.
+    assert readmes.count("/blob/v0.4.0/notebooks/01_first_experiment.ipynb") == 4
 
 
 def test_interactive_payload_matches_readme_visual_payload() -> None:

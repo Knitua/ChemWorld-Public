@@ -25,14 +25,11 @@ chemworld lab
 
 Open `http://127.0.0.1:8876/student/` for the Lab or `http://127.0.0.1:8876/agent/` for the Agent view. Python 3.11 and 3.12 are supported.
 
-## Project status
+## Four ways to use ChemWorld
 
-This repository contains the stable public release. Ongoing work and candidate features remain in the development repository until they are ready to publish. For reproducible studies, record the release tag, task, world split, seed and action trace.
+- [**🚀 Try the Live Lab**](https://chemworld-public-lab.onrender.com/student/) — Choose a task, compose operations and see how the apparatus and measurements respond in the browser.
+- [**🤖 Watch Agents**](https://chemworld-public-lab.onrender.com/agent/) — Step through the built-in policies and inspect their actions, observations and results on the same tasks.
+- [**📓 Run in Colab**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb) — Open a notebook and run a reproducible first experiment without installing ChemWorld locally.
+- [**📚 Read the Documentation**](https://knitua.github.io/ChemWorld-Public/) — Read about the research question, system design, tasks, agent integration and evaluation.
 
-ChemWorld is a software environment for studying experimental interaction. Its simulated quantities and policies are not instructions for physical laboratory work, and results in ChemWorld do not by themselves establish transfer to a real laboratory.
-
-## Team and citation
-
-ChemWorld is developed by **Jiangjie Qiu, Yijun Li and Xiaonan Wang** at the Beijing Key Laboratory of Artificial Intelligence for Advanced Chemical Engineering Materials, State Key Laboratory of Chemical Engineering and Low-Carbon Technology, Department of Chemical Engineering, Tsinghua University.
-
-Citation metadata is provided in [`CITATION.cff`](CITATION.cff). The code is released under the [MIT License](LICENSE).
+Citation metadata is provided in [`CITATION.cff`](https://github.com/Knitua/ChemWorld-Public/blob/main/CITATION.cff). The code is released under the [MIT License](https://github.com/Knitua/ChemWorld-Public/blob/main/LICENSE).

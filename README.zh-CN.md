@@ -25,14 +25,11 @@ chemworld lab
 
 打开 `http://127.0.0.1:8876/student/` 进入实验台，或打开 `http://127.0.0.1:8876/agent/` 查看 Agent。支持 Python 3.11 和 3.12。
 
-## 版本说明
+## 四种使用方式
 
-这个仓库只保留已经稳定的公开版本。仍在开发或验证中的功能会继续放在开发仓库，确认后再进入 Public。用于研究时，请记录版本标签、任务、world split、seed 和动作轨迹。
+- [**🚀 体验在线 Lab**](https://chemworld-public-lab.onrender.com/student/)：在浏览器中选择任务、编排操作，直接观察装置状态和测量结果。
+- [**🤖 观察 Agent**](https://chemworld-public-lab.onrender.com/agent/)：逐步运行内置策略，查看 Agent 在相同任务中的动作、观测和结果。
+- [**📓 在 Colab 运行**](https://colab.research.google.com/github/Knitua/ChemWorld-Public/blob/v0.4.0/notebooks/01_first_experiment.ipynb)：无需本地安装，打开 Notebook 即可完成第一个可复现实验。
+- [**📚 阅读研究文档**](https://knitua.github.io/ChemWorld-Public/zh/)：了解 ChemWorld 的研究问题、系统设计、任务、Agent 接入和评估方法。
 
-ChemWorld 是研究实验交互的软件环境。其中的模拟数值和策略不是现实实验室操作建议；在 ChemWorld 中得到的结果也不能单独证明其可以迁移到真实实验室。
-
-## 团队与引用
-
-ChemWorld 由 **Jiangjie Qiu、Yijun Li 和 Xiaonan Wang** 共同开发。团队来自清华大学化学工程系、北京人工智能驱动的化工材料重点实验室和化学工程与低碳技术全国重点实验室。
-
-引用信息见 [`CITATION.cff`](CITATION.cff)。代码采用 [MIT License](LICENSE)。
+引用信息见 [`CITATION.cff`](https://github.com/Knitua/ChemWorld-Public/blob/main/CITATION.cff)。代码采用 [MIT License](https://github.com/Knitua/ChemWorld-Public/blob/main/LICENSE)。
